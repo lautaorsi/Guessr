@@ -51,6 +51,12 @@
                     </button>
                 </a>
             </div>
+            <div id="warning">
+                <h2 id="attention">•Atencion•</h2>
+                <h3 id="color_warning">-Elige un color para tu pin!</h3>
+                <h3 id="time_warning">-Elige la duracion de la ronda!</h3>
+                <h3 id="rounds_warning">-Elige la cantidad de rondas!</h3>
+            </div>
     </body>
 </html>
 
@@ -85,6 +91,7 @@
     descript.innerHTML = descriptions[gamename.hello]
     wimg.src = images[gamename.hello]
     title.innerHTML=titles[gamename.hello]
+    var warning_elem = document.getElementById('warning')
     const btn = document.getElementById("start");
     function myFunction(){
         var time = document.getElementById('timeselect').value
@@ -92,12 +99,24 @@
         var color = document.getElementById('colorselect').value
         if (time == 'none'){
             console.log('time not selected')
+            var time_warning = document.getElementById('time_warning')
+            warning_elem.style.display = 'block'
+            time_warning.style.display = 'block'
+            
+
         }
         if (color == 'none'){
             console.log('color not selected')
+            var color_warning = document.getElementById('color_warning')
+            warning_elem.style.display = 'block'
+            color_warning.style.display = 'block'
+            
         }
         if (rounds == 'none'){
             console.log('rounds not selected')
+            var rounds_warning = document.getElementById('rounds_warning')
+            warning_elem.style.display = 'block'
+            rounds_warning.style.display = 'block'
         }
         if(time != 'none' && color != 'none' && rounds != 'none'){
             localStorage.setItem('rounds', rounds)
@@ -105,8 +124,21 @@
             localStorage.setItem('time', time)
             window.location.href = `game.html`
         }
+        else{
+            warning_elem.style.animation = 'horizontal-shaking 1s 0s'
+            setTimeout(function(){
+                showWarning()
+                }, 4000);
+        }
     }
+    function showWarning(){
+        console.log('warning hidden')
+        warning_elem.style.display = 'none'
+        color_warning.style.display = 'none'
+        time_warning.style.display = 'none'
+        rounds_warning.style.display = 'none'
 
+    }
 
 </script>
 <!-- localStorage.setItem('name', objnamestr);
