@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+    crossorigin=""/> 
+    <title>VideoGuessr</title>
+    <script type="text/javascript" src="./leaflet/leaflet.js"></script>
+
+  </head>
+  <body>
+    <div class="open_map">
+        <button id="Open_map" onclick="window.modal.showModal(), invsze(),  map_open()" data-title="Click to guess!"><img src="./globe.png" id = "globe"></button>
+       
+    </div>
+    <div class="custom-controls">
+        <button id="rewindButton" onclick="rewindVideo()"><i class="fa-solid fa-backward" style="color: #003aad;"></i> 5s</button>
+        <button id="reduceSpeedButton" onclick="reduceSpeed()">Reduce Speed</button>
+        
+        <button id="restartVideo" onclick="restartVideo()">Restart Video</button>
+    </div>
+    <div id="credits_container">
+        <a href="" target="_blank" id="credits"></a>
+    </div>
+    <table border="1" width = "200" class="scoretable" id="scoretable">
+        <tr>
+            <th>Jugador</th>
+            <th>Puntaje</th>
+          </tr>
+    </table>
+    <div class="video-background">
+        <div class="video-foreground">
+            <div id="myvid" class="ytplayer-nbvz"></div>
+        </div>
+    </div>
+        <dialog id="modal">
+                <div id="map"></div>
+                <h2 id="h2"></h2>
+                <button id="close_map" onclick="window.modal.close(),  map_open()">Cerrar</button>
+                <div class="text-box">
+                    <a href="#" id="guess" class="btn btn-white btn-        animate" onclick="final_guess()">Adivinar</a>
+                </div>
+                <button id = "continue" onclick="next()">Continuar</button>
+        </dialog>
+        <div id="warning-container">
+            <text id="warning">Clickea el mapa para adivinar!<i class="fa-solid fa-location-dot fa-bounce" id="marker_warning" style="color: #005eff;"></i></text> 
+        </div>
+</body>
+
+<link rel="stylesheet" href="classic.css">
+<script type="text/javascript" src="1hp.js"></script>
+<script src="https://www.youtube.com/iframe_api"></script>
+<script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
+
+</html>

@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="lobby.css">
+        <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Gabarito&family=Merriweather Sans">
+        <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+            <h1 id="Title">VideoGuessr</h1>
+            <div id="main_container">
+                <h2 id="gamemode"></h2>
+                <div id="imgcontainer">
+                    <img src="" id="img2">
+                    <div id="foot">
+                        <p id="desc"></p>
+                    </div>
+                </div>
+                <div id="selectors">
+                        <select id="colorselect">
+                            <option value="none">Color</option>
+                            <option value='0' class="red">Rojo</option>
+                            <option value="5" class="blue">Azul </option>
+                            <option value="2" class="yellow">Amarillo</option>
+                            <option value="1" class="purple">Violeta</option>
+                            <option value="3" class="orange">Naranja</option>
+                            <option value="4" class="black">Negro</option>
+                        </select>
+                        <select id="roundselect">
+                            <option value="none">Rondas</option>
+                            <option value=5 >5 rondas</option>
+                            <option value=10 >10 rondas</option>
+                            <option value=15 >15 rondas</option>
+                            <option value=20 >20 rondas</option>
+                            <option value=25 >25 rondas</option>
+                        </select>
+                        <select id="timeselect">
+                            <option value="none">Tiempo</option>
+                            <option value=20 >20s</option>
+                            <option value=40 >40s</option>
+                            <option value=80 >80s</option>
+                            <option value=100 >100s</option>
+                            <option value=120 >120s</option>
+                        </select>
+                </div>
+                <button id="start" onclick="myFunction()">
+                    Jugar
+                </button>
+                <a href="index.html">
+                    <button id="return" href = >
+                        <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
+                    </button>
+                </a>
+            </div>
+    </body>
+</html>
+
+<script>
+    const descriptions = {
+        'CLASICO': 'Modo de juego clasico, <br> limites de tiempo por ronda',
+        'clear_map': 'Mapa en blanco! <br> Sin nombres ni divisiones politicas! <br> (recomendado para jugadores avanzados)',
+        '1hp': 'Desafio: <br> conseguir la mayor cantidad de aciertos sin equivocarse, <br> un error y game over!',
+        'contrarreloj': 'Desafio: <br> conseguir la mayor cantidad de aciertos <br>antes de que acabe el tiempo!'
+    }
+
+    const titles = {
+        'CLASICO' : 'CLASICO',
+        'contrarreloj' : 'CONTRARRELOJ 💣',
+        '1hp' : '1 VIDA 🧡',
+        'clear_map' : 'MAPA BLANCO🗺'
+    }
+
+    const images = {
+        'CLASICO' : 'CLASICO.jpg',
+        'contrarreloj' : 'CLASICO.jpg',
+        '1hp' : 'CLASICO.jpg',
+        'clear_map' : 'clear_map.png'
+    }
+
+    var descript = document.getElementById('desc')
+    var wimg = document.getElementById("img2")
+    var title = document.getElementById("gamemode")
+    const gamemodestr = localStorage.getItem('gamemode');
+    console.log(gamemodestr)
+    const gamename = JSON.parse(gamemodestr)
+    descript.innerHTML = descriptions[gamename.hello]
+    wimg.src = images[gamename.hello]
+    title.innerHTML=titles[gamename.hello]
+    const btn = document.getElementById("start");
+    function myFunction(){
+        var time = document.getElementById('timeselect').value
+        var rounds = document.getElementById('roundselect').value
+        var color = document.getElementById('colorselect').value
+        if (time == 'none'){
+            console.log('time not selected')
+        }
+        if (color == 'none'){
+            console.log('color not selected')
+        }
+        if (rounds == 'none'){
+            console.log('rounds not selected')
+        }
+        if(time != 'none' && color != 'none' && rounds != 'none'){
+            localStorage.setItem('rounds', rounds)
+            localStorage.setItem('color', color)
+            localStorage.setItem('time', time)
+            window.location.href = `game.html`
+        }
+    }
+
+
+</script>
+<!-- localStorage.setItem('name', objnamestr);
+localStorage.setItem('gamemode', objgamemode);
+const objcolorstr = JSON.stringify(color);
+const objnamestr = JSON.stringify(name);
+const objcolor = { hello: color };
+const objname = { hello: name };
+// var name = document.getElementById("name").value;  
+// var color = document.getElementById("color_select").value;   -->

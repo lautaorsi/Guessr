@@ -1,0 +1,295 @@
+#h1{
+    text-align: center;
+    margin-top: 0%;
+    color: aliceblue;
+}
+
+#top_menu{
+    top: 0;
+    background-color: #2F4F3D;
+    height: 7%;
+    position: fixed;
+    width: 100%;
+    z-index: 1;
+}
+
+body{
+    padding: 0%;
+    margin: 0;
+    background-image: url("background_small.jpg");
+    background-color: #cccccc;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+}
+
+#contactdiv{
+    width: fit-content;
+    position: absolute;
+    top: 70%;
+}
+
+#playdiv{
+    width: fit-content;
+    position: absolute;
+    top: 45%;
+    right: 1%;
+}
+
+#play:hover,
+#play:focus {
+  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+  transform: translateY(-0.25em);
+}
+
+#play{
+    font: "Fira Sans", sans-serif;
+    background-color: #0ee706;
+    color: rgb(7, 7, 7);
+    font-size: large;
+    border-radius: 8px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+
+#contact{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+
+#about{
+    text-decoration: none;
+    color: antiquewhite;
+}
+
+#aboutdiv{
+    width: fit-content;
+    position: absolute;
+    top: 70%;
+    right: 50%;    
+}
+
+.card:hover{
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+    cursor: pointer;
+}
+
+
+#classiccards{
+    width: 100%;
+    position: absolute;
+    margin-top: 110px;
+    height: 500px;
+}
+
+#arcadecards{
+    width: 100%;
+    position: absolute;
+    margin-top: 710;
+    height: 500px;
+}
+
+#challengecards{
+    width: 100%;
+    position: absolute;
+    margin-top: 1310px;
+    height: 500px;
+}
+
+
+#classiccard{
+    margin-left: 15px;
+    position: relative;
+    margin-top: 0%;
+    width: fit-content;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#h4classic{
+    font-family: 'Gabarito', serif;
+    text-align: center;
+    font-size: x-large;
+}
+
+#classicdesc{
+    text-align: center;
+    font-family: 'Mukta', serif;
+}
+
+#classicimg{
+    height:350px;
+}
+
+
+
+#cleancard{
+    margin-left: 8px;
+    position: relative;
+    margin-top: 0%;
+    width: fit-content;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
+#h4clean{
+    text-align: center;
+    width: 100%;
+    font-family: 'Gabarito', serif;
+    font-size: x-large;
+}
+
+#cleandesc{
+    font-family: 'Mukta', serif;
+    text-align: center;
+    width: 100%;
+}
+
+#cleanimg{
+    height: 350px;
+    width: 100%;
+}
+
+
+
+#hp1card{
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+    margin-top: 0%;
+    width: fit-content;
+    vertical-align: middle;
+}
+
+
+
+#h4hp1{
+    text-align: center;
+    font-family: 'Gabarito', serif;
+    font-size: x-large;
+}
+
+#hp1desc{
+    font-family: 'Mukta', serif;
+    text-align: center;
+}
+
+#hp1img{
+    height: 350px;
+    width: 100%;
+}
+
+
+#timecard{
+    display: inline-block;
+    margin-left: 0px;
+    position: relative;
+    margin-top: 0%;
+    width: fit-content;
+    vertical-align: middle;
+}
+
+
+
+#h4time{
+    text-align: center;
+    font-family: 'Gabarito', serif;
+    font-size: x-large;
+}
+
+#timedesc{
+    font-family: 'Mukta', serif;
+    text-align: center;
+}
+
+#timeimg{
+    height: 350px;
+    width: 100%;
+}
+
+
+
+
+.bottomright {
+    position: absolute;
+    right: 16px;
+    font-size: 35px;
+}
+
+
+.card {
+    /* Add shadows to create the "card" effect */
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 300px;
+    background-color: whitesmoke;
+}
+
+/* On mouse-over, add a deeper shadow */
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+}
+  
+/* Add some padding inside the card container */
+.container {
+    padding: 2px 16px;
+}
+
+.cardlink{
+    text-decoration: none;
+    color: black;
+}
+
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+  
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
+  
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+  
+.close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+footer {
+    margin-bottom: 0%;
+    text-align: center;
+    padding: 3px;
+    background-color: DarkSalmon;
+    color: white;
+}
