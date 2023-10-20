@@ -4,12 +4,14 @@ const colorobject = localStorage.getItem('color');
 const numero_color = JSON.parse(colorobject);
 document.getElementById("marker_warning").style.color = colors[Number(numero_color)]
 const prerounds = localStorage.getItem('rounds')
-var rounds = JSON.parse(prerounds) 
+var rounds = 0 
 var timer = document.getElementById("timer")
 const pretime = localStorage.getItem('time')
 time = JSON.parse(pretime)
 const abstime =  JSON.parse(pretime)
-
+var prround = JSON.parse(prerounds) 
+var roundhtml = document.getElementById('round')
+round.innerHTML = `0/${prround}`
 
 var redIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
@@ -78,7 +80,7 @@ var greenIcon = new L.Icon({
 
 
 
-var score, video_coords, Enable_marking, points, marker_coords, map, marker, score_id, vidmarker, polyline, src, lat, lng, active_video, playersmarkers, time, inter, gamemode, pause
+var score, video_coords, Enable_marking, points, marker_coords, map, marker, score_id, vidmarker, polyline, src, lat, lng, active_video, playersmarkers, time, inter, gamemode, pause, interval
 var color_list = [redIcon, violetIcon, yellowIcon, orangeIcon, blackIcon, blueIcon]
 var guessed = true
 pause = false
@@ -118,6 +120,7 @@ var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927,'VAL', 'CarpoWalks','http
 var x = document.getElementById("warning-container")
 var myvid = document.getElementById('myvid');
 var bool_map = false
+// var creditos = []
 
 
 
@@ -125,7 +128,7 @@ var bool_map = false
 
 // initalize map
 map = L.map('map').setView([0, 0], 2); 
-console.log('map ready')
+
 if (gamemode == 'clear_map'){
 
 }
@@ -174,9 +177,9 @@ function randomlyChooseVideo() {
     console.log(src)
     
     active_video = video_list[vid_index]
-    // update the video source and play
-    
 
+    
+    // update the video source and play
     video_coords = [active_video[1],active_video[2]]
     return(src)
    
@@ -193,10 +196,7 @@ function distance_calc(user_guess, video_coords){
     const R = 6371e3; // metres
     const φ1 = user_guess[0] * Math.PI/180; // φ, λ in radians
 
-    console.log(user_guess[0])
-    console.log(user_guess[1])
-    console.log(video_coords[0])
-    console.log(video_coords[1])
+
     const φ2 = +video_coords[0] * Math.PI/180;
     const Δφ = (+video_coords[0]-user_guess[0]) * Math.PI/180;
     const Δλ = (+video_coords[1]-user_guess[1]) * Math.PI/180;
@@ -227,11 +227,11 @@ function mark(e){
 function map_open() {
 
         if(bool_map == false){
-           console.log("false -> true")
+         
            bool_map = true
         }
         else {
-            console.log("true -> false")
+         
             bool_map = false
         }
 }
@@ -250,8 +250,7 @@ function switchbtn() {
         y.style.visibility = "hidden";
         x.style.visibility = "visible";
     }
-    console.log(`guess style vistibility is now ${x.style.visibility}`)
-    console.log(`continue style vistibility is now ${y.style.visibility}`)
+
 }
 
 function showWarning() {
@@ -319,8 +318,11 @@ function calc_points(){
 
 
 function next(e) {
+    if(rounds < prround){
+    rounds = rounds + 1
+    roundhtml.innerHTML = `${rounds}/${prround}`
     Enable_marking = true
-    console.log('continue')
+  
     document.getElementById('continue').innerHTML = 'Continue'
     switchbtn()
     marker.clearLayers()
@@ -332,47 +334,74 @@ function next(e) {
     map.setView([0, 0], 2)
     map_open();
     document.getElementById("h2").innerHTML = "";
-    console.log('next video')
+   
     showDistance()
     document.getElementById('modal').close()
     var newvid = randomlyChooseVideo()
+
     player.loadVideoById(newvid, 100);
     var a = document.getElementById('credits');
     console.log(vid_index)
     a.href = video_list[vid_index][5]
     a.innerHTML = `Credits: ${video_list[vid_index][4]}`
-    console.log('received next video')
+    // if (creditos.includes(video_list[vid_index][5]) == false){
+    //     console.log(`${video_list[vid_index][5]} included`)
+    //     creditos.push(video_list[vid_index][5])
+    // }
+    // else{
+    //     console.log(`${video_list[vid_index][5]} not included`)
+    // }
+
+    video_list = video_list.slice(0, vid_index).concat(video_list.slice(vid_index + 1));
+
+
+    
     if(gamemode !='contrarreloj'){
         time = abstime   
     }
     pause = false
     startTimer()
+    }
+    else{
+        end()
+    }
+
 
 }
 
+function end(){
+    localStorage.setItem('points', score)
+    window.location.href = 'resume.html'
+}
+
+
 function startTimer(){
-    console.log(`startimer`)
+   
+    clearTimeout(interval)
+    looptime()
+
+
+}
+
+function looptime(){
     if(time < 1){
         final_guess(false)
     }
     else{
-        setTimeout(function() {
+       interval = setTimeout(function() {
           updatetime()
         }, 1200);
+        console.log(interval)
     }
     
-
-
 }
 
-
-
 function updatetime(){
-    console.log('time updated')
+   
     if(pause == false){
     time = time - 1
-    timer.innerHTML = time
-    startTimer()
+    timer.innerHTML = `${time}s`
+    looptime()
     }
     
 
@@ -382,7 +411,6 @@ function updatetime(){
 
 //guessing secuence
 function final_guess(c) {
-    console.log("final_guess pressed")
     pause = true
     
     if(c == false){
@@ -401,20 +429,20 @@ function final_guess(c) {
         L.marker((latlng), {icon: greenIcon}).addTo(vidmarker);
 
         map.addLayer(vidmarker);
-        document.getElementById("h2").innerHTML = "No guess made!";
+        document.getElementById("h2").innerHTML = "El tiempo acabo!";
         showDistance()
         switchbtn()
     }
     else{
         try{
             if (marker_coords[0] == null ||  marker_coords[1] == null){
-                console.log("Error caught on if statement")
+                
                 showWarning()
                 return
             }
         }
         catch(err){
-            console.log("Error caught")
+           
             showWarning()
             return
     
@@ -452,7 +480,7 @@ function final_guess(c) {
     polyline = L.polyline(latlngs, {color: 'black'})
     try{polyline.addTo(map);}
     catch(err){
-        console.log("Error caught")
+        
         showWarning()
         return
     }    
@@ -478,15 +506,15 @@ function final_guess(c) {
 map.on('click', function(e){
     if (Enable_marking == true){
         mark(e)
-        console.log("Guess coords: " + lat + " , " + lng);
-        console.log("Marker coords: " + video_coords)
+       
+  
     }
 });
 
 
 
 function rewindVideo() {
-    console.log("video rewinded");
+    
     const currentTime = player.getCurrentTime();
     if(currentTime > 70){
         player.seekTo(currentTime - 10, true); 
@@ -497,13 +525,13 @@ function rewindVideo() {
 }
 
 function reduceSpeed() {
-    console.log("speed reduced");
+   
     const currentPlaybackRate = player.getPlaybackRate();
     player.setPlaybackRate(currentPlaybackRate - 0.25); // You can adjust the speed reduction factor
 }
 
 function restartVideo(){
-    console.log("video restarted");
+    
     player.seekTo(100, true);
 }
 
@@ -512,7 +540,7 @@ document.addEventListener('keydown', (event) => {
     var x = document.getElementById("guess");
     if (name === 'Enter' && bool_map) {
         if (x.style.visibility != "hidden"){
-            console.log("final_guess")
+           
             final_guess()
         }
         else{
@@ -545,8 +573,8 @@ function onYouTubeIframeAPIReady() {
         },
 
     });
-    console.log('Player ready')
-    startTimer()
+   
+    
 
 }
 
@@ -558,12 +586,18 @@ function onPlayerReady(event) {
     // Define custom control actions
     document.getElementById("rewindButton").addEventListener("click", rewindVideo);
     document.getElementById("reduceSpeedButton").addEventListener("click", reduceSpeed);
-    player.setPlaybackQuality('hd720')
+    player.setPlaybackQuality('highres')
     var a = document.getElementById('credits');
     console.log(vid_index)
     console.log(video_list[vid_index])
     a.href = video_list[vid_index][5]
     a.innerHTML = `Credits: ${video_list[vid_index][4]}`
-
-
+    // if (creditos.includes(video_list[vid_index][5]) == false){
+    //     console.log(`${video_list[vid_index][5]} included`)
+    //     creditos.push(video_list[vid_index][5])
+    // }
+    // else{
+    //     console.log(`${video_list[vid_index][5]} not included`)
+    // }
+    startTimer()
 }

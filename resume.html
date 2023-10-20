@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="resume.css">
+        <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Gabarito&family=Merriweather Sans">
+        <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+            <h1 id="Title">VideoGuessr</h1>
+            <div id="main_container">
+                <h2 id="congrats"></h2>
+                <h2 id="points"></h3>
+                <button id="start" onclick="myFunction1()">
+                    Jugar de nuevo
+                </button>
+                <button id="menu" onclick="myFunction()">
+                    Volver al menu
+                </button>
+                <a href="index.html">
+                    <button id="return" href = >
+                        <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
+                    </button>
+                </a>
+            </div>
+    </body>
+    <script>
+        const objcredits = localStorage.getItem('credits')
+        const objrounds = localStorage.getItem('rounds')
+        const rounds = JSON.stringify(objrounds)
+        const objscore = localStorage.getItem('points')
+        var score = JSON.stringify(objscore)
+        if (score/rounds >= 1100){
+            document.getElementById('congrats').innerHTML='Wow! Obtuviste:'
+        }
+        if(score/rounds >= 800){
+            document.getElementById('congrats').innerHTML='Bien jugado! Obtuviste:'
+        }
+        else{
+            document.getElementById('congrats').innerHTML='Buen intento! Obtuviste:'
+        }
+        score = parseInt(score)
+        document.getElementById('points').innerHTML = `${score} Puntos`
+    
+        function myFunction(){
+            window.location.href = 'index.html'
+        }
+        function myFunction1(){
+            window.location.href = 'game.html'
+        }
+    </script>
+
+
+</html>
