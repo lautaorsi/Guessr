@@ -249,7 +249,7 @@ select {
     padding-right: 30px;
     padding-left: 25px;
     border-radius: 8px;
-    display: none;
+    display : none;
 }
 
 #attention{
@@ -257,6 +257,7 @@ select {
     color: rgba(255, 1, 1, 0.904);
     font-family: 'Merriweather sans', serif;
     font-size: large;
+
 }
 
 h3{
@@ -264,7 +265,7 @@ h3{
     font-size: medium;
     margin-top: 45px;
     font-family: 'Merriweather sans', serif;
-    display: none;
+    display: none
 }
 
 @keyframes horizontal-shaking {
