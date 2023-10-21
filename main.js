@@ -370,8 +370,10 @@ function next(e) {
 }
 
 function end(){
+    score = parseInt(score)
     localStorage.setItem('points', score)
     window.location.href = 'resume.html'
+    
 }
 
 

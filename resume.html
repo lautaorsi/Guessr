@@ -5,13 +5,22 @@
         href="https://fonts.googleapis.com/css2?family=Gabarito&family=Merriweather Sans">
         <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
 
+
+
+
     </head>
+
+
     <body>
             <h1 id="Title">VideoGuessr</h1>
             <div id="main_container">
                 <h2 id="congrats"></h2>
                 <h2 id="points"></h3>
+                <div id="imgcontainer">
+                    <img src="" id="gif">
+                </div>
                 <button id="start" onclick="myFunction1()">
+
                     Jugar de nuevo
                 </button>
                 <button id="menu" onclick="myFunction()">
@@ -19,29 +28,38 @@
                 </button>
                 <a href="index.html">
                     <button id="return" href = >
-                        <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
+                        <span id="arrow">&#10229;</span>
                     </button>
                 </a>
             </div>
     </body>
     <script>
+        function getRandomIndex(max) {
+        /* The function will return a random number between 0 and max - 1 */
+        return Math.floor(Math.random() * Math.floor(max));
+        }
+
+
         const objcredits = localStorage.getItem('credits')
         const objrounds = localStorage.getItem('rounds')
         const rounds = JSON.stringify(objrounds)
         const objscore = localStorage.getItem('points')
         var score = JSON.stringify(objscore)
-        if (score/rounds >= 1100){
+        const fail_gifs = ['fail2.gif','fail3.gif','fail4.gif','fail5.gif','fail6.gif','fail7.gif','fail8.gif']
+        const wow_gifs = ['shocked.gif','wow.gif','wow2.gif','wow4.gif','giphy.gif','wow5.gif']
+        if (objscore/rounds >= 1100){
             document.getElementById('congrats').innerHTML='Wow! Obtuviste:'
+            document.getElementById('gif').src = wow_gifs[getRandomIndex(wow_gifs.length)]
         }
-        if(score/rounds >= 800){
+        if(objscore/rounds >= 800){
             document.getElementById('congrats').innerHTML='Bien jugado! Obtuviste:'
+            document.getElementById('gif').src = wow_gifs[getRandomIndex(wow_gifs.length)]
         }
         else{
-            document.getElementById('congrats').innerHTML='Buen intento! Obtuviste:'
+            document.getElementById('congrats').innerHTML='Mejor suerte la proxima! Obtuviste:'
+            document.getElementById('gif').src = fail_gifs[getRandomIndex(fail_gifs.length)]
         }
-        score = parseInt(score)
-        document.getElementById('points').innerHTML = `${score} Puntos`
-    
+        document.getElementById('points').innerHTML = `${objscore} Puntos`
         function myFunction(){
             window.location.href = 'index.html'
         }

@@ -156,9 +156,9 @@ select {
     background-color: #ffffff;
     border-radius: 8px;
     border-style: none;
-    box-shadow: rgba(39, 174, 96, .15) 0 4px 9px;
+    box-shadow: rgba(0, 255, 34, 0.15) 0 4px 9px;
     box-sizing: border-box;
-    color: #fff;
+    color: #000000;
     cursor: pointer;
     display: inline-block;
     font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
@@ -183,7 +183,7 @@ select {
   
 #return:hover {
     opacity: 1;
-    transform: translateY(0);
+    animation: backwards;
     transition-duration: .35s;
 }
   
@@ -193,7 +193,7 @@ select {
 }
   
 #return:hover {
-    box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
+    box-shadow: rgba(72, 255, 0, 0.2) 0 6px 12px;
 }
 
 
@@ -281,7 +281,7 @@ select {
 }
   
 #menu:hover {
-    background-color: #1e8449;
+    background-color: #fafafabd;
     opacity: 1;
     transform: translateY(0);
     transition-duration: .35s;
@@ -295,3 +295,16 @@ select {
 #menu:hover {
     box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }
+
+#imgcontainer{
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+#gif{
+    width: 100%;
+    height: 100%;
+}
+
