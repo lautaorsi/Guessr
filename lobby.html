@@ -35,11 +35,11 @@
                         </select>
                         <select id="timeselect">
                             <option value="none">Tiempo</option>
-                            <option value=20 >20s</option>
-                            <option value=40 >40s</option>
-                            <option value=80 >80s</option>
-                            <option value=100 >100s</option>
-                            <option value=120 >120s</option>
+                            <option value=20 id="time1">20s</option>
+                            <option value=40 id="time2">40s</option>
+                            <option value=80 id="time3">80s</option>
+                            <option value=100 id="time4" >100s</option>
+                            <option value=120 id="time5">120s</option>
                         </select>
                 </div>
                 <button id="start" onclick="myFunction()">
@@ -86,16 +86,36 @@
     var wimg = document.getElementById("img2")
     var title = document.getElementById("gamemode")
     const gamemodestr = localStorage.getItem('gamemode');
-    console.log(gamemodestr)
+    
     const gamename = JSON.parse(gamemodestr)
     descript.innerHTML = descriptions[gamename.hello]
     wimg.src = images[gamename.hello]
     title.innerHTML=titles[gamename.hello]
     var warning_elem = document.getElementById('warning')
     const btn = document.getElementById("start");
+    console.log(gamename)
+    if (gamename.hello == 'contrarreloj'){
+        document.getElementById('roundselect').setAttribute("hidden", "hidden")
+        document.getElementById('timeselect').style.marginLeft = "20%"
+        document.getElementById('time1').innerHTML = "30s"
+        document.getElementById('time1').value = 30
+        document.getElementById('time2').innerHTML = "50s"
+        document.getElementById('time2').value = 50
+        document.getElementById('time3').innerHTML = "80s"
+        document.getElementById('time3').value = 80
+        document.getElementById('time4').innerHTML = "100s"
+        document.getElementById('time4').value = 100
+        document.getElementById('time5').innerHTML = "120s"
+        document.getElementById('time5').value = 120
+    }
     function myFunction(){
         var time = document.getElementById('timeselect').value
-        var rounds = document.getElementById('roundselect').value
+        if(gamename.hello == 'contrarreloj'){
+            var rounds = 9999
+        }
+        else{
+            var rounds = document.getElementById('roundselect').value
+        }
         var color = document.getElementById('colorselect').value
         var attention = document.getElementById('attention')
         if (time == 'none'){

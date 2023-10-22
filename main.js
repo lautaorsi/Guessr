@@ -3,15 +3,23 @@ var colors = ["#CC2A3D", "#9D2ECC", "#CBC52B", "#CB852B", "#3E3E3E", "#2C83CB"]
 const colorobject = localStorage.getItem('color');
 const numero_color = JSON.parse(colorobject);
 document.getElementById("marker_warning").style.color = colors[Number(numero_color)]
-const prerounds = localStorage.getItem('rounds')
+const gamemode = JSON.parse(localStorage.getItem('gamemode'))['hello']
+let abstime
 var rounds = 0 
+var roundhtml = document.getElementById('round')
 var timer = document.getElementById("timer")
 const pretime = localStorage.getItem('time')
 time = JSON.parse(pretime)
-const abstime =  JSON.parse(pretime)
-var prround = JSON.parse(prerounds) 
-var roundhtml = document.getElementById('round')
-round.innerHTML = `0/${prround}`
+abstime =  JSON.parse(pretime)
+if (gamemode != 'contrarreloj'){
+    const prerounds = localStorage.getItem('rounds')
+    var prround = JSON.parse(prerounds) 
+    roundhtml.innerHTML = `0/${prround}`
+}
+else{
+    roundhtml.innerHTML = `0`
+}
+
 
 var redIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
@@ -80,11 +88,12 @@ var greenIcon = new L.Icon({
 
 
 
-var score, video_coords, Enable_marking, points, marker_coords, map, marker, score_id, vidmarker, polyline, src, lat, lng, active_video, playersmarkers, time, inter, gamemode, pause, interval
+var score, video_coords, Enable_marking, points, marker_coords, map, marker, score_id, vidmarker, polyline, src, lat, lng, active_video, playersmarkers, time, inter, pause, interval
 var color_list = [redIcon, violetIcon, yellowIcon, orangeIcon, blackIcon, blueIcon]
 var guessed = true
 pause = false
-gamemode = 's'
+
+console.log(gamemode)
 
 var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927,'VAL', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
 ["UHdURaQ0fXE", 39.457383, -0.354918,'MAD', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
@@ -318,9 +327,18 @@ function calc_points(){
 
 
 function next(e) {
-    if(rounds < prround){
     rounds = rounds + 1
+    if(gamemode != 'contrarreloj'){
+    if(rounds < prround){
     roundhtml.innerHTML = `${rounds}/${prround}`
+    }
+    else{
+        end()
+    }
+    }
+    else{
+        roundhtml.innerHTML = `${rounds}`
+    }
     Enable_marking = true
   
     document.getElementById('continue').innerHTML = 'Continue'
@@ -361,13 +379,10 @@ function next(e) {
     }
     pause = false
     startTimer()
-    }
-    else{
-        end()
-    }
-
-
 }
+
+
+
 
 function end(){
     score = parseInt(score)
@@ -415,6 +430,10 @@ function updatetime(){
 function final_guess(c) {
     pause = true
     
+    if(c == false && gamemode == 'contrarreloj'){
+        end()
+    }
+
     if(c == false){
         guessed = false
         document.getElementById('modal').showModal()
@@ -457,13 +476,17 @@ function final_guess(c) {
 
     //calculate distance between user's guess and vid coords
     distance = distance_calc([marker_coords[0], marker_coords[1]], video_coords)
+
     switchbtn()
 
     //calculate points
     score = calc_points().toFixed(0)
-
+    if(gamemode == '1hp' && distance > 1000){
+        end()
+    }
+    else{
     document.getElementById(`points`).innerHTML = Number(document.getElementById(`points`).innerHTML) + Number(score)
-
+    }
 
 
 
