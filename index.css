@@ -19,7 +19,9 @@ body{
 }
 
 #h1{
-    text-align: center;
+    display: flex;
+    position: absolute;
+    right: 46%;
     margin-top: 0%;
     color: aliceblue;
 }
@@ -40,42 +42,21 @@ body{
 #contactdiv{
     width: fit-content;
     position: absolute;
-    top: 70%;
+    top: 60%;
+    left: 1%;
 }
 
-#playdiv{
+#howtodiv{
+    display: flex;
     width: fit-content;
     position: absolute;
-    top: 45%;
-    right: 1%;
+    top: 60%;
+    right: 50%;
 }
 
-#play:hover,
-#play:focus {
-  box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-  transform: translateY(-0.25em);
-}
-
-#play{
-    font: "Fira Sans", sans-serif;
-    background-color: #0ee706;
-    color: rgb(7, 7, 7);
+.headers{
+    font-family: 'Mukta', serif;
     font-size: large;
-    border-radius: 8px;
-    padding-bottom: 5px;
-    padding-top: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
-}
-
-
-#contact{
-    text-decoration: none;
-    color: antiquewhite;
-}
-
-
-#about{
     text-decoration: none;
     color: antiquewhite;
 }
@@ -83,8 +64,8 @@ body{
 #aboutdiv{
     width: fit-content;
     position: absolute;
-    top: 70%;
-    right: 50%;    
+    top: 60%;
+    right: 1%;
 }
 
 .card:hover{
@@ -92,7 +73,6 @@ body{
     transform: translateY(-0.25em);
     cursor: pointer;
 }
-
 
 #classiccards{
     width: 100%;
@@ -139,7 +119,6 @@ body{
 #classicimg{
     height:350px;
 }
-
 
 
 #cleancard{
@@ -300,7 +279,7 @@ body{
     color: black;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
 footer {
     position: relative;
