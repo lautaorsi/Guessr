@@ -104,6 +104,11 @@ select {
     border-radius: 0.25rem;
     color: #000;
     cursor: pointer;
+    text-align: center;
+}
+
+option{
+    text-align: left;
 }
 
 

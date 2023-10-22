@@ -11,7 +11,7 @@ body{
     vertical-align: top;
     width: 25%;
     margin: 3.5%;
-    height:70%;
+    height:fit-content;
     line-height: 100%;
     border-radius: 19px;
     background-color: whitesmoke;
@@ -28,13 +28,14 @@ h1{
 }
 
 p{
-    margin-top: 100px;
+    margin-top: 60px;
     font-size: 23px;
     font-family: 'Mukta', serif;
     text-align: center;
     padding: 25;
     line-height:210%;
 }
+
 
 
 #gmail{
