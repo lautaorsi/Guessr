@@ -25,6 +25,7 @@
        
     </div>
     <div class="custom-controls">
+        
         <button id="rewindButton" onclick="rewindVideo()"><i class="fa-solid fa-backward" style="color: #003aad;"></i> 5s</button>
         <button id="reduceSpeedButton" onclick="reduceSpeed()">Reduce Speed</button>
         
@@ -39,6 +40,11 @@
                 <td id="points">0</td>
           </tr>
     </table>
+    <div id="volumecontainer">
+        <i class="fa-solid fa-volume-xmark" style="color: #333e52;" id="volume_icon"></i>
+        <input type="range" name="volume" id="volumerange" class="volumerange" min="0" max="100" oninput="player.setVolume(this.value)">
+    </div>
+   
     <div class="video-background">
         <div class="video-foreground">
             <div id="myvid" class="ytplayer-nbvz"></div>
@@ -63,7 +69,8 @@
 </script>
 <link rel="stylesheet" href='classic.css'>
 <script type="text/javascript" src="main.js"></script>
-<script src="https://www.youtube.com/iframe_api"></script>
 <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
+
+<script src="https://www.youtube.com/iframe_api"></script>
 
 </html>

@@ -157,6 +157,31 @@ body{
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+#volumecontainer{
+  position: absolute;
+  top: 12%;
+  left: 2%;
+  background-color: #222222;
+}
+
+#volumecontainer:hover .volumerange{
+  display: inline;
+}
+
+.volumerange{
+  background-color: #222222;
+  position: absolute;
+  display: none;
+}
+
+.volumerange:hover .volumerange{
+  display: inline;
+}
+
+.volume_icon{
+  position: absolute;
+}
+
 
 td{
   text-align: center;

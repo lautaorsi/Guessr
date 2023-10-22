@@ -11,6 +11,8 @@ var timer = document.getElementById("timer")
 const pretime = localStorage.getItem('time')
 time = JSON.parse(pretime)
 abstime =  JSON.parse(pretime)
+const premute = localStorage.getItem('mute')
+var mute = JSON.parse(premute)
 if (gamemode != 'contrarreloj'){
     const prerounds = localStorage.getItem('rounds')
     var prround = JSON.parse(prerounds) 
@@ -617,6 +619,16 @@ function onPlayerReady(event) {
     document.getElementById("rewindButton").addEventListener("click", rewindVideo);
     document.getElementById("reduceSpeedButton").addEventListener("click", reduceSpeed);
     player.setPlaybackQuality('highres')
+    if(mute){
+        player.unMute()
+        player.setVolume(0)
+        document.getElementById('volumerange').value = 0
+    }
+    else{
+        player.unMute()
+        player.setVolume(10)
+    }
+    
     var a = document.getElementById('credits');
     console.log(vid_index)
     console.log(video_list[vid_index])
