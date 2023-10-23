@@ -596,7 +596,6 @@ function onYouTubeIframeAPIReady() {
             modestbranding: 1,
             showinfo: 0,
             start: 100,
-            end: 300,
             loop: 1,
             origin: "http://127.0.0.1:3000/main.html"
         },
@@ -626,7 +625,7 @@ function onPlayerReady(event) {
     }
     else{
         player.unMute()
-        player.setVolume(10)
+        player.setVolume(50)
     }
     
     var a = document.getElementById('credits');

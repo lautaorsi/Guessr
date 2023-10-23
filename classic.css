@@ -162,6 +162,8 @@ body{
   top: 12%;
   left: 2%;
   background-color: #222222;
+  width: 16%;
+  border-radius: 10px;
 }
 
 #volumecontainer:hover .volumerange{
@@ -174,9 +176,7 @@ body{
   display: none;
 }
 
-.volumerange:hover .volumerange{
-  display: inline;
-}
+
 
 .volume_icon{
   position: absolute;
