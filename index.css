@@ -205,11 +205,32 @@ h4{
 }
 
 
+.difficulty{
+    font-family: 'Gabarito';
+    position: absolute;
+    top: 65%;
+    left: 16px;
+    font-size: 20px;
+}
 
+
+
+#easy{
+    color: green;
+}
+
+#hard{
+    color: red;
+}
+
+#normal{
+    color: orange;
+}
 
 .bottomright {
     position: absolute;
     right: 16px;
+    top: 55%;
     font-size: 35px;
 }
 
