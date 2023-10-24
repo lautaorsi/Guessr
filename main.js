@@ -22,6 +22,12 @@ else{
     roundhtml.innerHTML = `0`
 }
 
+if (gamemode == 'radius'){
+    const preradius = localStorage.getItem('radius')
+    var gamerule_radius = JSON.parse(preradius)
+    console.log(gamerule_radius)
+}
+
 
 var redIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
@@ -378,7 +384,7 @@ function next(e) {
     // }
 
     video_list = video_list.slice(0, vid_index).concat(video_list.slice(vid_index + 1));
-
+    console.log(video_list)
 
     
     if(gamemode !='contrarreloj'){
@@ -437,7 +443,7 @@ function updatetime(){
 function final_guess(c) {
     pause = true
     
-    if(c == false && gamemode == 'contrarreloj'){
+    if(c == false && (gamemode == 'contrarreloj' || gamemode == '1hp' || gamemode == 'radius')){
         end()
     }
 
@@ -488,7 +494,7 @@ function final_guess(c) {
 
     //calculate points
     score = calc_points().toFixed(0)
-    if(gamemode == '1hp' && distance > 1000){
+    if(gamemode == 'radius' && distance > gamerule_radius){
         end()
     }
     else{

@@ -16,6 +16,15 @@
                     </div>
                 </div>
                 <div id="selectors">
+                        <select id="radiusselect">
+                            <option value="none">Radio</option>
+                            <option value=5 >5km</option>
+                            <option value=20 >20km</option>
+                            <option value=50 >50km</option>
+                            <option value=100 >100km</option>
+                            <option value=200 >200km</option>
+                            <option value=1000 >1000km</option>
+                        </select>
                         <select id="colorselect">
                             <option value="none">Marcador</option>
                             <option value='0' class="red">Rojo</option>
@@ -41,6 +50,7 @@
                             <option value=100 id="time4" >100s</option>
                             <option value=120 id="time5">120s</option>
                         </select>
+
                 </div>
                 <button id="start" onclick="myFunction()">
                     Jugar
@@ -57,6 +67,7 @@
                 <h3 id="color_warning">-Elige un color para tu pin!</h3>
                 <h3 id="time_warning">-Elige la duracion de la ronda!</h3>
                 <h3 id="rounds_warning">-Elige la cantidad de rondas!</h3>
+                <h3 id="radius_warning">-Elige el radio!</h3>
             </div>
             
     </body>
@@ -67,19 +78,22 @@
         'CLASICO': 'Modo de juego clasico, <br> limites de tiempo por ronda',
         'clear_map': 'Mapa satelital! <br> Sin nombres ni divisiones politicas! <br> (recomendado para jugadores avanzados)',
         '1hp': 'Desafio: <br> conseguir la mayor cantidad de aciertos sin equivocarse, <br> un error y game over!',
-        'contrarreloj': 'Desafio: <br> conseguir la mayor cantidad de aciertos <br>antes de que acabe el tiempo!'
+        'contrarreloj': 'Desafio: <br> conseguir la mayor cantidad de aciertos <br>antes de que acabe el tiempo!',
+        'radius': 'Consigue la mayor cantidad de aciertos<br> en el radio determinado!'
     }
 
     const titles = {
         'CLASICO' : 'CLASICO',
         'contrarreloj' : 'CONTRARRELOJ 💣',
         '1hp' : '1 VIDA 🧡',
+        'radius': 'RADIO📏',
         'clear_map' : 'MAPA BLANCO🗺'
     }
 
     const images = {
         'CLASICO' : 'CLASICO.jpg',
         'contrarreloj' : 'CLASICO.jpg',
+        'radius' : 'CLASICO.jpg',
         '1hp' : 'CLASICO.jpg',
         'clear_map' : 'earthmap.jpg'
     }
@@ -113,6 +127,13 @@
         document.getElementById('time5').innerHTML = "120s"
         document.getElementById('time5').value = 120
     }
+    if(gamename.hello != 'radius'){
+        document.getElementById('radiusselect').style.display = 'none'
+
+    }
+    else{
+        document.getElementById('selectors').style.left = '20%'
+    }
     function myFunction(){
         var time = document.getElementById('timeselect').value
         if(gamename.hello == 'contrarreloj'){
@@ -123,14 +144,20 @@
         }
         var color = document.getElementById('colorselect').value
         var attention = document.getElementById('attention')
+
+
+        if(gamename.hello == 'radius' &&  document.getElementById('radiusselect').value == 'none'){
+            document.getElementById('radius_warning').style.display = 'block'
+
+        }
+        else{
+            localStorage.setItem('radius', document.getElementById('radiusselect').value)
+        }
         if (time == 'none'){
             console.log('time not selected')
             var time_warning = document.getElementById('time_warning')
             warning_elem.style.display = 'block'
             time_warning.style.display = 'block'
-            
-            
-
         }
         if (color == 'none'){
             console.log('color not selected')
@@ -169,6 +196,7 @@
         color_warning.style.display = 'none'
         time_warning.style.display = 'none'
         rounds_warning.style.display = 'none'
+        radius_warning.style.display = 'none'
         warning_elem.style.animation = ''
 
     }

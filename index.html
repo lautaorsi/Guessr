@@ -25,11 +25,11 @@
         </div>
                 <div id="classiccards">
                     <div class="card" id="classiccard">
-                        <a href='javascript: lobby("CLASICO")' class="cardlink">
+                        <a onclick='lobby("CLASICO")' class="cardlink">
                         <img src="CLASICO.jpg" alt="Classic" id="classicimg">
                         <div class="container">
                         <h4 id="h4classic"><b>Clasico</b></h4>
-                        <p id="classicdesc">Recorre los paises <br>del mundo en este clasico modo <br>de juego</p>                 
+                        <p id="classicdesc" class="card_description">Recorre los paises <br>del mundo en este clasico modo <br>de juego</p>                 
 
                         </div>
                         </a>
@@ -37,34 +37,44 @@
                 </div>
                 <div id="challengecards">
                     <div class="card" id="hp1card">
-                        <a href='javascript: lobby("1hp")' class="cardlink">
+                        <a onclick='lobby("1hp")' class="cardlink">
                         <img src="CLASICO.jpg" alt="clean"  id="hp1img">
                         <div class="bottomright">🧡</div>
                         <div class="container">
                         <h4 id="h4hp1"><b>1 vida!</b></h4>
-                        <p id="hp1desc">Intenta adivinar la mayor<br>cantidad de paises<br> sin equivocarte! </p>
+                        <p id="hp1desc" class="card_description">Intenta adivinar la mayor<br>cantidad de paises<br> sin equivocarte! </p>
                         </div>
                         </a>
                     </div>
                     <div class="card" id="timecard">
-                        <a href='javascript: lobby("contrarreloj")' class="cardlink">
+                        <a onclick='lobby("contrarreloj")' class="cardlink">
                         <img src="CLASICO.jpg" alt="clean"  id="timeimg">
                         <div class="bottomright">💣</div>
                         <div class="container">
                         <h4 id="h4time"><b>Contrarreloj!</b></h4>
-                        <p id="timedesc">Consigue la mayor<br>cantidad de puntos<br> antes de que el tiempo acabe! </p>
+                        <p id="timedesc" class="card_description">Consigue la mayor<br>cantidad de puntos<br> antes de que el tiempo acabe! </p>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="card" id="radiuscard">
+                        <a onclick="lobby('radius')" class="cardlink">
+                        <img src="CLASICO.jpg" alt="clean"  id="timeimg">
+                        <div class="bottomright">📏</div>
+                        <div class="container">
+                        <h4 id="h4radius"><b>Radio!</b></h4>
+                        <p id="radiudesc" class="card_description">Consigue la mayor<br> cantidad de aciertos<br> en el radio determinado!</p>
                         </a>
                         </div>
                     </div>
                 </div>
                 <div id="arcadecards">
                     <div class="card" id="cleancard">
-                        <a href='javascript: lobby("clear_map")' class="cardlink">
+                        <a onclick='lobby("clear_map")' class="cardlink">
                         <img src="earthmap.jpg" alt="clean"  id="cleanimg">
                         <div class="bottomright">🗺</div>
                         <div class="container">
                         <h4 id="h4clean"><b>Satelital</b></h4>
-                        <p id="cleandesc">Para jugadores expertos este modo no tiene <br> divisiones politicas ni nombres! <br> (Dificultad avanzada)</p>
+                        <p id="cleandesc" class="card_description">Para jugadores expertos este modo no tiene <br> divisiones politicas ni nombres! <br> (Dificultad avanzada)</p>
                        </a>
                         </div>
                     </div>
