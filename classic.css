@@ -45,7 +45,7 @@ body{
 
 #myvid {
   position: absolute;
-  top: 50%;
+  top: 55%;
   left: 50%;
   width: 100%;
   height: 125%;
@@ -162,12 +162,47 @@ body{
   top: 12%;
   left: 2%;
   background-color: #222222;
-  width: 16%;
+  width: 160px;
   border-radius: 10px;
 }
 
 #volumecontainer:hover .volumerange{
   display: inline;
+}
+
+#pausecontainer{
+  position: absolute;
+  bottom: 3%;
+  right: 48%;
+
+}
+
+#pausebutton{
+  text-align: center;
+  font-family: 'Gabarito';
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: rgb(167, 4, 4);
+  padding-left: 30px;
+  padding-top: 14px;
+  padding-bottom: 14px;
+  padding-right: 30px;
+  cursor: pointer;
+  display: none;
+}
+
+#playbutton{
+  display: none;
+  text-align: center;
+  font-family: 'Gabarito';
+  font-size: 14px;
+  border-radius: 5px;
+  background-color: rgb(4, 167, 4);
+  padding-left: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-right: 30px;
+  cursor: pointer;
 }
 
 .volumerange{

@@ -25,12 +25,13 @@ else{
 if (gamemode == 'radius'){
     const preradius = localStorage.getItem('radius')
     var gamerule_radius = JSON.parse(preradius)
-    console.log(gamerule_radius)
-}
-
-if(gamemode == 'PAUSE'){
     
 }
+
+if (gamemode == 'PAUSE'){
+    document.getElementById('pausebutton').style.display = 'block'
+}
+
 
 var redIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
@@ -102,9 +103,9 @@ var greenIcon = new L.Icon({
 var score, video_coords, Enable_marking, points, marker_coords, map, marker, score_id, vidmarker, polyline, src, lat, lng, active_video, playersmarkers, time, inter, pause, interval
 var color_list = [redIcon, violetIcon, yellowIcon, orangeIcon, blackIcon, blueIcon]
 var guessed = true
-pause = false
+var pause = false
 
-console.log(gamemode)
+
 
 var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927,'VAL', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
 ["UHdURaQ0fXE", 39.457383, -0.354918,'MAD', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
@@ -199,7 +200,7 @@ function randomlyChooseVideo() {
     // update the video source and play
     vid_index =  getRandomIndex(video_list.length);
     src = (video_list[vid_index])[0];
-    console.log(src)
+  
     
     active_video = video_list[vid_index]
 
@@ -375,19 +376,12 @@ function next(e) {
 
     player.loadVideoById(newvid, 100);
     var a = document.getElementById('credits');
-    console.log(vid_index)
+
     a.href = video_list[vid_index][5]
     a.innerHTML = `Credits: ${video_list[vid_index][4]}`
-    // if (creditos.includes(video_list[vid_index][5]) == false){
-    //     console.log(`${video_list[vid_index][5]} included`)
-    //     creditos.push(video_list[vid_index][5])
-    // }
-    // else{
-    //     console.log(`${video_list[vid_index][5]} not included`)
-    // }
 
     video_list = video_list.slice(0, vid_index).concat(video_list.slice(vid_index + 1));
-    console.log(video_list)
+
 
     
     if(gamemode !='contrarreloj'){
@@ -424,13 +418,13 @@ function looptime(){
        interval = setTimeout(function() {
           updatetime()
         }, 1200);
-        console.log(interval)
+       
     }
     
 }
 
 function updatetime(){
-   
+
     if(pause == false){
     time = time - 1
     timer.innerHTML = `${time}s`
@@ -440,6 +434,23 @@ function updatetime(){
 
 }
 
+function pause(){
+    if(gamemode == 'PAUSE'){
+        player.pauseVideo()
+        document.getElementById('pausebutton').style.display = 'none'
+        document.getElementById('playbutton').style.display = 'block'
+    }
+}
+
+
+
+function play(){
+    if(gamemode == 'PAUSE'){
+        player.playVideo()
+        document.getElementById('playbutton').style.display = 'none'
+        document.getElementById('pausebutton').style.display = 'block'
+    }
+}
 
 
 //guessing secuence
@@ -496,12 +507,13 @@ function final_guess(c) {
     switchbtn()
 
     //calculate points
-    score = calc_points().toFixed(0)
+    score = Number(document.getElementById(`points`).innerHTML) + Number(calc_points().toFixed(0))
+    
     if(gamemode == 'radius' && distance > gamerule_radius){
         end()
     }
     else{
-    document.getElementById(`points`).innerHTML = Number(document.getElementById(`points`).innerHTML) + Number(score)
+    document.getElementById(`points`).innerHTML =  Number(score)
     }
 
 
@@ -578,6 +590,7 @@ function restartVideo(){
 
 document.addEventListener('keydown', (event) => {
     var name = event.key;
+  
     var x = document.getElementById("guess");
     if (name === 'Enter' && bool_map) {
         if (x.style.visibility != "hidden"){
@@ -586,6 +599,15 @@ document.addEventListener('keydown', (event) => {
         }
         else{
             next()
+        }
+    }
+    if (name == ' ' && gamemode == 'PAUSE'){
+      
+        if(document.getElementById('pausebutton').style.display == 'none'){
+            play()
+        }
+        else{
+            pause()
         }
     }
 })
@@ -622,7 +644,7 @@ function onYouTubeIframeAPIReady() {
 
 
 function onPlayerReady(event) {
-    console.log("buttons ready");
+  
     // Define custom control actions
     document.getElementById("rewindButton").addEventListener("click", rewindVideo);
     document.getElementById("reduceSpeedButton").addEventListener("click", reduceSpeed);
@@ -638,16 +660,8 @@ function onPlayerReady(event) {
     }
     
     var a = document.getElementById('credits');
-    console.log(vid_index)
-    console.log(video_list[vid_index])
+
     a.href = video_list[vid_index][5]
     a.innerHTML = `Credits: ${video_list[vid_index][4]}`
-    // if (creditos.includes(video_list[vid_index][5]) == false){
-    //     console.log(`${video_list[vid_index][5]} included`)
-    //     creditos.push(video_list[vid_index][5])
-    // }
-    // else{
-    //     console.log(`${video_list[vid_index][5]} not included`)
-    // }
     startTimer()
 }
