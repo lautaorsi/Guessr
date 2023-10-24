@@ -28,6 +28,9 @@ if (gamemode == 'radius'){
     console.log(gamerule_radius)
 }
 
+if(gamemode == 'PAUSE'){
+    
+}
 
 var redIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',

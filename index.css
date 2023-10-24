@@ -120,6 +120,16 @@ body{
     height:350px;
 }
 
+#pausecard{
+    margin-left: 15px;
+    position: relative;
+    margin-top: 0%;
+    width: fit-content;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+
 
 #cleancard{
     margin-left: 8px;
