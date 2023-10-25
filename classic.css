@@ -161,14 +161,32 @@ body{
   position: absolute;
   top: 12%;
   left: 2%;
-  background-color: #222222;
-  width: 160px;
+  width: fit-content;
   border-radius: 10px;
 }
 
 #volumecontainer:hover .volumerange{
   display: inline;
 }
+
+#volumecontainer:hover #volume_icon{
+  display: none;
+}
+
+
+.volumerange{
+  background-color: #222222;
+  position: absolute;
+  display: none;
+}
+
+
+
+
+.volume_icon{
+  position: absolute;
+}
+
 
 #pausecontainer{
   position: absolute;
@@ -205,17 +223,6 @@ body{
   cursor: pointer;
 }
 
-.volumerange{
-  background-color: #222222;
-  position: absolute;
-  display: none;
-}
-
-
-
-.volume_icon{
-  position: absolute;
-}
 
 
 td{
@@ -249,14 +256,29 @@ td{
 
 
 
+#speedcontainer{
+  width: fit-content + 2px;
+}
 
 #reduceSpeedButton{
-  cursor: pointer;
   margin-bottom: 20px;
   width: 70px;
   opacity: 50%;
   box-shadow: 7px 7px 2px 3px black;
   border-radius: 50px;
+}
+
+#speedrange{
+  display: none;
+  padding-bottom: 30px;
+}
+
+#speedcontainer:hover #speedrange{
+  display: inline;
+}
+
+#speedcontainer:hover #reduceSpeedButton{
+  display: none;
 }
 
 

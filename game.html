@@ -30,8 +30,10 @@
     <div class="custom-controls">
         
         <button id="rewindButton" onclick="rewindVideo()"><i class="fa-solid fa-backward" style="color: #003aad;"></i> 5s</button>
-        <button id="reduceSpeedButton" onclick="reduceSpeed()">Reduce Speed</button>
-        
+        <div id="speedcontainer">
+            <button id="reduceSpeedButton" onclick="reduceSpeed()">Reduce Speed</button>
+            <input type="range" id="speedrange">
+        </div>
         <button id="restartVideo" onclick="restartVideo()">Restart Video</button>
     </div>
     <div id="credits_container">
@@ -45,7 +47,7 @@
     </table>
     <div id="volumecontainer">
         <i class="fa-solid fa-volume-xmark" style="color: #333e52;" id="volume_icon"></i>
-        <input type="range" name="volume" id="volumerange" class="volumerange" min="0" max="100" oninput="player.setVolume(this.value)">
+        <input type="range" name="volume" id="volumerange" class="volumerange" min="0" max="100" value="30"  oninput="player.setVolume(this.value)">
     </div>
    
     <div class="video-background">
