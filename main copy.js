@@ -1,45 +1,181 @@
+Enable_marking = true
+var colors = ["#CC2A3D", "#9D2ECC", "#CBC52B", "#CB852B", "#3E3E3E", "#2C83CB"]
+const colorobject = localStorage.getItem('color');
+const numero_color = JSON.parse(colorobject);
+document.getElementById("marker_warning").style.color = colors[Number(numero_color)]
+const gamemode = JSON.parse(localStorage.getItem('gamemode'))['hello']
+let abstime
+var rounds = 0 
+var roundhtml = document.getElementById('round')
+var timer = document.getElementById("timer")
+const pretime = localStorage.getItem('time')
+time = JSON.parse(pretime)
+abstime =  JSON.parse(pretime)
+const premute = localStorage.getItem('mute')
+var mute = JSON.parse(premute)
+if (gamemode != 'contrarreloj'){
+    const prerounds = localStorage.getItem('rounds')
+    var prround = JSON.parse(prerounds) 
+    roundhtml.innerHTML = `0/${prround}`
+}
+else{
+    roundhtml.innerHTML = `0`
+}
 
-var score, video_coords, Enable_marking, points, marker_coords, map, marker, score_id, vidmarker, polyline, src, lat, lng, active_video
+if (gamemode == 'radius'){
+    const preradius = localStorage.getItem('radius')
+    var gamerule_radius = JSON.parse(preradius)
+    
+}
+
+if (gamemode == 'PAUSE'){
+    document.getElementById('pausebutton').style.display = 'block'
+}
+
+
+var redIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+var violetIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-violet.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+
+var yellowIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-yellow.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+var orangeIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-orange.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+
+var blackIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-black.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+var blueIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-blue.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
+
+var greenIcon = new L.Icon({
+    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
+    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
+    iconSize: [25, 41],
+    iconAnchor: [12, 41],
+    popupAnchor: [1, -34],
+    shadowSize: [41, 41]
+});
 
 
 
-var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927,'VAL', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["UHdURaQ0fXE", 39.457383, -0.354918,'MAD', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["Kv7JR2JgyfA", 40.420320, -3.714005,'MAD', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["2EffxnmMXg0", 40.416772, -3.708632,'MAD', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["hSZJk2N-ho4",-13.259417, -72.258194,'PER', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["mSdx12ETWFM", -13.420139, -71.850750,'PER', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["sw89HOTBHQI", -12.126667, -77.036333,'PER', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["jstF9EYr4IM", -37.992883, -57.564338,'ARG', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["EIc2vyDRT20", -36.535465, -56.688901,'ARG', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["zMz4bNxIWh8", 43.732685, 7.422464,'MON', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["2G3Mq_D1Po8", 48.858907, 2.293025,'FRA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["6yjZ1WE0tsg", 43.774012, 11.249976,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["jYVJccE8Wa4", 43.322257, 11.330865,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["zWxdKYxfcRQ", 44.499609, 11.343899,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["dbICS9q9hVo", -32.890557, -68.844857,'ARG', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["gpaB5d4C6hA", 45.465305, 9.194007,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-["7a2cqy9Qwwg", 45.646856, 13.771754,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
-["BMDso0Rqx3M", 45.975012, 9.247205,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
-["9vx9qm2_ghI", 45.463732, 9.190500,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
-["4xJf5PfuMjg", 44.117593, 15.219858,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
-["GkhMz52zMG0", 46.004807, 8.948346,'SWZ', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
-["cSWv6YJYBHM", 43.508254, 16.440185,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
-["RInBAatA11Q", 52.247803, 21.013650,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
-["ZL4LNXe_F2Y", 42.642014, 18.112509,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
-["KQ5TW0DCXb0", 45.659127, 10.047541,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
-["KkKmGQpEr9s", 43.818297, 7.777631,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
-["m4D8LqsvXu0", 44.303984, 9.207712,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks']
+var score, video_coords, Enable_marking, points, marker_coords, map, marker, score_id, vidmarker, polyline, src, lat, lng, active_video, playersmarkers, time, inter, pause, interval, player
+var color_list = [redIcon, violetIcon, yellowIcon, orangeIcon, blackIcon, blueIcon]
+var guessed = true
+var pausado = false
+
+
+
+var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927, ,'VAL', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+// ["UHdURaQ0fXE", 39.457383, -0.354918,'MAD', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+// ["Kv7JR2JgyfA", 40.420320, -3.714005,'MAD', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+// ["2EffxnmMXg0", 40.416772, -3.708632,'MAD', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+// ["hSZJk2N-ho4",-13.259417, -72.258194,'PER', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+// ["mSdx12ETWFM", -13.420139, -71.850750,'PER', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+["sw89HOTBHQI", -12.126667, -77.036333, 130,'PER', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+["jstF9EYr4IM", -37.992883, -57.564338, 833,'ARG', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+["EIc2vyDRT20", -36.535465, -56.688901,300,'ARG', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+// ["zMz4bNxIWh8", 43.732685, 7.422464,'MON', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+["2G3Mq_D1Po8", 48.858907, 2.293025,140,'FRA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+// ["6yjZ1WE0tsg", 43.774012, 11.249976,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+["jYVJccE8Wa4", 43.322257, 11.330865, 935 ,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+["zWxdKYxfcRQ", 44.499609, 11.343899, 866,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+["dbICS9q9hVo", -32.890557, -68.844857, 240,'ARG', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+["gpaB5d4C6hA", 45.465305, 9.194007,260,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+["7a2cqy9Qwwg", 45.646856, 13.771754, 66,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["7a2cqy9Qwwg", 45.646856, 13.771754, 780,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["7a2cqy9Qwwg", 45.646856, 13.771754, 1652,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["7a2cqy9Qwwg", 45.646856, 13.771754, 2202,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["BMDso0Rqx3M", 45.975012, 9.247205,50,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["BMDso0Rqx3M", 45.975012, 9.247205,518,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["BMDso0Rqx3M", 45.975012, 9.247205,1164,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["9vx9qm2_ghI", 45.463732, 9.190500,97,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["9vx9qm2_ghI", 45.463732, 9.190500,984,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["4xJf5PfuMjg", 44.117593, 15.219858,55,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["4xJf5PfuMjg", 44.117593, 15.219858,390,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["4xJf5PfuMjg", 44.117593, 15.219858,1028,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["4xJf5PfuMjg", 44.117593, 15.219858,1615,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["GkhMz52zMG0", 46.004807, 8.948346,345,'SWZ', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["GkhMz52zMG0", 46.004807, 8.948346,670,'SWZ', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["GkhMz52zMG0", 46.004807, 8.948346,1246,'SWZ', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["GkhMz52zMG0", 46.004807, 8.948346,1693,'SWZ', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["cSWv6YJYBHM", 43.508254, 16.440185,103,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["cSWv6YJYBHM", 43.508254, 16.440185,732,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["cSWv6YJYBHM", 43.508254, 16.440185,1060,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["cSWv6YJYBHM", 43.508254, 16.440185,1405,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["RInBAatA11Q", 52.247803, 21.013650,70,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["RInBAatA11Q", 52.247803, 21.013650,656,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["RInBAatA11Q", 52.247803, 21.013650,1180,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["RInBAatA11Q", 52.247803, 21.013650,1654,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["ZL4LNXe_F2Y", 42.642014, 18.112509,98,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["ZL4LNXe_F2Y", 42.642014, 18.112509,845,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["ZL4LNXe_F2Y", 42.642014, 18.112509,1415,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KQ5TW0DCXb0", 45.659127, 10.047541,99,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KQ5TW0DCXb0", 45.659127, 10.047541,551,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KQ5TW0DCXb0", 45.659127, 10.047541,1002,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KkKmGQpEr9s", 43.818297, 7.777631,100,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KkKmGQpEr9s", 43.818297, 7.777631,520,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KkKmGQpEr9s", 43.818297, 7.777631,960,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KkKmGQpEr9s", 43.818297, 7.777631,1280,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["m4D8LqsvXu0", 44.303984, 9.207712,640,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["EtxCpMzu1GY", 52.360660, 4.887635,100,'NTH', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["EtxCpMzu1GY", 52.366964, 4.889127,907,'NTH', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["EtxCpMzu1GY", 52.376607, 4.899634,2249,'NTH', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["-0YA3p8zvRE", 40.8391213,14.2495606,235,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["-0YA3p8zvRE", 40.8401192,14.2484348,590,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["-0YA3p8zvRE", 40.8473569,14.2515967,1984,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["-0YA3p8zvRE", 40.8513121,14.2577763,2531,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["-0YA3p8zvRE", 40.8413436,14.2520886,3302,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
 ]
-
 
 
 
 var x = document.getElementById("warning-container")
 var myvid = document.getElementById('myvid');
 var bool_map = false
-
-
+var backvideo 
+// var creditos = []
 
 
 
@@ -47,11 +183,22 @@ var bool_map = false
 
 // initalize map
 map = L.map('map').setView([0, 0], 2); 
-L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
-maxZoom: 19,
-minZoom: 2,
-attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-}).addTo(map);
+
+//select map type based on gamemode
+if (gamemode == 'clear_map'){
+    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+        maxZoom: 19,
+        minZoom: 2,
+        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+        }).addTo(map);
+
+}
+else{
+    L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en', {
+        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+        subdomains:['mt0','mt1','mt2','mt3']
+    }).addTo(map);
+}
 map.setMaxBounds([[150,200],[-150,-200]]);
 
 //add marker to map
@@ -62,7 +209,81 @@ function invsze(){
   map.invalidateSize();
 }
 
+function onYouTubeIframeAPIReady() {
+    Enable_marking = true
+    active_video = randomlyChooseVideo()
+    player = new YT.Player("myvid", {
+        videoId: active_video[0],
+        playerVars: {
+            autoplay: 1,
+            mute: 1,
+            controls: 0,
+            rel : 0,
+            fs : 0,
+            modestbranding: 1,
+            showinfo: 0,
+            start: 100,
+            loop: 1,
+            origin: "http://127.0.0.1:3000/main.html"
+        },
+        events: {
+            onReady: onPlayerReady
+        },
 
+    });
+    backvideo = new YT.Player('test', {
+        videoID:'als--DIzZPg',
+        playerVars: {
+            autoplay: 1,
+            mute: 1,
+            controls: 0,
+            rel : 0,
+            fs : 0,
+            modestbranding: 1,
+            showinfo: 0,
+            start: 0,
+            loop: 1,
+            origin: "http://127.0.0.1:3000/main.html"
+        },
+        events: {
+            onReady: onPlayerReady
+        },
+    });
+   
+    
+
+}
+
+
+
+
+function onPlayerReady(event) {
+    // Define custom control actions
+    document.getElementById("rewindButton").addEventListener("click", rewindVideo);
+    document.getElementById("reduceSpeedButton").addEventListener("click", reduceSpeed);
+    player.setPlaybackQuality('highres')
+    if(mute){
+        player.unMute()
+        player.setVolume(0)
+        document.getElementById('volumerange').value = 0
+    }
+    else{
+        player.unMute()
+        player.setVolume(30)
+    }
+    
+    var a = document.getElementById('credits');
+
+    a.href = video_list[vid_index][6]
+    a.innerHTML = `Credits: ${video_list[vid_index][5]}`
+    startTimer()
+}
+
+
+//player color selection
+function choose_color(i){
+    return(color_list[i])
+}
 
 
 function getRandomIndex(max) {
@@ -70,34 +291,39 @@ function getRandomIndex(max) {
     return Math.floor(Math.random() * Math.floor(max));
 }
 
+
 //choose random vid based on video list index
 function randomlyChooseVideo() {
-    vid_index = getRandomIndex(video_list.length);
     
-    // update the video source and play
-    src = (video_list[vid_index])[0];
-    console.log(src)
-    
-    active_video = video_list[vid_index]
-    // update the video source and play
     
 
+    // get new video
+    vid_index =  getRandomIndex(video_list.length);
+    src = (video_list[vid_index]);
+  
+    
+    active_video = video_list[vid_index]
+
+    
+    // update the video's coordenates
     video_coords = [active_video[1],active_video[2]]
+    console.log(src)
     return(src)
    
 }
 
 
+
+
+
+
+
 //calculate distance
 function distance_calc(user_guess, video_coords){
-    console.log(user_guess)
     const R = 6371e3; // metres
     const φ1 = user_guess[0] * Math.PI/180; // φ, λ in radians
 
-    console.log(user_guess[0])
-    console.log(user_guess[1])
-    console.log(video_coords[0])
-    console.log(video_coords[1])
+
     const φ2 = +video_coords[0] * Math.PI/180;
     const Δφ = (+video_coords[0]-user_guess[0]) * Math.PI/180;
     const Δλ = (+video_coords[1]-user_guess[1]) * Math.PI/180;
@@ -111,15 +337,6 @@ function distance_calc(user_guess, video_coords){
 }
 
 
-//green icon 
-var greenIcon = new L.Icon({
-    iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-green.png',
-    shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
-    iconSize: [25, 41],
-    iconAnchor: [12, 41],
-    popupAnchor: [1, -34],
-    shadowSize: [41, 41]
-});
 
 
 
@@ -129,24 +346,22 @@ function mark(e){
     var coord = e.latlng;
     lat = coord.lat;
     lng = coord.lng;
-    L.marker(e.latlng).addTo(marker);
+    L.marker((e.latlng), {icon: choose_color(Number(numero_color))}).addTo(marker);
     marker_coords = [coord.lat, coord.lng]
-
 }
 
 //show or hide map
 function map_open() {
 
         if(bool_map == false){
-           console.log("false -> true")
+         
            bool_map = true
         }
         else {
-            console.log("true -> false")
+         
             bool_map = false
         }
 }
-
 
 
 
@@ -162,8 +377,10 @@ function switchbtn() {
         y.style.visibility = "hidden";
         x.style.visibility = "visible";
     }
+
 }
 
+//no-guess warning
 function showWarning() {
     if (x.style.display = "none"){
         x.style.display = "block";
@@ -175,6 +392,7 @@ function showWarning() {
     }
 }
 
+//show distance btwn guess and answer
 function showDistance() {
     var x = document.getElementById("h2");
     if (x.style.visibility != "hidden"){
@@ -185,7 +403,7 @@ function showDistance() {
 
 
 
-
+//point calculation
 function calc_points(){
     if (distance <= 1){
 
@@ -227,43 +445,212 @@ function calc_points(){
 }
 
 
+//next function (main)
+function next(e) {
+    rounds = rounds + 1
+    
+    if(gamemode != 'contrarreloj'){
+    if(rounds < prround){
+        //update round counter
+    roundhtml.innerHTML = `${rounds}/${prround}`
+    }
+    else{
+        // if all rounds have been played, end match
+        end()
+    }
+    }
+    else{
+        //if contrarreloj gamemode, no round max, just counter
+        roundhtml.innerHTML = `${rounds}`
+    }
+    Enable_marking = true
 
-function next() {
-    score = score + calc_points()
-    document.getElementById("userp1").innerHTML = Number(score.toFixed(0))
+    //update continue button
+    document.getElementById('continue').innerHTML = 'Continue'
+    switchbtn()
+
+    //clear all map layers
     marker.clearLayers()
+    if(guessed){
     polyline.removeFrom(map)
-    map.removeLayer(vidmarker)
-    map_open();
-    Enable_marking = true;
-    document.getElementById("h2").innerHTML = "";
-    player.loadVideoById((randomlyChooseVideo()), 60);
-    showDistance()
     marker_coords.length = 0
-    console.log(marker_coords)
+    }
+    map.removeLayer(vidmarker)
+
+    //readjust map's zoom
+    map.setView([0, 0], 2)
+    map_open();
+
+    //erase distance text
+    document.getElementById("h2").innerHTML = "";
+    showDistance()
+
+    //close map modal
+    document.getElementById('modal').close()
+    
+    //choose new video
+    var newvid = randomlyChooseVideo()
+
+    //update video
+    player.loadVideoById(newvid[0],newvid[3]);
+    var a = document.getElementById('credits');
+
+    //update credits
+    a.href = video_list[vid_index][6]
+    a.innerHTML = `Credits: ${video_list[vid_index][5]}`
+
+    //remove video from vide list
+    video_list = video_list.slice(0, vid_index).concat(video_list.slice(vid_index + 1));
+
+
+    
+    if(gamemode !='contrarreloj'){
+        //readjust round timer
+        time = abstime   
+    }
+
+    pausado = false
+    //start timer
+    startTimer()
+}
+
+
+
+
+function end(){
+    score = parseInt(score)
+    localStorage.setItem('points', score)
+    window.location.href = 'resume.html'
     
 }
 
+
+function startTimer(){
+   
+    clearTimeout(interval)
+    looptime()
+
+
+}
+
+function looptime(){
+    if(time < 1){
+        final_guess(false)
+    }
+    else{
+       interval = setTimeout(function() {
+          updatetime()
+        }, 1200);
+       
+    }
+    
+}
+
+function updatetime(){
+
+    if(pausado == false){
+    time = time - 1
+    timer.innerHTML = `${time}s`
+    looptime()
+    }
+    
+
+}
+
+function pause(){
+    if(gamemode == 'PAUSE'){
+        player.pauseVideo()
+        document.getElementById('pausebutton').style.display = 'none'
+        document.getElementById('playbutton').style.display = 'block'
+    }
+}
+
+
+
+function play(){
+    if(gamemode == 'PAUSE'){
+        player.playVideo()
+        document.getElementById('playbutton').style.display = 'none'
+        document.getElementById('pausebutton').style.display = 'block'
+    }
+}
+
+
 //guessing secuence
-function final_guess() {
-    console.log("final_guess pressed")
-    try{
-        if (marker_coords[0] == null ||  marker_coords[1] == null){
-            console.log("Error caught on if statement")
+function final_guess(c) {
+    pausado = true
+    //if c == false user made no guess, otherwise user guessed
+    
+    //if user didn't guess on those gamemodes, game ends
+    if(c == false && (gamemode == 'contrarreloj' || gamemode == '1hp' || gamemode == 'radius')){
+        
+        end()
+    }
+
+    //if user didn't guess on regular gamemodes
+    if(c == false){
+        
+        guessed = false
+        document.getElementById('modal').showModal()
+        invsze()
+        
+        Enable_marking = false
+        
+        //give 0 points
+        score = 0
+        document.getElementById(`points`).innerHTML = Number(document.getElementById('points').innerHTML) + Number(score)
+            
+        //update video marker coords
+        vidmarker = L.layerGroup();
+
+        //add marker on vid coords 
+        var latlng = L.latLng(video_coords[0], video_coords[1]);
+        L.marker((latlng), {icon: greenIcon}).addTo(vidmarker);
+        map.addLayer(vidmarker);
+
+        //front end stuff
+        document.getElementById("h2").innerHTML = "El tiempo acabo!";
+        showDistance()
+        switchbtn()
+    }
+    else{
+        try{
+             //if user tried guessing without clicking map show warning
+            if (marker_coords[0] == null ||  marker_coords[1] == null){
+               
+                showWarning()
+                return
+            }
+        }
+        catch(err){
+           
             showWarning()
             return
+    
         }
-    }
-    catch(err){
-        console.log("Error caught")
-        showWarning()
-        return
 
-    }
+    Enable_marking = false
+
+
+
 
     //calculate distance between user's guess and vid coords
     distance = distance_calc([marker_coords[0], marker_coords[1]], video_coords)
+
     switchbtn()
+
+    //calculate points
+    score = Number(document.getElementById(`points`).innerHTML) + Number(calc_points().toFixed(0))
+    
+    //if radius gamemode, check guess distance and end if failed
+    if(gamemode == 'radius' && distance > gamerule_radius){
+        end()
+    }
+    else{
+    document.getElementById(`points`).innerHTML =  Number(score)
+    }
+
+
 
     vidmarker = L.layerGroup();
 
@@ -280,7 +667,7 @@ function final_guess() {
     polyline = L.polyline(latlngs, {color: 'black'})
     try{polyline.addTo(map);}
     catch(err){
-        console.log("Error caught")
+        
         showWarning()
         return
     }    
@@ -292,6 +679,10 @@ function final_guess() {
     //display distance from guess to right answer
     document.getElementById("h2").innerHTML = Number((distance).toFixed(2)) + " KM";
     showDistance()
+    }
+
+
+    
 
     
     
@@ -300,48 +691,17 @@ function final_guess() {
 
 
 map.on('click', function(e){
-    mark(e)
-    console.log("Guess coords: " + lat + " , " + lng);
-    console.log("Marker coords: " + video_coords)
+    if (Enable_marking == true){
+        mark(e)
+       
+  
+    }
 });
 
 
 
-
-
-function onYouTubeIframeAPIReady() {
-    active_video = randomlyChooseVideo()
-    player = new YT.Player("myvid", {
-        videoId: (active_video),
-        playerVars: {
-            autoplay: 1,
-            mute: 1,
-            controls: 0,
-            rel : 0,
-            fs : 0,
-            modestbranding: 1,
-            showinfo: 0,
-            start: 60,
-            loop: 1,
-            origin: "https://127.0.0.1:3000"
-        },
-        events: {
-            onReady: onPlayerReady
-        },
-
-    });
-}
-
-function onPlayerReady(event) {
-    console.log("buttons ready");
-    // Define custom control actions
-    document.getElementById("rewindButton").addEventListener("click", rewindVideo);
-    document.getElementById("reduceSpeedButton").addEventListener("click", reduceSpeed);
-
-}
-
 function rewindVideo() {
-    console.log("video rewinded");
+    
     const currentTime = player.getCurrentTime();
     if(currentTime > 70){
         player.seekTo(currentTime - 10, true); 
@@ -352,20 +712,56 @@ function rewindVideo() {
 }
 
 function reduceSpeed() {
-    console.log("speed reduced");
+   
     const currentPlaybackRate = player.getPlaybackRate();
     player.setPlaybackRate(currentPlaybackRate - 0.25); // You can adjust the speed reduction factor
 }
 
 function restartVideo(){
-    console.log("video restarted");
-    player.seekTo(60, true);
+    
+    player.seekTo(100, true);
 }
 
 document.addEventListener('keydown', (event) => {
     var name = event.key;
+  
+    var x = document.getElementById("guess");
     if (name === 'Enter' && bool_map) {
-        console.log("final_guess")
-      final_guess()
+        if (x.style.visibility != "hidden"){
+           
+            final_guess()
+        }
+        else{
+            next()
+        }
+    }
+    if (name == ' ' && gamemode == 'PAUSE'){
+      
+        if(document.getElementById('pausebutton').style.display == 'none'){
+            play()
+        }
+        else{
+            pause()
+        }
     }
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    maxZoom: 19,
+    minZoom: 2,
+    attribution: '&copy; <a href="http://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+    }).addTo(map);

@@ -724,7 +724,7 @@ function restartVideo(){
 
 document.addEventListener('keydown', (event) => {
     var name = event.key;
-  
+    console.log(name)
     var x = document.getElementById("guess");
     if (name === 'Enter' && bool_map) {
         if (x.style.visibility != "hidden"){
@@ -743,6 +743,9 @@ document.addEventListener('keydown', (event) => {
         else{
             pause()
         }
+    }
+    if(name == 'MediaPlayPause'){
+        player.playVideo()
     }
 })
 

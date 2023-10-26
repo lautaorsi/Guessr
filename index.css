@@ -238,6 +238,7 @@ h4{
 }
 
 .bottomright {
+    color: #fefefe;
     position: absolute;
     right: 16px;
     top: 55%;

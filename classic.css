@@ -234,6 +234,7 @@ td{
   position: absolute; /*or fixed*/
   right: 0px;
   width: 70px;
+  padding-right: 30px;
   margin-top: 20%;
 }
 #rewindButton{
@@ -257,7 +258,9 @@ td{
 
 
 #speedcontainer{
-  width: fit-content + 2px;
+  margin-top: 50px;
+  position: absolute;
+  width: fit-content;
 }
 
 #reduceSpeedButton{
@@ -269,6 +272,7 @@ td{
 }
 
 #speedrange{
+  margin-right: 50px;
   display: none;
   padding-bottom: 30px;
 }
@@ -323,10 +327,6 @@ td{
 }
 
 
-
-
-
-
 h2{
   text-align: center;
   left: 45%;
@@ -343,8 +343,8 @@ h2{
 }
 
 #credits{
-  color: #fafafa;
-  opacity: 100%;
+  mix-blend-mode: difference;
+  color: #ffffff;
   margin-left: 25px;
   font-size: 20px;
   cursor: pointer;
