@@ -1,5 +1,6 @@
 
 body{
+  height: 100vh;
   margin: 0px;
   padding: 0px;
   overflow: hidden
@@ -231,11 +232,15 @@ td{
 }
 
 .custom-controls{
-  position: absolute; /*or fixed*/
-  right: 0px;
-  width: 70px;
-  padding-right: 30px;
-  margin-top: 20%;
+  position: absolute;
+  display: flex;
+  justify-content: right;
+  flex-direction: column;
+  width: 80px;
+  padding-right: 0px;
+  top: 40%;
+  margin-right: 0%;
+  
 }
 #rewindButton{
   cursor: pointer;
@@ -258,13 +263,17 @@ td{
 
 
 #speedcontainer{
-  margin-top: 50px;
-  position: absolute;
-  width: fit-content;
+  width: 100%;
+  margin-bottom: 20px;
+    /* Use flexbox for slider wrapper element */
+    display:flex;
+    /* Direct alignment of content along horizontal axis */
+    flex-direction:row;
+    /* Tell's flexbox to center content around the non-horizontal axis (ie around the vertical axis) */
+    align-items:center;
 }
 
 #reduceSpeedButton{
-  margin-bottom: 20px;
   width: 70px;
   opacity: 50%;
   box-shadow: 7px 7px 2px 3px black;
@@ -272,9 +281,8 @@ td{
 }
 
 #speedrange{
-  margin-right: 50px;
+  right: 40%;
   display: none;
-  padding-bottom: 30px;
 }
 
 #speedcontainer:hover #speedrange{
@@ -282,7 +290,8 @@ td{
 }
 
 #speedcontainer:hover #reduceSpeedButton{
-  display: none;
+  background-color: #fff;
+  opacity: 100%;
 }
 
 
@@ -415,11 +424,10 @@ h2{
 
 #globe{
   width: 70px;
-  margin-top: 5px;
+  top: 0%;
   opacity: 50%;
   box-shadow: 7px 7px 2px 3px rgb(0, 0, 0);
   border-radius: 50px;
-  
 }
 
 

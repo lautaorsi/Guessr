@@ -255,6 +255,11 @@ function onYouTubeIframeAPIReady() {
 }
 
 
+document.getElementById('speedrange').oninput = function(){
+    player.setPlaybackRate(parseFloat((document.getElementById('speedrange')).value))
+    document.getElementById('reduceSpeedButton').innerHTML = `x${(document.getElementById('speedrange')).value}`
+};
+
 
 
 function onPlayerReady(event) {
