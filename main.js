@@ -260,6 +260,10 @@ document.getElementById('speedrange').oninput = function(){
     document.getElementById('reduceSpeedButton').innerHTML = `x${(document.getElementById('speedrange')).value}`
 };
 
+document.getElementById('volumerange').oninput = function(){
+    player.setVolume(parseFloat((document.getElementById('volumerange')).value))
+    document.getElementById('reduceSpeedButton').innerHTML = `x${(document.getElementById('volumerange')).value}`
+};
 
 
 function onPlayerReady(event) {
