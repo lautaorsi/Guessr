@@ -1,14 +1,13 @@
 html{
-    min-height: 100vh;
+    overflow: auto;
     display: flex;
     flex-direction: column;
 }
 
 body{
-    flex-grow: 1;
+    height: fit-content;
     padding: 0%;
     margin: 0;
-    min-height: 100vh;
     background-image: url("background_small.jpg");
     background-color: #cccccc;
     background-repeat: no-repeat;
@@ -74,30 +73,74 @@ body{
     cursor: pointer;
 }
 
+
+
+#classic_gamemodes{
+    position: relative;
+    top: 90px;
+    background-color: rgb(59, 62, 255);
+    width: fit-content;
+    left: 2%;
+    padding: 10;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    font-family: 'Roboto';
+}
+
 #classiccards{
+    overflow-x: clip;
     width: 100%;
-    position: absolute;
-    margin-top: 110px;
+    position: relative;
+    top: 110px;
     height: 500px;
+}
+
+#arcade_gamemodes{
+    position: relative;
+    top: 190px;
+    background-color: rgb(59, 62, 255);
+    width: fit-content;
+    left: 2%;
+    padding: 10;
+    padding-left: 29px;
+    padding-right: 29px;
+    border-radius: 15px;
+    font-family: 'Roboto';
 }
 
 #arcadecards{
-    width: 100%;
-    position: absolute;
-    margin-top: 710;
+   
+    overflow-x: clip;
+    position: relative;
+    top: 210px;
     height: 500px;
 }
 
+#challenge_gamemodes{
+    position: relative;
+    top: 270px;
+    background-color: rgb(59, 62, 255);
+    width: fit-content;
+    left: 2%;
+    padding: 10;
+    padding-left: 29px;
+    padding-right: 29px;
+    border-radius: 15px;
+    font-family: 'Roboto';
+}
+
 #challengecards{
-    width: 100%;
-    position: absolute;
-    margin-top: 1310px;
+    overflow-x: clip;
+    position: relative;
+    top: 290px;
     height: 500px;
+    margin-bottom: 350px;
 }
 
 
 #classiccard{
-    margin-left: 15px;
+    margin-left: 8px;
     position: relative;
     margin-top: 0%;
     width: fit-content;
@@ -111,17 +154,13 @@ body{
     font-size: x-large;
 }
 
-#classicdesc{
-    text-align: center;
-    font-family: 'Mukta', serif;
-}
 
 #classicimg{
     height:350px;
 }
 
 #pausecard{
-    margin-left: 15px;
+    margin-left: 8px;
     position: relative;
     margin-top: 0%;
     width: fit-content;
@@ -187,6 +226,7 @@ body{
 }
 
 #radiuscard{
+    
     display: inline-block;
     margin-left: 5px;
     position: relative;
@@ -201,7 +241,7 @@ body{
 h4{
     text-align: center;
     font-family: 'Gabarito', serif;
-    font-size: x-large;
+    font-size: 23px;
 }
 
 .card_description{
@@ -308,5 +348,64 @@ h4{
     color: black;
     text-decoration: none;
     cursor: pointer;
+}
+
+#sharecontainer{
+    position: relative;
+    margin-bottom: 18px;
+    align-items: center;
+    width: 100%;
+}
+
+#share{
+    padding: 20px;
+    left: 40%;
+    position: relative;
+    background-color: #fefefe;
+    width: fit-content;
+    align-self: center;
+    border-radius: 10px;
+}
+
+#sharetext{
+    position: relative;
+    font-family: 'Roboto';
+    left: 75px;
+    font-size: large;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 10px;
+ }
+ .share-button {
+    border: none;
+    border-radius: 5px;
+    color: #fff;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 8px 16px;
+ }
+ .facebook {
+    margin-left: 60px;
+    background-color: #3b5998;
+ }
+ .twitter {
+    background-color: #030303;
+ }
+ .reddit {
+    background-color: #ff4500;
+ }
+ .whatsapp {
+    background-color: #25d366;
+    margin-right: 60px;
+ }
+
+
+footer{
+    width: 100%;
+    height: 15%;
+    background-color: #fefefe;
+    bottom: 0%;
 }
 

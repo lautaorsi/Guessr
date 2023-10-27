@@ -108,17 +108,10 @@ var pausado = false
 
 
 var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927, ,'VAL', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-// ["UHdURaQ0fXE", 39.457383, -0.354918,'MAD', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-// ["Kv7JR2JgyfA", 40.420320, -3.714005,'MAD', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-// ["2EffxnmMXg0", 40.416772, -3.708632,'MAD', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-// ["hSZJk2N-ho4",-13.259417, -72.258194,'PER', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-// ["mSdx12ETWFM", -13.420139, -71.850750,'PER', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
 ["sw89HOTBHQI", -12.126667, -77.036333, 130,'PER', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
 ["jstF9EYr4IM", -37.992883, -57.564338, 833,'ARG', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
 ["EIc2vyDRT20", -36.535465, -56.688901,300,'ARG', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-// ["zMz4bNxIWh8", 43.732685, 7.422464,'MON', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
 ["2G3Mq_D1Po8", 48.858907, 2.293025,140,'FRA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
-// ["6yjZ1WE0tsg", 43.774012, 11.249976,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
 ["jYVJccE8Wa4", 43.322257, 11.330865, 935 ,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
 ["zWxdKYxfcRQ", 44.499609, 11.343899, 866,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
 ["dbICS9q9hVo", -32.890557, -68.844857, 240,'ARG', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
@@ -167,7 +160,30 @@ var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927, ,'VAL', 'CarpoWalks','ht
 ["-0YA3p8zvRE", 40.8473569,14.2515967,1984,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
 ["-0YA3p8zvRE", 40.8513121,14.2577763,2531,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
 ["-0YA3p8zvRE", 40.8413436,14.2520886,3302,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["by-2aEbso28", 51.601629,-0.3169,94,'UK', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["by-2aEbso28", 51.601629,-0.3169,94,'UK', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["by-2aEbso28", 51.607338, -0.301417,1110,'UK', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["by-2aEbso28", 51.6076714,-0.2905685,1743,'UK', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["by-2aEbso28", 51.6102515,-0.2829999,1743,'UK', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["_aQVlq9jOlw", 51.5949805,-0.3145607,410,'UK', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["_aQVlq9jOlw", 51.600035, -0.312838,1728,'UK', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["cQilmRKq9A0", 34.007217, -118.496112,693,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["cQilmRKq9A0", 34.007968, -118.494115,1165,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["xAN7PVS8Hko", 34.0691215,-118.2913733,130,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["xAN7PVS8Hko", 34.076186, -118.291566,932,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["xAN7PVS8Hko", 34.0729513,-118.2915304,1842,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["teHOCmM18ZU", 34.0769519,-118.3803203,127,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["teHOCmM18ZU", 34.077164, -118.376534,1227,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["25iy2ZFAMZE", 34.101665, -118.338577,24,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["BYX7lxGRl3Q", 33.8148071,-117.9215549,185,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["bEt-vzKFVP8", 51.509009, -0.087134,445,'UK', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["bEt-vzKFVP8", 51.5074602,-0.0776777,1428,'UK', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
 ]
+
+
+
+
+
 
 
 
@@ -231,24 +247,7 @@ function onYouTubeIframeAPIReady() {
         },
 
     });
-    backvideo = new YT.Player('test', {
-        videoID:'als--DIzZPg',
-        playerVars: {
-            autoplay: 1,
-            mute: 1,
-            controls: 0,
-            rel : 0,
-            fs : 0,
-            modestbranding: 1,
-            showinfo: 0,
-            start: 0,
-            loop: 1,
-            origin: "http://127.0.0.1:3000/main.html"
-        },
-        events: {
-            onReady: onPlayerReady
-        },
-    });
+
    
     
 
