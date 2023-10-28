@@ -17,17 +17,20 @@ body{
     
 }
 
-#h1{
-    display: flex;
+
+
+.logoimg{
     position: absolute;
-    right: 46%;
-    margin-top: 0%;
-    color: aliceblue;
+    right: 0%;
+    left: 0%;
+    display: block;
+    margin: auto;
 }
+
 
 #top_menu{
     top: 0;
-    background-color: #2F4F3D;
+    background-color: #003a70;
     height: 7%;
     position: fixed;
     width: 100%;
@@ -38,19 +41,14 @@ body{
 
 
 
-#contactdiv{
-    width: fit-content;
-    position: absolute;
-    top: 60%;
-    left: 1%;
-}
-
 #howtodiv{
-    display: flex;
+    display: block;
     width: fit-content;
     position: absolute;
     top: 60%;
-    right: 50%;
+    margin: auto;
+    right: 0%;
+    left: 0%;
 }
 
 .headers{
@@ -60,12 +58,6 @@ body{
     color: antiquewhite;
 }
 
-#aboutdiv{
-    width: fit-content;
-    position: absolute;
-    top: 60%;
-    right: 1%;
-}
 
 .card:hover{
     box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
