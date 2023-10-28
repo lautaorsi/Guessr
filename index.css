@@ -180,12 +180,6 @@ body{
 }
 
 
-#h4clean{
-    text-align: center;
-    width: 100%;
-    font-family: 'Gabarito', serif;
-    font-size: x-large;
-}
 
 
 #cleanimg{
@@ -216,7 +210,6 @@ body{
 
 
 #timecard{
-   
     display: inline-block;
     margin-left: 5px;
     position: relative;
@@ -226,27 +219,30 @@ body{
 }
 
 #radiuscard{
-    
     display: inline-block;
     margin-left: 5px;
     position: relative;
     margin-top: 0%;
     width: fit-content;
     vertical-align: middle;
+    overflow: clip;
 }
 
 
 
 
-h4{
+h3{
+    margin-bottom: 0px;
     text-align: center;
     font-family: 'Gabarito', serif;
     font-size: 23px;
 }
 
 .card_description{
+    margin-top: 2px;
     font-family: 'Mukta', serif;
     text-align: center;
+    overflow: clip;
 }
 
 #timeimg{
@@ -258,7 +254,7 @@ h4{
 .difficulty{
     font-family: 'Gabarito';
     position: absolute;
-    top: 65%;
+    top: 70%;
     left: 16px;
     font-size: 20px;
 }
@@ -406,13 +402,74 @@ h4{
  .whatsapp {
     background-color: #25d366;
     margin-right: 60px;
- }
+}
+
+
+#footer-content{
+    display:flex;
+    justify-content:space-between;
+    width: 100%;
+    height: 100%;
+}
+
+h4{
+    font-size: large;
+    color: #888;
+    font-family: 'Roboto';
+}
+
+#juegos{
+    margin-left: 20px;
+    font-family: 'Roboto';
+    position: relative;
+}
+
+#creditos{
+    font-family: 'Roboto';
+    position: relative;
+}
+
+#Us{
+    margin-right: 20px;
+    font-family: 'Roboto';
+    position: relative;
+}
+
+.footerlink{
+    text-decoration: none;
+    color: #706f6f;
+    
+}
+
+.footerlink:hover{
+    color: #302f2f;
+}
+
+
+#bug{
+    position: fixed;
+    bottom: 2%;
+    right: 1%;
+    width: fit-content;
+}
+
+#bug-text{
+    padding: 10px;
+    font-size: medium ;
+    background-color: aliceblue;
+    border-radius: 100px;
+    text-decoration: none;
+    color: #04852a;
+    font-family: 'Gabarito';
+}
+
 
 
 footer{
+    position: absolute;
     width: 100%;
-    height: 15%;
+    height: fit-content;
+    padding-bottom: 60px;
     background-color: #fefefe;
-    bottom: 0%;
 }
 
