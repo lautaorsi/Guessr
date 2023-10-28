@@ -422,23 +422,25 @@ h4{
     margin-left: 20px;
     font-family: 'Roboto';
     position: relative;
+    text-align: center;
 }
 
 #creditos{
-    font-family: 'Roboto';
-    position: relative;
-}
-
-#Us{
     margin-right: 20px;
     font-family: 'Roboto';
     position: relative;
+    text-align: center;
+}
+
+#Us{
+    font-family: 'Roboto';
+    position: relative;
+    text-align: center;
 }
 
 .footerlink{
     text-decoration: none;
     color: #706f6f;
-    
 }
 
 .footerlink:hover{

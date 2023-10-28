@@ -3,6 +3,7 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
+    overflow-y: clip;
 }
 
 .column{
@@ -29,7 +30,7 @@ h1{
 
 p{
     margin-top: 60px;
-    font-size: 23px;
+    font-size: 1.3vw;
     font-family: 'Mukta', serif;
     text-align: center;
     padding: 25;
@@ -39,6 +40,7 @@ p{
 
 
 #gmail{
+    font-size: 1.3vw;
     margin: 0;
 }
 
@@ -49,7 +51,8 @@ footer{
     background-color: aliceblue;
     text-align: center;
     position: absolute;
-    
+    height: fit-content;
+    padding-bottom: 20px;
 }
 
 #credTitle{
