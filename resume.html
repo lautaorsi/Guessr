@@ -17,7 +17,7 @@
                 <h2 id="congrats"></h2>
                 <h2 id="points"></h3>
                 <div id="imgcontainer">
-                    <img src="" id="gif">
+                    <video src="" id="gif" autoplay muted>
                 </div>
                 <button id="start" onclick="myFunction1()">
 
@@ -45,8 +45,8 @@
         const rounds = JSON.stringify(objrounds)
         const objscore = localStorage.getItem('points')
         var score = JSON.stringify(objscore)
-        const fail_gifs = ['fail2.gif','fail3.gif','fail4.gif','fail5.gif','fail6.gif','fail7.gif','fail8.gif']
-        const wow_gifs = ['shocked.gif','wow.gif','wow2.gif','wow4.gif','giphy.gif','wow5.gif']
+        const fail_gifs = ['fail2.mp4','fail3.mp4','fail5.mp4','fail6.mp4','fail8.mp4']
+        const wow_gifs = ['wow2.gif']
         if (objscore/rounds >= 1100){
             document.getElementById('congrats').innerHTML='Wow! Obtuviste:'
             document.getElementById('gif').src = wow_gifs[getRandomIndex(wow_gifs.length)]
