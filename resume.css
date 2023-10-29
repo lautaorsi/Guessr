@@ -1,7 +1,7 @@
 body{
     padding: 0%;
     margin: 0;
-    background-image: url("background_small.jpg");
+    background-image: url("./static/background_small.jpg");
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: cover;
@@ -20,7 +20,7 @@ body{
     width: 650px;
     height: 750px;
     border-radius: 8px;
-    background-image: url('lobby.jpg');
+    background-image: url('./static/lobby.jpg');
     background-size: cover;
 }
 

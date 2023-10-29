@@ -8,7 +8,7 @@ body{
     height: fit-content;
     padding: 0%;
     margin: 0;
-    background-image: url("background_small.jpg");
+    background-image: url("./static/background_small.jpg");
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: cover;
