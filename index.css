@@ -84,13 +84,13 @@ body{
     overflow-x: clip;
     width: 100%;
     position: relative;
-    top: 110px;
+    top: 100px;
     height: 500px;
 }
 
 #arcade_gamemodes{
     position: relative;
-    top: 190px;
+    top: 120px;
     background-color: rgb(59, 62, 255);
     width: fit-content;
     left: 2%;
@@ -102,16 +102,15 @@ body{
 }
 
 #arcadecards{
-   
     overflow-x: clip;
     position: relative;
-    top: 210px;
+    top: 130px;
     height: 500px;
 }
 
 #challenge_gamemodes{
     position: relative;
-    top: 270px;
+    top: 150px;
     background-color: rgb(59, 62, 255);
     width: fit-content;
     left: 2%;
@@ -125,7 +124,7 @@ body{
 #challengecards{
     overflow-x: clip;
     position: relative;
-    top: 290px;
+    top: 160px;
     height: 500px;
     margin-bottom: 350px;
 }
@@ -339,8 +338,8 @@ h3{
 }
 
 #sharecontainer{
-    position: relative;
-    margin-bottom: 18px;
+    position: absolute;
+    bottom: -1180px;
     align-items: center;
     width: 100%;
 }
