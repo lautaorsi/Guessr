@@ -663,7 +663,11 @@ function final_guess(c) {
     switchbtn()
 
     //calculate points
-    score = Number(document.getElementById(`points`).innerHTML) + Number(calc_points().toFixed(0))
+    var point = Number(calc_points())
+
+
+    //update points on scoreboard
+    score = Number(document.getElementById(`points`).innerHTML) + Number(point.toFixed(0))
     
     //if radius gamemode, check guess distance and end if failed
     if(gamemode == 'radius' && distance > gamerule_radius){
@@ -700,7 +704,12 @@ function final_guess(c) {
 
 
     //display distance from guess to right answer
+    if(distance < 1){
+        document.getElementById("h2").innerHTML = Number((Number((distance))*1000).toFixed(0)) + " M";
+    }
+    else{
     document.getElementById("h2").innerHTML = Number((distance).toFixed(2)) + " KM";
+    }
     showDistance()
     }
 
