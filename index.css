@@ -30,21 +30,39 @@ body{
 #top_menu{
     top: 0;
     background-color: #003a70;
-    height: 7%;
+    height: 65px;
     position: fixed;
     width: 100%;
     z-index: 1;
 }
 
 
-#howtodiv{
+#centerheader{
     display: block;
     width: fit-content;
     position: absolute;
-    top: 60%;
+    top: 57%;
     margin: auto;
     right: 0%;
     left: 0%;
+}
+
+#leftheader{
+    display: block;
+    width: fit-content;
+    position: absolute;
+    top: 57%;
+    margin: auto;
+    left: 20px;
+}
+
+#rightheader{
+    display: block;
+    width: fit-content;
+    position: absolute;
+    top: 57%;
+    margin: auto;
+    right: 20px;
 }
 
 .headers{
