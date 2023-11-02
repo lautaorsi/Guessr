@@ -26,6 +26,7 @@
     </div>
     <div class="open_map">
         <button id="Open_map" onclick="window.modal.showModal(), invsze(),  map_open()" data-title="Click to guess!"><img src="./static/globe.png" id = "globe"></button>
+        <p id="howto">Aprieta el globo para adivinar!</p>
     </div>
     <div class="custom-controls">
         
@@ -46,7 +47,7 @@
           </tr>
     </table>
     <div id="volumecontainer">
-        <i class="fa-solid fa-volume-xmark" style="color: #333e52;" id="volume_icon"></i>
+        <i class="fa-solid fa-volume-xmark" style="color: #0057f8;" id="volume_icon"></i>
         <input type="range" name="volume" id="volumerange" class="volumerange" min="0" max="100" value="30">
     </div>
    
@@ -59,10 +60,14 @@
     </div>
         <dialog id="modal">
                 <div id="map"></div>
-                <h2 id="h2"></h2>
-                <button id="close_map" onclick="window.modal.close(),  map_open()">Cerrar</button>
-                <a href="#" id="guess" class="btn btn-white btn-        animate" onclick="final_guess(true)">Adivinar</a>
-                <button id = "continue" onclick="next()">Continuar</button>
+                <div id="lowermodal">
+                    <div id="distance">
+                        <h2 id="h2"></h2>
+                    </div>
+                    <button id="close_map" onclick="window.modal.close(),  map_open()">Cerrar</button>
+                    <a href="#" id="guess" class="btn btn-white btn-        animate" onclick="final_guess(true)">Adivinar</a>
+                    <button id = "continue" onclick="next()">Continuar</button>
+                 </div>
         </dialog>
         <div id="warning-container">
             <text id="warning">Clickea el mapa para adivinar!<i class="fa-solid fa-location-dot fa-bounce" id="marker_warning" style="color: #005eff;"></i></text> 

@@ -13,7 +13,7 @@ body{
     
 .scoretable{
   position: absolute;
-  top: 8%;
+  top: 75px;
   border-collapse: collapse;
   background-color: #fff;
   border-radius: 9px;
@@ -130,7 +130,7 @@ body{
   position: absolute;
   background-color: #fafafa;
   right: 1%;
-  top: 2%;
+  top: 20px;
   opacity: 70%;
   border-radius: 5px;
   padding-left: 20px;
@@ -140,7 +140,7 @@ body{
   position: absolute;
   background-color: #fafafa;
   right: 1%;
-  top: 9%;
+  top: 85px;
   width: fit-content;
   opacity: 70%;
   border-radius: 5px;
@@ -160,8 +160,8 @@ body{
 
 #volumecontainer{
   position: absolute;
-  top: 12%;
-  left: 2%;
+  top: 110px;
+  left: 30px;
   width: fit-content;
   border-radius: 10px;
 }
@@ -184,7 +184,7 @@ body{
 
 
 
-.volume_icon{
+#volume_icon{
   position: absolute;
 }
 
@@ -327,7 +327,7 @@ td{
   margin-top: 0px;
   height: 85%;
   width: 100%;
-  position: absolute;
+  position: relative;
   }
 * {
     padding: 0;
@@ -335,26 +335,34 @@ td{
     box-sizing: border-box;
 }
 
+#lowermodal{
+  width: 100%;
+  position: relative;
+  height: 15%;
+}
+
+#distance{
+  margin: auto;
+  width: fit-content;
+}
 
 h2{
-  text-align: center;
-  left: 45%;
+  margin-bottom: 0%;
+  margin-top: 0%;
   color: white;
-  bottom: 7.5%;
   width: fit-content;
-  position: absolute;
 }
 
 #credits_container{
   position: absolute;
-  top: 5.8%;
+  top: 55px;
   margin-left: 0.5%;
 }
 
 #credits{
   mix-blend-mode: difference;
   color: #ffffff;
-  margin-left: 25px;
+  margin-left: 22px;
   font-size: 20px;
   cursor: pointer;
 }
@@ -373,14 +381,14 @@ h2{
 
 #modal{
   overflow-y: hidden;
-  height: 74%;
-  width: 60%;
+  height: 90%;
+  width: 75%;
   background-color: hwb(0 0% 100%);
   top: 0%;
   left: 0%;
   right: 0%;
   bottom: 0%;
-  position: absolute;
+  position: relative;
   font-family: "Monaco", monospace;
   border-radius: 9px;
 }
@@ -406,28 +414,26 @@ h2{
 
 
 
-[data-title]:after {
-  content: attr(data-title);
+#howto{
   background-color: rgb(245, 240, 232);
   color: #111;
-  font-size: 100%;
+  font-size: 20px;
   position: absolute;
   padding: 1px 5px 2px 5px;
-  bottom: 0.1px;
-  left: 120%;
+  top: 0.1px;
+  left: 55%;
   white-space: nowrap;
   box-shadow: 1px 1px 3px #222222;
   opacity: 0;
   border: 1px solid #111111;
   z-index: 99999;
-  visibility: hidden;
+  visibility: visible;
   border-radius: 4px;
 }
 
-[data-title]:hover:after {
+#howto{
   opacity: 1;
   transition: all 0.1s ease 0.5s;
-  visibility: visible;
   animation: bounceLeft 2s infinite;
 }
 
@@ -479,7 +485,7 @@ h2{
   text-align: center;
   font-size: medium;
   padding: 15px 30px;
-  bottom: 5%;
+  top: 20%;
   left: 3%;
   position: absolute;
   font-family: 'Gabarito', serif;
@@ -495,7 +501,7 @@ h2{
   transition: box-shadow 0.25s ease-in-out;
   font-size: medium;
   padding: 15px 30px;
-  bottom: 5%;
+  top: 20%;
   right: 3%;
   position: absolute;
   visibility: visible;
@@ -521,7 +527,7 @@ h2{
   transition: box-shadow 0.25s ease-in-out;
   font-size: medium;
   padding: 15px 30px;
-  bottom: 5%;
+  top: 20%;
   right: 3%;
   position: absolute;
   visibility: hidden;
@@ -591,7 +597,7 @@ h2{
 
 .volume-control{
   position: absolute;
-  margin-top: 20%;
+  margin-top: 20px;
 
 }
 

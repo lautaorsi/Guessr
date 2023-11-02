@@ -212,7 +212,7 @@ var backvideo
 
 
 // initalize map
-map = L.map('map').setView([0, 0], 2); 
+map = L.map('map').setView([0, 0], 2.4); 
 
 //select map type based on gamemode
 if (gamemode == 'clear_map'){
@@ -276,7 +276,6 @@ document.getElementById('speedrange').oninput = function(){
 
 document.getElementById('volumerange').oninput = function(){
     player.setVolume(parseFloat((document.getElementById('volumerange')).value))
-    document.getElementById('reduceSpeedButton').innerHTML = `x${(document.getElementById('volumerange')).value}`
 };
 
 
@@ -300,7 +299,13 @@ function onPlayerReady(event) {
     a.href = video_list[vid_index][6]
     a.innerHTML = `Credits: ${video_list[vid_index][5]}`
     startTimer()
+    setTimeout(hide(), 5000)
 }
+
+function hide(){
+    document.getElementById("howto").visibility = 'hidden'
+}
+
 
 
 //player color selection
@@ -473,7 +478,7 @@ function next(e) {
     rounds = rounds + 1
     
     if(gamemode != 'contrarreloj'){
-    if(rounds < prround){
+    if(rounds <= prround){
         //update round counter
     roundhtml.innerHTML = `${rounds}/${prround}`
     }
@@ -501,7 +506,7 @@ function next(e) {
     map.removeLayer(vidmarker)
 
     //readjust map's zoom
-    map.setView([0, 0], 2)
+    map.setView([0, 0], 2.4)
     map_open();
 
     //erase distance text

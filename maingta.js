@@ -416,7 +416,7 @@ function next(e) {
     rounds = rounds + 1
     
     if(gamemode != 'contrarreloj'){
-    if(rounds < prround){
+    if(rounds <= prround){
         //update round counter
     roundhtml.innerHTML = `${rounds}/${prround}`
     }
