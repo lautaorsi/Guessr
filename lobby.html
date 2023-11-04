@@ -49,11 +49,11 @@
                         </select>
                         <select id="timeselect">
                             <option value="none">Tiempo</option>
-                            <option value=20 id="time1">20s</option>
-                            <option value=40 id="time2">40s</option>
-                            <option value=80 id="time3">80s</option>
-                            <option value=100 id="time4" >100s</option>
-                            <option value=120 id="time5">120s</option>
+                            <option value=30 id="time1">30s</option>
+                            <option value=50 id="time2">50s</option>
+                            <option value=90 id="time3">90s</option>
+                            <option value=120 id="time4" >120s</option>
+                            <option value=210 id="time5">210s</option>
                         </select>
 
                 </div>
@@ -76,7 +76,7 @@
 
 <script>
     const descriptions = {
-        'ITA': 'Reglas clasicas, ubicaciones dentro de Italia. <br> Ideal para planear un viaje!',
+        'ITA': 'Reglas clasicas, ubicaciones dentro de Italia.',
         'PAUSE': 'Reglas clasicas, con boton de play y pausa habilitados. <br> Pero cuidado, el tiempo seguira corriendo!',
         'CLASICO': 'Modo de juego clasico, <br> limites de tiempo por ronda',
         'clear_map': 'Mapa satelital! <br> Sin nombres ni divisiones politicas! <br> (recomendado para jugadores avanzados)',
@@ -96,6 +96,7 @@
     }
 
     const images = {
+        'ITA': './static/italy.jpg',
         'PAUSE': './static/CLASICO.jpg',
         'CLASICO' : './static/CLASICO.jpg',
         'contrarreloj' : './static/CLASICO.jpg',

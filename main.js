@@ -104,7 +104,7 @@ var score, video_coords, Enable_marking, points, marker_coords, map, marker, sco
 var color_list = [redIcon, violetIcon, yellowIcon, orangeIcon, blackIcon, blueIcon]
 var guessed = true
 var pausado = false
-
+var playing = true
 
 
 var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927, ,'VAL', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
@@ -194,7 +194,31 @@ var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927, ,'VAL', 'CarpoWalks','ht
 ["rFfWAwsdZWI", 59.9119644,10.7485938,1725,'NW', 'Atmos Walks','https://www.youtube.com/@AtmosWalks'],
 ]
 
-
+var ita_list = [["jYVJccE8Wa4", 43.322257, 11.330865, 935 ,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+["zWxdKYxfcRQ", 44.499609, 11.343899, 866,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+["gpaB5d4C6hA", 45.465305, 9.194007,260,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
+["7a2cqy9Qwwg", 45.646856, 13.771754, 66,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["7a2cqy9Qwwg", 45.646856, 13.771754, 780,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["7a2cqy9Qwwg", 45.646856, 13.771754, 1652,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["7a2cqy9Qwwg", 45.646856, 13.771754, 2202,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["BMDso0Rqx3M", 45.975012, 9.247205,50,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["BMDso0Rqx3M", 45.975012, 9.247205,518,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["BMDso0Rqx3M", 45.975012, 9.247205,1164,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["9vx9qm2_ghI", 45.463732, 9.190500,97,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["9vx9qm2_ghI", 45.463732, 9.190500,984,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KQ5TW0DCXb0", 45.659127, 10.047541,99,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KQ5TW0DCXb0", 45.659127, 10.047541,551,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KQ5TW0DCXb0", 45.659127, 10.047541,1002,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KkKmGQpEr9s", 43.818297, 7.777631,100,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KkKmGQpEr9s", 43.818297, 7.777631,520,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KkKmGQpEr9s", 43.818297, 7.777631,960,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["KkKmGQpEr9s", 43.818297, 7.777631,1280,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'], 
+["m4D8LqsvXu0", 44.303984, 9.207712,640,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["-0YA3p8zvRE", 40.8391213,14.2495606,235,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["-0YA3p8zvRE", 40.8401192,14.2484348,590,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["-0YA3p8zvRE", 40.8473569,14.2515967,1984,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["-0YA3p8zvRE", 40.8513121,14.2577763,2531,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+["-0YA3p8zvRE", 40.8413436,14.2520886,3302,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],]
 
 
 
@@ -299,11 +323,7 @@ function onPlayerReady(event) {
     a.href = video_list[vid_index][6]
     a.innerHTML = `Credits: ${video_list[vid_index][5]}`
     startTimer()
-    setTimeout(hide(), 5000)
-}
-
-function hide(){
-    document.getElementById("howto").visibility = 'hidden'
+    setTimeout(() => {  document.getElementById('howto').style.display = "none"; }, 4500)
 }
 
 
@@ -326,11 +346,19 @@ function randomlyChooseVideo() {
     
 
     // get new video
-    vid_index =  getRandomIndex(video_list.length);
-    src = (video_list[vid_index]);
-  
     
-    active_video = video_list[vid_index]
+    if(gamemode == 'ITA'){
+        vid_index =  getRandomIndex(ita_list.length);
+        src = (ita_list[vid_index]);
+        active_video = ita_list[vid_index]
+    }
+    else{
+        vid_index =  getRandomIndex(video_list.length);
+        src = (video_list[vid_index]);
+        active_video = video_list[vid_index]
+    }
+    
+    
 
     
     // update the video's coordenates
@@ -528,8 +556,12 @@ function next(e) {
     a.innerHTML = `Credits: ${video_list[vid_index][5]}`
 
     //remove video from vide list
-    video_list = video_list.slice(0, vid_index).concat(video_list.slice(vid_index + 1));
-
+    if(gamemode == "ITA"){
+        ita_list = ita_list.slice(0, vid_index).concat(ita_list.slice(vid_index + 1));
+    }
+    else{
+        video_list = video_list.slice(0, vid_index).concat(video_list.slice(vid_index + 1));
+    }
 
     
     if(gamemode !='contrarreloj'){
@@ -568,8 +600,7 @@ function looptime(){
     else{
        interval = setTimeout(function() {
           updatetime()
-        }, 1200);
-       
+        }, 1000);
     }
     
 }
@@ -577,9 +608,17 @@ function looptime(){
 function updatetime(){
 
     if(pausado == false){
-    time = time - 1
-    timer.innerHTML = `${time}s`
-    looptime()
+        time = time - 1
+        timer.innerHTML = `${time}s`
+        looptime()
+        if(time <= 10 && playing){
+            playing = false
+            document.getElementById('tic').play()
+            document.getElementById('tic').addEventListener("ended", function(){
+                this.currentTime = 0;
+                this.pause();
+            });
+        }
     }
     
 
@@ -609,7 +648,7 @@ function final_guess(c) {
     pausado = true
     //if c == false user made no guess, otherwise user guessed
     
-    //if user didn't guess on those gamemodes, game ends
+    //if user didn't guess on these gamemodes, game ends
     if(c == false && (gamemode == 'contrarreloj' || gamemode == '1hp' || gamemode == 'radius')){
         
         end()
@@ -617,31 +656,108 @@ function final_guess(c) {
 
     //if user didn't guess on regular gamemodes
     if(c == false){
+        console.log('didnt press guess')
         
         guessed = false
         document.getElementById('modal').showModal()
         invsze()
         
         Enable_marking = false
-        
+        try{
+            //if user tried guessing without clicking map show warning
+           if (marker_coords[0] == null ||  marker_coords[1] == null){
+                //give 0 points
+                score = 0
+                document.getElementById(`points`).innerHTML = Number(document.getElementById('points').innerHTML) + Number(score)
+                document.getElementById("h2").innerHTML = "El tiempo acabo! ";
+                vidmarker = L.layerGroup();
+
+                //add marker on vid coords 
+                var latlng = L.latLng(video_coords[0], video_coords[1]);
+                L.marker((latlng), {icon: greenIcon}).addTo(vidmarker);
+            
+                map.addLayer(vidmarker);
+                switchbtn()
+               return
+           }
+       }
+       catch(err){
         //give 0 points
         score = 0
         document.getElementById(`points`).innerHTML = Number(document.getElementById('points').innerHTML) + Number(score)
-            
-        //update video marker coords
+        document.getElementById("h2").innerHTML = "El tiempo acabo! ";
         vidmarker = L.layerGroup();
 
         //add marker on vid coords 
         var latlng = L.latLng(video_coords[0], video_coords[1]);
         L.marker((latlng), {icon: greenIcon}).addTo(vidmarker);
+    
         map.addLayer(vidmarker);
-
-        //front end stuff
-        document.getElementById("h2").innerHTML = "El tiempo acabo!";
-        showDistance()
         switchbtn()
-    }
+        return
+        }     
+        console.log('had marker placed')
+        guessed = true
+        Enable_marking = false
+
+        //calculate distance between user's guess and vid coords
+        distance = distance_calc([marker_coords[0], marker_coords[1]], video_coords)
+    
+        switchbtn()
+    
+        //calculate points
+        var point = Number(calc_points())
+    
+    
+        //update points on scoreboard
+        score = Number(document.getElementById(`points`).innerHTML) + Number(point.toFixed(0))
+        
+        //if radius gamemode, check guess distance and end if failed
+        if(gamemode == 'radius' && distance > gamerule_radius){
+            end()
+        }
+        else{
+        document.getElementById(`points`).innerHTML =  Number(score)
+        }
+    
+    
+    
+        vidmarker = L.layerGroup();
+    
+        //add marker on vid coords 
+        var latlng = L.latLng(video_coords[0], video_coords[1]);
+        L.marker((latlng), {icon: greenIcon}).addTo(vidmarker);
+    
+        map.addLayer(vidmarker);
+    
+        //draw line between the 2 markers
+        var latlngs = [];
+        latlngs.push(L.latLng(marker_coords[0],marker_coords[1]));
+        latlngs.push(L.latLng(video_coords[0],video_coords[1]));
+        polyline = L.polyline(latlngs, {color: 'black'})
+        try{polyline.addTo(map);}
+        catch(err){
+            
+            showWarning()
+            return
+        }    
+    
+        //zoom into line
+        map.fitBounds(polyline.getBounds());
+    
+    
+        //display distance from guess to right answer
+        if(distance < 1){
+            document.getElementById("h2").innerHTML = "El tiempo acabo! " + Number((Number((distance))*1000).toFixed(0)) + " M";
+        }
+        else{
+        document.getElementById("h2").innerHTML = "El tiempo acabo! " + Number((distance).toFixed(2)) + " KM";
+        }
+        showDistance()
+        }
+
     else{
+        console.log('pressed guess')
         try{
              //if user tried guessing without clicking map show warning
             if (marker_coords[0] == null ||  marker_coords[1] == null){
@@ -664,7 +780,13 @@ function final_guess(c) {
 
     //calculate distance between user's guess and vid coords
     distance = distance_calc([marker_coords[0], marker_coords[1]], video_coords)
-
+    if(distance <= 10){
+        document.getElementById('cheers').play()
+        document.getElementById('cheers').addEventListener("ended", function(){
+            this.currentTime = 0;
+            this.pause();
+        });
+    }
     switchbtn()
 
     //calculate points
