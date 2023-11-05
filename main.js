@@ -192,7 +192,24 @@ var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927, ,'VAL', 'CarpoWalks','ht
 ["rFfWAwsdZWI", 59.913840, 10.738698,81,'NW', 'Atmos Walks','https://www.youtube.com/@AtmosWalks'],
 ["rFfWAwsdZWI", 59.9134949,10.7398892,1140,'NW', 'Atmos Walks','https://www.youtube.com/@AtmosWalks'],
 ["rFfWAwsdZWI", 59.9119644,10.7485938,1725,'NW', 'Atmos Walks','https://www.youtube.com/@AtmosWalks'],
+['sKTox7DglVg',37.8093724,-122.4759122,301, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['sKTox7DglVg',37.8084333,-122.4729643,1400, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['a6VI-4YNHR0',40.7567671,-73.9865428,6, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['4ugekTk2_Ss',40.6908017,-74.045311,315, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['-jHtx64DUuw',21.4310782,-157.8315108,5, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['0WFAbXjpC1s',21.281624, -157.830731,107, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['0WFAbXjpC1s',21.2740059,-157.824152,1273, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['0WFAbXjpC1s',21.277048, -157.826154,2089, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['gcfC4lT2mj0',36.122620868922525, -115.17038233886313,2765, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['gcfC4lT2mj0',36.117949828514625, -115.17166929611284,4272, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['gcfC4lT2mj0',36.115322568368626, -115.17367909154801,531, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['gcfC4lT2mj0',36.101604793421046, -115.1732311728788,6415, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['vuWpEJ1JRUQ',37.793363170827774, -122.4060702564594,441, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['frh97PBKay8',34.06794575788217, -118.40156826076559,1320, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
 ]
+
+
+'frh97PBKay8',34.06794575788217, -118.40156826076559
 
 var ita_list = [["jYVJccE8Wa4", 43.322257, 11.330865, 935 ,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
 ["zWxdKYxfcRQ", 44.499609, 11.343899, 866,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
@@ -218,7 +235,8 @@ var ita_list = [["jYVJccE8Wa4", 43.322257, 11.330865, 935 ,'ITA', 'CarpoWalks','
 ["-0YA3p8zvRE", 40.8401192,14.2484348,590,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
 ["-0YA3p8zvRE", 40.8473569,14.2515967,1984,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
 ["-0YA3p8zvRE", 40.8513121,14.2577763,2531,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
-["-0YA3p8zvRE", 40.8413436,14.2520886,3302,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],]
+["-0YA3p8zvRE", 40.8413436,14.2520886,3302,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
+]
 
 
 
@@ -321,7 +339,7 @@ function onPlayerReady(event) {
     var a = document.getElementById('credits');
 
     a.href = video_list[vid_index][6]
-    a.innerHTML = `Credits: ${video_list[vid_index][5]}`
+    a.innerHTML = `${video_list[vid_index][5]}`
     startTimer()
     setTimeout(() => {  document.getElementById('howto').style.display = "none"; }, 4500)
 }
@@ -503,6 +521,7 @@ function calc_points(){
 
 //next function (main)
 function next(e) {
+    playing = true
     rounds = rounds + 1
     
     if(gamemode != 'contrarreloj'){
@@ -553,7 +572,7 @@ function next(e) {
 
     //update credits
     a.href = video_list[vid_index][6]
-    a.innerHTML = `Credits: ${video_list[vid_index][5]}`
+    a.innerHTML = `${video_list[vid_index][5]}`
 
     //remove video from vide list
     if(gamemode == "ITA"){
@@ -614,10 +633,7 @@ function updatetime(){
         if(time <= 10 && playing){
             playing = false
             document.getElementById('tic').play()
-            document.getElementById('tic').addEventListener("ended", function(){
-                this.currentTime = 0;
-                this.pause();
-            });
+            console.log('audio play')
         }
     }
     
@@ -645,6 +661,9 @@ function play(){
 
 //guessing secuence
 function final_guess(c) {
+    playing = false
+    document.getElementById('tic').currentTime = 0
+    document.getElementById('tic').pause()
     pausado = true
     //if c == false user made no guess, otherwise user guessed
     
