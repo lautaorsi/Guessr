@@ -105,7 +105,7 @@ var color_list = [redIcon, violetIcon, yellowIcon, orangeIcon, blackIcon, blueIc
 var guessed = true
 var pausado = false
 var playing = true
-
+const modal = document.getElementById('modal')
 
 var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927, ,'VAL', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
 ["sw89HOTBHQI", -12.126667, -77.036333, 130,'PER', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
@@ -209,7 +209,7 @@ var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927, ,'VAL', 'CarpoWalks','ht
 ]
 
 
-'frh97PBKay8',34.06794575788217, -118.40156826076559
+
 
 var ita_list = [["jYVJccE8Wa4", 43.322257, 11.330865, 935 ,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
 ["zWxdKYxfcRQ", 44.499609, 11.343899, 866,'ITA', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
@@ -295,7 +295,7 @@ function onYouTubeIframeAPIReady() {
             fs : 0,
             modestbranding: 1,
             showinfo: 0,
-            start: 100,
+            start: active_video[3],
             loop: 1,
             origin: "http://127.0.0.1:3000/main.html"
         },
@@ -928,3 +928,8 @@ document.addEventListener('keydown', (event) => {
 })
 
 
+window.onclick = function(event) {
+    if (event.target == modal) {
+      modal.close()
+    }
+  }
