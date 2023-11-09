@@ -96,7 +96,7 @@
 
             <div class="card" id="classiccard">
                 <a onclick='lobby("US")' class="cardlink">
-                <img src="static/Italy.jpg" class="cardimg" alt="Classic" id="classicimg">
+                <img src="static/USA.png" class="cardimg" alt="Classic" id="classicimg">
                 <div class="bottomright">🇮🇹</div>
                 <div class="container">
                 <h3 id="h4italy"><b>Estados Unidos </b></h3>
@@ -106,4 +106,14 @@
             </div>
         </div>
     </body>
+    <script> 
+
+        function lobby(gamemode) { 
+            console.log(gamemode)
+            const objgamemode = {hello: gamemode};
+            const objgamemodestr = JSON.stringify(objgamemode);
+            localStorage.setItem('gamemode', objgamemodestr);
+            window.location.href = 'lobby.html'
+        } 
+        </script> 
 </html>

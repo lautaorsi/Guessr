@@ -100,7 +100,7 @@ var greenIcon = new L.Icon({
 
 
 
-var score, video_coords, Enable_marking, points, marker_coords, map, marker, score_id, vidmarker, polyline, src, lat, lng, active_video, playersmarkers, time, inter, pause, interval, player
+var score, video_coords, Enable_marking, points, marker_coords, map, marker, score_id, vidmarker, polyline, src, lat, lng, active_video, playersmarkers, time, inter, pause, interval, player, active_playlist
 var color_list = [redIcon, violetIcon, yellowIcon, orangeIcon, blackIcon, blueIcon]
 var guessed = true
 var pausado = false
@@ -238,8 +238,41 @@ var ita_list = [["jYVJccE8Wa4", 43.322257, 11.330865, 935 ,'ITA', 'CarpoWalks','
 ["-0YA3p8zvRE", 40.8413436,14.2520886,3302,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks'],
 ]
 
+var usa_list = [["cQilmRKq9A0", 34.007217, -118.496112,693,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["cQilmRKq9A0", 34.007968, -118.494115,1165,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["xAN7PVS8Hko", 34.0691215,-118.2913733,119,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["xAN7PVS8Hko", 34.076186, -118.291566,932,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["xAN7PVS8Hko", 34.0729513,-118.2915304,1842,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["teHOCmM18ZU", 34.0769519,-118.3803203,127,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["teHOCmM18ZU", 34.077164, -118.376534,1227,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["25iy2ZFAMZE", 34.101665, -118.338577,24,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+["BYX7lxGRl3Q", 33.8148071,-117.9215549,185,'US', 'Voyager Walks','https://www.youtube.com/@TheVoyagerWalks'],
+['sKTox7DglVg',37.8093724,-122.4759122,301, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['sKTox7DglVg',37.8084333,-122.4729643,1400, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['a6VI-4YNHR0',40.7567671,-73.9865428,6, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['4ugekTk2_Ss',40.6908017,-74.045311,315, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['-jHtx64DUuw',21.4310782,-157.8315108,5, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['0WFAbXjpC1s',21.281624, -157.830731,107, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['0WFAbXjpC1s',21.2740059,-157.824152,1273, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['0WFAbXjpC1s',21.277048, -157.826154,2089, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['gcfC4lT2mj0',36.122620868922525, -115.17038233886313,2765, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['gcfC4lT2mj0',36.117949828514625, -115.17166929611284,4272, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['gcfC4lT2mj0',36.115322568368626, -115.17367909154801,531, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['gcfC4lT2mj0',36.101604793421046, -115.1732311728788,6415, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['vuWpEJ1JRUQ',37.793363170827774, -122.4060702564594,441, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+['frh97PBKay8',34.06794575788217, -118.40156826076559,1320, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
+]
 
-
+const list = {
+    'USA': usa_list,
+    'ITA': ita_list,
+    'PAUSE': video_list,
+    'CLASICO': video_list,
+    'contrarreloj': video_list,
+    'radius': video_list,
+    '1hp': video_list,
+    'clear_map': video_list,
+}
 
 
 
@@ -338,8 +371,8 @@ function onPlayerReady(event) {
     
     var a = document.getElementById('credits');
 
-    a.href = video_list[vid_index][6]
-    a.innerHTML = `${video_list[vid_index][5]}`
+    a.href = active_playlist[vid_index][6]
+    a.innerHTML = `${active_playlist[vid_index][5]}`
     startTimer()
     setTimeout(() => {  document.getElementById('howto').style.display = "none"; }, 4500)
 }
@@ -358,27 +391,16 @@ function getRandomIndex(max) {
 }
 
 
+
 //choose random vid based on video list index
 function randomlyChooseVideo() {
-    
-    
 
     // get new video
-    
-    if(gamemode == 'ITA'){
-        vid_index =  getRandomIndex(ita_list.length);
-        src = (ita_list[vid_index]);
-        active_video = ita_list[vid_index]
-    }
-    else{
-        vid_index =  getRandomIndex(video_list.length);
-        src = (video_list[vid_index]);
-        active_video = video_list[vid_index]
-    }
-    
-    
+    vid_index =  getRandomIndex((list[gamemode]).length);
+    src = ((list[gamemode])[vid_index]);
+    active_video = (list[gamemode])[vid_index]
+    active_playlist = list[gamemode]
 
-    
     // update the video's coordenates
     video_coords = [active_video[1],active_video[2]]
     console.log(src)
@@ -571,15 +593,15 @@ function next(e) {
     var a = document.getElementById('credits');
 
     //update credits
-    a.href = video_list[vid_index][6]
-    a.innerHTML = `${video_list[vid_index][5]}`
+    a.href = active_playlist[vid_index][6]
+    a.innerHTML = `${active_playlist[vid_index][5]}`
 
     //remove video from vide list
     if(gamemode == "ITA"){
         ita_list = ita_list.slice(0, vid_index).concat(ita_list.slice(vid_index + 1));
     }
     else{
-        video_list = video_list.slice(0, vid_index).concat(video_list.slice(vid_index + 1));
+        active_playlist = active_playlist.slice(0, vid_index).concat(active_playlist.slice(vid_index + 1));
     }
 
     
