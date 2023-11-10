@@ -81,7 +81,8 @@
         'clear_map': 'Mapa satelital! <br> Sin nombres ni divisiones politicas! <br> (recomendado para jugadores avanzados)',
         '1hp': 'Desafio: <br> conseguir la mayor cantidad de aciertos sin equivocarse, <br> un error y game over!',
         'contrarreloj': 'Desafio: <br> conseguir la mayor cantidad de aciertos <br>antes de que acabe el tiempo!',
-        'radius': 'Consigue la mayor cantidad de aciertos<br> en el radio determinado!'
+        'radius': 'Consigue la mayor cantidad de aciertos<br> en el radio determinado!',
+        'INVERTIDO': 'Cuidado! El video se reproducira de cabeza, deberas afilar todos tus sentidos para leer y ubicarte'
     }
 
     const titles = {
@@ -91,7 +92,8 @@
         'contrarreloj' : 'CONTRARRELOJ ⏱️',
         '1hp' : '1 VIDA 🧡',
         'radius': 'RADIO📏',
-        'clear_map' : 'MAPA SATELITAL🛰️'
+        'clear_map' : 'MAPA SATELITAL🛰️',
+        'INVERTIDO': 'INVERTIDO'
     }
 
     const images = {
@@ -101,7 +103,8 @@
         'contrarreloj' : './static/CLASICO.jpg',
         'radius' : './static/CLASICO.jpg',
         '1hp' : './static/CLASICO.jpg',
-        'clear_map' : './static/earthmap.jpg'
+        'clear_map' : './static/earthmap.jpg',
+        'INVERTIDO': './static/CLASICO.jpg'
     }
 
     var descript = document.getElementById('desc')
@@ -133,6 +136,13 @@
         document.getElementById('time5').innerHTML = "120s"
         document.getElementById('time5').value = 120
     }
+
+
+    if(gamename.hello == 'INVERTIDO'){
+        wimg.style.rotate = '180deg'
+    }
+
+
     if(gamename.hello != 'radius'){
         document.getElementById('radiusselect').style.display = 'none'
 

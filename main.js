@@ -272,6 +272,7 @@ const list = {
     'radius': video_list,
     '1hp': video_list,
     'clear_map': video_list,
+    'INVERTIDO': video_list,
 }
 
 
@@ -355,6 +356,11 @@ document.getElementById('volumerange').oninput = function(){
 
 
 function onPlayerReady(event) {
+    if(gamemode == 'INVERTIDO'){
+        document.getElementById('myvid').style.transform = 'rotate(180deg)'
+        document.getElementById('myvid').style.top= '-80px';
+        document.getElementById('myvid').style.left= '00%';
+    }
     // Define custom control actions
     document.getElementById("rewindButton").addEventListener("click", rewindVideo);
     document.getElementById("reduceSpeedButton").addEventListener("click", reduceSpeed);
@@ -369,6 +375,7 @@ function onPlayerReady(event) {
         player.setVolume(30)
     }
     
+
     var a = document.getElementById('credits');
 
     a.href = active_playlist[vid_index][6]

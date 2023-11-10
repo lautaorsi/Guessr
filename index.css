@@ -152,7 +152,7 @@ body{
 
 #classiccards{
     display: grid;
-    grid-template-columns: repeat(2, 0.1fr);
+    grid-template-columns: repeat(3, 0.1fr);
     grid-auto-rows: auto;
     grid-gap: 1rem;
     width: fit-content;
@@ -160,6 +160,19 @@ body{
     top: 100px;
     height: 500px;
 }
+
+#invertimg{
+    rotate: 180deg;
+    border-top-right-radius: 0%;
+    border-top-left-radius: 0%;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#invertright{
+    rotate: 180deg;
+}
+
 
 #arcade_gamemodes{
     position: relative;
@@ -212,11 +225,6 @@ body{
 
 #classiccard{
     margin-left: 8px;
-    position: relative;
-    margin-top: 0%;
-    width: fit-content;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 #h4classic{
@@ -224,7 +232,6 @@ body{
     text-align: center;
     font-size: x-large;
 }
-
 
 .cardimg{
     border-top-right-radius: 20px;
@@ -238,24 +245,8 @@ body{
     border-top-left-radius: 20px ;
 }
 
-#pausecard{
-    margin-left: 8px;
-    position: relative;
-    margin-top: 0%;
-    width: fit-content;
-    display: inline-block;
-    vertical-align: middle;
-}
-
-
-
 #cleancard{
     margin-left: 8px;
-    position: relative;
-    margin-top: 0%;
-    width: fit-content;
-    display: inline-block;
-    vertical-align: middle;
 }
 
 
@@ -266,33 +257,7 @@ body{
 
 #hp1card{
     margin-left: 10px;
-    display: inline-block;
-    position: relative;
-    margin-top: 0%;
-    width: fit-content;
-    vertical-align: middle;
 }
-
-
-#timecard{
-    display: inline-block;
-    margin-left: 5px;
-    position: relative;
-    margin-top: 0%;
-    width: fit-content;
-    vertical-align: middle;
-}
-
-#radiuscard{
-    display: inline-block;
-    margin-left: 5px;
-    position: relative;
-    margin-top: 0%;
-    width: fit-content;
-    vertical-align: middle;
-    overflow: clip;
-}
-
 
 h3{
     margin-bottom: 0px;

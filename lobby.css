@@ -56,7 +56,6 @@ body{
 }
 
 #imgcontainer{
-    position: ab;
     margin-left: 12%;
     width: 75%;
     height: 60%;
@@ -79,6 +78,18 @@ body{
     width: 100%;
     height: 90%;
     
+}
+
+#invertimg{
+    rotate: 180deg;
+    border-top-right-radius: 0%;
+    border-top-left-radius: 0%;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#invertright{
+    rotate: 180deg;
 }
 
 
