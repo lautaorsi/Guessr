@@ -69,7 +69,7 @@ h1{
     margin-left: 100px;
     background-color: rgb(78, 78, 78);
     height: 470px;
-    width: 300px;
+    width: 310px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     background: rgb(0,0,0);
@@ -77,14 +77,10 @@ h1{
     text-align: left;
 }
 
-.card-style:hover{
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-    transform: translateY(-0.5em);
-}
 
 .image-style {
     height: 250px;
-    width: 300px;
+    width: 310px;
     object-fit: cover;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
@@ -137,6 +133,68 @@ p{
 
 .imlink{
     color: rgb(7, 7, 7);
-    margin-top: 10px;
     position: absolute;
+    font-size: large;
+    font-family: 'Gabarito';
+    margin-top: 0;
+}
+
+#bottom{
+    margin-bottom: 150px;
+}
+
+
+#toptext{
+    margin-top: 10px;
+}
+
+
+#footer-content{
+    display:flex;
+    justify-content:space-between;
+    width: 100%;
+    height: 100%;
+}
+
+h4{
+    font-size: large;
+    color: #888;
+    font-family: 'Roboto';
+}
+
+#juegos{
+    margin-left: 20px;
+    font-family: 'Roboto';
+    position: relative;
+    text-align: center;
+}
+
+#creditos{
+    margin-right: 20px;
+    font-family: 'Roboto';
+    position: relative;
+    text-align: center;
+}
+
+#Us{
+    font-family: 'Roboto';
+    position: relative;
+    text-align: center;
+}
+
+.footerlink{
+    text-decoration: none;
+    color: #706f6f;
+}
+
+.footerlink:hover{
+    color: #302f2f;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 20px;
+    background-color: #fefefe;
 }

@@ -348,7 +348,7 @@ h3{
 
 #sharecontainer{
     position: absolute;
-    bottom: 250;
+    bottom: 220;
     left: 40%;
     align-items: center;
     width: fit-content;
@@ -447,6 +447,15 @@ h4{
     color: #302f2f;
 }
 
+footer{
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 20px;
+    background-color: #fefefe;
+}
+
+
 
 #bug{
     position: fixed;
@@ -467,11 +476,4 @@ h4{
 
 
 
-footer{
-    position: absolute;
-    width: 100%;
-    height: fit-content;
-    padding-bottom: 60px;
-    background-color: #fefefe;
-}
 
