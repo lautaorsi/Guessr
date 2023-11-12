@@ -181,8 +181,6 @@ body{
     width: fit-content;
     left: 2%;
     padding: 10;
-    padding-left: 29px;
-    padding-right: 29px;
     border-radius: 15px;
     font-family: 'Roboto';
 }
@@ -222,10 +220,10 @@ body{
     margin-bottom: 350px;
 }
 
-
-#classiccard{
+#firstcard{
     margin-left: 8px;
 }
+
 
 #h4classic{
     font-family: 'Gabarito', serif;

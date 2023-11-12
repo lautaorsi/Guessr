@@ -37,10 +37,10 @@
         </div>
                 <div id="classic_gamemodes"> <h2>Modos Clasicos</h2></div>
                 <div id="classiccards">
-                    <div class="card" id="classiccard">
+                    <div class="card" id="firstcard">
                         <a onclick='lobby("CLASICO")' class="cardlink">
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
-                        <div id="Normal" class="difficulty" title="Dificultad">Media</div>
+                        <div id="Normal" class="difficulty" title="Dificultad">Normal</div>
                         <div class="container">
                         <h3><b>Normal</b></h3>
                         <p id="classicdesc" class="card_description">Recorre los paises <br>del mundo en este clasico modo <br>de juego</p>                 
@@ -89,11 +89,20 @@
                     <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
                     <div class="container">
                     <h3 id="h4italy"><b>Regiones</b></h3>
-                    <p id="classicdesc" class="card_description">Recorre y adivina las distintas ubicaciones <br> de  continentes o paises  <br> en este modo de juego</p>                 
+                    <p id="classicdesc" class="card_description">Recorre y adivina las distintas ubicaciones <br> de  continentes o paises  en este modo de juego</p>                 
                     </div>
                     </a>
                 </div>
-                
+                <div class="card" id="classiccard">
+                    <a onclick='lobby("nozoom")' class="cardlink">
+                    <img src="static/Continentes.png" class="largeimg"  id="cleanimg" alt="Classic">
+                    <div id="Normal" class="difficulty" title="Dificultad">Normal</div>
+                    <div class="container">
+                    <h3 id="h4italy"><b>Sin Zoom</b></h3>
+                    <p id="classicdesc" class="card_description">Reglas de juego clasicas.<br> No podras hacer zoom en el mapa para adivinar!</p>                 
+                    </div>
+                    </a>
+                </div>
                 </div>
                 <div id="challenge_gamemodes"> <h2>Desafios</h2></div>
                 <div id="challengecards">
@@ -112,7 +121,7 @@
                         <a onclick='lobby("contrarreloj")' class="cardlink">
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false"  id="timeimg">
                         <div class="bottomright">⏱️</div>
-                        <div id="Normal" class="difficulty" title="Dificultad">Media</div>
+                        <div id="Normal" class="difficulty" title="Dificultad">Normal</div>
                         <div class="container">
                         <h3 id="h4time"><b>Contrarreloj</b></h3>
                         <p id="timedesc" class="card_description">Consigue la mayor<br>cantidad de puntos<br> antes de que el tiempo acabe! </p>
