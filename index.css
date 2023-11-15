@@ -5,6 +5,7 @@ html{
 }
 
 body{
+    overflow-x: clip;
     height: fit-content;
     padding: 0%;
     margin: 0;
@@ -85,10 +86,10 @@ body{
 
 
 #top_menu{
+    position: absolute;
     top: 0;
     background-color: #fefefe;
     height: 65px;
-    position: absolute;
     width: 100%;
     z-index: 1;
 }
@@ -186,6 +187,7 @@ body{
 }
 
 #arcadecards{
+    overflow-x: clip;
     display: grid;
     grid-template-columns: repeat(4, 0.1fr);
     grid-auto-rows: auto;

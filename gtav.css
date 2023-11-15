@@ -294,7 +294,7 @@ h3{
 
 #sharecontainer{
     position: absolute;
-    bottom: 250;
+    bottom: 230;
     left: 40%;
     align-items: center;
     width: fit-content;
@@ -379,6 +379,7 @@ h4{
 
 
 footer{
+    margin-top: 50;
     position: absolute;
     width: 100%;
     height: fit-content;
