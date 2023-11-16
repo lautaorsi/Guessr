@@ -107,12 +107,76 @@ var pausado = false
 
 
 
-var urban_list = []
-var rural_list = []
-var all_list = []
+var urban_list = [['4keUlXV_z5w', -568.3435959177785, -1390.7216472103837, 20, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -554.6542089811346, -1328.8768865409415, 70, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -394.50011893608536, -1119.1645529151644, 305, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -153.6780094867725, -719.572882101767, 909, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -230.03120507293698, -666.7917939802127, 1200, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -226.96234107948013, -528.0192415200981, 1440, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -292.58050095044484, -316.92327909272046, 1665, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -468.70733446496473, -162.6429837788674, 1891, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -582.1124039904098, -89.06078843640066, 2225, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -746.6862998149187, -24.24984274886327, 2431, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -868.7050729370324, -122.31711913396488, 2662, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -976.9550379865161, -13.669760165230315, 2843, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -1301.634640865187, 48.13265456935852, 3208, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+]
 
 
 
+
+var rural_list = [['fVoMdt5MZKg', 4954.52773506048,1673.2022200772203, 0, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',3754.8508708416716,1943.1708494208497,1675, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',3704.6966190852772, 32.949174951501,7860, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',2559.6723206516867, -1241.2936757941654,9796, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',1152.7158116135877, -3067.7949750856214,11745, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',2305.0334220833015, -1760.3386319718345,10500, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',1079.5259092872393, -3263.8359728834753,12249, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',184.70609745664692, -3013.5055170253504,13040, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',971.4073999111112, -3260.898346751677,14409, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+]
+
+var video_list = [['fVoMdt5MZKg', 4954.52773506048,1673.2022200772203, 0, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',3754.8508708416716,1943.1708494208497,1675, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',3704.6966190852772, 32.949174951501,7860, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',2559.6723206516867, -1241.2936757941654,9796, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',1152.7158116135877, -3067.7949750856214,11745, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',2305.0334220833015, -1760.3386319718345,10500, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',1079.5259092872393, -3263.8359728834753,12249, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',184.70609745664692, -3013.5055170253504,13040, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['fVoMdt5MZKg',971.4073999111112, -3260.898346751677,14409, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -568.3435959177785, -1390.7216472103837, 20, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -554.6542089811346, -1328.8768865409415, 70, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -394.50011893608536, -1119.1645529151644, 305, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -153.6780094867725, -719.572882101767, 909, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -230.03120507293698, -666.7917939802127, 1200, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -226.96234107948013, -528.0192415200981, 1440, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -292.58050095044484, -316.92327909272046, 1665, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -468.70733446496473, -162.6429837788674, 1891, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -582.1124039904098, -89.06078843640066, 2225, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -746.6862998149187, -24.24984274886327, 2431, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -868.7050729370324, -122.31711913396488, 2662, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -976.9550379865161, -13.669760165230315, 2843, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+['4keUlXV_z5w', -1301.634640865187, 48.13265456935852, 3208, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+]
+
+
+
+
+
+
+
+
+const list = {
+    'URBAN': urban_list,
+    'RURAL': rural_list,
+    'PAUSE': video_list,
+    'CLASICO': video_list,
+    'contrarreloj': video_list,
+    'radius': video_list,
+    'INVERTIDO': video_list,
+
+}
 
 
 
@@ -153,7 +217,7 @@ var SateliteStyle = L.tileLayer('mapStyles/styleSatelite/{z}/{x}/{y}.jpg', {minZ
 var map = L.map('map', {
     crs: CUSTOM_CRS,
     minZoom: 2,
-    maxZoom: 5,
+    maxZoom: 5.49,
     Zoom: 5,
     maxNativeZoom: 5,
     preferCanvas: true,
@@ -189,7 +253,7 @@ function onYouTubeIframeAPIReady() {
             fs : 0,
             modestbranding: 1,
             showinfo: 0,
-            start: 0,
+            start: active_video[3],
             loop: 1,
             origin: "http://127.0.0.1:3000/main.html"
         },
@@ -255,32 +319,12 @@ function getRandomIndex(max) {
 function randomlyChooseVideo() {
     
     
-
     // get new video
-    if(gamemode == 'RURAL'){
-        vid_index =  getRandomIndex(rural_list.length);
-        src = (rural_list[vid_index]);
-      
-        
-        active_video = rural_list[vid_index]
-    }
-    if(gamemode == 'URBAN'){
-        vid_index =  getRandomIndex(urban_list.length);
-        src = (urban_list[vid_index]);
-      
-        
-        active_video = urban_list[vid_index]
-    
-    }
-    if(gamemode != 'URBAN' && gamemode != 'RURAL'){
-        vid_index =  getRandomIndex(all_list.length);
-        src = (all_list[vid_index]);
-      
-        
-        active_video = all_list[vid_index]
-    }
+    vid_index =  getRandomIndex((list[gamemode]).length);
+    src = ((list[gamemode])[vid_index]);
+    active_video = (list[gamemode])[vid_index]
+    active_playlist = list[gamemode]
 
-    
     // update the video's coordenates
     video_coords = [active_video[1],active_video[2]]
     console.log(src)
@@ -613,8 +657,9 @@ function final_guess(c) {
     score = Number(document.getElementById(`points`).innerHTML) + Number(point.toFixed(0))
     
     //if radius gamemode, check guess distance and end if failed
-    if(gamemode == 'radius' && distance > gamerule_radius){
+    if(gamemode == 'radius' && distance > gamerule_radius*1000){
         end()
+        
     }
     else{
     document.getElementById(`points`).innerHTML =  Number(score)
@@ -648,7 +693,7 @@ function final_guess(c) {
 
     //display distance from guess to right answer
     if(distance > 1000){
-        document.getElementById("h2").innerHTML = Number((Number((distance))*1000).toFixed(0)) + " KM";
+        document.getElementById("h2").innerHTML = Number((Number((distance))/1000).toFixed(2)) + " KM";
     }
     else{
     document.getElementById("h2").innerHTML = Number((distance).toFixed(2)) + " M";
@@ -666,6 +711,8 @@ function final_guess(c) {
 
 
 map.on('click', function(e){
+    mark(e)
+    console.log(marker_coords)
     if (Enable_marking == true){
         mark(e)
        

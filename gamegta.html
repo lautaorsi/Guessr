@@ -1,6 +1,7 @@
 <!DOCTYPE html >
 <html lang="es">
   <head>
+    <link rel="stylesheet" href='gamegta.css'>
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Gabarito&family=Mukta">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
@@ -57,13 +58,17 @@
             </div>
         </div>
     </div>
-        <dialog id="modal">
-                <div id="map"></div>
+    <dialog id="modal">
+        <div id="map"></div>
+        <div id="lowermodal">
+            <div id="distance">
                 <h2 id="h2"></h2>
-                <button id="close_map" onclick="window.modal.close(),  map_open()">Cerrar</button>
-                <a href="#" id="guess" class="btn btn-white btn-        animate" onclick="final_guess(true)">Adivinar</a>
-                <button id = "continue" onclick="next()">Continuar</button>
-        </dialog>
+            </div>
+            <button id="close_map" onclick="window.modal.close(),  map_open()">Cerrar</button>
+            <a href="#" id="guess" class="btn btn-white btn-        animate" onclick="final_guess(true)">Adivinar</a>
+            <button id = "continue" onclick="next()">Continuar</button>
+         </div>
+</dialog>
         <div id="warning-container">
             <text id="warning">Clickea el mapa para adivinar!<i class="fa-solid fa-location-dot fa-bounce" id="marker_warning" style="color: #005eff;"></i></text> 
         </div>
@@ -71,10 +76,9 @@
 
 <script>
     function myFunction(){
-        window.location.href = 'index.html'
+        window.location.href = 'gtaV.html'
     }
 </script>
-<link rel="stylesheet" href='classic.css'>
 <script type="text/javascript" src="maingta.js"></script>
 <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
 
