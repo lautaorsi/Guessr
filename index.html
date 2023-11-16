@@ -41,68 +41,62 @@
                         <a onclick='lobby("CLASICO")' class="cardlink">
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
                         <div id="Normal" class="difficulty" title="Dificultad">Normal</div>
-                        <div class="container">
                         <h3><b>Normal</b></h3>
                         <p id="classicdesc" class="card_description">Recorre los paises <br>del mundo en este clasico modo <br>de juego</p>                 
-                        </div>
                         </a>
                     </div>
                     <div class="card" id="pausecard">
                         <a onclick='lobby("PAUSE")' class="cardlink">
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
                         <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
-                        <div class="container">
                         <h3><b>Pausa</b></h3>
                         <div class="bottomright">⏯️</div>
                         <p id="pausedesc" class="card_description"> Para jugadores casuales,<br>botones de play y pausa habilitados.<br>Pero cuidado, el tiempo sigue corriendo!</p>                 
-                        </div>
                         </a>
                     </div>
                     <div class="card" id="invertcard">
                         <a onclick='lobby("INVERTIDO")' class="cardlink">
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="invertimg">
                         <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
-                        <div class="container">
                         <h3><b>Invertido</b></h3>
                         <div class="bottomright" id="invertright">👨🏻‍💻</div>
-                        <p id="pausedesc" class="card_description"> Que mareo! En este modo<br>veras todo de cabeza, leer carteles y <br>calles sera todo un desafio!</p>                 
-                        </div>
+                        <p id="pausedesc" class="card_description">Esta todo de cabeza! Para expertos, <br> leer carteles y calles sera todo un desafio!</p>                 
+                        
                         </a>
                     </div>
                 </div>
                 <div id="Arcade_gamemodes"> <h2>Modos Arcade</h2></div>
+                <div id="slidecontainer">
+                    <button id="slideRight" class="slidebutt">&rarr;</button>
+                    <button id="slideLeft" class="slidebutt">&larr;</button>
+                </div>
+                
                 <div id="arcadecards">
-                    <div class="card" id="cleancard">
+                    <div class="card" id="firstcard" class="arcadecard">
                         <a onclick='lobby("clear_map")' class="cardlink">
                         <img src="./static/earthmap.jpg" class="largeimg"  alt="clean" draggable="false" id="cleanimg">
                         <div class="bottomright">🛰️</div>
                         <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
-                        <div class="container">
                         <h3><b>Satelital</b></h3>
                         <p id="cleandesc" class="card_description">Para jugadores expertos este modo no tiene <br> divisiones politicas ni nombres! <br> (Dificultad avanzada)</p>
                        </a>
                     </div>
-                </div>
-                <div class="card" id="classiccard">
-                    <a href="regions.html" class="cardlink">
-                    <img src="static/Continentes.png" class="largeimg"  id="cleanimg" alt="Classic">
-                    <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
-                    <div class="container">
-                    <h3 id="h4italy"><b>Regiones</b></h3>
-                    <p id="classicdesc" class="card_description">Recorre y adivina las distintas ubicaciones <br> de  continentes o paises  en este modo de juego</p>                 
+                    <div class="card"  class="arcadecard">
+                        <a href="regions.html" class="cardlink">
+                        <img src="static/Continentes.png" class="largeimg"  id="cleanimg" alt="cleanimg">
+                        <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
+                        <h3 id="h4italy"><b>Regiones</b></h3>
+                        <p id="classicdesc" class="card_description">Recorre y adivina las distintas ubicaciones <br> de  continentes o paises  en este modo de juego</p>                 
+                        </a>
                     </div>
-                    </a>
-                </div>
-                <div class="card" id="classiccard">
-                    <a onclick='lobby("nozoom")' class="cardlink">
-                    <img src="static/nozoom.png" class="largeimg"  id="cleanimg" alt="Classic">
-                    <div id="Normal" class="difficulty" title="Dificultad">Normal</div>
-                    <div class="container">
-                    <h3 id="h4italy"><b>Sin Zoom</b></h3>
-                    <p id="classicdesc" class="card_description">Reglas de juego clasicas.<br> No podras hacer zoom en el mapa para adivinar!</p>                 
+                    <div class="card"  class="arcadecard">
+                        <a onclick='lobby("nozoom")' class="cardlink">
+                        <img src="static/nozoom.png" class="largeimg"  id="cleanimg" alt="cleanimg">
+                        <div id="Normal" class="difficulty" title="Dificultad">Normal</div>
+                        <h3 id="h4italy"><b>Sin Zoom</b></h3>
+                        <p id="classicdesc" class="card_description">Reglas de juego clasicas.<br> No podras hacer zoom en el mapa para adivinar!</p>                 
+                        </a>
                     </div>
-                    </a>
-                </div>
                 </div>
                 <div id="challenge_gamemodes"> <h2>Desafios</h2></div>
                 <div id="challengecards">
@@ -117,27 +111,23 @@
                         </div>
                         </a>
                     </div> -->
-                    <div class="card" id="timecard">
+                    <div class="card" id="firstcard">
                         <a onclick='lobby("contrarreloj")' class="cardlink">
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false"  id="timeimg">
                         <div class="bottomright">⏱️</div>
                         <div id="Normal" class="difficulty" title="Dificultad">Normal</div>
-                        <div class="container">
                         <h3 id="h4time"><b>Contrarreloj</b></h3>
                         <p id="timedesc" class="card_description">Consigue la mayor<br>cantidad de puntos<br> antes de que el tiempo acabe! </p>
                         </a>
-                        </div>
                     </div>
                     <div class="card" id="radiuscard">
                         <a onclick="lobby('radius')" class="cardlink">
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false" id="timeimg">
                         <div class="bottomright">📏</div>
                         <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
-                        <div class="container">
                         <h3 id="h4radius"><b>Radio</b></h3>
                         <p id="radiudesc" class="card_description">Consigue la mayor<br> cantidad de aciertos<br> en el radio determinado!</p>
                         </a>
-                        </div>
                     </div>
                 </div>
        <footer>
@@ -174,7 +164,7 @@
             </div>
 
             <div id="Us">
-                <h4>Nosotros</h4>
+                <h4>Sobre Nosotros</h4>
                 <a class="footerlink" href="mailto:videoguessr@gmail.com?" target="_blank" class="gamelink">Contacto</a> 
                 <br> 
                 <br>
@@ -201,6 +191,16 @@
     </body> 
 
     <script> 
+            const buttonRight = document.getElementById('slideRight');
+            const buttonLeft = document.getElementById('slideLeft');
+
+            buttonRight.onclick = function () {
+                console.log('scroll')
+            document.getElementById('arcadecards').scrollLeft += 580;
+            };
+            buttonLeft.onclick = function () {
+            document.getElementById('arcadecards').scrollLeft -= 580;
+            };
 
         function lobby(gamemode) { 
             console.log(gamemode)
