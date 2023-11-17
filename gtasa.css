@@ -2,23 +2,24 @@ html{
     overflow: auto;
     display: flex;
     flex-direction: column;
+    height: 100%;
+    overflow-y: clip;  /*change when done*/
 }
 
 body{
-    overflow-x: clip;
-    height: fit-content;
     padding: 0%;
     margin: 0;
-    background-image: url("./static/background_small.jpg");
+    background-image: url("./static/background_gtasa.jpg");
     background-color: #cccccc;
     background-repeat: no-repeat;
-    background-size: cover;
     background-attachment: fixed;
     background-position: center;
+    background-size: cover;
+    height: 100%;
 }
 
 .modal {
-    display: none; /* Hidden by default */
+    display: block; /* Hidden by default */
     position: fixed; /* Stay in place */
     z-index: 2; /* Sit on top */
     left: 0;
@@ -55,28 +56,50 @@ body{
     text-align: center;
 }
 
-#close_warning{
+#buttonscontainer{
+    width: 100%;
+    position: relative;
+}
 
+#goto_gta{
+    border-style: none;
+    margin-left: 400px;
+    font-size: large;
+    font-family: 'Gabarito';
+    position: relative;
+    margin-top: 20px;
     text-align: center;
     border-radius: 5px;
-    background-color: rgb(167, 4, 4);
+    background-color: rgb(95, 233, 77);
     padding-left: 10px;
-    padding-top: 7px;
-    padding-bottom: 7px;
+    padding-top: 2px;
+    padding-bottom: 2px;
     padding-right: 14px;
     cursor: pointer;
 }
 
-#text2{
-    font-size: large;
+#goto_classic{
+    border-style: none;
+    margin-left: 500px;
     font-family: 'Gabarito';
-    color: #fefefe;
-    height: fit-content;
-    margin: 0%;
+    font-size: large;
+    margin-top: 20px;
+    text-align: center;
+    border-radius: 5px;
+    background-color: rgb(212, 207, 207);
+    padding-left: 10px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    padding-right: 14px;
+    cursor: pointer;
 }
 
 
+
+
 .logoimg{
+    top: -10px;
+    height: 40;
     position: absolute;
     right: 0%;
     left: 0%;
@@ -85,25 +108,30 @@ body{
 }
 
 
+.logoVimg{
+    top: 20;
+    height: 40;
+    width: 80px;
+    position: relative;
+    right: 0%;
+    left: 0;
+    display: block;
+    margin: auto;
+}
+
 #top_menu{
-    position: absolute;
     top: 0;
     background-color: #fefefe;
     height: 65px;
+    position: absolute;
     width: 100%;
     z-index: 1;
 }
 
 
-#centerheader{
-    display: block;
-    width: fit-content;
-    position: absolute;
-    top: 57%;
-    margin: auto;
-    right: 0%;
-    left: 0%;
-}
+
+
+
 
 #leftheader{
     display: block;
@@ -127,21 +155,15 @@ body{
     font-family: 'Mukta', serif;
     font-size: large;
     text-decoration: none;
-    color: rgb(5, 5, 5);
+    color: rgb(0, 0, 0);
 }
 
-
-.card:hover{
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-    transform: translateY(-0.25em);
-    cursor: pointer;
-}
 
 
 #classic_gamemodes{
     position: relative;
     top: 90px;
-    background-color: rgb(179, 177, 196);
+    background-color: rgb(94, 255, 0);
     width: fit-content;
     left: 2%;
     padding: 10;
@@ -153,7 +175,7 @@ body{
 
 #classiccards{
     display: grid;
-    grid-template-columns: repeat(3, 0.1fr);
+    grid-template-columns: repeat(4, 0.1fr);
     grid-auto-rows: auto;
     grid-gap: 1rem;
     width: fit-content;
@@ -162,95 +184,21 @@ body{
     height: 500px;
 }
 
-#invertimg{
-    rotate: 180deg;
-    border-top-right-radius: 0%;
-    border-top-left-radius: 0%;
-    border-bottom-right-radius: 20px;
-    border-bottom-left-radius: 20px;
+#classiccard{
+    margin-left: 8px;
+    position: relative;
+    margin-top: 0%;
+    width: fit-content;
+    display: inline-block;
+    vertical-align: middle;
 }
 
-#invertright{
-    rotate: 180deg;
-}
 
 
 #arcade_gamemodes{
     position: relative;
-    top: 120px;
-    background-color: rgb(179, 177, 196);
-    width: fit-content;
-    left: 2%;
-    padding: 10;
-    border-radius: 15px;
-    font-family: 'Roboto';
-}
-
-#arcadecards{
-    overflow-x: hidden;
-    display: grid;
-    grid-template-columns: repeat(4, 0.1fr);
-    grid-auto-rows: auto;
-    grid-gap: 1rem;
-    width: 100%;
-    position: relative;
-    top: 130px;
-}
-
-.arcadecard{
-    width: 500px;
-}
-
-.slidebutt{
-    font-size: 20px ;
-}
-
-#slideRight{
-    z-index: 2;
-    top: 808px;
-    position: absolute;
-    width: 120px;
-    cursor: pointer;
-    height: 500px;
-    background: rgb(32, 32, 32);
-    opacity: 0%;
-    display: block;
-    color: white;
-    border-radius: 8px;
-    right: 0%;
-
-}
-
-#slideLeft{
-    z-index: 2;
-    top: 808px;
-        position: absolute;
-        width: 120px;
-        cursor: pointer;
-        height: 500px;
-        background: rgb(32, 32, 32);
-        opacity: 0%;
-        display: block;
-        color: white;
-        border-radius: 8px;
-        left: 0%;
-}
-
-#slideRight:hover {
-    opacity: 80%;
-}
-
-#slideLeft:hover {
-    opacity: 80%;
-}
-
-
-
-
-#challenge_gamemodes{
-    position: relative;
-    top: 150px;
-    background-color: rgb(179, 177, 196);
+    top: 160px;
+    background-color: rgb(94, 255, 0);
     width: fit-content;
     left: 2%;
     padding: 10;
@@ -260,53 +208,43 @@ body{
     font-family: 'Roboto';
 }
 
-#challengecards{
+#arcadecards{
     display: grid;
-    grid-template-columns: repeat(3, 0.1fr);
+    grid-template-columns: repeat(4, 0.1fr);
     grid-auto-rows: auto;
     grid-gap: 1rem;
     width: fit-content;
     position: relative;
-    margin-bottom: 350px;
-    top: 160px;
+    top: 170px;
     height: 500px;
-}
-
-#firstcard{
-    margin-left: 8px;
+    margin-bottom: 350px;
 }
 
 
-#h4classic{
-    font-family: 'Gabarito', serif;
-    text-align: center;
-    font-size: x-large;
-}
 
-.cardimg{
+
+
+
+#cardimg{
     border-top-right-radius: 20px;
     border-top-left-radius: 20px ;
     height:350px;
     width: 350;
 }
 
-.largeimg{
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px ;
-    height: 350px;
-    width: 580px;
-}
 
-#cleancard{
-    margin-left: 8px;
+
+#classicdesc{
+    margin-top: 15px;
+    padding-bottom: 15px;
 }
 
 
-
-
-#hp1card{
-    margin-left: 10px;
+#timecard{
+    margin-left: 5px;
 }
+
+
 
 h3{
     margin-bottom: 0px;
@@ -323,14 +261,16 @@ h3{
 }
 
 
+
+
+
+
 .difficulty{
     font-family: 'Gabarito';
-    position: absolute;
     top: 70%;
     left: 16px;
     font-size: 20px;
 }
-
 
 #easy{
     color: green;
@@ -344,12 +284,20 @@ h3{
     color: orange;
 }
 
+
+
 .bottomright {
     color: #fefefe;
+    width: fit-content;
     position: absolute;
-    right: 16px;
-    top: 55%;
     font-size: 35px;
+    top: 56%;
+    right: 0%;
+}
+
+
+#imgcontainer{
+    position: relative;
 }
 
 
@@ -363,12 +311,13 @@ h3{
     background-color: whitesmoke;
 }
 
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.card:hover{
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+    cursor: pointer;
 }
   
-/* Add some padding inside the card container */
+
 .container {
     padding: 2px 16px;
 }
@@ -379,6 +328,28 @@ h3{
 }
 
 
+
+/* .modal {
+    display: none; 
+    position: fixed; 
+    z-index: 1; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgb(0,0,0); 
+    background-color: rgba(0,0,0,0.4); 
+}
+  
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 15% auto; 
+    padding: 20px;
+    border: 1px solid #888;
+   
+} */
   
 
 .close {
@@ -397,7 +368,7 @@ h3{
 
 #sharecontainer{
     position: absolute;
-    bottom: 220;
+    bottom: 230;
     left: 40%;
     align-items: center;
     width: fit-content;
@@ -454,6 +425,42 @@ h3{
 }
 
 
+h4{
+    font-size: large;
+    color: #888;
+    font-family: 'Roboto';
+}
+
+
+
+#bug{
+    position: fixed;
+    bottom: 2%;
+    right: 1%;
+    width: fit-content;
+}
+
+#bug-text{
+    padding: 10px;
+    font-size: medium ;
+    background-color: aliceblue;
+    border-radius: 100px;
+    text-decoration: none;
+    color: #04852a;
+    font-family: 'Gabarito';
+}
+
+
+
+footer{
+    margin-top: 50;
+    position: absolute;
+    width: 100%;
+    height: fit-content;
+    padding-bottom: 20px;
+    background-color: #fefefe;
+}
+
 #footer-content{
     display:flex;
     justify-content:space-between;
@@ -495,34 +502,3 @@ h4{
 .footerlink:hover{
     color: #302f2f;
 }
-
-footer{
-    position: absolute;
-    width: 100%;
-    height: fit-content;
-    padding-bottom: 20px;
-    background-color: #fefefe;
-}
-
-
-
-#bug{
-    position: fixed;
-    bottom: 2%;
-    right: 1%;
-    width: fit-content;
-}
-
-#bug-text{
-    padding: 10px;
-    font-size: medium ;
-    background-color: aliceblue;
-    border-radius: 100px;
-    text-decoration: none;
-    color: #04852a;
-    font-family: 'Gabarito';
-}
-
-
-
-

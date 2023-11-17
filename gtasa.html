@@ -1,0 +1,229 @@
+<html lang="es">
+    <head>    
+        <script>
+                     function cerrar() {
+            window.location.href = 'index.html'
+        }   
+        </script>
+        <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
+        <meta name="description" content="Game: Guessing, videogame for guessing, geography fun">
+        <script> localStorage.clear()</script>
+        <title>VideoGuessr</title>
+        <link rel="stylesheet" href="gtasa.css">
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Gabarito&family=Mukta&family=Roboto">
+    </head>
+    <body>
+        <div id="adblock_warning" class="modal">
+            <div class="modal-content">
+              <h2 id="modal_title">Disculpa las molestias!</h2>
+              <h3> <b>Esta pagina se encuentra en desarrollo</b></h3>
+              <div id="buttonscontainer">
+                <button id="goto_classic" onclick='cerrar("index.html")'><p id="text2"><b>Clasico</b></p></button>
+                <button id="goto_gta" onclick='cerrar("gtav.html")'><p id="text2"><b>Gta v</b></p></button>
+              </div>
+            </div>
+        </div>
+
+        <div id="Top_menu">
+            <img src="./static/logo.png" alt="logo" class="logoimg" draggable="false">
+            <img src="./static/gtasalogo.png" alt="logo" class="logoVimg" draggable="false">
+            <div id="leftheader">
+                <a href="index.html" draggable="false" id="howto" class="headers">Clasico</a>
+            </div>
+            <div id="rightheader">
+                <a href="gtaV.html" draggable="false" id="howto" class="headers">GTA V</a>
+            </div>
+        </div>
+                <div id="classic_gamemodes"> <h2>Clasicos</h2></div>
+                <div id="classiccards">
+                    <div class="card" id="classiccard">
+                        <a onclick='lobby("CLASICO")' class="cardlink">
+                        <img src="./static/gtasamap.jpg" alt="Classic" draggable="false" id="cardimg">
+                        <div id="Normal" class="difficulty" title="Dificultad">Media</div>
+                        <div class="container">
+                        <h3><b>Normal</b></h3>
+                        <p id="classicdesc" class="card_description">Recorre todo San Andreas! <br> Incluye isla Cayo Perico y edificios</p>                 
+                        </div>
+                        </a>
+                    </div>
+                    <div class="card" id="pausecard">
+                        <a onclick='lobby("PAUSE")' class="cardlink">
+                        <img src="./static/gtasamap.jpg" alt="Classic" draggable="false" id="cardimg">
+                        <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
+                        <div class="container">
+                        <h3><b>Pausa</b></h3>
+                        <div class="bottomright">⏯️</div>
+                        <p id="pausedesc" class="card_description"> Para jugadores casuales,<br>botones de play y pausa habilitados.<br>Pero cuidado, el tiempo sigue corriendo!</p>                 
+                        </div>
+                        </a>
+                    </div>
+                    <div class="card" id="urbancard">
+                        <a onclick='lobby("URBAN")' class="cardlink">
+                        <img src="./static/urban.jpg" alt="Classic" draggable="false" id="cardimg">
+                        <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
+                        <div class="container">
+                        <h3><b>Los Angeles</b></h3>
+                        <p id="pausedesc" class="card_description"> Videos unicamente de <br> la ciudad de Los Angeles.</p>                 
+                        </div>
+                        </a>
+                    </div>
+                    <div class="card" id="ruralcard">
+                        <a onclick='lobby("RURAL")' class="cardlink">
+                        <img src="./static/rural.jpg" alt="Classic" draggable="false" id="cardimg">
+                        <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
+                        <div class="container">
+                        <h3><b>Vegas</b></h3>
+                        <p id="ruraldesc" class="card_description">  Videos de la ciudad <br> de Las Vegas (Sandy Shores, etc) .</p>                 
+                        </div>
+                        </a>
+                    </div>
+                </div>
+                <div id="Arcade_gamemodes"> <h2>Arcade</h2></div>
+                <div id="arcadecards">
+                    <div class="card" id="timecard">
+                        <a onclick='lobby("contrarreloj")' class="cardlink">
+                        <img src="./static/gtasamap.jpg" alt="clean" draggable="false"  id="cardimg">
+                        <div class="bottomright">⏱️</div>
+                        <div id="Normal" class="difficulty" title="Dificultad">Media</div>
+                        <div class="container">
+                        <h3 id="h4time"><b>Contrarreloj</b></h3>
+                        <p id="timedesc" class="card_description">Consigue la mayor<br>cantidad de puntos<br> antes de que el tiempo acabe! </p>
+                        </a>
+                        </div>
+                    </div>
+                    <div class="card" id="radiuscard">
+                        <a onclick="lobby('radius')" class="cardlink">
+                        <img src="./static/gtasamap.jpg" alt="clean" draggable="false" id="cardimg">
+                        <div class="bottomright">📏</div>
+                        <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
+                        <div class="container">
+                        <h3 id="h4radius"><b>Radio</b></h3>
+                        <p id="radiudesc" class="card_description">Consigue la mayor<br> cantidad de aciertos<br> en el radio determinado!</p>
+                        </a>
+                        </div>
+                    </div>
+
+                </div>
+       </div>
+       <footer>
+        <div id="sharecontainer">
+            <div id="share">
+                <p id="sharetext">Compartinos en redes!</p> 
+                <div class="share-buttons">
+                    <button class="share-button facebook">
+                       <i class="fab fa-facebook-f"></i>
+                    </button>
+                    <button class="share-button twitter">
+                       <i class="fab fa-x"></i>
+                    </button>
+                    <button class="share-button reddit">
+                       <i class="fab fa-reddit-alien"></i>
+                    </button>
+                    <button class="share-button whatsapp">
+                       <i class="fab fa-whatsapp"></i>
+                    </button>
+                 </div>
+            </div>
+        </div>
+        <div id="footer-content">
+            <div id="Juegos">
+                <h4>Juegos</h4>
+                <a class="footerlink" href="./index.html" class="gamelink">Normal Version</a> 
+                <br> 
+                <br>
+                <a class="footerlink" href="./gta.html" class="gamelink">GTA 5 Version</a>
+                <br>
+                <br>
+                <a class="footerlink" href="./gta.html" class="gamelink">GTA SA Version</a>
+            </div>
+
+            <div id="Us">
+                <h4>Nosotros</h4>
+                <a class="footerlink" href="https://mail.google.com/mail/u/5/#inbox?compose=CllgCJTLGkMjHrCKRHQgWPzRRCkdCSqlqKrHBGFNdgcFPFZzBPdSqgvfVprgsKtSjDNqqlzjTLV" target="_blank" class="gamelink">Contacto</a> 
+                <br> 
+                <br>
+                <a class="footerlink" href="https://mail.google.com/mail/u/5/#inbox?compose=CllgCJTLGkMjHrCKRHQgWPzRRCkdCSqlqKrHBGFNdgcFPFZzBPdSqgvfVprgsKtSjDNqqlzjTLV" target="_blank" class="gamelink">Sugerencias</a>
+                <br>
+                <br>
+                <a class="footerlink" href="https://mail.google.com/mail/u/5/#inbox?compose=CllgCJTLGkMjHrCKRHQgWPzRRCkdCSqlqKrHBGFNdgcFPFZzBPdSqgvfVprgsKtSjDNqqlzjTLV" target="_blank" class="gamelink">Aportar videos</a>
+            </div>
+            <div id="Creditos">
+                <h4>Creditos</h4>
+                <a  href="./creditsGTA.html" class="footerlink">Creadores Videos</a>
+                <br> 
+                <br>
+                <a href="https://virtualvacation.us/guess" target="_blank" class="footerlink">GeoGuessr</a>
+                <br>
+                <br>
+                <a href="https://www.geoguessr.com/" target="_blank" class="footerlink">CityGuessr</a> 
+            </div>
+        </div>
+       </footer>
+        <div id="Bug">
+            <a id="bug-text" href="https://mail.google.com/mail/u/5/#inbox?compose=GTvVlcSKkkJmlfsZkkcSqVWbgzvSlSKJnhlnhDhSTZxbNlBCJJBLxVtKlZxDTtsqBFNzClrJMTBbc" target="_blank">Reportar bug</a>
+        </div> 
+    </body> 
+
+    <script> 
+        function lobby(gamemode) { 
+            console.log(gamemode)
+            const objgamemode = {hello: gamemode};
+            const objgamemodestr = JSON.stringify(objgamemode);
+            localStorage.setItem('gamemode', objgamemodestr);
+            window.location.href = 'lobbygta.html'
+        } 
+
+        window.onclick = function(event) {
+            if (event.target == document.getElementById('adblock_warning')) {
+                cerrar();
+            }
+        }
+
+        </script> 
+        
+    
+    
+    <script>
+              // Get all share buttons
+      const shareButtons = document.querySelectorAll('.share-button');
+      // Add click event listener to each button
+      shareButtons.forEach(button => {
+         button.addEventListener('click', () => {
+            // Get the URL of the current page
+            const url = window.location.href;
+            // Get the social media platform from the button's class name
+            const platform = button.classList[1];
+            // Set the URL to share based on the social media platform
+            let shareUrl;
+            switch (platform) {
+               case 'facebook':
+               shareUrl = `https://www.facebook.com/sharer/sharer.php?u=Prueba VideoGuessr! 
+               ${encodeURIComponent(url)}`;
+               break;
+               case 'twitter':
+               shareUrl = `https://twitter.com/share?url=Prueba VideoGuessr! 
+               ${encodeURIComponent(url)}`;
+               break;
+               case 'reddit':
+               shareUrl = `https://reddit.com/submit?url=Prueba VideoGuessr! ${encodeURIComponent(url)}`;
+               break;
+               case 'whatsapp':
+               shareUrl = `https://api.whatsapp.com/send?text=Prueba VideoGuessr! 
+               ${encodeURIComponent(url)}`;
+               break;
+            }
+            // Open a new window to share the URL
+            window.open(shareUrl, '_blank');
+         });
+      });
+    </script>
+
+</html>
+
+
+
+
+
+
+
