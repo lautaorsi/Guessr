@@ -227,7 +227,11 @@ var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927, ,'VAL', 'CarpoWalks','ht
 ['O1RyGdlmoLc',-34.60706564188459, -58.36616101403808,252,'AR','Martin Recorre','https://www.youtube.com/@MartinRecorre'],
 ['Dtxr7H9cpEc',-34.583844004597026, -58.39163494962098,93,'AR','Martin Recorre','https://www.youtube.com/@MartinRecorre'],
 ['DpvzLyuGtaI',-50.46891320343997, -73.03324494984098,300,'AR','Martin Recorre','https://www.youtube.com/@MartinRecorre'],
+['QpO_uUjCM5c',50.0866367,14.4196876,1030,'CZ','POPtravel','https://www.youtube.com/@poptravelorg'],
+['QpO_uUjCM5c',50.0859985,14.4148046,1335,'CZ','POPtravel','https://www.youtube.com/@poptravelorg'],
 ]
+
+
 
 
 
@@ -296,6 +300,8 @@ const list = {
     'INVERTIDO': video_list,
     'nozoom': video_list
 }
+
+
 
 
 
@@ -941,11 +947,11 @@ map.on('click', function(e){
 function rewindVideo() {
     
     const currentTime = player.getCurrentTime();
-    if(currentTime > 70){
-        player.seekTo(currentTime - 10, true); 
+    if(currentTime >= 5 + active_video[3]){
+        player.seekTo(currentTime - 5, true); 
     }
     else{
-        player.seekTo(60, true);
+        player.seekTo(active_video[3], true);
     }
 }
 
@@ -956,8 +962,7 @@ function reduceSpeed() {
 }
 
 function restartVideo(){
-    
-    player.seekTo(100, true);
+    player.seekTo(active_video[3], true);
 }
 
 document.addEventListener('keydown', (event) => {
