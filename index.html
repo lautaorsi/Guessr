@@ -18,7 +18,6 @@
             <div class="modal-content">
               <h2 id="modal_title">Disculpa las molestias!</h2>
               <p class="warning_text">Hola! Soy el desarrollador de VideoGuessr, un estudiante universitario que debe costear el mantenimiento de la pagina, el hosting y el dominio. <br> Si bien entiendo que los anuncios resultan molestos, VideoGuessr es un juego totalmente gratuito que no solicita registrarse ni ningun tipo de informacion de sus usuarios. <br> Es por esto que te pido -si no te molesta- que desactives el bloqueador de anuncios para mantener VideoGuessr funcionando! (Recuerda refrescar la pagina)</p>
-              
               <p class="warning_text"> <b>No te preocupes, podras jugar VideoGuessr incluso si decides dejar el bloqueador activo, gracias por jugar!</b></p>
               <button id="close_warning" onclick='cerrar()'><p id="text2">Cerrar</p></button>
             </div>
@@ -41,48 +40,47 @@
                         <a onclick='lobby("CLASICO")' class="cardlink">
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
                         <div id="Normal" class="difficulty" title="Dificultad">Media</div>
-                        <div class="container">
                         <h3><b>Normal</b></h3>
                         <p id="classicdesc" class="card_description">Recorre los paises <br>del mundo en este clasico modo <br>de juego</p>                 
-                        </div>
                         </a>
                     </div>
                     <div class="card" id="pausecard">
                         <a onclick='lobby("PAUSE")' class="cardlink">
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
                         <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
-                        <div class="container">
                         <h3><b>Pausa</b></h3>
                         <div class="bottomright">⏯️</div>
                         <p id="pausedesc" class="card_description"> Para jugadores casuales,<br>botones de play y pausa habilitados.<br>Pero cuidado, el tiempo sigue corriendo!</p>                 
-                        </div>
                         </a>
                     </div>
                 </div>
                 <div id="Arcade_gamemodes"> <h2>Modos Arcade</h2></div>
                 <div id="arcadecards">
-                    <div class="card" id="cleancard">
-                        <a onclick='lobby("clear_map")' class="cardlink">
-                        <img src="./static/earthmap.jpg" class="largeimg"  alt="clean" draggable="false" id="cleanimg">
-                        <div class="bottomright">🛰️</div>
-                        <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
-                        <div class="container">
-                        <h3><b>Satelital</b></h3>
-                        <p id="cleandesc" class="card_description">Para jugadores expertos este modo no tiene <br> divisiones politicas ni nombres! <br> (Dificultad avanzada)</p>
-                       </a>
+                        <div class="card" id="cleancard">
+                            <a onclick='lobby("clear_map")' class="cardlink">
+                            <img src="./static/earthmap.jpg" class="largeimg"  alt="clean" draggable="false" id="cleanimg">
+                            <div class="bottomright">🛰️</div>
+                            <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
+                            <h3><b>Satelital</b></h3>
+                            <p id="cleandesc" class="card_description">Para jugadores expertos este modo no tiene <br> divisiones politicas ni nombres! <br> (Dificultad avanzada)</p>
+                        </a>
+                        </div>
+                    <div class="card" id="classiccard">
+                        <a href="regions.html" class="cardlink">
+                        <img src="static/Continentes.png" class="largeimg"  id="cleanimg" alt="Classic">
+                        <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
+                        <h3 id="h4italy"><b>Regiones</b></h3>
+                        <p id="classicdesc" class="card_description">Recorre y adivina las distintas ubicaciones <br> de  continentes o paises  <br> en este modo de juego</p>                 
+                        </a>
                     </div>
-                </div>
-                <div class="card" id="classiccard">
-                    <a href="regions.html" class="cardlink">
-                    <img src="static/Continentes.png" class="largeimg"  id="cleanimg" alt="Classic">
-                    <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
-                    <div class="container">
-                    <h3 id="h4italy"><b>Regiones</b></h3>
-                    <p id="classicdesc" class="card_description">Recorre y adivina las distintas ubicaciones <br> de  continentes o paises  <br> en este modo de juego</p>                 
+                    <div class="card" id="classiccard">
+                        <a onclick="lobby('nozoom')" class="cardlink">
+                        <img src="static/nozoom.png" class="largeimg"  id="cleanimg" alt="Classic">
+                        <div id="Easy" class="difficulty" title="Dificultad">Mediana</div>
+                        <h3 id="h4italy"><b>Sin Zoom</b></h3>
+                        <p id="classicdesc" class="card_description">Reglas normales pero cuidado, <br> no podras hacer zoom  <br> en el mapa</p>                 
+                        </a>
                     </div>
-                    </a>
-                </div>
-                
                 </div>
                 <div id="challenge_gamemodes"> <h2>Desafios</h2></div>
                 <div id="challengecards">
@@ -91,10 +89,8 @@
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false" id="hp1img">
                         <div class="bottomright">🧡</div>
                         <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
-                        <div class="container">
                         <h3 id="h4hp1"><b>1 vida</b></h3>
                         <p id="hp1desc" class="card_description">Intenta adivinar la mayor<br>cantidad de paises<br> sin equivocarte! </p>
-                        </div>
                         </a>
                     </div>
                     <div class="card" id="timecard">
@@ -102,28 +98,23 @@
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false"  id="timeimg">
                         <div class="bottomright">⏱️</div>
                         <div id="Normal" class="difficulty" title="Dificultad">Media</div>
-                        <div class="container">
                         <h3 id="h4time"><b>Contrarreloj</b></h3>
                         <p id="timedesc" class="card_description">Consigue la mayor<br>cantidad de puntos<br> antes de que el tiempo acabe! </p>
                         </a>
-                        </div>
                     </div>
                     <div class="card" id="radiuscard">
                         <a onclick="lobby('radius')" class="cardlink">
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false" id="timeimg">
                         <div class="bottomright">📏</div>
                         <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
-                        <div class="container">
                         <h3 id="h4radius"><b>Radio</b></h3>
                         <p id="radiudesc" class="card_description">Consigue la mayor<br> cantidad de aciertos<br> en el radio determinado!</p>
                         </a>
-                        </div>
                     </div>
                 </div>
 
        <footer>
         <div id="sharecontainer">
-        
             <div id="share">
                 <p id="sharetext">Compartinos en redes!</p> 
                 <div class="share-buttons">
@@ -152,7 +143,7 @@
                 <a class="footerlink" href="./gtaV.html" class="gamelink">GTA 5 Version</a>
                 <br>
                 <br>
-                <a class="footerlink" href="./gtaSA.html" class="gamelink">GTA SA Version</a>
+                <a class="footerlink" href="./gtasa.html" class="gamelink">GTA SA Version</a>
             </div>
 
             <div id="Us">
