@@ -2,17 +2,85 @@
     <head>    
         <meta name="description" content="Game: Guessing, videogame for guessing, geography fun">
         <script>
-         const modalshownstr = localStorage.getItem('shown');
-         localStorage.clear()
-         function cerrar() {
-            document.getElementById('adblock_warning').style.display = "none";
+            function whiten(){
+            var body = document.getElementsByTagName('body')[0];
+            body.style.backgroundImage = 'url(./static/background_small.jpg)';
+            var tmenu = document.getElementById('Top_menu')
+            tmenu.style.backgroundColor = '#fefefe'
+            var cards = document.getElementsByClassName('card')
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].style.backgroundColor = 'whitesmoke' 
+            }
+            var ps = document.getElementsByTagName('p')
+            for (let i = 0; i < ps.length; i++) {
+                ps[i].style.color = 'black' 
+            }
+            var h3s = document.getElementsByTagName('h3')
+            for (let i = 0; i < h3s.length; i++) {
+                h3s[i].style.color = 'black' 
+            }
+            var headers = document.getElementsByClassName('headers')
+            for (let i = 0; i < headers.length; i++) {
+                headers[i].style.color = 'black' 
+            }
+            document.getElementsByTagName('footer')[0].style.backgroundColor = '#fefefe'
+            document.getElementById('share').style.backgroundColor = '#fefefe'
+            document.getElementById('whiten').style.display = 'block'
+            document.getElementById('darken').style.display = 'none'
+        }
+
+        function darken(){
+            var body = document.getElementsByTagName('body')[0];
+            body.style.backgroundImage = 'url(./static/night_background.jpg)';
+            var tmenu = document.getElementById('Top_menu')
+            tmenu.style.backgroundColor = '#0d0d0d'
+            var cards = document.getElementsByClassName('card')
+            for (let i = 0; i < cards.length; i++) {
+                cards[i].style.backgroundColor = 'rgb(22, 22, 22)' 
+            }
+            var ps = document.getElementsByTagName('p')
+            for (let i = 0; i < ps.length; i++) {
+                ps[i].style.color = 'white' 
+            }
+            var h3s = document.getElementsByTagName('h3')
+            for (let i = 0; i < h3s.length; i++) {
+                h3s[i].style.color = 'white' 
+            }
+            var headers = document.getElementsByClassName('headers')
+            for (let i = 0; i < headers.length; i++) {
+                headers[i].style.color = 'white' 
+            }
+            document.getElementsByTagName('footer')[0].style.backgroundColor = '#0d0d0d'
+            document.getElementById('share').style.backgroundColor = '#0d0d0d'
+            document.getElementById('darken').style.display = 'block'
+            document.getElementById('whiten').style.display = 'none'
+        }
+
+        if(localStorage.getItem('lightMode') === 'enabled'){
+            localStorage.setItem('lightMode', 'enabled')
+            darken()
+        }
+        else{
+            localStorage.setItem('lightMode', 'enabled')
+            whiten()
+        }
+
+        const modalshownstr = localStorage.getItem('shown');
+        localStorage.clear()
+
+        function cerrar() {
+        document.getElementById('adblock_warning').style.display = "none";    
         }   
-         </script>
+        </script>
+
         <title>VideoGuessr</title>
         <link rel="stylesheet" href="index.css">
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Gabarito&family=Mukta&family=Roboto">
+
     </head>
+
+
     <body>
         <div id="adblock_warning" class="modal">
             <div class="modal-content">
@@ -76,7 +144,7 @@
                         </div>
                     <div class="card" id="classiccard">
                         <a href="regions.html" class="cardlink">
-                        <img src="static/Continentes.png" class="largeimg"  id="cleanimg" alt="Classic">
+                        <img src="static/Continentes.png" class="largeimg" draggable="false"  id="cleanimg" alt="Classic">
                         <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
                         <h3 id="h4italy"><b>Regiones</b></h3>
                         <p id="classicdesc" class="card_description">Recorre y adivina las distintas ubicaciones <br> de  continentes o paises  <br> en este modo de juego</p>                 
@@ -84,7 +152,7 @@
                     </div>
                     <div class="card" id="classiccard">
                         <a onclick="lobby('nozoom')" class="cardlink">
-                        <img src="static/nozoom.png" class="largeimg"  id="cleanimg" alt="Classic">
+                        <img src="static/nozoom.png" class="largeimg" draggable="false"  id="cleanimg" alt="Classic">
                         <div id="Easy" class="difficulty" title="Dificultad">Mediana</div>
                         <h3 id="h4italy"><b>Sin Zoom</b></h3>
                         <p id="classicdesc" class="card_description">Reglas normales pero cuidado, <br> no podras hacer zoom  <br> en el mapa</p>                 
@@ -133,7 +201,6 @@
                     </button>
                  </div>
             </div>
-
        </div>
         <div id="footer-content">
             <div id="Juegos">
@@ -172,6 +239,10 @@
         <div id="Bug">
             <a id="bug-text" href="mailto:videoguessr@gmail.com?subject=Reportar%20Bug&body=[Explicacion bug]%0D%0A[Como replicar]" target="_blank">Reportar bug</a>
         </div> 
+        <div id="mode">
+            <a id="darken" onclick="whiten()">🌑</a>
+            <a id="whiten" onclick="darken()">🔆</a>
+        </div> 
     </body> 
 
     <script> 
@@ -187,6 +258,9 @@
     <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
     
     <script>
+
+
+
         
         async function detectAdBlock() {
         console.log('using')

@@ -26,6 +26,34 @@ body{
 }
 
 
+#darken{
+    position: fixed;
+    bottom: 2%;
+    left: 1%;
+    width: fit-content;
+    background-color: #030303;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: large;
+    cursor: pointer;
+}
+
+
+#whiten{
+    position: fixed;
+    bottom: 2%;
+    left: 1%;
+    width: fit-content;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: large;
+    cursor: pointer;
+}
+
+
+
+
 .logoimg{
     margin-top: 10;
     width: 160;

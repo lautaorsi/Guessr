@@ -17,6 +17,9 @@ body{
     background-position: center;
 }
 
+
+
+
 .modal {
     display: none; /* Hidden by default */
     position: fixed; /* Stay in place */
@@ -85,7 +88,7 @@ body{
 }
 
 
-#top_menu{
+#Top_menu{
     position: absolute;
     top: 0;
     background-color: #fefefe;
@@ -513,7 +516,34 @@ footer{
     bottom: 2%;
     right: 1%;
     width: fit-content;
+    cursor: pointer;
 }
+
+#darken{
+    position: fixed;
+    bottom: 2%;
+    left: 1%;
+    width: fit-content;
+    background-color: #030303;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: large;
+    cursor: pointer;
+}
+
+
+#whiten{
+    position: fixed;
+    bottom: 2%;
+    left: 1%;
+    width: fit-content;
+    background-color: white;
+    border-radius: 20px;
+    padding: 10px;
+    font-size: large;
+    cursor: pointer;
+}
+
 
 #bug-text{
     padding: 10px;

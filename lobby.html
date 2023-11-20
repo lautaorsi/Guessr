@@ -4,6 +4,64 @@
         <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Gabarito&family=Merriweather Sans">
         <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
+
+        <script>
+            function whiten(){
+            var body = document.getElementsByTagName('body')[0];
+            body.style.backgroundImage = 'url(./static/background_small.jpg)';
+            var ps = document.getElementsByTagName('p')
+            for (let i = 0; i < ps.length; i++) {
+                ps[i].style.color = 'black' 
+            }
+            var h3s = document.getElementsByTagName('h3')
+            for (let i = 0; i < h3s.length; i++) {
+                h3s[i].style.color = 'black' 
+            }
+            var headers = document.getElementsByClassName('headers')
+            for (let i = 0; i < headers.length; i++) {
+                headers[i].style.color = 'black' 
+            }
+            document.getElementById('whiten').style.display = 'block'
+            document.getElementById('darken').style.display = 'none'
+        }
+
+
+
+
+
+        function darken(){
+            var body = document.getElementsByTagName('body')[0];
+            body.style.backgroundImage = 'url(./static/night_background.jpg)';
+            var ps = document.getElementsByTagName('p')
+            for (let i = 0; i < ps.length; i++) {
+                ps[i].style.color = 'white' 
+            }
+            var h3s = document.getElementsByTagName('h3')
+            for (let i = 0; i < h3s.length; i++) {
+                h3s[i].style.color = 'white' 
+            }
+            var headers = document.getElementsByClassName('headers')
+            for (let i = 0; i < headers.length; i++) {
+                headers[i].style.color = 'white' 
+            }
+            document.getElementById('darken').style.display = 'block'
+            document.getElementById('whiten').style.display = 'none'
+        }
+
+
+
+        if(localStorage.getItem('lightMode') === 'enabled'){
+            localStorage.setItem('lightMode', 'enabled')
+            darken()
+        }
+        else{
+            localStorage.setItem('lightMode', 'enabled')
+            whiten()
+        }
+
+        </script>
+
+
     </head>
     <body>
             <img src="./static/logo.png" alt="logo" class="logoimg" draggable="false">
@@ -21,7 +79,7 @@
                     </div>
                 </div>
                 <div id="selectors">
-                        <select id="radiusselect">
+                        <select id="radiusselect" class="selects">
                             <option value="none">Radio</option>
                             <option value=5 >5km</option>
                             <option value=20 >20km</option>
@@ -30,7 +88,7 @@
                             <option value=200 >200km</option>
                             <option value=1000 >1000km</option>
                         </select>
-                        <select id="colorselect">
+                        <select id="colorselect" class="selects">
                             <option value="none">Marcador</option>
                             <option value='0' class="red">Rojo</option>
                             <option value="5" class="blue">Azul </option>
@@ -39,14 +97,14 @@
                             <option value="3" class="orange">Naranja</option>
                             <option value="4" class="black">Negro</option>
                         </select>
-                        <select id="roundselect">
+                        <select id="roundselect" class="selects">
                             <option value="none">Rondas</option>
                             <option value=5 >5 rondas</option>
                             <option value=10 >10 rondas</option>
                             <option value=15 >15 rondas</option>
                             <option value=20 >20 rondas</option>
                         </select>
-                        <select id="timeselect">
+                        <select id="timeselect" class="selects">
                             <option value="none">Tiempo</option>
                             <option value=30 id="time1">30s</option>
                             <option value=50 id="time2">50s</option>
@@ -69,11 +127,58 @@
                 <h3 id="rounds_warning">-Elige la cantidad de rondas!</h3>
                 <h3 id="radius_warning">-Elige el radio!</h3>
             </div>
-            
+            <div id="mode">
+                <a id="darken" onclick="whiten()" display="none">🌑</a>
+                <a id="whiten" onclick="darken()">🔆</a>
+            </div> 
     </body>
 </html>
 
 <script>
+        function whiten(){
+            var body = document.getElementsByTagName('body')[0];
+            body.style.backgroundImage = 'url(./static/background_small.jpg)';
+            var ps = document.getElementsByTagName('p')
+            for (let i = 0; i < ps.length; i++) {
+                ps[i].style.color = 'black' 
+            }
+            var h3s = document.getElementsByTagName('h3')
+            for (let i = 0; i < h3s.length; i++) {
+                h3s[i].style.color = 'black' 
+            }
+            var headers = document.getElementsByClassName('headers')
+            for (let i = 0; i < headers.length; i++) {
+                headers[i].style.color = 'black' 
+            }
+            document.getElementById('foot').style.backgroundColor = 'white'
+            document.getElementById('whiten').style.display = 'block'
+            document.getElementById('darken').style.display = 'none'
+        }
+
+
+
+
+
+        function darken(){
+            var body = document.getElementsByTagName('body')[0];
+            body.style.backgroundImage = 'url(./static/night_background.jpg)';
+            var ps = document.getElementsByTagName('p')
+            for (let i = 0; i < ps.length; i++) {
+                ps[i].style.color = 'white' 
+            }
+            var h3s = document.getElementsByTagName('h3')
+            for (let i = 0; i < h3s.length; i++) {
+                h3s[i].style.color = 'white' 
+            }
+            document.getElementById('foot').style.backgroundColor = '#0d0d0d'
+            document.getElementById('darken').style.display = 'block'
+            document.getElementById('whiten').style.display = 'none'
+        }
+
+    
+
+
+
     const descriptions = {
         'ITA': 'Reglas clasicas, ubicaciones dentro de Italia.',
         'PAUSE': 'Reglas clasicas, con boton de play y pausa habilitados. <br> Pero cuidado, el tiempo seguira corriendo!',
