@@ -21,9 +21,13 @@ body{
     width: 650px;
     height: 750px;
     border-radius: 8px;
-    background-image: url('./static/lobby.jpg');
+    background: linear-gradient(180deg, rgba(0,107,254,1) 0%, rgba(60,127,250,1) 53%, rgba(65,190,255,1) 84%, rgba(154,233,255,1) 100%);
     background-size: cover;
 }
+
+
+/* linear-gradient(180deg, #04003d 0%, #0030da 53%, #1570fe 84%, #00aad9 100%) */
+
 
 
 #darken{
@@ -67,15 +71,12 @@ body{
     font-family: 'merriweather sans', serif;
     font-size: x-large;
     text-align: center;
-    text-decoration: wavy;
-
 }
 
 
 
 #h2{
     position: relative;
-    top: 123;
     width: fit-content;
     right: 0%;
     left: 0%;
