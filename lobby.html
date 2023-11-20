@@ -7,7 +7,7 @@
     </head>
     <body>
             <img src="./static/logo.png" alt="logo" class="logoimg" draggable="false">
-            <a href="index.html">
+            <a onclick="got()">
                 <button id="return" >
                     <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
                 </button>
@@ -83,7 +83,9 @@
         'contrarreloj': 'Desafio: <br> conseguir la mayor cantidad de aciertos <br>antes de que acabe el tiempo!',
         'radius': 'Consigue la mayor cantidad de aciertos<br> en el radio determinado!',
         'INVERTIDO': 'Cuidado! El video se reproducira de cabeza, deberas afilar todos tus sentidos para leer y ubicarte',
-        'nozoom': 'Reglas clasicas, pero cuidado, no podras hacer zoom para adivinar con precision, deberas afilar tu mano!'
+        'nozoom': 'Reglas clasicas, pero cuidado, no podras hacer zoom para adivinar con precision, deberas afilar tu mano!',
+        'US': 'Recorre EEUU,   sus grandes ciudades y amplios valles te dejaran asombrado!',
+        'EUROPA': 'Recorre los paises de Europa.Este modo te llevara a recorrer sus ciudades, playas y monumentos iconicos!'
     }
 
     const titles = {
@@ -95,7 +97,9 @@
         'radius': 'RADIO📏',
         'clear_map' : 'MAPA SATELITAL🛰️',
         'INVERTIDO': 'INVERTIDO',
-        'nozoom': 'Sin Zoom'
+        'nozoom': 'Sin Zoom',
+        'US': 'USA 🇺🇸',
+        'EUROPA': 'EUROPA 🇪🇺'
     }
 
     const images = {
@@ -107,7 +111,9 @@
         '1hp' : './static/CLASICO.jpg',
         'clear_map' : './static/earthmap.jpg',
         'INVERTIDO': './static/CLASICO.jpg',
-        'nozoom': './static/CLASICO.jpg'
+        'nozoom': './static/CLASICO.jpg',
+        'US': './static/USA.png',
+        'EUROPA': './static/EUROPA.jpg'
     }
 
     var descript = document.getElementById('desc')
@@ -218,6 +224,15 @@
         radius_warning.style.display = 'none'
         warning_elem.style.animation = ''
 
+    }
+
+    function got(){
+        if(gamename.hello == 'ITA' || gamename.hello == 'US' || gamename.hello == 'EUROPA'){
+            window.location.href = 'regions.html'
+        }
+        else{
+            window.location.href = 'index.html'
+        }
     }
 
 </script>
