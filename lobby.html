@@ -194,7 +194,8 @@
         'INVERTIDO': 'Cuidado! El video se reproducira de cabeza, deberas afilar todos tus sentidos para leer y ubicarte',
         'nozoom': 'Reglas clasicas, pero cuidado, no podras hacer zoom para adivinar con precision, deberas afilar tu mano!',
         'US': 'Recorre EEUU,   sus grandes ciudades y amplios valles te dejaran asombrado!',
-        'EUROPA': 'Recorre los paises de Europa.Este modo te llevara a recorrer sus ciudades, playas y monumentos iconicos!'
+        'EUROPA': 'Recorre los paises de Europa.Este modo te llevara a recorrer sus ciudades, playas y monumentos iconicos!',
+        'STATIC': 'Cansado de videos? Prueba adivinar las ubicaciones en las que fueron tomadas estas fotografias!'
     }
 
     const titles = {
@@ -208,7 +209,8 @@
         'INVERTIDO': 'INVERTIDO',
         'nozoom': 'Sin Zoom',
         'US': 'USA 🇺🇸',
-        'EUROPA': 'EUROPA 🇪🇺'
+        'EUROPA': 'EUROPA 🇪🇺',
+        'STATIC': 'ESTATICO'
     }
 
     const images = {
@@ -222,7 +224,8 @@
         'INVERTIDO': './static/CLASICO.jpg',
         'nozoom': './static/CLASICO.jpg',
         'US': './static/USA.png',
-        'EUROPA': './static/EUROPA.jpg'
+        'EUROPA': './static/EUROPA.jpg',
+        'STATIC': './static/CLASICO.jpg'
     }
 
     var descript = document.getElementById('desc')
@@ -314,7 +317,12 @@
             localStorage.setItem('rounds', rounds)
             localStorage.setItem('color', color)
             localStorage.setItem('time', time)
-            window.location.href = 'game.html'
+            if(gamename.hello == 'STATIC'){
+                window.location.href = 'staticgame.html'
+            }
+            else{
+            window.location.href = 'game.html' 
+            }
             
         }
         else{
