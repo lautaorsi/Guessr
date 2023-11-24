@@ -1,6 +1,4 @@
 html{
-    overflow: auto;
-    display: flex;
     flex-direction: column;
 }
 
@@ -181,11 +179,13 @@ body{
 }
 
 #classiccards{
+    scroll-behavior: smooth;
+    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(4, 0.1fr);
     grid-auto-rows: auto;
     grid-gap: 1rem;
-    width: fit-content;
+    width: 100%;
     position: relative;
     top: 100px;
     height: 500px;
@@ -224,15 +224,18 @@ body{
 }
 
 #arcadecards{
-    overflow-x: hidden;
+    scroll-behavior: smooth;
+    overflow: hidden;
     display: grid;
     grid-template-columns: repeat(4, 0.1fr);
     grid-auto-rows: auto;
     grid-gap: 1rem;
-    width: fit-content;
+    width: 100%;
     position: relative;
     top: 130px;
 }
+
+
 
 .Arbutt{
     top: 808px;
@@ -258,15 +261,16 @@ body{
 }
 
 #challengecards{
+    scroll-behavior: smooth;
     display: grid;
+    overflow: hidden;
     grid-template-columns: repeat(3, 0.1fr);
     grid-auto-rows: auto;
     grid-gap: 1rem;
-    width: fit-content;
+    width: 100%;
     position: relative;
     margin-bottom: 350px;
     top: 160px;
-    height: 500px;
 }
 
 .Chbutt{
