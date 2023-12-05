@@ -247,19 +247,11 @@ var video_list = [["kXAHDqHfXAQ", 39.467269, -0.374927, ,'ES', 'CarpoWalks','htt
 ['ZMHTdqngZfA',55.75301418846161, 37.622853682566515,454,'RU','WindowToMoscow','https://www.youtube.com/@WindowToMoscow'],
 ['IOm_1-Qx744',55.73881335254801, 37.61029574547425,933,'RU','WindowToMoscow','https://www.youtube.com/@WindowToMoscow'],
 ['uRcpYz9lxZw',55.7617247,37.6202726,753,'RU','WindowToMoscow','https://www.youtube.com/@WindowToMoscow'],
-['hmT3m4GBhJU',40.784622,-73.9591253,30, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
-['hmT3m4GBhJU',40.774314, -73.970380,680, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
-['hmT3m4GBhJU',40.77265742288223, -73.97149820965703,984, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
-['rDI1XWuz5tM',39.3092147,-119.6500964,237, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
-['am6-ntPu-_0',40.7047082562976, -73.99511540940394,66, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
-['_RTB5Aeq3BU',34.10167341716042, -118.34096089715887,221, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew'],
-['XxsMwnHeZes',48.14564986210154, 11.565785527245966,1560,'DE','POPtravel','https://www.youtube.com/@poptravelorg' ],
-['sCw_gHM7q-Q',53.553151077864676, 10.005848720455502,18,'DE','POPtravel','https://www.youtube.com/@poptravelorg' ],
-['7M36wpx_OfU',52.376282008479876, 9.740673894271058,7,'DE','POPtravel','https://www.youtube.com/@poptravelorg' ],
-['gA1aLQCCZQE',52.51392118526781, 13.378696152051283,3240,'DE','POPtravel','https://www.youtube.com/@poptravelorg' ],
-['gA1aLQCCZQE',52.51631158134281, 13.378436903451522,3641,'DE','POPtravel','https://www.youtube.com/@poptravelorg' ],
-['V5q8f_eluOg',54.59482020760334, -5.934534194681385,43,'IRE','POPtravel','https://www.youtube.com/@poptravelorg' ],
+[],
 ]
+
+
+
 
 
 
@@ -393,17 +385,11 @@ var europe_list = [["kXAHDqHfXAQ", 39.467269, -0.374927, ,'ES', 'CarpoWalks','ht
 ]
 
 const list = {
-    'US': usa_list,
-    'ITA': ita_list,
     'PAUSE': video_list,
     'CLASICO': video_list,
-    'contrarreloj': video_list,
-    'radius': video_list,
-    '1hp': video_list,
     'clear_map': video_list,
     'INVERTIDO': video_list,
     'nozoom': video_list,
-    'EUROPA': europe_list,
 }
 
 
@@ -730,21 +716,6 @@ function next(e) {
 
     //update video
     player.loadVideoById(newvid[0],newvid[3]);
-    var state = player.getPlayerState()
-
-    //if video isn't working, getPlayerState will return -1 value
-
-    if(state == -1){
-        console.log('unavailable video')
-        //choose new video
-        var newvid = randomlyChooseVideo()
-
-        //update video
-        player.loadVideoById(newvid[0],newvid[3]);
-    }
-    
-    
-
     var a = document.getElementById('credits');
 
     //update credits
