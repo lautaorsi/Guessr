@@ -776,7 +776,8 @@ function next(e) {
 function end(){
     score = parseInt(score)
     localStorage.setItem('points', score)
-    window.location.href = 'resume.html'
+    document.getElementById("continue").onclick = window.location.href = 'resume.html';
+
     
 }
 
@@ -1109,3 +1110,10 @@ window.onclick = function(event) {
       modal.close()
     }
   }
+
+
+if (window.performance.getEntriesByType) {
+    if (window.performance.getEntriesByType("navigation")[0].type === "reload") {
+        window.location.href = './index.html';
+    }
+}
