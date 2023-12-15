@@ -7,6 +7,8 @@ body{
 }
 
 
+
+
 #darken{
     position: fixed;
     bottom: 2%;
@@ -17,6 +19,28 @@ body{
     padding: 10px;
     font-size: large;
     cursor: pointer;
+}
+
+
+#howto{
+    position: absolute;
+    top: 135px;
+    left: 0%;
+}
+
+
+#gif{
+    margin: 0%;
+    top: 50px;
+    height: 80vh;
+    width: 60vw;
+    right: 5%;
+    position: absolute;
+}
+
+#container{
+    position: relative;
+    height: 100%;
 }
 
 
@@ -33,16 +57,17 @@ body{
 }
 
 .column{
+    top: 0%;
+    bottom: 0%;
     display: inline-block;
     outline: 1px dashed rgb(0, 0, 0);
     vertical-align: top;
-    width: 25%;
+    width: 30vw;
     margin: 3.5%;
     height:fit-content;
     line-height: 100%;
     border-radius: 19px;
     background-color: whitesmoke;
-    
 }
 
 #about_us{
@@ -51,11 +76,12 @@ body{
 
 h1{
     text-align: center;
+    font-size: 2vw;
 }
 
 p{
-    margin-top: 60px;
-    font-size: 1.3vw;
+    margin-top: 0px;
+    font-size: 20px;
     font-family: 'Mukta', serif;
     text-align: center;
     padding: 25;
@@ -64,10 +90,7 @@ p{
 
 
 
-#gmail{
-    font-size: 1.3vw;
-    margin: 0;
-}
+
 
 
 a{
@@ -127,58 +150,50 @@ a{
     box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
 }
 
-.footerlink{
-    text-decoration: none;
-    color: #706f6f;
-}
 
-.footerlink:hover{
-    color: #302f2f;
-}
+
 
 footer{
+    bottom: 0%;
     position: absolute;
     width: 100%;
-    height: fit-content;
-    padding-bottom: 20px;
+    height: 19%;
+    padding-bottom: 40px;
     background-color: #fefefe;
 }
-
-
-
 #footer-content{
     display:flex;
     justify-content:space-between;
     width: 100%;
     height: 100%;
 }
-
-
-
 h4{
     font-size: large;
     color: #888;
     font-family: 'Roboto';
 }
-
-
 #juegos{
-    margin-left: 5px;
+    margin-left: 20px;
     font-family: 'Roboto';
     position: relative;
     text-align: center;
 }
-
 #creditos{
     margin-right: 20px;
     font-family: 'Roboto';
     position: relative;
     text-align: center;
 }
-
 #Us{
     font-family: 'Roboto';
     position: relative;
     text-align: center;
+}
+.footerlink{
+    text-decoration: none;
+    color: #706f6f;
+}
+.footerlink:hover{
+    color: #302f2f;
 }
 
