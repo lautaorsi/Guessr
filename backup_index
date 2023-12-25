@@ -72,7 +72,7 @@
         </script>
 
         <title>VideoGuessr</title>
-        <link rel="stylesheet" href="index1.css">
+        <link rel="stylesheet" href="index.css">
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Gabarito&family=Mukta&family=Roboto">
 
@@ -194,27 +194,27 @@
                         </a>
                     </div>
                 </div>
-                <div id="sharecontainer">
-                    <div id="share">
-                        <p id="sharetext">Compartinos en redes!</p> 
-                        <div class="share-buttons">
-                            <button class="share-button facebook">
-                               <i class="fab fa-facebook-f"></i>
-                            </button>
-                            <button class="share-button twitter">
-                               <i class="fab fa-x"></i>
-                            </button>
-                            <button class="share-button reddit">
-                               <i class="fab fa-reddit-alien"></i>
-                            </button>
-                            <button class="share-button whatsapp">
-                               <i class="fab fa-whatsapp"></i>
-                            </button>
-                         </div>
-                    </div>
-               </div>
-       <footer>
 
+       <footer>
+        <div id="sharecontainer">
+            <div id="share">
+                <p id="sharetext">Compartinos en redes!</p> 
+                <div class="share-buttons">
+                    <button class="share-button facebook">
+                       <i class="fab fa-facebook-f"></i>
+                    </button>
+                    <button class="share-button twitter">
+                       <i class="fab fa-x"></i>
+                    </button>
+                    <button class="share-button reddit">
+                       <i class="fab fa-reddit-alien"></i>
+                    </button>
+                    <button class="share-button whatsapp">
+                       <i class="fab fa-whatsapp"></i>
+                    </button>
+                 </div>
+            </div>
+       </div>
         <div id="footer-content">
             <div id="Juegos">
                 <h4>Juegos</h4>

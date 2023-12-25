@@ -1102,6 +1102,22 @@ document.addEventListener('keydown', (event) => {
     if(name == 'MediaPlayPause'){
         player.playVideo()
     }
+    if (name === 'm') {
+        document.getElementById('modal').showModal()
+        invsze()
+    }
+    if (name === 'ArrowLeft') {
+        var currentPlaybackRate = player.getPlaybackRate(); 
+        player.setPlaybackRate(currentPlaybackRate - 0.25);
+        document.getElementById('speedrange').value = currentPlaybackRate - 0.25;
+        document.getElementById('reduceSpeedButton').innerHTML = `x${(document.getElementById('speedrange')).value}`;
+    }
+    if (name === 'ArrowRight'){
+        var currentPlaybackRate = player.getPlaybackRate();
+        player.setPlaybackRate(currentPlaybackRate + 0.25);
+        document.getElementById('speedrange').value = currentPlaybackRate + 0.25;
+        document.getElementById('reduceSpeedButton').innerHTML = `x${(document.getElementById('speedrange')).value}`;
+    }
 })
 
 

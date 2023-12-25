@@ -100,9 +100,7 @@
                 <a href="gtasa.html" draggable="false" id="howto" class="headers">GTA SA</a>
             </div>
         </div>
-                <div id="classic_gamemodes"> <h2>Modos Clasicos</h2></div>
-                <button id="slideRightCl" onclick="scrll('classiccards','right')" class="slidebutt Clbutt  rightbutt">➡</button>
-                <button id="slideLeftCl" onclick="scrll('classiccards','left')" class="slidebutt Clbutt leftbutt">⬅</button>
+                <div id="classic_gamemodes"> <h2>Clasicos</h2></div>
                 <div id="classiccards">
                         <div class="card" id="firstcard">
                             <a onclick='lobby("CLASICO")' class="cardlink">
@@ -130,6 +128,15 @@
                             <p id="pausedesc" class="card_description">El video esta de cabeza!<br> Reglas de juego y controles normales.<br> Leer carteles y calles es todo un desafio!</p>                 
                             </a>
                         </div>
+                        <div class="card">
+                            <a href="multiplayer.html" class="cardlink">
+                            <img src="./static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                            <div id="Normal" class="difficulty" title="Dificultad">Media</div>
+                            <h3><b>Multijugador</b></h3>
+                            <div class="bottomright">👩‍💻👨‍💻🧑‍💻👩‍💻🧑‍💻</div>
+                            <p id="pausedesc" class="card_description"> Juega con amigos! <br> Competiras para obtener la mayor cantidad de puntos, demuestrales quien manda!</p>                 
+                            </a>
+                        </div>
                         <!-- <div class="card">
                             <a onclick='lobby("STATIC")' class="cardlink">
                             <img src="./static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false">
@@ -140,9 +147,7 @@
                             </a>
                         </div> -->
                 </div>
-                <div id="Arcade_gamemodes"> <h2>Modos Arcade</h2></div> 
-                <button id="slideRightAr" onclick="scrll('arcadecards','right')" class="slidebutt Arbutt rightbutt">➡</button>
-                <button id="slideLeftAr" onclick="scrll('arcadecards','left')" class="slidebutt Arbutt leftbutt">⬅</button>
+                <div id="Arcade_gamemodes"> <h2>Arcade</h2></div> 
                 <div id="arcadecards">
                         <div class="card" id="cleancard">
                             <a onclick='lobby("clear_map")' class="cardlink">
@@ -171,10 +176,8 @@
                     </div>
                 </div>
                 <div id="challenge_gamemodes"> <h2>Desafios</h2></div>
-                <button id="slideRightCh" onclick="scrll('challengecards','right')" class="slidebutt Chbutt rightbutt">➡</button>
-                <button id="slideLeftCh" onclick="scrll('challengecards','left')" class="slidebutt Chbutt leftbutt">⬅</button>
                 <div id="challengecards">
-                    <div class="card" id="firstcard">
+                    <div class="card firstchallenge" id="firstcard" >
                         <a onclick='lobby("contrarreloj")' class="cardlink">
                         <img src="./static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false"  id="timeimg">
                         <div class="bottomright">⏱️</div>
@@ -194,27 +197,27 @@
                         </a>
                     </div>
                 </div>
-
+                <div id="sharecontainer">
+                    <div id="share">
+                        <p id="sharetext">Compartinos en redes!</p> 
+                        <div class="share-buttons">
+                            <button class="share-button facebook">
+                               <i class="fab fa-facebook-f"></i>
+                            </button>
+                            <button class="share-button twitter">
+                               <i class="fab fa-x"></i>
+                            </button>
+                            <button class="share-button reddit">
+                               <i class="fab fa-reddit-alien"></i>
+                            </button>
+                            <button class="share-button whatsapp">
+                               <i class="fab fa-whatsapp"></i>
+                            </button>
+                         </div>
+                    </div>
+               </div>
        <footer>
-        <div id="sharecontainer">
-            <div id="share">
-                <p id="sharetext">Compartinos en redes!</p> 
-                <div class="share-buttons">
-                    <button class="share-button facebook">
-                       <i class="fab fa-facebook-f"></i>
-                    </button>
-                    <button class="share-button twitter">
-                       <i class="fab fa-x"></i>
-                    </button>
-                    <button class="share-button reddit">
-                       <i class="fab fa-reddit-alien"></i>
-                    </button>
-                    <button class="share-button whatsapp">
-                       <i class="fab fa-whatsapp"></i>
-                    </button>
-                 </div>
-            </div>
-       </div>
+
         <div id="footer-content">
             <div id="Juegos">
                 <h4>Juegos</h4>
