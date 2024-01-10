@@ -532,7 +532,8 @@ function choose_color(i){
 
 function getRandomIndex(max) {
     /* The function will return a random number between 0 and max - 1 */
-    return Math.floor(Math.random() * Math.floor(max));
+    // return Math.floor(Math.random() * Math.floor(max));
+    return rando(max)
 }
 
 
@@ -725,7 +726,12 @@ function next(e) {
     //close map modal
     document.getElementById('modal').close()
     
+    //remove current video from list
+    active_playlist = active_playlist.splice(vid_index,1);
+
+
     //choose new video
+    
     var newvid = randomlyChooseVideo()
 
     //update video
@@ -750,15 +756,7 @@ function next(e) {
     //update credits
     a.href = active_playlist[vid_index][6]
     a.innerHTML = `${active_playlist[vid_index][5]}`
-
-    //remove video from vide list
-    if(gamemode == "ITA"){
-        ita_list = ita_list.slice(0, vid_index).concat(ita_list.slice(vid_index + 1));
-    }
-    else{
-        active_playlist = active_playlist.slice(0, vid_index).concat(active_playlist.slice(vid_index + 1));
-    }
-
+    
     
     if(gamemode !='contrarreloj'){
         //readjust round timer

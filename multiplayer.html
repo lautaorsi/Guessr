@@ -75,8 +75,13 @@
                 </button>
             </a>
             <div id="main_container">
-                <h2 id="gamemode">Hostear</h2>
+                <h2 id="gamemode">Crear partida</h2>
                 <div id="selectors">
+                        <select id="modeselect" class="selects">
+                            <option value="none">Modo</option>
+                            <option value=30 id="time1">Normal</option>
+                            <option value=50 id="time2">Invertido</option>
+                        </select>
                         <select id="roundselect" class="selects">
                             <option value="none">Rondas</option>
                             <option value=5 >5 rondas</option>
@@ -93,13 +98,14 @@
                             <option value=210 id="time5">210s</option>
                         </select>
                 </div>
+                <input type="text" name="Host_name" id="HostName" size="25" placeholder="Nombre de Usuario">
+                <button id="create_session">Crear sala</button>
             </div>
             <div id="join_container">
-                <h2 id="gamemode">Unirse</h2>
-            </div>
-            <div id="controlcont">
-                <p id="key" class="s">M</p><p class="s" >Abrir mapa</p>
-                <p id="key" class="s">⬅</p><p id="key" class="s">➡</p><p class="s" id="keyxplain">Subir/Bajar velocidad de reproduccion</p>
+                <h2 id="join_title">Unirse</h2>
+                <input type="text" id="lobby_id" placeholder="ID Sala">
+                <input type="text" id="player_username" placeholder="Nombre de Usuario">
+                <button id="join_room">Unirse</button>
             </div>
             <div id="mode">
                 <a id="darken" onclick="whiten()" display="none">🌑</a>
@@ -108,15 +114,15 @@
     </body>
 </html>
 
-<script>
+
+<script>    
+    
         if(localStorage.getItem('lightMode') === 'disabled'){
             darken()
         }
         else{
             whiten()
         }
-
-
 
         function whiten(){
             var body = document.getElementsByTagName('body')[0];
@@ -137,16 +143,11 @@
             for (let i = 0; i < keys.length; i++) {
                 keys[i].style.color = 'black' 
             }
-            document.getElementById('foot').style.backgroundColor = 'white'
             document.getElementById('whiten').style.display = 'block'
             document.getElementById('darken').style.display = 'none'
             document.getElementById('main_container').style.background = 'linear-gradient(180deg, rgba(0,107,254,1) 0%, rgba(60,127,250,1) 53%, rgba(65,190,255,1) 84%, rgba(154,233,255,1) 100%)'
             document.getElementById('controlcont').style.backgroundColor = 'white'
         }
-
-
-
-
 
         function darken(){
             var body = document.getElementsByTagName('body')[0];
@@ -164,7 +165,6 @@
                 keys[i].style.color = 'white' 
             }
             document.getElementById('main_container').style.background = 'linear-gradient(180deg, #04003d 0%, #0030da 70%, #1570fe 90%, #00aad9 100%)'
-            document.getElementById('foot').style.backgroundColor = '#0d0d0d'
             document.getElementById('darken').style.display = 'block'
             document.getElementById('whiten').style.display = 'none'
             document.getElementById('controlcont').style.backgroundColor = '#0d0d0d'
@@ -199,57 +199,26 @@
 
     function myFunction(){
         var time = document.getElementById('timeselect').value
-        if(gamename.hello == 'contrarreloj'){
-            var rounds = 9999
-        }
-        else{
-            var rounds = document.getElementById('roundselect').value
-        }
-        var color = document.getElementById('colorselect').value
+        var rounds = document.getElementById('roundselect').value
         var attention = document.getElementById('attention')
-
-
-        if(gamename.hello == 'radius' &&  document.getElementById('radiusselect').value == 'none'){
-            document.getElementById('radius_warning').style.display = 'block'
-
-        }
-        else{
-            localStorage.setItem('radius', document.getElementById('radiusselect').value)
-        }
         if (time == 'none'){
             console.log('time not selected')
             var time_warning = document.getElementById('time_warning')
             warning_elem.style.display = 'block'
             time_warning.style.display = 'block'
         }
-        if (color == 'none'){
-            console.log('color not selected')
-            var color_warning = document.getElementById('color_warning')
-            warning_elem.style.display = 'block'
-            color_warning.style.display = 'block'
-
-            
-        }
         if (rounds == 'none'){
             console.log('rounds not selected')
             var rounds_warning = document.getElementById('rounds_warning')
             warning_elem.style.display = 'block'
             rounds_warning.style.display = 'block'
-
         }
-        if(time != 'none' && color != 'none' && rounds != 'none'){
+        if(time != 'none' && rounds != 'none'){
             var checkbox = document.getElementById('checkmute').checked
             localStorage.setItem('mute', checkbox)
             localStorage.setItem('rounds', rounds)
-            localStorage.setItem('color', color)
             localStorage.setItem('time', time)
-            if(gamename.hello == 'STATIC'){
-                window.location.href = 'staticgame.html'
-            }
-            else{
-            window.location.href = 'game.html' 
-            }
-            
+            window.location.href = 'multiplayer_lobby.html' 
         }
         else{
             warning_elem.style.animation = 'horizontal-shaking 1.5s 0s'
@@ -266,16 +235,12 @@
         rounds_warning.style.display = 'none'
         radius_warning.style.display = 'none'
         warning_elem.style.animation = ''
-
     }
 
     function got(){
-        if(gamename.hello == 'ITA' || gamename.hello == 'US' || gamename.hello == 'EUROPA'){
-            window.location.href = 'regions.html'
-        }
-        else{
-            window.location.href = 'index.html'
-        }
+        window.location.href = 'index.html'
     }
+
+
 
 </script>
