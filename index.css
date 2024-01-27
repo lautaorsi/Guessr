@@ -1,5 +1,6 @@
 html{
     flex-direction: column;
+    scroll-behavior: smooth;
 }
 
 body{

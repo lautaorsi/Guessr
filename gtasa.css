@@ -63,10 +63,10 @@ body{
 
 #goto_gta{
     border-style: none;
-    margin-left: 400px;
     font-size: large;
     font-family: 'Gabarito';
-    position: relative;
+    position: absolute;
+    right: 20%;
     margin-top: 20px;
     text-align: center;
     border-radius: 5px;
@@ -79,8 +79,9 @@ body{
 }
 
 #goto_classic{
+    position: inherit;
     border-style: none;
-    margin-left: 500px;
+    left: 20%;
     font-family: 'Gabarito';
     font-size: large;
     margin-top: 20px;

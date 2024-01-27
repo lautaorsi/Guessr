@@ -1,5 +1,6 @@
 body{
-    background-image: url('./static/background_small.jpg');
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg,rgb(45, 43, 164) 0% , rgba(16,16,36,1) 50%,rgb(5, 5, 5) 100%);
     background-repeat: no-repeat;
     background-size: cover;
     margin: 0;
