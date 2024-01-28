@@ -313,69 +313,6 @@
             }
         }
 
-        function whiten(){
-            localStorage.setItem('lightMode','enabled')
-            var body = document.getElementsByTagName('body')[0];
-            body.style.backgroundImage = 'url(./static/background_small.jpg)';
-            var tmenu = document.getElementById('Top_menu')
-            tmenu.style.backgroundColor = '#fefefe'
-            var cards = document.getElementsByClassName('card')
-            for (let i = 0; i < cards.length; i++) {
-                cards[i].style.backgroundColor = 'whitesmoke' 
-            }
-            var ps = document.getElementsByTagName('p')
-            for (let i = 0; i < ps.length; i++) {
-                ps[i].style.color = 'black' 
-            }
-            var h3s = document.getElementsByTagName('h3')
-            for (let i = 0; i < h3s.length; i++) {
-                h3s[i].style.color = 'black' 
-            }
-            var headers = document.getElementsByClassName('headers')
-            for (let i = 0; i < headers.length; i++) {
-                headers[i].style.color = 'black' 
-            }
-            document.getElementsByTagName('footer')[0].style.backgroundColor = '#fefefe'
-            document.getElementById('share').style.backgroundColor = '#fefefe'
-            document.getElementById('whiten').style.display = 'block'
-            document.getElementById('darken').style.display = 'none'
-        }
-
-        function darken(){
-            localStorage.setItem('lightMode','disabled')
-            var body = document.getElementsByTagName('body')[0];
-            body.style.backgroundImage = 'url(./static/night_background.jpg)';
-            var tmenu = document.getElementById('Top_menu')
-            tmenu.style.backgroundColor = '#0d0d0d'
-            var cards = document.getElementsByClassName('card')
-            for (let i = 0; i < cards.length; i++) {
-                cards[i].style.backgroundColor = 'rgb(22, 22, 22)' 
-            }
-            var ps = document.getElementsByTagName('p')
-            for (let i = 0; i < ps.length; i++) {
-                ps[i].style.color = 'white' 
-            }
-            var h3s = document.getElementsByTagName('h3')
-            for (let i = 0; i < h3s.length; i++) {
-                h3s[i].style.color = 'white' 
-            }
-            var headers = document.getElementsByClassName('headers')
-            for (let i = 0; i < headers.length; i++) {
-                headers[i].style.color = 'white' 
-            }
-            document.getElementsByTagName('footer')[0].style.backgroundColor = '#0d0d0d'
-            document.getElementById('share').style.backgroundColor = '#0d0d0d'
-            document.getElementById('darken').style.display = 'block'
-            document.getElementById('whiten').style.display = 'none'
-        }
-
-        console.log(localStorage.getItem('lightMode'))
-        if(localStorage.getItem('lightMode') === 'disabled'){
-            darken()
-        }
-        else{
-            whiten()
-        }
 
         
         async function detectAdBlock() {
