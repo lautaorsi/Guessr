@@ -428,7 +428,7 @@ function calc_points(){
         return(800 + 300/distance )
     }  
 
-    if (10 <= distance & distance <= 40 ){
+    if (10 <= distance & distance <= 100 ){
         return(480 + 3000/distance )
     }  
 
