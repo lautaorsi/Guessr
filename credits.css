@@ -1,4 +1,10 @@
+html{
+    min-width: 100vw;
+    width: fit-content;
+}
+
 body{
+    min-width: 100vw;
     padding: 0%;
     margin: 0;
     background: rgb(2,0,36);
@@ -83,12 +89,11 @@ h1{
     width: 310px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 10px;
-    background: rgb(0,0,0);
-    background: linear-gradient(180deg, rgba(0,0,0,1) 22%, rgba(15,26,18,1) 29%, rgba(31,54,38,1) 60%, rgba(43,164,120,1) 100%);
+    background: rgb(22, 21, 21);
     text-align: left;
 }
 
-
+/* linear-gradient(180deg, rgba(0,0,0,1) 22%, rgba(15,26,18,1) 29%, rgba(31,54,38,1) 60%, rgba(43,164,120,1) 100%) */
 .image-style {
     height: 250px;
     width: 310px;
@@ -98,6 +103,7 @@ h1{
 }
 
 .card-content {
+    text-align: center;
     padding: 15px;
     height: 150px;
     text-overflow: ellipsis;
@@ -110,6 +116,8 @@ h1{
     grid-auto-rows: auto;
     grid-gap: 0rem;
     font-family: 'Roboto';
+    width: fit-content;
+    margin: auto;
 }
 
 .card-bottom{
@@ -117,7 +125,6 @@ h1{
     font-family: 'Roboto';
     background-color: rgb(255, 255, 255);
     width: 24%;
-    margin-left: 15px;
     border-radius: 5px;
     padding: 7;
     padding-left: 10;
@@ -126,27 +133,30 @@ h1{
 }
 
 h2{
+    width: fit-content;
     color: beige;
     margin-bottom: 0%;
+    margin: auto;
 }
 
 
 p{
+    color: white;
     padding-top: 20;
     font-size: larger;
     font-family: 'Gabarito';
 }
 
 
-
-.buttt{
-    text-decoration: none;
-    color: black;
+a{
+    margin: 0%;
 }
 
+
+
+
 .imlink{
-    color: rgb(7, 7, 7);
-    position: absolute;
+    color: rgb(255, 255, 255);
     font-size: large;
     font-family: 'Gabarito';
     margin-top: 0;
@@ -158,7 +168,7 @@ p{
     margin-top: 10px;
 }
 
-#bottom{
+.bottom{
     margin-bottom: 150px;
 }
 
