@@ -69,6 +69,22 @@ p{
     margin: auto;
 }
 
+.adbox{
+    top: 15%;
+    position: absolute !important;
+    height: fit-content;
+    width: fit-content;
+    z-index: 9999;
+}
+
+.right{
+    right: 0%;
+}
+
+.left{
+    left: 0%;
+}
+
 
 #controlcont{
     position: absolute;

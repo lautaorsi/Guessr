@@ -165,6 +165,33 @@ body{
     left: 0%;
 }
 
+.adbox{
+    position: absolute;
+    width: fit-content;
+}
+
+.fst{
+    top: 120px;
+}
+
+.snd{
+    top: 765px;
+}
+
+.last{
+    position: relative !important;
+    margin: auto;
+    
+}
+
+.left{
+    left: 1%;
+}
+
+.right{
+    right: 1%;
+}
+
 
 
 #classic_gamemodes{
@@ -288,7 +315,7 @@ body{
     grid-gap: 1rem;
     width: fit-content;
     position: relative;
-    margin-bottom: 250px;
+    margin-bottom: 200px;
     top: 160px;
 }
 
@@ -428,6 +455,7 @@ h3{
 
 
 #sharecontainer{
+    margin-top: 40px;
     position: relative;
     margin-bottom: 20px;
     left: 50%;
