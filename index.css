@@ -80,6 +80,7 @@ body{
 
 .logoimg{
     position: absolute;
+    width: 58;
     right: 0%;
     left: 0%;
     display: block;
