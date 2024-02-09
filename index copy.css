@@ -18,14 +18,6 @@ body{
 }
 
 
-#main_container{
-    width: 100vw;
-    display: grid;
-    grid-template-columns: 1;
-    grid-auto-rows: repeat(3, 1rem);
-    row-gap: 2em;
-}
-
 
 
 .modal {
@@ -148,54 +140,68 @@ body{
     cursor: pointer;
 }
 
-
-.ad_grid{
-    display: grid;
-    grid-template-columns: repeat(2,minmax(50%,50%));
-    grid-auto-rows: 1;
-    grid-gap: 20px;
-    width: 100%;
+.slidebutt{
+    font-size: 20px ;
     position: absolute;
-    margin-top: 10px;
+    width: 120px;
+    cursor: pointer;
+    height: 500px;
+    background: rgb(32, 32, 32);
+    opacity: 0%;
+    display: block;
+    color: white;
+    border-radius: 8px;
+    z-index: 2;
+}
+.slidebutt:hover {
+    opacity: 80%;
+}
+
+
+.rightbutt{
+    right: 0%;
+}
+
+.leftbutt{
+    left: 0%;
 }
 
 .adbox{
-    margin-top: 10px;
-    background-color: #030303;
-    position: relative;
+    position: absolute;
     width: fit-content;
-    margin: auto;
-
 }
 
+.fst{
+    top: 120px;
+}
 
-
-
+.snd{
+    top: 765px;
+}
 
 .last{
-    margin-top: 20px !important;
     position: relative !important;
     margin: auto;
+    
+}
+
+.left{
+    left: 1%;
+}
+
+.right{
+    right: 1%;
 }
 
 
 
-
-
-
-
-.mode_container{
-    position: relative;
-    height: fit-content;
-}
-
-.gametitles{
+#classic_gamemodes{
     border: #030303;
     border-style: solid;
     transform: translateX(-50%);
     left: 50%;
     position: relative;
-    top: 10px;
+    top: 50px;
     background-color: rgb(255, 255, 255);
     width: fit-content;
     padding: 10;
@@ -203,33 +209,23 @@ body{
     padding-right: 20px;
     border-radius: 15px;
     font-family: 'Roboto';
-
 }
 
-
-.card_container{
+#classiccards{
+    padding-bottom: 13;
+    transform: translateX(-50%);
+    left: 50%;
+    scroll-behavior: smooth;
+    overflow: hidden;
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(320px,320px));
-    grid-auto-rows: 1;
-    grid-gap: 20px;
+    grid-template-columns: repeat(4, 0.1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    width: fit-content;
     position: relative;
-    top: 10px;
-    justify-content: center;
-    align-content: center;
+    top: 60px;
+    height: 505px;
 }
-
-
-.big_card_container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(544px,544px));
-    grid-auto-rows: 1;
-    grid-gap: 20px;
-    position: relative;
-    top: 10px;
-    justify-content: center;
-    align-content: center;
-}
-
 
 .Clbutt{
     top: 189px;
@@ -237,22 +233,50 @@ body{
 }
 
 
-.invertimg{
+#invertimg{
     rotate: 180deg;
-    border-top-right-radius: 0px !important;
-    border-top-left-radius: 0px !important;
+    border-top-right-radius: 0%;
+    border-top-left-radius: 0%;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
+}
+
+#invertright{
+    rotate: 180deg;
 }
 
 
 
 
+#arcade_gamemodes{
+    position: relative;
+    top: 90px;
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    transform: translateX(-50%);
+    left: 50%;
+    padding: 10;
+    padding-left: 25px;
+    border: #030303;
+    border-style: solid;
+    padding-right: 25px;
+    border-radius: 15px;
+    font-family: 'Roboto';
+}
 
-
-
-
-
+#arcadecards{
+    transform: translateX(-50%);
+    left: 50%;
+    scroll-behavior: smooth;
+    overflow: hidden;
+    display: grid;
+    grid-template-columns: repeat(4, 0.1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    width: fit-content;
+    position: relative;
+    top: 130px;
+}
 
 
 
@@ -266,14 +290,45 @@ body{
 
 
 
+#challenge_gamemodes{
+    border: #030303;
+    border-style: solid;
+    left: 45%;
+    position: relative;
+    top: 150px;
+    background-color: rgb(255, 255, 255);
+    width: fit-content;
+    padding: 10;
+    padding-left: 29px;
+    padding-right: 29px;
+    border-radius: 15px;
+    font-family: 'Roboto';
+}
 
-
+#challengecards{
+    left: 50%;
+    transform: translateX(-50%);
+    scroll-behavior: smooth;
+    display: grid;
+    overflow: hidden;
+    grid-template-columns: repeat(3, 0.1fr);
+    grid-auto-rows: auto;
+    grid-gap: 1rem;
+    width: fit-content;
+    position: relative;
+    margin-bottom: 200px;
+    top: 160px;
+}
 
 .Chbutt{
     top: 1426px;
 }
 
 
+
+#firstcard{
+    margin-left: 8px;
+}
 
 
 #h4classic{
@@ -285,17 +340,22 @@ body{
 .cardimg{
     border-top-right-radius: 20px;
     border-top-left-radius: 20px ;
-    height:362px;
+    height:38.41vh;
     min-width: 300px;
-    width: 320px;
+    width: 18.23vw;
 }
 
 .largeimg{
     border-top-right-radius: 20px;
     border-top-left-radius: 20px ;
-    height: 359px;
-    width: 543px;
+    height: 38vh;
+    width: 32vw;
 }
+
+#cleancard{
+    margin-left: 8px;
+}
+
 
 
 
@@ -316,9 +376,6 @@ h3{
     font-family: 'Mukta', serif;
     text-align: center;
     overflow: clip;
-    max-width: 300px;
-    margin: auto;
-    padding-bottom: 10px;
 }
 
 
@@ -360,7 +417,7 @@ h3{
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: fit-content !important;
+    width: fit-content;
     background-color: whitesmoke;
 }
 
