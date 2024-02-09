@@ -7,7 +7,7 @@
     </head>
     <body>
         <div id="Top_menu">
-            <img src="./static/logo.png" alt="logo" class="logoimg" draggable="false">
+            <img src="./static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
             <div id="centerheader">
                 <a href="info.html" draggable="false" id="howto" class="headers">Como jugar</a>
             </div>
@@ -23,65 +23,8 @@
                 <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
             </button>
         </a>
-        <div id="continent_gamemodes"> <h2>Continentes</h2></div>
-        <div id="continentcards">
-            <div class="card" id="classiccard">
-                <a onclick='lobby("SAMERICA")' class="cardlink">
-                <img src="./static/SAMERICA.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
-                <div class="container">
-                <h3><b>America del Sur</b></h3>
-                <p id="classicdesc" class="card_description">Recorre los paises de America del Sur. <br> Explora sus ciudades, culturas y colores!  (incluye Centro America) </p>                 
-                </div>
-                </a>
-            </div>
-            <div class="card" id="classiccard">
-                <a onclick='lobby("ASIA")' class="cardlink">
-                <img src="./static/ASIA.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
-                <div class="container">
-                <h3><b>Asia</b></h3>
-                <p id="classicdesc" class="card_description">Recorre los paises de Asia. <br> Sus complejas ciudades y hermosos idiomas hacen a este modo un verdadero desafio! </p>                 
-                </div>
-                </a>
-            </div>
-            <div class="card" id="classiccard">
-                <a onclick='lobby("EUROPA")' class="cardlink">
-                <img src="./static/EUROPA.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
-                <div class="container">
-                <h3><b>Europa</b></h3>
-                <p id="classicdesc" class="card_description">Recorre los paises de Europa. <br> Este modo te llevara a recorrer sus ciudades, playas y monumentos iconicos!</p>                 
-                </div>
-                </a>
-            </div>
-            <div class="card" id="classiccard">
-                <a onclick='lobby("OCEANIA")' class="cardlink">
-                <img src="./static/OCEANIA.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
-                <div class="container">
-                <h3><b>Oceania</b></h3>
-                <p id="classicdesc" class="card_description">Recorre los paises de Oceania. <br> Pocos paises pero de gran tamaño aseguran poco margen de error. Cuidado con los koalas! </p>                 
-                </div>
-                </a>
-            </div>
-            <div class="card" id="classiccard">
-                <a onclick='lobby("AFRICA")' class="cardlink">
-                <img src="./static/AFRICA.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
-                <div class="container">
-                <h3><b>Africa</b></h3>
-                <p id="classicdesc" class="card_description">Recorre los paises de Africa. <br>Un continente frecuentemente menospreciado pero que asombra a todos con su hermosa fauna y paisajes!</p>                 
-                </div>
-                </a>
-            </div>
-            <div class="card" id="classiccard">
-                <a onclick='lobby("NAMERICA")' class="cardlink">
-                    <img src="./static/NAMERICA.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
-                    <div class="container">
-                    <h3><b>America del Norte</b></h3>
-                    <p id="classicdesc" class="card_description">Recorre los paises de America del Norte. <br> Paises con muchas ciudades conocidas internacionalmente. Cuidado de no perderse en las grandes metropolis!  </p>                  
-                </div>
-                </a>
-            </div>
-        </div>
-        <div id="country_gamemodes"> <h2>Paises</h2></div>
-        <div id="countrycards">
+        <div id="country_gamemodes" class="gametitles"> <h2>Paises</h2></div>
+        <div id="country_cards" class="card_container">
 
             <div class="card" id="classiccard">
                 <a onclick='lobby("ITA")' class="cardlink">
@@ -115,6 +58,66 @@
                 </a>
             </div>
         </div>
+        <div class="mode_container">
+            <div id="continent_gamemodes" class="gametitles"> <h2>Continentes</h2></div>
+            <div id="continent_cards" class="card_container">
+                <div class="card" id="classiccard">
+                    <a onclick='lobby("SAMERICA")' class="cardlink">
+                    <img src="./static/SAMERICA.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                    <div class="container">
+                    <h3><b>America del Sur</b></h3>
+                    <p id="classicdesc" class="card_description">Recorre los paises de America del Sur. <br> Explora sus ciudades, culturas y colores!  (incluye Centro America) </p>                 
+                    </div>
+                    </a>
+                </div>
+                <div class="card" id="classiccard">
+                    <a onclick='lobby("ASIA")' class="cardlink">
+                    <img src="./static/ASIA.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                    <div class="container">
+                    <h3><b>Asia</b></h3>
+                    <p id="classicdesc" class="card_description">Recorre los paises de Asia. <br> Sus complejas ciudades y hermosos idiomas hacen a este modo un verdadero desafio! </p>                 
+                    </div>
+                    </a>
+                </div>
+                <div class="card" id="classiccard">
+                    <a onclick='lobby("EUROPA")' class="cardlink">
+                    <img src="./static/EUROPA.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                    <div class="container">
+                    <h3><b>Europa</b></h3>
+                    <p id="classicdesc" class="card_description">Recorre los paises de Europa. <br> Este modo te llevara a recorrer sus ciudades, playas y monumentos iconicos!</p>                 
+                    </div>
+                    </a>
+                </div>
+                <div class="card" id="classiccard">
+                    <a onclick='lobby("OCEANIA")' class="cardlink">
+                    <img src="./static/OCEANIA.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                    <div class="container">
+                    <h3><b>Oceania</b></h3>
+                    <p id="classicdesc" class="card_description">Recorre los paises de Oceania. <br> Pocos paises pero de gran tamaño aseguran poco margen de error. Cuidado con los koalas! </p>                 
+                    </div>
+                    </a>
+                </div>
+                <div class="card" id="classiccard">
+                    <a onclick='lobby("AFRICA")' class="cardlink">
+                    <img src="./static/AFRICA.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                    <div class="container">
+                    <h3><b>Africa</b></h3>
+                    <p id="classicdesc" class="card_description">Recorre los paises de Africa. <br>Un continente frecuentemente menospreciado pero que asombra a todos con su hermosa fauna y paisajes!</p>                 
+                    </div>
+                    </a>
+                </div>
+                <div class="card" id="classiccard">
+                    <a onclick='lobby("NAMERICA")' class="cardlink">
+                        <img src="./static/NAMERICA.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                        <div class="container">
+                        <h3><b>America del Norte</b></h3>
+                        <p id="classicdesc" class="card_description">Recorre los paises de America del Norte. <br> Paises con muchas ciudades conocidas internacionalmente. Cuidado de no perderse en las grandes metropolis!  </p>                  
+                    </div>
+                    </a>
+                </div>
+            </div>
+    </div>
+
     </body>
     <script> 
 

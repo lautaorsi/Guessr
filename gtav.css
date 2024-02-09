@@ -18,7 +18,9 @@ body{
 
 
 .logoimg{
+    cursor: pointer;
     position: absolute;
+    width: 58;
     right: 0%;
     left: 0%;
     display: block;
@@ -31,7 +33,7 @@ body{
     width: 30px;
     position: relative;
     right: 0%;
-    left: 85;
+    left: 45;
     display: block;
     margin: auto;
 }

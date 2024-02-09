@@ -71,6 +71,17 @@ body{
     background-color: whitesmoke;
 }
 
+.logoimg{
+    cursor: pointer;
+    position: absolute;
+    width: 100;
+    right: 0%;
+    left: 0%;
+    display: block;
+    margin: auto;
+}
+
+
 #about_us{
     margin-left: 4.2% ;
 }
@@ -82,7 +93,7 @@ h1{
 
 p{
     margin-top: 0px;
-    font-size: 20px;
+    font-size: 2vh;
     font-family: 'Mukta', serif;
     text-align: center;
     padding: 25;
