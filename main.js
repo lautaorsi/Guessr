@@ -1151,6 +1151,13 @@ document.addEventListener('keydown', (event) => {
         document.getElementById('speedrange').value = currentPlaybackRate + 0.25;
         document.getElementById('reduceSpeedButton').innerHTML = `x${(document.getElementById('speedrange')).value}`;
     }
+
+    if (name === 'audio play'){
+        player.playVideo()
+            
+    }
+
+
 })
 
 
