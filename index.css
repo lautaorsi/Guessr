@@ -97,6 +97,22 @@ body{
     margin: auto;
 }
 
+.logoimg:hover{
+    animation: rotation 1.5s infinite;
+}
+
+@keyframes rotation {
+    25% {
+      transform: rotate(5deg);
+    }
+    50% {
+      transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+  }
+
 
 #Top_menu{
     position: relative;
@@ -143,6 +159,9 @@ body{
     color: rgb(5, 5, 5);
 }
 
+.headers:hover{
+    color: rgb(12, 90, 0) !important;
+}
 
 .card:hover{
     box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
@@ -556,8 +575,3 @@ h4{
     font-size: large;
     cursor: pointer;
 }
-
-
-
-
-
