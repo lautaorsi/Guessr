@@ -911,7 +911,21 @@ function final_guess(c) {
                 score = 0
                 document.getElementById(`points`).innerHTML = Number(document.getElementById('points').innerHTML) + Number(score)
                 document.getElementById("h2").innerHTML = "El tiempo acabo! ";
+               
+
+                            
+                //add marker on vid coords 
                 vidmarker = L.layerGroup();
+                var latlng = L.latLng(video_coords[0], video_coords[1]);
+                var green_marker = L.marker((latlng), {icon: greenIcon})
+                    .addTo(vidmarker)
+                    .bindPopup(`${active_playlist[vid_index][7]}, ${country(active_playlist[vid_index][4])}`);
+                map.addLayer(vidmarker);
+                green_marker.openPopup();
+    
+
+                
+
                 switchbtn()
                return
            }
@@ -923,6 +937,16 @@ function final_guess(c) {
         document.getElementById("h2").innerHTML = "El tiempo acabo! ";
         vidmarker = L.layerGroup();
 
+                
+            //add marker on vid coords 
+            vidmarker = L.layerGroup();
+            var latlng = L.latLng(video_coords[0], video_coords[1]);
+            var green_marker = L.marker((latlng), {icon: greenIcon})
+                .addTo(vidmarker)
+                .bindPopup(`${active_playlist[vid_index][7]}, ${country(active_playlist[vid_index][4])}`);
+            map.addLayer(vidmarker);
+            green_marker.openPopup();
+    
 
         switchbtn()
         return
@@ -954,6 +978,15 @@ function final_guess(c) {
     
     
 
+            //add marker on vid coords 
+            vidmarker = L.layerGroup();
+            var latlng = L.latLng(video_coords[0], video_coords[1]);
+            var green_marker = L.marker((latlng), {icon: greenIcon})
+                .addTo(vidmarker)
+                .bindPopup(`${active_playlist[vid_index][7]}, ${country(active_playlist[vid_index][4])}`);
+            map.addLayer(vidmarker);
+            green_marker.openPopup();
+    
     
         //draw line between the 2 markers
         var latlngs = [];
@@ -1031,6 +1064,15 @@ function final_guess(c) {
 
 
 
+    //add marker on vid coords 
+    vidmarker = L.layerGroup();
+    var latlng = L.latLng(video_coords[0], video_coords[1]);
+    var green_marker = L.marker((latlng), {icon: greenIcon})
+        .addTo(vidmarker)
+        .bindPopup(`${active_playlist[vid_index][7]}, ${country(active_playlist[vid_index][4])}`);
+    map.addLayer(vidmarker);
+    green_marker.openPopup();
+    
 
 
     //draw line between the 2 markers
@@ -1062,15 +1104,7 @@ function final_guess(c) {
 
 
 
-    //add marker on vid coords 
-    vidmarker = L.layerGroup();
-    var latlng = L.latLng(video_coords[0], video_coords[1]);
-    var green_marker = L.marker((latlng), {icon: greenIcon})
-        .addTo(vidmarker)
-        .bindPopup(`${active_playlist[vid_index][7]}, ${country(active_playlist[vid_index][4])}`);
-    map.addLayer(vidmarker);
-    green_marker.openPopup();
-    
+
     
     
 }
