@@ -93,6 +93,13 @@ img{
     background: rgb(22, 21, 21);
 }
 
+
+.card-style:hover{
+    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    transform: translateY(-0.25em);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.805);
+}
+
 /* linear-gradient(180deg, rgba(0,0,0,1) 22%, rgba(15,26,18,1) 29%, rgba(31,54,38,1) 60%, rgba(43,164,120,1) 100%) */
 .image-style {
     height: 250px;
