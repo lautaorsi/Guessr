@@ -457,7 +457,8 @@ const list = {
 var x = document.getElementById("warning-container")
 var myvid = document.getElementById('myvid');
 var bool_map = false
-var backvideo 
+var backvideo
+var marker_placed = false
 
 
 
@@ -631,6 +632,7 @@ function mark(e){
     lng = coord.lng;
     L.marker((e.latlng), {icon: choose_color(Number(numero_color))}).addTo(marker);
     marker_coords = [coord.lat, coord.lng]
+    marker_placed = true
 }
 
 //show or hide map
@@ -728,8 +730,20 @@ function calc_points(){
 }
 
 
-//next function (main)
+//next function 
 function next(e) {
+
+    //if user didn't guess on these gamemodes, game ends
+    if(guessed == false && (gamemode == 'contrarreloj' || gamemode == '1hp' || gamemode == 'radius')){
+        end()
+    }
+
+    //if radius gamemode, check guess distance and end if failed
+    if(gamemode == 'radius' && distance > gamerule_radius){
+        end()
+    }
+
+    marker_placed = false
     playing = true
     rounds = rounds + 1
     
@@ -809,6 +823,10 @@ function next(e) {
         time = abstime   
     }
 
+    if(gamemode == 'radius'){
+
+    }
+
     pausado = false
     //start timer
     startTimer()
@@ -835,13 +853,16 @@ function startTimer(){
 }
 
 function looptime(){
-    if(time < 1){
-        final_guess(false)
+    if(time < 1 && marker_placed){
+        final_guess(true)
     }
-    else{
+    if(time >= 1){
        interval = setTimeout(function() {
           updatetime()
         }, 1000);
+    }
+    if(time < 1 && marker_placed == false){
+        final_guess(false)
     }
     
 }
@@ -883,19 +904,54 @@ function play(){
 
 //guessing secuence
 function final_guess(c) {
+    if(c){
+        try{
+            //if user tried guessing without clicking map show warning
+           if (marker_coords[0] == null ||  marker_coords[1] == null){
+              
+               showWarning()
+               return
+           }
+       }
+       catch(err){
+          
+           showWarning()
+           return
+    
+       }
+
+    }
+
     playing = false
     document.getElementById('tic').currentTime = 0
     document.getElementById('tic').pause()
     pausado = true
-    //if c == false user made no guess, otherwise user guessed
-    
-    //if user didn't guess on these gamemodes, game ends
-    if(c == false && (gamemode == 'contrarreloj' || gamemode == '1hp' || gamemode == 'radius')){
-        
-        end()
+
+                            
+    //create marker on vid coords 
+    vidmarker = L.layerGroup();
+    var latlng = L.latLng(video_coords[0], video_coords[1]);
+    var green_marker = L.marker((latlng), {icon: greenIcon})
+        .addTo(vidmarker)
+        .bindPopup(`${active_playlist[vid_index][7]}, ${country(active_playlist[vid_index][4])}`);
+    green_marker.openPopup();
+
+    //if gamemode is radius, draw a circle with desired r
+    if(gamemode == 'radius'){
+        console.log('added radius')
+        L.circle(latlng,{
+         color: 'green',
+         radius: gamerule_radius*1000   
+        }).addTo(vidmarker)
     }
 
-    //if user didn't guess on regular gamemodes
+    //add the marker and circle
+    map.addLayer(vidmarker);
+
+
+
+
+    //if c == false user didn't guess
     if(c == false){
         console.log('didnt press guess')
         
@@ -909,22 +965,7 @@ function final_guess(c) {
            if (marker_coords[0] == null ||  marker_coords[1] == null){
                 //give 0 points
                 score = 0
-                document.getElementById(`points`).innerHTML = Number(document.getElementById('points').innerHTML) + Number(score)
                 document.getElementById("h2").innerHTML = "El tiempo acabo! ";
-               
-
-                            
-                //add marker on vid coords 
-                vidmarker = L.layerGroup();
-                var latlng = L.latLng(video_coords[0], video_coords[1]);
-                var green_marker = L.marker((latlng), {icon: greenIcon})
-                    .addTo(vidmarker)
-                    .bindPopup(`${active_playlist[vid_index][7]}, ${country(active_playlist[vid_index][4])}`);
-                map.addLayer(vidmarker);
-                green_marker.openPopup();
-    
-
-                
 
                 switchbtn()
                return
@@ -933,105 +974,20 @@ function final_guess(c) {
        catch(err){
         //give 0 points
         score = 0
-        document.getElementById(`points`).innerHTML = Number(document.getElementById('points').innerHTML) + Number(score)
         document.getElementById("h2").innerHTML = "El tiempo acabo! ";
-        vidmarker = L.layerGroup();
+        
 
-                
-            //add marker on vid coords 
-            vidmarker = L.layerGroup();
-            var latlng = L.latLng(video_coords[0], video_coords[1]);
-            var green_marker = L.marker((latlng), {icon: greenIcon})
-                .addTo(vidmarker)
-                .bindPopup(`${active_playlist[vid_index][7]}, ${country(active_playlist[vid_index][4])}`);
-            map.addLayer(vidmarker);
-            green_marker.openPopup();
-    
+
 
         switchbtn()
         return
-        }     
-        console.log('had marker placed')
-        guessed = true
-        Enable_marking = false
-
-        //calculate distance between user's guess and vid coords
-        distance = distance_calc([marker_coords[0], marker_coords[1]], video_coords)
-    
-        switchbtn()
-    
-        //calculate points
-        var point = Number(calc_points())
-    
-    
-        //update points on scoreboard
-        score = Number(document.getElementById(`points`).innerHTML) + Number(point.toFixed(0))
-        
-        //if radius gamemode, check guess distance and end if failed
-        if(gamemode == 'radius' && distance > gamerule_radius){
-            end()
-        }
-        else{
-        document.getElementById(`points`).innerHTML =  Number(score)
-        }
-    
-    
-    
-
-            //add marker on vid coords 
-            vidmarker = L.layerGroup();
-            var latlng = L.latLng(video_coords[0], video_coords[1]);
-            var green_marker = L.marker((latlng), {icon: greenIcon})
-                .addTo(vidmarker)
-                .bindPopup(`${active_playlist[vid_index][7]}, ${country(active_playlist[vid_index][4])}`);
-            map.addLayer(vidmarker);
-            green_marker.openPopup();
-    
-    
-        //draw line between the 2 markers
-        var latlngs = [];
-        latlngs.push(L.latLng(marker_coords[0],marker_coords[1]));
-        latlngs.push(L.latLng(video_coords[0],video_coords[1]));
-        polyline = L.polyline(latlngs, {color: 'black'})
-        try{polyline.addTo(map);}
-        catch(err){
-            
-            showWarning()
-            return
-        }    
-    
-        //zoom into line
-        map.fitBounds(polyline.getBounds());
-    
-    
-        //display distance from guess to right answer
-        if(distance < 1){
-            document.getElementById("h2").innerHTML = "El tiempo acabo! " + Number((Number((distance))*1000).toFixed(0)) + " M";
-        }
-        else{
-        document.getElementById("h2").innerHTML = "El tiempo acabo! " + Number((distance).toFixed(2)) + " KM";
-        }
-        showDistance()
-        }
-
+        }}
     else{
         console.log('pressed guess')
-        try{
-             //if user tried guessing without clicking map show warning
-            if (marker_coords[0] == null ||  marker_coords[1] == null){
-               
-                showWarning()
-                return
-            }
-        }
-        catch(err){
-           
-            showWarning()
-            return
-    
-        }
+
 
     Enable_marking = false
+    guessed = true
 
 
 
@@ -1054,24 +1010,9 @@ function final_guess(c) {
     //update points on scoreboard
     score = Number(document.getElementById(`points`).innerHTML) + Number(point.toFixed(0))
     
-    //if radius gamemode, check guess distance and end if failed
-    if(gamemode == 'radius' && distance > gamerule_radius){
-        end()
-    }
-    else{
-    document.getElementById(`points`).innerHTML =  Number(score)
-    }
 
 
 
-    //add marker on vid coords 
-    vidmarker = L.layerGroup();
-    var latlng = L.latLng(video_coords[0], video_coords[1]);
-    var green_marker = L.marker((latlng), {icon: greenIcon})
-        .addTo(vidmarker)
-        .bindPopup(`${active_playlist[vid_index][7]}, ${country(active_playlist[vid_index][4])}`);
-    map.addLayer(vidmarker);
-    green_marker.openPopup();
     
 
 
@@ -1148,7 +1089,7 @@ document.addEventListener('keydown', (event) => {
     if (name === 'Enter' && bool_map) {
         if (x.style.visibility != "hidden"){
            
-            final_guess()
+            final_guess(true)
         }
         else{
             next()
