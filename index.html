@@ -113,11 +113,22 @@
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Gabarito&family=Mukta&family=Roboto">
 
+          <script>
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+                document.getElementById('mobiel_warning').style.display = 'block'
+            }
+          </script>
+
     </head>
 
 
     <body>
-
+        <div id="mobile_warning" class="modal">
+            <div class="modal-content-mobile">
+                <p class="warning_text">Lo siento, VideoGuessr se encuentra disponible unicamente en computadoras/laptops!</p>
+            </div>
+            
+        </div>
 
         <div id="adblock_warning" class="modal">
             <div class="modal-content">
