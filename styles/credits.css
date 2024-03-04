@@ -1,6 +1,7 @@
 html{
     min-width: 100vw;
     width: fit-content;
+    overflow-x: clip;
 }
 
 body{

@@ -1,12 +1,48 @@
 <html lang="es">
-    <head>    
-        <link rel="icon" href="static/logo.png">
+
+
+ <!--                
+                                                                                                    
+                                   --:                                                              
+                                    .*@@@#@@@*              .@%:                                    
+                                      :#%@@-:  #*            -@@=      -.                           
+               -@@@@=.                        @@@@@@@+        .@@@@# %@@@@@@                        
+                 #@@@@@+        =:.@@* .    ..%@@@@@*       .@@@@@@%@@@@@@@@#                       
+                 *@@@@@@@@@%+=-:=@@@@@@@@@@@@@@@@@@#         #@@@@@@@@@@@-                          
+                      +@@@@@@@@@@@@@@@@@@@@@@@@@@@@#     %@@@@@@@@@@@@@@@#=    :@@@@@@@@%=          
+                      =++@@@@@@@@@@@@@@@@@@@@%-*:         -@@@@@@@@@@@@@@@%*.  .%@@@@@@@+.          
+                       +@@@@@@@@@@@@@@@@@@@@@@%=         .@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@@%          
+                          - #@@@@@@@@@@@@@@@@%+       +@@%@@@@@@@@@@@@@@@@@@@@@@@@@@@@%**#%@@.      
+                           *@@@@@@@@@@@@@@:           .#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@=:            
+                   :.=@@#@@@=-@@@@@@@@@@@@@.          =+*@@@@@@@@@@@@@@@@@@@@@@%@@@@@@@@@@@@@:      
+                   .@@*-@@@%@@#..#@@@@@@@@*       *@@@= .@@@@@@@@@@@@@@@@@@@@@@@@@@@@%+#%*.         
+                    :-=@=    +@@@@@@@@@@@@*        @@@@@@@@@@@@%@@@@@@@@@@@%  .*:  ..:.             
+                     .@@@@@@@@@@@@@@%@@@@*       %@@@@@@@@%   +@@@@@@@@@@@@@@+                      
+    .@@@@.#@        -%%%@@@@@@@@@@%@          .@@@@@@@@@@@@@@%...%@#-.+@@@+                         
+      %@@@%            =@@@@@@@@@@@@@#      -@@@@@@@@@@@@%@@@@@@@=:                                        Islas Malvinas
+      *@%@+         -+@@@@@@@@@@@@@@:        #@@@@@@@@@%@@@@@@@@@@@.                                     Siempre Argentinas
+          -%@+ #@@%@@@@@@@@@@@@+.:.        *@@@@@@@+  . +@@@@*#@@@@@@*.=%@*                         
+             .=@@@@@@@@@@@@@@@*         %@@@@@@@@@@+     %@@%   +@@   :%@@=                         
+       :%%@@@@@%@@@@@@-@%  %%+.          @@@@@@@@@@@@     %+    @@%     -#-                         
+           .@@% :.*@@#-              =@- +@@@:.+-*@@@@:.        :-                                  
+             +-   #@@@#               :@@  @@@     +@@@@%:    .                                     
+                                      :%+  *@@@*    -@@@@@@%%@-                                     
+                                       #     @@@%.                                                  
+                                       :*+      +:                                                  
+                                       =@@.                                                         
+                                        ..+.                                    ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+
+
+-->
+
+    <head>  
+        <link rel="icon" href="/singeplayer/static/logo.png">  
         <meta name="description" content="Game: Guessing, videogame for guessing, geography fun">
         <script>
         function whiten(){
             localStorage.setItem('lightMode','enabled')
             var body = document.getElementsByTagName('body')[0];
-            body.style.backgroundImage = 'url(./static/background_small.jpg)';
+            body.style.backgroundImage = 'url(/singeplayer/static/background_small.jpg)';
             var tmenu = document.getElementById('Top_menu')
             tmenu.style.backgroundColor = '#fefefe'
             var cards = document.getElementsByClassName('card')
@@ -34,7 +70,7 @@
         function darken(){
             localStorage.setItem('lightMode','disabled')
             var body = document.getElementsByTagName('body')[0];
-            body.style.backgroundImage = 'url(./static/night_background.jpg)';
+            body.style.backgroundImage = 'url(/singeplayer/static/night_background.jpg)';
             var tmenu = document.getElementById('Top_menu')
             tmenu.style.backgroundColor = '#0d0d0d'
             var cards = document.getElementsByClassName('card')
@@ -71,26 +107,43 @@
         </script>
 
         <title>VideoGuessr</title>
-        <link rel="stylesheet" href="index.css">
+        <meta name="description" content="Play solo or with friends! Try to guess the country shown in this video!">
+        <link rel="icon" href="/singeplayer/static/logo.png">
+        <link rel="stylesheet" href="/singeplayer/styles/index.css">
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Gabarito&family=Mukta&family=Roboto">
+
+          <script>
+            if(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
+                document.getElementById('mobiel_warning').style.display = 'block'
+            }
+          </script>
 
     </head>
 
 
     <body>
+        <div id="mobile_warning" class="modal">
+            <div class="modal-content-mobile">
+                <p class="warning_text">Sorry! VideoGuessr is only available in desktop/laptops, mobile devices are not yet supported</p>
+            </div>
+            
+        </div>
+
         <div id="adblock_warning" class="modal">
             <div class="modal-content">
-              <h2 id="modal_title">Disculpa las molestias!</h2>
-              <p class="warning_text">Hola! Soy el desarrollador de VideoGuessr, un estudiante universitario que debe costear el mantenimiento de la pagina, el hosting y el dominio. <br> Si bien entiendo que los anuncios resultan molestos, VideoGuessr es un juego totalmente gratuito que no solicita registrarse ni ningun tipo de informacion de sus usuarios. <br> Es por esto que te pido -si no te molesta- que desactives el bloqueador de anuncios para mantener VideoGuessr funcionando! (Recuerda refrescar la pagina)</p>
-              <p class="warning_text"> <b>No te preocupes, podras jugar VideoGuessr incluso si decides dejar el bloqueador activo, gracias por jugar!</b></p>
-              <button id="close_warning" onclick='cerrar()'><p id="text2">Cerrar</p></button>
+              <h2 id="modal_title">Greetings player!</h2>
+              <p class="warning_text">VideoGuessr's developer here, as a college student that has to cover the website's hosting fees as well as the domain <br> I ask -if it's okay with you- to disable your AdBlocker. VideoGuessr is a completely free to play videogame that doesn't require annoying log-ins nor asks for any type of information from you. <br> Thus, keeping Videoguessr working is only achievable through ads or donations (Please remember to refresh the page if you choose to disable your blocker)</p>
+              <p class="warning_text"> <b>Don't worry, you will still be able to play VideoGuessr with your AdBlocker on. Have fun!</b></p>
+              <button id="close_warning" onclick='cerrar()'><p id="text2">Close</p></button>
             </div>
-          </div>
+        </div>
+
+
         <div id="Top_menu">
-            <img src="./static/logo.png" alt="logo" class="logoimg" draggable="false">
+            <img src="/singeplayer/static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
             <div id="centerheader">
-                <a href="info.html" draggable="false" id="howto" class="headers">Como jugar</a>
+                <a href="info.html" draggable="false" id="howto" class="headers">How to play</a>
             </div>
             <div id="leftheader">
                 <a href="gtaV.html" draggable="false" id="howto" class="headers">GTA 5</a>
@@ -99,87 +152,93 @@
                 <a href="gtasa.html" draggable="false" id="howto" class="headers">GTA SA</a>
             </div>
         </div>
-        <div class="adbox left fst ">
 
-            <script type="text/javascript">
-            
-            atOptions = {
-            
-            'key': 'a2deada25372de0ca4b7dbcb85012fd2',
-            
-            'format': 'iframe',
-            
-            'height': 90,
-            
-            'width': 728,
-            
-            'params': {}
-            
-            };
-            
-            document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/a2deada25372de0ca4b7dbcb85012fd2/invoke.js"></scr' + 'ipt>');
-            
-            </script>
-            
+
+        <div id="main_container">
+            <div class="mode_container">
+                <div class="ad_grid">
+                <div class="adbox ">
+
+                    <script type="text/javascript">
+                    
+                    atOptions = {
+                    
+                    'key': 'a2deada25372de0ca4b7dbcb85012fd2',
+                    
+                    'format': 'iframe',
+                    
+                    'height': 90,
+                    
+                    'width': 728,
+                    
+                    'params': {}
+                    
+                    };
+                    
+                    document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/a2deada25372de0ca4b7dbcb85012fd2/invoke.js"></scr' + 'ipt>');
+                    
+                    </script>
+                    
+                    </div>
+                <div class="adbox " >
+        
+                        <script type="text/javascript">
+                        
+                        atOptions = {
+                        
+                        'key': 'a2deada25372de0ca4b7dbcb85012fd2',
+                        
+                        'format': 'iframe',
+                        
+                        'height': 90,
+                        
+                        'width': 728,
+                        
+                        'params': {}
+                        
+                        };
+                        
+                        document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/a2deada25372de0ca4b7dbcb85012fd2/invoke.js"></scr' + 'ipt>');
+                        
+                        </script>
+                        
+                </div>
             </div>
-        <div class="adbox right fst" >
-
-                <script type="text/javascript">
-                
-                atOptions = {
-                
-                'key': 'a2deada25372de0ca4b7dbcb85012fd2',
-                
-                'format': 'iframe',
-                
-                'height': 90,
-                
-                'width': 728,
-                
-                'params': {}
-                
-                };
-                
-                document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/a2deada25372de0ca4b7dbcb85012fd2/invoke.js"></scr' + 'ipt>');
-                
-                </script>
-                
-        </div>
-                <div id="classic_gamemodes"> <h2>Clasicos</h2></div>
-                <div id="classiccards">
-                        <div class="card" id="firstcard">
+                <div id="classic_gamemodes" class="gametitles"> <h2>Classic</h2></div>
+                <div id="classiccards" class="card_container">
+                        <div class="card" >
                             <a onclick='lobby("CLASICO")' class="cardlink">
-                            <img src="./static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
-                            <div id="Normal" class="difficulty" title="Dificultad">Media</div>
+                            <img src="/singeplayer/static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                            <div id="Normal" class="difficulty" title="Dificultad">Normal</div>
                             <h3><b>Normal</b></h3>
-                            <p id="classicdesc" class="card_description">Recorre los paises <br>del mundo en este clasico modo <br>de juego</p>                 
+                            <p id="classicdesc" class="card_description">Visit the world's <br> countries in this classical <br>gamemode.</p>                 
                             </a>
                         </div>
                         <div class="card">
                             <a onclick='lobby("PAUSE")' class="cardlink">
-                            <img src="./static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
-                            <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
-                            <h3><b>Pausa</b></h3>
+                            <img src="/singeplayer/static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                            <div id="Easy" class="difficulty" title="Dificultad">Easy</div>
+                            <h3><b>Pause</b></h3>
                             <div class="bottomright">⏯️</div>
-                            <p id="pausedesc" class="card_description"> Para jugadores casuales,<br>botones de play y pausa habilitados.<br>Pero cuidado, el tiempo sigue corriendo!</p>                 
+                            <p id="pausedesc" class="card_description"> For casual players,<br>play and pause buttons available.<br>Beware, as time will still be running</p>                 
                             </a>
                         </div>
                         <div class="card">
                             <a onclick='lobby("INVERTIDO")' class="cardlink">
-                            <img src="./static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="invertimg">
-                            <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
-                            <h3 ><b>Invertido</b></h3>
+                            <img src="/singeplayer/static/CLASICO.jpg" class="cardimg invertimg" alt="Classic" draggable="false">
+                            <div id="Easy" class="difficulty" title="Dificultad">Easy</div>
+                            <h3 ><b>Upside Down</b></h3>
                             <div class="bottomright" id="invertright">🧑‍💻</div>
-                            <p id="pausedesc" class="card_description">El video esta de cabeza!<br> Reglas de juego y controles normales.<br> Leer carteles y calles es todo un desafio!</p>                 
+                            <p id="pausedesc" class="card_description">Video is upside down!<br> Classical gamerules and buttons.<br> Reading signs will pose a challenge!</p>                 
                             </a>
                         </div>
                         <div class="card">
                             <a href="https://videoguessr-demo.onrender.com" class="cardlink">
-                            <img src="./static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
-                            <div id="Normal" class="difficulty" title="Dificultad">Intermedio</div>
-                            <h3><b>Multijugador</b></h3>
+                            <img src="/singeplayer/static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                            <div id="Normal" class="difficulty" title="Dificultad">Normal</div>
+                            <h3><b>Multiplayer</b></h3>
                             <div class="bottomright">👩‍💻👨‍💻</div>
-                            <p id="pausedesc" class="card_description"> Juega con amigos! <br> Competiras para obtener la mayor cantidad de puntos, demuestrales quien manda!</p>                 
+                            <p id="pausedesc" class="card_description">Play with friends! <br> You will compete for the most points, show them who is boss!</p>                 
                             </a>
                         </div>
                         <!-- <div class="card">
@@ -192,6 +251,9 @@
                             </a>
                         </div> -->
                 </div>
+            </div>
+            <div class="mode_container">
+                <div class="ad_grid">
                 <div class="adbox left snd ">
 
                     <script type="text/javascript">
@@ -238,57 +300,60 @@
                         </script>
                         
                 </div>
-                <div id="Arcade_gamemodes"> <h2>Arcade</h2></div> 
-                <div id="arcadecards">
-                        <div class="card" id="cleancard">
+            </div>
+                <div id="Arcade_gamemodes" class="gametitles"> <h2>Arcade</h2></div> 
+                <div id="arcadecards" class="big_card_container">
+                        <div class="card" >
                             <a onclick='lobby("clear_map")' class="cardlink">
-                            <img src="./static/earthmap.jpg" class="largeimg"  alt="clean" draggable="false" id="cleanimg">
+                            <img src="/singeplayer/static/earthmap.jpg" class="largeimg"  alt="clean" draggable="false" id="cleanimg">
                             <div class="bottomright">🛰️</div>
-                            <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
-                            <h3><b>Satelital</b></h3>
-                            <p id="cleandesc" class="card_description">Para jugadores expertos este modo no tiene <br> divisiones politicas ni nombres! <br> (Dificultad avanzada)</p>
+                            <div id="Hard" class="difficulty" title="Dificultad">Hard</div>
+                            <h3><b>Satellite</b></h3>
+                            <p id="cleandesc" class="card_description">For hardcore players, no country borders or names! Are you up for the challenge?</p>
                         </a>
                         </div>
                     <div class="card" id="arcadecard">
                         <a href="regions.html" class="cardlink">
-                        <img src="static/CONTINENTES.png" class="largeimg" draggable="false"  id="cleanimg" alt="Classic">
-                        <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
-                        <h3 id="h4italy"><b>Regiones</b></h3>
-                        <p id="classicdesc" class="card_description">Recorre y adivina las distintas ubicaciones <br> de  continentes o paises  <br> en este modo de juego</p>                 
+                        <img src="/singeplayer/static/CONTINENTES.png" class="largeimg" draggable="false"  id="cleanimg" alt="Classic">
+                        <div id="Easy" class="difficulty" title="Dificultad">Easy</div>
+                        <h3 id="h4italy"><b>Regions</b></h3>
+                        <p id="classicdesc" class="card_description">Visit and guess specific continents and countries in this new gamemode! (More countries will soon be added)</p>                 
                         </a>
                     </div>
                     <div class="card" id="arcadecard">
                         <a onclick="lobby('nozoom')" class="cardlink">
-                        <img src="static/nozoom.png" class="largeimg" draggable="false"  id="cleanimg" alt="Classic">
-                        <div id="Normal" class="difficulty" title="Dificultad">Intermedio</div>
-                        <h3 id="h4italy"><b>Sin Zoom</b></h3>
-                        <p id="classicdesc" class="card_description">Reglas normales pero cuidado, <br> no podras hacer zoom  <br> en el mapa</p>                 
+                        <img src="/singeplayer/static/nozoom.png" class="largeimg" draggable="false"  id="cleanimg" alt="Classic">
+                        <div id="Normal" class="difficulty" title="Dificultad">Normal</div>
+                        <h3 id="h4italy"><b>No Zoom</b></h3>
+                        <p id="classicdesc" class="card_description">Regular gamerules.<br> Map zooming is disabled </p>                 
                         </a>
                     </div>
                 </div>
-                <div id="challenge_gamemodes"> <h2>Desafios</h2></div>
-                <div id="challengecards">
-                    <div class="card firstchallenge" id="firstcard" >
+            </div>
+            <div class="mode_container">
+                <div id="challenge_gamemodes" class="gametitles"> <h2>Challenges</h2></div>
+                <div id="challengecards" class="card_container">
+                    <div class="card firstchallenge firstcard"  >
                         <a onclick='lobby("contrarreloj")' class="cardlink">
-                        <img src="./static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false"  id="timeimg">
+                        <img src="/singeplayer/static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false"  id="timeimg">
                         <div class="bottomright">⏱️</div>
-                        <div id="Normal" class="difficulty" title="Dificultad">Intermedio</div>
-                        <h3 id="h4time"><b>Contrarreloj</b></h3>
-                        <p id="timedesc" class="card_description">Consigue la mayor<br>cantidad de puntos<br> antes de que el tiempo acabe! </p>
+                        <div id="Normal" class="difficulty" title="Dificultad">Normal</div>
+                        <h3 id="h4time"><b>Time Trial</b></h3>
+                        <p id="timedesc" class="card_description">Get the most amount of points <br> before the time runs out! </p>
                         </a>
                     </div>
 
                     <div class="card" id="radiuscard">
                         <a onclick="lobby('radius')" class="cardlink">
-                        <img src="./static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false" id="timeimg">
+                        <img src="/singeplayer/static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false" id="timeimg">
                         <div class="bottomright">📏</div>
-                        <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
+                        <div id="Hard" class="difficulty" title="Dificultad">Hard</div>
                         <h3 id="h4radius"><b>Radio</b></h3>
-                        <p id="radiudesc" class="card_description">Consigue la mayor<br> cantidad de aciertos<br> en el radio determinado!</p>
+                        <p id="radiudesc" class="card_description">Guess as many locations as possible <br> within the selected radius!</p>
                         </a>
                     </div>
                 </div>
-                 <div class="adbox last">
+                <div class="adbox last">
 
                     <script type="text/javascript">
                     
@@ -311,9 +376,14 @@
                     </script>
                     
                 </div>
-                <div id="sharecontainer">
+            </div>
+
+        </div>
+
+
+        <div id="sharecontainer">
                     <div id="share">
-                        <p id="sharetext">Compartinos en redes!</p> 
+                        <p id="sharetext">Share us on social media!</p> 
                         <div class="share-buttons">
                             <button class="share-button facebook">
                                <i class="fab fa-facebook-f"></i>
@@ -329,12 +399,14 @@
                             </button>
                          </div>
                     </div>
-               </div>
-       <footer>
+        </div>
+       
+        
 
+       <footer>
         <div id="footer-content">
             <div id="Juegos">
-                <h4>Juegos</h4>
+                <h4>Games</h4>
                 <a class="footerlink" href="./index.html" class="gamelink">Normal Version</a> 
                 <br> 
                 <br>
@@ -345,18 +417,18 @@
             </div>
 
             <div id="Us">
-                <h4>Sobre Nosotros</h4>
-                <a class="footerlink" href="mailto:videoguessr@gmail.com?" target="_blank" class="gamelink">Contacto</a> 
+                <h4>About us</h4>
+                <a class="footerlink" href="mailto:videoguessr@gmail.com?" target="_blank" class="gamelink">Contact</a> 
                 <br> 
                 <br>
-                <a class="footerlink" href="mailto:videoguessr@gmail.com?subject=Sugerencia&body=Sugerencia" target="_blank" class="gamelink">Sugerencias</a>
+                <a class="footerlink" href="mailto:videoguessr@gmail.com?subject=Sugerencia&body=Sugerencia" target="_blank" class="gamelink">Suggestions</a>
                 <br>
                 <br>
-                <a class="footerlink" href="mailto:videoguessr@gmail.com?subject=Aporte%20Video&body=[Link%20canal||videos]%0D%0AInformacion%20extra" target="_blank" class="gamelink">Aportar videos</a>
+                <a class="footerlink" href="mailto:videoguessr@gmail.com?subject=Aporte%20Video&body=[Link%20canal||videos]%0D%0AInformacion%20extra" target="_blank" class="gamelink">Contribute videos</a>
             </div>
             <div id="Creditos">
-                <h4>Creditos</h4>
-                <a  href="./credits.html" class="footerlink">Creadores Videos</a>
+                <h4>Credits</h4>
+                <a  href="./credits.html" class="footerlink">Content Creators</a>
                 <br> 
                 <br>
                 <a href="https://virtualvacation.us/guess" target="_blank" class="footerlink">CityGuessr</a> 
@@ -366,9 +438,13 @@
             </div>
         </div>
        </footer>
+
+
         <div id="Bug">
-            <a id="bug-text" href="mailto:videoguessr@gmail.com?subject=Reportar%20Bug&body=[Explicacion bug]%0D%0A[Como replicar]" target="_blank">Reportar bug</a>
+            <a id="bug-text" href="mailto:videoguessr@gmail.com?subject=Reportar%20Bug&body=[Explicacion bug]%0D%0A[Como replicar]" target="_blank">Report bug</a>
         </div> 
+
+
         <div id="mode">
             <a id="darken" onclick="whiten()">🌑</a>
             <a id="whiten" onclick="darken()">🔆</a>
@@ -490,5 +566,3 @@
     </script>
 
 </html>
-
-

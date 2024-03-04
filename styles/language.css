@@ -1,0 +1,89 @@
+body{
+    background: rgb(10,66,37);
+    margin: 0;
+    overflow: clip;
+}
+
+
+
+.logo{
+    position: absolute;
+    width: 20%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%, 0);
+}
+
+.main-body { 
+    width: 90%;
+    height: 60%;
+    position: relative;
+    margin: auto;
+    top: 28%;
+}
+
+.languages{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(30%,30%));
+    grid-template-rows: 60%;
+    grid-auto-rows: 1;
+    grid-gap: 10%;
+    position: relative;
+    margin: auto;
+    width: 90%;
+    height: 80%;
+    justify-content: center;
+    align-content: center;
+    min-width: 483px;
+    
+}
+
+.lang{
+    transition: box-shadow 0.25s ease-in-out;
+    cursor: pointer;
+    background-color: rgb(4, 4, 39);
+    display: block;
+    border-radius: 20px;
+    height: 100%;
+    min-width: 176px;
+    border-radius: 5px;
+    -webkit-transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 0.6s cubic-bezier(0.165, 0.84, 0.44, 1);
+}
+
+.lang:hover {
+    border: 3px;
+    border-style: solid;
+    border-color: rgb(216, 183, 1);
+    -webkit-transform: scale(1.1, 1.1);
+    transform: scale(1.1, 1.1);
+}
+
+.p-name{
+    font-size: 50px;
+    font-family: "Madimi One", sans-serif;
+    font-weight: 500;
+    font-style: normal;
+    color: antiquewhite;
+    margin: auto;
+    position: relative;
+    width: fit-content;
+    margin-top: 10%;
+}
+
+.flags{
+    margin-top: 5% !important;
+    margin: auto;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(40px, 60px));
+    grid-auto-rows: 1;
+    grid-gap: 10%;
+    position: relative;
+    justify-content: center;
+    align-content: center;
+}
+
+.flag-icon{
+    font-size: clamp(40px, 2.5vw, 20000px);
+}

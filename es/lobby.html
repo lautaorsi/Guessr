@@ -1,7 +1,7 @@
 <html lang="es">
     <head>
-        <link rel="icon" href="static/logo.png">
-        <link rel="stylesheet" href="lobby.css">
+        <link rel="icon" href="/singeplayer/static/logo.png">
+        <link rel="stylesheet" href="/singeplayer/styles/lobby.css">
         <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Gabarito&family=Merriweather Sans">
         <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
@@ -11,7 +11,7 @@
         console.log(lmode)
         function whiten(){
             var body = document.getElementsByTagName('body')[0];
-            body.style.backgroundImage = 'url(./static/background_small.jpg)';
+            body.style.backgroundImage = 'url(/singeplayer/static/background_small.jpg)';
             var ps = document.getElementsByTagName('p')
             for (let i = 0; i < ps.length; i++) {
                 ps[i].style.color = 'black' 
@@ -40,7 +40,7 @@
 
         function darken(){
             var body = document.getElementsByTagName('body')[0];
-            body.style.backgroundImage = 'url(./static/night_background.jpg)';
+            body.style.backgroundImage = 'url(/singeplayer/static/night_background.jpg)';
             var ps = document.getElementsByTagName('p')
             for (let i = 0; i < ps.length; i++) {
                 ps[i].style.color = 'white' 
@@ -96,7 +96,7 @@
                     </script>
         </div>
         
-            <img src="./static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
+            <img src="/singeplayer/static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
             <a onclick="got()">
                 <button id="return" >
                     <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
@@ -171,71 +171,6 @@
 </html>
 
 <script>
-        if(localStorage.getItem('lightMode') === 'disabled'){
-            darken()
-        }
-        else{
-            whiten()
-        }
-
-
-
-        function whiten(){
-            var body = document.getElementsByTagName('body')[0];
-            body.style.backgroundImage = 'url(./static/background_small.jpg)';
-            var ps = document.getElementsByTagName('p')
-            for (let i = 0; i < ps.length; i++) {
-                ps[i].style.color = 'black' 
-            }
-            var h3s = document.getElementsByTagName('h3')
-            for (let i = 0; i < h3s.length; i++) {
-                h3s[i].style.color = 'black' 
-            }
-            var headers = document.getElementsByClassName('headers')
-            for (let i = 0; i < headers.length; i++) {
-                headers[i].style.color = 'black' 
-            }
-            var keys = document.getElementsByClassName('s')
-            for (let i = 0; i < keys.length; i++) {
-                keys[i].style.color = 'black' 
-            }
-            document.getElementById('foot').style.backgroundColor = 'white'
-            document.getElementById('whiten').style.display = 'block'
-            document.getElementById('darken').style.display = 'none'
-            document.getElementById('main_container').style.background = 'linear-gradient(180deg, rgba(0,107,254,1) 0%, rgba(60,127,250,1) 53%, rgba(65,190,255,1) 84%, rgba(154,233,255,1) 100%)'
-            document.getElementById('controlcont').style.backgroundColor = 'white'
-        }
-
-
-
-
-
-        function darken(){
-            var body = document.getElementsByTagName('body')[0];
-            body.style.backgroundImage = 'url(./static/night_background.jpg)';
-            var ps = document.getElementsByTagName('p')
-            for (let i = 0; i < ps.length; i++) {
-                ps[i].style.color = 'white' 
-            }
-            var h3s = document.getElementsByTagName('h2')
-            for (let i = 0; i < h3s.length; i++) {
-                h3s[i].style.color = 'white' 
-            }
-            var keys = document.getElementsByClassName('s')
-            for (let i = 0; i < keys.length; i++) {
-                keys[i].style.color = 'white' 
-            }
-            document.getElementById('main_container').style.background = 'linear-gradient(180deg, #04003d 0%, #0030da 70%, #1570fe 90%, #00aad9 100%)'
-            document.getElementById('foot').style.backgroundColor = '#0d0d0d'
-            document.getElementById('darken').style.display = 'block'
-            document.getElementById('whiten').style.display = 'none'
-            document.getElementById('controlcont').style.backgroundColor = '#0d0d0d'
-        }
-
-    
-
-
-
     const descriptions = {
         'ITA': 'Reglas clasicas, ubicaciones dentro de Italia.',
         'PAUSE': 'Reglas clasicas, con boton de play y pausa habilitados. <br> Pero cuidado, el tiempo seguira corriendo!',
@@ -269,19 +204,19 @@
     }
 
     const images = {
-        'ITA': './static/italy.jpg',
-        'PAUSE': './static/CLASICO.jpg',
-        'CLASICO' : './static/CLASICO.jpg',
-        'contrarreloj' : './static/CLASICO.jpg',
-        'radius' : './static/CLASICO.jpg',
-        '1hp' : './static/CLASICO.jpg',
-        'clear_map' : './static/earthmap.jpg',
-        'INVERTIDO': './static/CLASICO.jpg',
-        'nozoom': './static/CLASICO.jpg',
-        'US': './static/USA.png',
-        'EUROPA': './static/EUROPA.jpg',
-        'STATIC': './static/CLASICO.jpg',
-        'ARG': './static/Arg.jpg'
+        'ITA': '/singeplayer/static/italy.jpg',
+        'PAUSE': '/singeplayer/static/CLASICO.jpg',
+        'CLASICO' : '/singeplayer/static/CLASICO.jpg',
+        'contrarreloj' : '/singeplayer/static/CLASICO.jpg',
+        'radius' : '/singeplayer/static/CLASICO.jpg',
+        '1hp' : '/singeplayer/static/CLASICO.jpg',
+        'clear_map' : '/singeplayer/static/earthmap.jpg',
+        'INVERTIDO': '/singeplayer/static/CLASICO.jpg',
+        'nozoom': '/singeplayer/static/CLASICO.jpg',
+        'US': '/singeplayer/static/USA.png',
+        'EUROPA': '/singeplayer/static/EUROPA.jpg',
+        'STATIC': '/singeplayer/static/CLASICO.jpg',
+        'ARG': '/singeplayer/static/Arg.jpg'
     }
 
     var descript = document.getElementById('desc')
@@ -401,7 +336,7 @@
 
     function got(){
         if(gamename.hello == 'ITA' || gamename.hello == 'US' || gamename.hello == 'EUROPA'){
-            window.location.href = 'regions.html'
+            window.location.href = 'regiones.html'
         }
         else{
             window.location.href = 'index.html'

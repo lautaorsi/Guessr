@@ -10,7 +10,7 @@ body{
     height: fit-content;
     padding: 0%;
     margin: 0;
-    background-image: url("./static/background_small.jpg");
+    background-image: url("/singeplayer/static/background_small.jpg");
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: cover;
@@ -391,6 +391,7 @@ h3{
 
 
 .card {
+    min-height: 504px !important;
     margin-top: 5;
     border-radius: 20px;
     position: relative;
