@@ -190,8 +190,8 @@ h3{
 .bottomright {
     color: #fefefe;
     position: absolute;
-    right: 16px;
-    top: 59%;
+    right: 0px;
+    top: 58.5%;
     font-size: 35px;
 }
 
