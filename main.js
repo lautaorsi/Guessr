@@ -1042,7 +1042,7 @@ function final_guess(c) {
     showDistance()
     }
 
-
+    document.getElementById(`points`).innerHTML = score
 
 
 
