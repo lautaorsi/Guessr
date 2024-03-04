@@ -9,7 +9,7 @@ html{
 body{
     padding: 0%;
     margin: 0;
-    background-image: url("/singeplayer/static/background_gtasa.jpg");
+    background-image: url("../static/background_gtasa.jpg");
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-attachment: fixed;

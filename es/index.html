@@ -36,13 +36,13 @@
 -->
 
     <head>  
-        <link rel="icon" href="/singeplayer/static/logo.png">  
+        <link rel="icon" href="../static/logo.png">  
         <meta name="description" content="Game: Guessing, videogame for guessing, geography fun">
         <script>
         function whiten(){
             localStorage.setItem('lightMode','enabled')
             var body = document.getElementsByTagName('body')[0];
-            body.style.backgroundImage = 'url(/singeplayer/static/background_small.jpg)';
+            body.style.backgroundImage = 'url(../static/background_small.jpg)';
             var tmenu = document.getElementById('Top_menu')
             tmenu.style.backgroundColor = '#fefefe'
             var cards = document.getElementsByClassName('card')
@@ -70,7 +70,7 @@
         function darken(){
             localStorage.setItem('lightMode','disabled')
             var body = document.getElementsByTagName('body')[0];
-            body.style.backgroundImage = 'url(/singeplayer/static/night_background.jpg)';
+            body.style.backgroundImage = 'url(../static/night_background.jpg)';
             var tmenu = document.getElementById('Top_menu')
             tmenu.style.backgroundColor = '#0d0d0d'
             var cards = document.getElementsByClassName('card')
@@ -108,7 +108,7 @@
 
         <title>VideoGuessr</title>
         <meta name="description" content="Play solo or with friends! Try to guess the country shown in this video!">
-        <link rel="stylesheet" href="/singeplayer/styles/index.css">
+        <link rel="stylesheet" href="../styles/index.css">
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Gabarito&family=Mukta&family=Roboto">
 
@@ -140,15 +140,15 @@
 
 
         <div id="Top_menu">
-            <img src="/singeplayer/static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
+            <img src="../static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
             <div id="centerheader">
-                <a href="/singeplayer/es/info.html" draggable="false" id="howto" class="headers">Como jugar</a>
+                <a href="../es/info.html" draggable="false" id="howto" class="headers">Como jugar</a>
             </div>
             <div id="leftheader">
-                <a href="/singeplayer/es/gtaV.html" draggable="false" id="howto" class="headers">GTA 5</a>
+                <a href="../es/gtaV.html" draggable="false" id="howto" class="headers">GTA 5</a>
             </div>
             <div id="rightheader">
-                <a href="/singeplayer/es/gtasa.html" draggable="false" id="howto" class="headers">GTA SA</a>
+                <a href="../es/gtasa.html" draggable="false" id="howto" class="headers">GTA SA</a>
             </div>
         </div>
 
@@ -207,7 +207,7 @@
                 <div id="classiccards" class="card_container">
                         <div class="card" >
                             <a onclick='lobby("CLASICO")' class="cardlink">
-                            <img src="/singeplayer/static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                            <img src="../static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
                             <div id="Normal" class="difficulty" title="Dificultad">Intermedio</div>
                             <h3><b>Normal</b></h3>
                             <p id="classicdesc" class="card_description">Recorre los paises <br>del mundo en este clasico modo <br>de juego</p>                 
@@ -215,7 +215,7 @@
                         </div>
                         <div class="card">
                             <a onclick='lobby("PAUSE")' class="cardlink">
-                            <img src="/singeplayer/static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                            <img src="../static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
                             <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
                             <h3><b>Pausa</b></h3>
                             <div class="bottomright">⏯️</div>
@@ -224,7 +224,7 @@
                         </div>
                         <div class="card">
                             <a onclick='lobby("INVERTIDO")' class="cardlink">
-                            <img src="/singeplayer/static/CLASICO.jpg" class="cardimg invertimg" alt="Classic" draggable="false">
+                            <img src="../static/CLASICO.jpg" class="cardimg invertimg" alt="Classic" draggable="false">
                             <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
                             <h3 ><b>Invertido</b></h3>
                             <div class="bottomright" id="invertright">🧑‍💻</div>
@@ -233,7 +233,7 @@
                         </div>
                         <div class="card">
                             <a href="https://videoguessr-demo.onrender.com" class="cardlink">
-                            <img src="/singeplayer/static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                            <img src="../static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
                             <div id="Normal" class="difficulty" title="Dificultad">Intermedio</div>
                             <h3><b>Multijugador</b></h3>
                             <div class="bottomright">👩‍💻👨‍💻</div>
@@ -304,7 +304,7 @@
                 <div id="arcadecards" class="big_card_container">
                         <div class="card" >
                             <a onclick='lobby("clear_map")' class="cardlink">
-                            <img src="/singeplayer/static/earthmap.jpg" class="largeimg"  alt="clean" draggable="false" id="cleanimg">
+                            <img src="../static/earthmap.jpg" class="largeimg"  alt="clean" draggable="false" id="cleanimg">
                             <div class="bottomright">🛰️</div>
                             <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
                             <h3><b>Satelital</b></h3>
@@ -313,7 +313,7 @@
                         </div>
                     <div class="card" id="arcadecard">
                         <a href="regiones.html" class="cardlink">
-                        <img src="/singeplayer/static/CONTINENTES.png" class="largeimg" draggable="false"  id="cleanimg" alt="Classic">
+                        <img src="../static/CONTINENTES.png" class="largeimg" draggable="false"  id="cleanimg" alt="Classic">
                         <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
                         <h3 id="h4italy"><b>Regiones</b></h3>
                         <p id="classicdesc" class="card_description">Recorre y adivina las distintas ubicaciones <br> de  continentes o paises  <br> en este modo de juego</p>                 
@@ -321,7 +321,7 @@
                     </div>
                     <div class="card" id="arcadecard">
                         <a onclick="lobby('nozoom')" class="cardlink">
-                        <img src="/singeplayer/static/nozoom.png" class="largeimg" draggable="false"  id="cleanimg" alt="Classic">
+                        <img src="../static/nozoom.png" class="largeimg" draggable="false"  id="cleanimg" alt="Classic">
                         <div id="Normal" class="difficulty" title="Dificultad">Intermedio</div>
                         <h3 id="h4italy"><b>Sin Zoom</b></h3>
                         <p id="classicdesc" class="card_description">Reglas normales pero cuidado, <br> no podras hacer zoom  <br> en el mapa</p>                 
@@ -334,7 +334,7 @@
                 <div id="challengecards" class="card_container">
                     <div class="card firstchallenge firstcard"  >
                         <a onclick='lobby("contrarreloj")' class="cardlink">
-                        <img src="/singeplayer/static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false"  id="timeimg">
+                        <img src="../static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false"  id="timeimg">
                         <div class="bottomright">⏱️</div>
                         <div id="Normal" class="difficulty" title="Dificultad">Intermedio</div>
                         <h3 id="h4time"><b>Contrarreloj</b></h3>
@@ -344,7 +344,7 @@
 
                     <div class="card" id="radiuscard">
                         <a onclick="lobby('radius')" class="cardlink">
-                        <img src="/singeplayer/static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false" id="timeimg">
+                        <img src="../static/CLASICO.jpg" class="cardimg" alt="clean" draggable="false" id="timeimg">
                         <div class="bottomright">📏</div>
                         <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
                         <h3 id="h4radius"><b>Radio</b></h3>
@@ -406,13 +406,13 @@
         <div id="footer-content">
             <div id="Juegos">
                 <h4>Juegos</h4>
-                <a class="footerlink" href="/singeplayer/index.html" class="gamelink">Normal Version</a> 
+                <a class="footerlink" href="../index.html" class="gamelink">Normal Version</a> 
                 <br> 
                 <br>
-                <a class="footerlink" href="/singeplayer/gtaV.html" class="gamelink">GTA 5 Version</a>
+                <a class="footerlink" href="../gtaV.html" class="gamelink">GTA 5 Version</a>
                 <br>
                 <br>
-                <a class="footerlink" href="/singeplayer/gtasa.html" class="gamelink">GTA SA Version</a>
+                <a class="footerlink" href="../gtasa.html" class="gamelink">GTA SA Version</a>
             </div>
 
             <div id="Us">
@@ -427,7 +427,7 @@
             </div>
             <div id="Creditos">
                 <h4>Creditos</h4>
-                <a  href="/singeplayer/es/creditos.html" class="footerlink">Creadores Videos</a>
+                <a  href="../es/creditos.html" class="footerlink">Creadores Videos</a>
                 <br> 
                 <br>
                 <a href="https://virtualvacation.us/guess" target="_blank" class="footerlink">CityGuessr</a> 

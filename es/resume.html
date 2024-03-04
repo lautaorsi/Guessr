@@ -1,7 +1,7 @@
 <html lang="es">
     <head>
-        <link rel="icon" href="/singeplayer/static/logo.png">
-        <link rel="stylesheet" href="/singeplayer/styles/resume.css">
+        <link rel="icon" href="../static/logo.png">
+        <link rel="stylesheet" href="../styles/resume.css">
         <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Gabarito&family=Merriweather Sans">
         <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
@@ -46,8 +46,8 @@
         const rounds = JSON.stringify(objrounds)
         const objscore = localStorage.getItem('points')
         var score = JSON.stringify(objscore)
-        const fail_gifs = ['/singeplayer/static/fail2.mp4','/singeplayer/static/fail3.mp4','/singeplayer/static/fail5.mp4','/singeplayer/static/fail6.mp4','/singeplayer/static/fail8.mp4']
-        const wow_gifs = ['/singeplayer/static/wow2.gif']
+        const fail_gifs = ['../static/fail2.mp4','../static/fail3.mp4','../static/fail5.mp4','../static/fail6.mp4','../static/fail8.mp4']
+        const wow_gifs = ['../static/wow2.gif']
         if (objscore/rounds >= 1100){
             document.getElementById('congrats').innerHTML='Wow! Obtuviste:'
             document.getElementById('gif').src = wow_gifs[getRandomIndex(wow_gifs.length)]

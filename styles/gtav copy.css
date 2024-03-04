@@ -8,7 +8,7 @@ body{
     height: fit-content;
     padding: 0%;
     margin: 0;
-    background-image: url("/singeplayer/static/background_gta.jpg");
+    background-image: url("../static/background_gta.jpg");
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-attachment: fixed;
