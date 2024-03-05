@@ -1,7 +1,7 @@
 html{
     flex-direction: column;
-    overflow-x: clip;
     scroll-behavior: smooth;
+    overflow-x: clip;
 }
 
 body{
@@ -187,11 +187,13 @@ body{
 
 
 .ad_grid{
+    right: 0;
+    left: 0;
     display: grid;
     grid-template-columns: repeat(2,minmax(50%,50%));
     grid-auto-rows: 1;
     grid-gap: 20px;
-    width: 100%;
+    width: 100vw;
     position: absolute;
     margin-top: 10px;
 }
@@ -329,8 +331,8 @@ body{
 }
 
 .largeimg{
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px ;
+    border-top-right-radius: 17px;
+    border-top-left-radius: 17px ;
     height: 359px;
     width: 543px;
 }
@@ -351,8 +353,8 @@ h3{
 }
 
 .card_description{
-    height: fit-content;
-    margin-top: 2px;
+    height: 100%;
+    position: relative;
     font-family: 'Mukta', serif;
     text-align: center;
     overflow: clip;
@@ -365,7 +367,7 @@ h3{
 
 .difficulty{
     font-family: 'Gabarito';
-    position: relative;
+    position: absolute;
     top: 72%;
     left: 10px;
     font-size: 20px;
@@ -566,16 +568,20 @@ h4{
 #bug-text{
     padding: 10px;
     font-size: medium ;
-    background-color: aliceblue;
     border-radius: 100px;
     text-decoration: none;
     color: #04852a;
     font-family: 'Gabarito';
+    background: linear-gradient(to top, #000 50%, #fff 50%);
+    background-size: 100% 200%;
+    background-position: top;
+    transition: all .35s ease-out;
 }
 
 #bug-text:hover{
-    background-color: rgb(206, 230, 251);
-    color: #003a11;
+    background-position: bottom;
+    color: #fff;
+
 }
 
 
@@ -583,25 +589,23 @@ h4{
 
 
 
-#darken{
+#change{
     position: fixed;
     bottom: 1%;
     left: 1%;
     width: fit-content;
-    background-color: #030303;
     border-radius: 20px;
     padding: 10px;
     font-size: large;
     cursor: pointer;
+    text-decoration: none;
+    background: linear-gradient(to top, #000 50%, #fff 50%);
+    background-size: 100% 200%;
+    background-position: top;
+    transition: all .35s ease-out;
 }
-#whiten{
-    position: fixed;
-    bottom: 1%;
-    left: 1%;
-    width: fit-content;
-    background-color: white;
-    border-radius: 20px;
-    padding: 10px;
-    font-size: large;
-    cursor: pointer;
+
+#change:hover {
+    background-position: bottom;
+    color: #ffffff;
 }

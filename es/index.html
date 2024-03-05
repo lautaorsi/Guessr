@@ -36,67 +36,12 @@
 -->
 
     <head>  
+        <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
         <link rel="icon" href="../static/logo.png">  
         <meta name="description" content="Game: Guessing, videogame for guessing, geography fun">
         <script>
-        function whiten(){
-            localStorage.setItem('lightMode','enabled')
-            var body = document.getElementsByTagName('body')[0];
-            body.style.backgroundImage = 'url(../static/background_small.jpg)';
-            var tmenu = document.getElementById('Top_menu')
-            tmenu.style.backgroundColor = '#fefefe'
-            var cards = document.getElementsByClassName('card')
-            for (let i = 0; i < cards.length; i++) {
-                cards[i].style.backgroundColor = 'whitesmoke' 
-            }
-            var ps = document.getElementsByTagName('p')
-            for (let i = 0; i < ps.length; i++) {
-                ps[i].style.color = 'black' 
-            }
-            var h3s = document.getElementsByTagName('h3')
-            for (let i = 0; i < h3s.length; i++) {
-                h3s[i].style.color = 'black' 
-            }
-            var headers = document.getElementsByClassName('headers')
-            for (let i = 0; i < headers.length; i++) {
-                headers[i].style.color = 'black' 
-            }
-            document.getElementsByTagName('footer')[0].style.backgroundColor = '#fefefe'
-            document.getElementById('share').style.backgroundColor = '#fefefe'
-            document.getElementById('whiten').style.display = 'block'
-            document.getElementById('darken').style.display = 'none'
-        }
-
-        function darken(){
-            localStorage.setItem('lightMode','disabled')
-            var body = document.getElementsByTagName('body')[0];
-            body.style.backgroundImage = 'url(../static/night_background.jpg)';
-            var tmenu = document.getElementById('Top_menu')
-            tmenu.style.backgroundColor = '#0d0d0d'
-            var cards = document.getElementsByClassName('card')
-            for (let i = 0; i < cards.length; i++) {
-                cards[i].style.backgroundColor = 'rgb(22, 22, 22)' 
-            }
-            var ps = document.getElementsByTagName('p')
-            for (let i = 0; i < ps.length; i++) {
-                ps[i].style.color = 'white' 
-            }
-            var h3s = document.getElementsByTagName('h3')
-            for (let i = 0; i < h3s.length; i++) {
-                h3s[i].style.color = 'white' 
-            }
-            var headers = document.getElementsByClassName('headers')
-            for (let i = 0; i < headers.length; i++) {
-                headers[i].style.color = 'white' 
-            }
-            document.getElementsByTagName('footer')[0].style.backgroundColor = '#0d0d0d'
-            document.getElementById('share').style.backgroundColor = '#0d0d0d'
-            document.getElementById('darken').style.display = 'block'
-            document.getElementById('whiten').style.display = 'none'
-        }
-
-
-        const lightm = localStorage.getItem('lightMode')
         const modalshownstr = localStorage.getItem('shown');
 
 
@@ -445,11 +390,12 @@
             <a id="bug-text" href="mailto:videoguessr@gmail.com?subject=Reportar%20Bug&body=[Explicacion bug]%0D%0A[Como replicar]" target="_blank">Reportar bug</a>
         </div> 
 
-
         <div id="mode">
-            <a id="darken" onclick="whiten()">🌑</a>
-            <a id="whiten" onclick="darken()">🔆</a>
-        </div> 
+            <a id="change" href="../en/"><span class="fi fi-gb flag-icon"></span></a>
+        </div>
+
+
+
     </body> 
 
     <script> 
@@ -464,48 +410,6 @@
     <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
     
     <script>
-        
-        window.addEventListener('resize', () => {
-            if(document.documentElement.clientWidth < 1141){  
-                document.getElementsByClassName('Clbutt')[0].style.display = 'block'
-                document.getElementsByClassName('Clbutt')[1].style.display = 'block'
-            }
-            if(document.documentElement.clientWidth >= 1141){
-                document.getElementsByClassName('Clbutt')[0].style.display = 'none'
-                document.getElementsByClassName('Clbutt')[1].style.display = 'none'
-            }
-            if(document.documentElement.clientWidth < 1796){  
-                console.log('arcade covered')
-                document.getElementsByClassName('Arbutt')[0].style.display = 'block'
-                document.getElementsByClassName('Arbutt')[1].style.display = 'block'
-                
-            }
-            if(document.documentElement.clientWidth >= 1796){
-                console.log('arcade uncovered')
-                document.getElementsByClassName('Arbutt')[0].style.display = 'none'
-                document.getElementsByClassName('Arbutt')[1].style.display = 'none'
-            }
-            if(document.documentElement.clientWidth < 775){  
-                document.getElementsByClassName('Chbutt')[0].style.display = 'block'
-                document.getElementsByClassName('Chbutt')[1].style.display = 'block'
-            }
-            if(document.documentElement.clientWidth >= 775){
-                document.getElementsByClassName('Chbutt')[0].style.display = 'none'
-                document.getElementsByClassName('Chbutt')[1].style.display = 'none'
-            }
-        });
-
-        function scrll(elem, direcc){
-            if(direcc == 'left'){
-                document.getElementById(elem).scrollLeft -= 300 
-            }
-            else{
-                document.getElementById(elem).scrollLeft += 300
-            }
-        }
-
-
-        
         async function detectAdBlock() {
         console.log('using')
         let adBlockEnabled = false
