@@ -965,7 +965,13 @@ function final_guess(c) {
            if (marker_coords[0] == null ||  marker_coords[1] == null){
                 //give 0 points
                 score = 0
-                document.getElementById("h2").innerHTML = "El tiempo acabo! ";
+                if(document.location.pathname == '/es/game.html'){
+                    document.getElementById("h2").innerHTML = "El tiempo acabo! ";
+                }
+                else{
+                    document.getElementById("h2").innerHTML = "Time ran out! ";
+                }
+                
 
                 switchbtn()
                return
@@ -974,7 +980,12 @@ function final_guess(c) {
        catch(err){
         //give 0 points
         score = 0
-        document.getElementById("h2").innerHTML = "El tiempo acabo! ";
+        if(document.location.pathname == '/es/game.html'){
+            document.getElementById("h2").innerHTML = "El tiempo acabo! ";
+        }
+        else{
+            document.getElementById("h2").innerHTML = "Time ran out! ";
+        }
         
 
 

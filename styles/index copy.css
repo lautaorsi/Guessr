@@ -575,7 +575,7 @@ h4{
     background: linear-gradient(to top, #000 50%, #fff 50%);
     background-size: 100% 200%;
     background-position: top;
-    transition: all .35s ease-out;
+    transition: all .3s ease-out;
 }
 
 #bug-text:hover{
@@ -602,7 +602,7 @@ h4{
     background: linear-gradient(to top, #000 50%, #fff 50%);
     background-size: 100% 200%;
     background-position: top;
-    transition: all .35s ease-out;
+    transition: all .3s ease-out;
 }
 
 #change:hover {

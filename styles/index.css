@@ -576,26 +576,3 @@ h4{
 
 
 
-
-#darken{
-    position: fixed;
-    bottom: 1%;
-    left: 1%;
-    width: fit-content;
-    background-color: #030303;
-    border-radius: 20px;
-    padding: 10px;
-    font-size: large;
-    cursor: pointer;
-}
-#whiten{
-    position: fixed;
-    bottom: 1%;
-    left: 1%;
-    width: fit-content;
-    background-color: white;
-    border-radius: 20px;
-    padding: 10px;
-    font-size: large;
-    cursor: pointer;
-}
