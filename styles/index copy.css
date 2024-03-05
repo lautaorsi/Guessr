@@ -1,5 +1,6 @@
 html{
     flex-direction: column;
+    overflow-x: clip;
     scroll-behavior: smooth;
 }
 
@@ -9,8 +10,7 @@ body{
     height: fit-content;
     padding: 0%;
     margin: 0;
-    background-image: url("./static/background_small.jpg");
-    background-color: #cccccc;
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,16,36,1) 35%, rgba(159,43,164,1) 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
@@ -18,6 +18,36 @@ body{
 }
 
 
+#main_container{
+    width: 100vw;
+    display: grid;
+    grid-template-columns: 1;
+    grid-auto-rows: repeat(3, 1rem);
+    row-gap: 2em;
+}
+
+#mobile_warning{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 2; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+
+}
+
+.modal-content-mobile {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Could be more or less, depending on screen size */
+}
 
 
 .modal {
@@ -79,6 +109,7 @@ body{
 
 
 .logoimg{
+    cursor: pointer;
     position: absolute;
     width: 58;
     right: 0%;
@@ -86,6 +117,22 @@ body{
     display: block;
     margin: auto;
 }
+
+.logoimg:hover{
+    animation: rotation 1.5s infinite;
+}
+
+@keyframes rotation {
+    25% {
+      transform: rotate(5deg);
+    }
+    50% {
+      transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+  }
 
 
 #Top_menu{
@@ -123,7 +170,7 @@ body{
     position: absolute;
     top: 57%;
     margin: auto;
-    right: 20px;
+    right: 30px;
 }
 
 .headers{
@@ -133,99 +180,94 @@ body{
     color: rgb(5, 5, 5);
 }
 
-
-.card:hover{
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
-    transform: translateY(-0.25em);
-    cursor: pointer;
+.headers:hover{
+    color: rgb(12, 90, 0) !important;
 }
 
-.slidebutt{
-    font-size: 20px ;
+
+
+.ad_grid{
+    display: grid;
+    grid-template-columns: repeat(2,minmax(50%,50%));
+    grid-auto-rows: 1;
+    grid-gap: 20px;
+    width: 100%;
     position: absolute;
-    width: 120px;
-    cursor: pointer;
-    height: 500px;
-    background: rgb(32, 32, 32);
-    opacity: 0%;
-    display: block;
-    color: white;
-    border-radius: 8px;
-    z-index: 2;
-}
-.slidebutt:hover {
-    opacity: 80%;
-}
-
-
-.rightbutt{
-    right: 0%;
-}
-
-.leftbutt{
-    left: 0%;
+    margin-top: 10px;
 }
 
 .adbox{
-    position: absolute;
+    margin-top: 10px;
+    background-color: #030303;
+    position: relative;
     width: fit-content;
+    margin: auto;
+
 }
 
-.fst{
-    top: 120px;
-}
 
-.snd{
-    top: 765px;
-}
+
+
 
 .last{
+    margin-top: 20px !important;
     position: relative !important;
     margin: auto;
-    
-}
-
-.left{
-    left: 1%;
-}
-
-.right{
-    right: 1%;
 }
 
 
 
-#classic_gamemodes{
+
+
+
+
+.mode_container{
+    position: relative;
+    height: fit-content;
+    padding: 15px;
+}
+
+.gametitles{
     border: #030303;
     border-style: solid;
     transform: translateX(-50%);
     left: 50%;
     position: relative;
-    top: 50px;
-    background-color: rgb(255, 255, 255);
+    top: 10px;
+    background-color: rgb(33, 34, 43);
     width: fit-content;
     padding: 10;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 15px;
     font-family: 'Roboto';
+
 }
 
-#classiccards{
-    padding-bottom: 13;
-    transform: translateX(-50%);
-    left: 50%;
-    scroll-behavior: smooth;
-    overflow: hidden;
+
+.card_container{
     display: grid;
-    grid-template-columns: repeat(4, 0.1fr);
-    grid-auto-rows: auto;
-    grid-gap: 1rem;
-    width: fit-content;
+    grid-template-columns: repeat(auto-fit,minmax(320px,320px));
+    grid-auto-rows: 1;
+    grid-gap: 20px;
     position: relative;
-    top: 60px;
-    height: 505px;
+    top: 10px;
+    justify-content: center;
+    align-content: center;
 }
+
+
+.big_card_container{
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(544px,544px));
+    grid-auto-rows: 1;
+    grid-gap: 20px;
+    position: relative;
+    top: 10px;
+    justify-content: center;
+    align-content: center;
+}
+
 
 .Clbutt{
     top: 189px;
@@ -233,50 +275,22 @@ body{
 }
 
 
-#invertimg{
+.invertimg{
     rotate: 180deg;
-    border-top-right-radius: 0%;
-    border-top-left-radius: 0%;
+    border-top-right-radius: 0px !important;
+    border-top-left-radius: 0px !important;
     border-bottom-right-radius: 20px;
     border-bottom-left-radius: 20px;
 }
 
-#invertright{
-    rotate: 180deg;
-}
 
 
 
 
-#arcade_gamemodes{
-    position: relative;
-    top: 90px;
-    background-color: rgb(255, 255, 255);
-    width: fit-content;
-    transform: translateX(-50%);
-    left: 50%;
-    padding: 10;
-    padding-left: 25px;
-    border: #030303;
-    border-style: solid;
-    padding-right: 25px;
-    border-radius: 15px;
-    font-family: 'Roboto';
-}
 
-#arcadecards{
-    transform: translateX(-50%);
-    left: 50%;
-    scroll-behavior: smooth;
-    overflow: hidden;
-    display: grid;
-    grid-template-columns: repeat(4, 0.1fr);
-    grid-auto-rows: auto;
-    grid-gap: 1rem;
-    width: fit-content;
-    position: relative;
-    top: 130px;
-}
+
+
+
 
 
 
@@ -290,45 +304,14 @@ body{
 
 
 
-#challenge_gamemodes{
-    border: #030303;
-    border-style: solid;
-    left: 45%;
-    position: relative;
-    top: 150px;
-    background-color: rgb(255, 255, 255);
-    width: fit-content;
-    padding: 10;
-    padding-left: 29px;
-    padding-right: 29px;
-    border-radius: 15px;
-    font-family: 'Roboto';
-}
 
-#challengecards{
-    left: 50%;
-    transform: translateX(-50%);
-    scroll-behavior: smooth;
-    display: grid;
-    overflow: hidden;
-    grid-template-columns: repeat(3, 0.1fr);
-    grid-auto-rows: auto;
-    grid-gap: 1rem;
-    width: fit-content;
-    position: relative;
-    margin-bottom: 200px;
-    top: 160px;
-}
+
 
 .Chbutt{
     top: 1426px;
 }
 
 
-
-#firstcard{
-    margin-left: 8px;
-}
 
 
 #h4classic{
@@ -340,22 +323,17 @@ body{
 .cardimg{
     border-top-right-radius: 20px;
     border-top-left-radius: 20px ;
-    height:38.41vh;
+    height:362px;
     min-width: 300px;
-    width: 18.23vw;
+    width: 320px;
 }
 
 .largeimg{
     border-top-right-radius: 20px;
     border-top-left-radius: 20px ;
-    height: 38vh;
-    width: 32vw;
+    height: 359px;
+    width: 543px;
 }
-
-#cleancard{
-    margin-left: 8px;
-}
-
 
 
 
@@ -364,10 +342,12 @@ body{
 }
 
 h3{
+    color: white;
     margin-bottom: 0px;
     text-align: center;
     font-family: 'Gabarito', serif;
     font-size: 23px;
+    font-weight: 2;
 }
 
 .card_description{
@@ -376,14 +356,18 @@ h3{
     font-family: 'Mukta', serif;
     text-align: center;
     overflow: clip;
+    max-width: 300px;
+    margin: auto;
+    padding-bottom: 10px;
+    color: white;
 }
 
 
 .difficulty{
     font-family: 'Gabarito';
-    position: absolute;
-    top: 39vh;
-    left: 16px;
+    position: relative;
+    top: 72%;
+    left: 10px;
     font-size: 20px;
 }
 
@@ -403,30 +387,38 @@ h3{
 .bottomright {
     color: #fefefe;
     position: absolute;
-    right: 16px;
-    top: 31vh;
+    right: 10px;
+    top: 63.3%;
     font-size: 35px;
 }
 
 
 .card {
-    margin-top: 5;
+    border: 2px solid transparent;
+    min-height: 504px !important;
+    margin-top: 10;
     border-radius: 20px;
     position: relative;
     height: fit-content;
-    /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
-    width: fit-content;
-    background-color: whitesmoke;
+    width: fit-content !important;
+    background-color: #000000;
 }
 
-/* On mouse-over, add a deeper shadow */
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+.card:hover{
+    transform: translateY(-0.25em);
+    cursor: pointer;
+    border: 2px;
+    border-color: gold;
+    border-style: solid;
 }
+
+
+
+
   
-/* Add some padding inside the card container */
+
 .container {
     padding: 2px 16px;
 }
@@ -528,6 +520,7 @@ footer{
     justify-content:space-between;
     width: 100%;
     height: 100%;
+    padding-bottom: 10px;
 }
 h4{
     font-size: large;
@@ -580,6 +573,14 @@ h4{
     font-family: 'Gabarito';
 }
 
+#bug-text:hover{
+    background-color: rgb(206, 230, 251);
+    color: #003a11;
+}
+
+
+
+
 
 
 #darken{
@@ -604,8 +605,3 @@ h4{
     font-size: large;
     cursor: pointer;
 }
-
-
-
-
-
