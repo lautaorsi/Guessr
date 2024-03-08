@@ -121,7 +121,7 @@ p{
 }
 
 #imgcontainer{
-    margin-left: 12%;
+    margin: auto;
     width: 75%;
     height: 60%;
 }
@@ -184,7 +184,7 @@ p{
 }
 
 #selectors{
-    left: 28%;
+    margin-left: 28%;
     position: relative;
     top: 90px;
     display: inline;
@@ -382,3 +382,62 @@ h3{
 
 
 
+
+
+@media (max-width: 768px) {
+    #main_container{
+        width: 90vw;
+        height: 90vh;
+    }
+    select{
+        height: 15vh;
+        font-size: 30px;
+    }
+    #imgcontainer{
+        display: none;
+    }
+    .adbox{
+        top: 11%;
+        height: 100%;
+    }
+    iframe{
+        height: 60%;
+    }
+    .left{
+        left: 5%;
+    }
+    .right{
+        right: 5%;
+    }    
+    #selectors{
+        top: 10%;
+        left: 15%;
+        display: grid;
+        grid-auto-rows: auto;
+        grid-auto-columns: 1;
+        grid-row-gap: 20px !important;
+        width: 30vw;
+        height: fit-content;
+        margin-left: 20% !important;
+    }
+    #gamemode{
+        font-size: 30px;
+    }
+
+    #controlcont{
+        display: none;
+    }
+
+    #start{
+        font-size: 40px;
+    }
+    #mutetext{
+        font-size: 30px;
+
+    }
+    .checkmute{
+        bottom: 4.8%;
+        height: 30px;
+        width: 30px;
+    }
+}

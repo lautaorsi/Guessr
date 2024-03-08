@@ -845,11 +845,10 @@ function end(){
 
 
 function startTimer(){
-   
+   if(player.getPlayerState() == 3 || player.getPlayerState() == 1 ){
     clearTimeout(interval)
     looptime()
-
-
+   }
 }
 
 function looptime(){
@@ -1157,6 +1156,17 @@ if (window.performance.getEntriesByType) {
     }
 }
 
+
+function startgame(){
+    player.playVideo()
+    console.log(player.getPlayerState())
+    startTimer()
+    document.getElementById('StartGame').style.display = 'none'
+    document.getElementsByClassName('video-foreground')[0].style.display = 'block'
+}
+
+
+
 function country(index){
     switch (index){
         case 'MX':
@@ -1225,3 +1235,4 @@ function country(index){
             return('Unknown')
     }
 }
+
