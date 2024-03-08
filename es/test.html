@@ -1,6 +1,7 @@
 <!DOCTYPE html >
 <html lang="es">
   <head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flag-icon-css/0.8.2/css/flag-icon.min.css">
     <link rel="icon" href="../static/logo.png">
     <script src="https://randojs.com/2.0.0.js"></script>
     <link rel="stylesheet"
@@ -8,12 +9,13 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
     integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
     crossorigin=""/> 
-    <title>VideoGuessr - Game</title>
-    <script type="text/javascript" src="..//leaflet/leaflet.js"></script>
+    <title>VideoGuessr - Partida</title>
+    <script type="text/javascript" src="../leaflet/leaflet.js"></script>
 
   </head>
 
   <body>
+    <button id="StartGame" onclick="player.playVideo()">Comenzar</button>
     <audio id="cheers">
         <source src="../static/cheer.mp3" type="audio/mp3">
       </audio>
@@ -22,8 +24,8 @@
         <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
     </button>
     <div id="pausecontainer">
-        <button id="pausebutton" onclick="pause()">PAUSE⏸</button>
-        <button id="playbutton" onclick="play()">PLAY▶️</button>
+        <button id="pausebutton" onclick="pause()">PAUSAR⏸</button>
+        <button id="playbutton" onclick="play()">CONTINUAR▶️</button>
     </div>
     <div id="timercontainer">
         <p id="timer"></p>
@@ -32,8 +34,8 @@
         <p id="round">/</p>
     </div>
     <div class="open_map">
-        <button id="Open_map" onclick="window.modal.showModal(), invsze(),  map_open()" data-title="Click to guess!"><img src="..//static/globe.png" id = "globe"></button>
-        <p id="howto">Click the globe to guess!</p>
+        <button id="Open_map" onclick="window.modal.showModal(), invsze(),  map_open()" data-title="Click to guess!"><img src="../static/globe.png" id = "globe"></button>
+        <p id="howto">Aprieta el globo para adivinar!</p>
     </div>
     <div class="custom-controls">
         
@@ -42,14 +44,14 @@
             <button id="reduceSpeedButton"  style="font-size: large;">x1</button>
             <input type="range" id="speedrange" min="0.25" max="2" step="0.25"  > 
         </div>
-        <button id="restartVideo" onclick="restartVideo()">Restart Video</button>
+        <button id="restartVideo" onclick="restartVideo()">Restartear Video</button>
     </div>
     <div id="credits_container">
         <a href="" target="_blank" id="credits"></a>
     </div>
     <table width = "200" class="scoretable" id="scoretable">
         <tr>
-            <th>Score</th>
+            <th>Puntaje</th>
                 <td id="points">0</td>
           </tr>
     </table>
@@ -71,13 +73,13 @@
                     <div id="distance">
                         <h2 id="h2"></h2>
                     </div>
-                    <button id="close_map" onclick="window.modal.close(),  map_open()">Close</button>
-                    <a href="#" id="guess" class="btn btn-white btn-        animate" onclick="final_guess(true)">Guess</a>
-                    <button id = "continue" onclick="next()">Continue</button>
+                    <button id="close_map" onclick="window.modal.close(),  map_open()">Cerrar</button>
+                    <a href="#" id="guess" class="btn btn-white btn-        animate" onclick="final_guess(true)">Adivinar</a>
+                    <button id = "continue" onclick="next()">Continuar</button>
                  </div>
         </dialog>
         <div id="warning-container">
-            <text id="warning">Click the map to guess!</text>
+            <text id="warning">Clickea el mapa para adivinar!</text>
             <i class="fa-solid fa-location-dot fa-bounce" id="marker_warning" style="color: #005eff;"></i> 
         </div>
 </body>

@@ -655,3 +655,19 @@ h2{
   height: 100svh;
   margin-top: 70px;
 } */
+
+
+#StartGame{
+  position: absolute;
+  top: 50%;
+  right: 50%;
+  height: fit-content;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: forestgreen;
+  font-family: 'Gabarito';
+  font-size: larger;
+  font-weight: 200;
+
+}
