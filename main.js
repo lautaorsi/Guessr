@@ -845,10 +845,8 @@ function end(){
 
 
 function startTimer(){
-   if(player.getPlayerState() == 3 || player.getPlayerState() == 1 ){
     clearTimeout(interval)
     looptime()
-   }
 }
 
 function looptime(){
