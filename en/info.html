@@ -1,5 +1,6 @@
 <html>
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../static/logo.png">
         <link rel="stylesheet" href="../styles/info.css">
         <link rel="stylesheet"
@@ -11,19 +12,18 @@
     </head>
     <body>
         <title>VideoGuessr - How To Play</title>
+        <img src="../static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
+
+        <a href="index.html">
+            <button id="return">
+                <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
+            </button>
+        </a>
         <div id="container">
-            <img src="../static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
-
-            <a href="index.html">
-                <button id="return">
-                    <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
-                </button>
-            </a>
-
             <div class="column" id="howto">
-            <h1>How to play:</h1>
-            <p>You simply have to look around for visual clues to indentify where the video was recorded, every detail counts! <br> After that, you must click the globe icon on top of the screen and guess. Remember to not run out of time! </p>
-        </div>
+                <h1>How to play:</h1>
+                <p>You simply have to look around for visual clues to indentify where the video was recorded, <br> look carefully as every detail counts! <br> After that, you must click the globe icon on top of the screen and guess. Remember to not run out of time! </p>
+            </div>
         <video src="../static/howto2.mp4" id="gif" autoplay muted loop>
         </video>
 

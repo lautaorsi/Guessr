@@ -1,5 +1,6 @@
 <html lang="es">
     <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="icon" href="../static/logo.png">
         <link rel="stylesheet" href="../styles/lobby.css">
         <link rel="stylesheet"
@@ -10,6 +11,7 @@
 
     </head>
     <body>
+        
         <title>VideoGuessr - Lobby</title>
         <div class="adbox left">
         <script type="text/javascript">
@@ -45,10 +47,6 @@
                 </button>
             </a>
             <div id="main_container">
-                <div id="controlcont">
-                    <p id="key" class="s">M</p><p class="s" >Abrir mapa</p>
-                    <p id="key" class="s">⬅</p><p id="key" class="s">➡</p><p class="s" id="keyxplain">Subir/Bajar velocidad de reproduccion</p>
-                </div>
                 <h2 id="gamemode"></h2>
                 <div id="imgcontainer">
                     <img src="" id="img2">
@@ -97,6 +95,10 @@
                 </button>
 
                 <input type="checkbox" class="checkmute" id="checkmute"> <label for="checkmute" id="mutetext">Mutear audio del video</label>
+            </div>
+            <div id="controlcont">
+                <p id="key" class="s">M</p><p class="s" >Abrir mapa</p>
+                <p id="key" class="s">⬅</p><p id="key" class="s">➡</p><p class="s" id="keyxplain">Subir/Bajar velocidad de reproduccion</p>
             </div>
             <div id="warning">
                 <h2 id="attention">•Atencion•</h2>
@@ -250,7 +252,7 @@
                 window.location.href = 'staticgame.html'
             }
             else{
-            window.location.href = 'test.html' 
+            window.location.href = 'game.html' 
             }
             
         }

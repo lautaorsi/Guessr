@@ -36,6 +36,7 @@
 -->
 
     <head>  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
@@ -53,7 +54,7 @@
 
         <title>VideoGuessr - Inicio</title>
         <meta name="description" content="Play solo or with friends! Try to guess the country shown in this video!">
-        <link rel="stylesheet" href="../styles/index copy.css">
+        <link rel="stylesheet" href="../styles/index.css">
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Gabarito&family=Mukta&family=Roboto">
 
@@ -148,7 +149,11 @@
                         
                 </div>
             </div>
-                <div id="classic_gamemodes" class="gametitles"> <h2>Clasicos</h2></div>
+                <div id="classic_gamemodes" class="gametitle_container"> 
+                    <div class="gametitle">
+                        <h2>Clasicos</h2>
+                    </div>
+                </div>
                 <div id="classiccards" class="card_container">
                         <div class="card" >
                             <a onclick='lobby("CLASICO")' class="cardlink">
@@ -247,7 +252,11 @@
                         
                 </div>
             </div>
-                <div id="Arcade_gamemodes" class="gametitles"> <h2>Arcade</h2></div> 
+            <div id="arcade_gamemodes" class="gametitle_container"> 
+                <div class="gametitle">
+                    <h2>Arcade</h2>
+                </div>
+            </div>
                 <div id="arcadecards" class="big_card_container">
                         <div class="card" >
                             <a onclick='lobby("clear_map")' class="cardlink">
@@ -277,7 +286,11 @@
                 </div>
             </div>
             <div class="mode_container">
-                <div id="challenge_gamemodes" class="gametitles"> <h2>Desafios</h2></div>
+                <div id="challenge_gamemodes" class="gametitle_container"> 
+                    <div class="gametitle">
+                        <h2>Desafios</h2>
+                    </div>
+                </div>
                 <div id="challengecards" class="card_container">
                     <div class="card firstchallenge firstcard"  >
                         <a onclick='lobby("contrarreloj")' class="cardlink">

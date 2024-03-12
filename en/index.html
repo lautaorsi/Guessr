@@ -36,6 +36,7 @@
 -->
 
     <head>  
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link
         rel="stylesheet"
         href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.0.0/css/flag-icons.min.css"/>
@@ -54,7 +55,7 @@
         <title>VideoGuessr - Start</title>
         <meta name="description" content="Play solo or with friends! Try to guess the country shown in this video!">
         <link rel="icon" href="../static/logo.png">
-        <link rel="stylesheet" href="../styles/index copy.css">
+        <link rel="stylesheet" href="../styles/index.css">
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Gabarito&family=Mukta&family=Roboto">
 
@@ -102,7 +103,7 @@
         <div id="main_container">
             <div class="mode_container">
                 <div class="ad_grid">
-                <div class="adbox ">
+                <div class="adbox hidemobile">
 
                     <script type="text/javascript">
                     
@@ -124,8 +125,8 @@
                     
                     </script>
                     
-                    </div>
-                <div class="adbox " >
+                </div>
+                <div class="adbox hidemobile" >
         
                         <script type="text/javascript">
                         
@@ -149,7 +150,11 @@
                         
                 </div>
             </div>
-                <div id="classic_gamemodes" class="gametitles"> <h2>Classic</h2></div>
+            <div id="classic_gamemodes" class="gametitle_container"> 
+                <div class="gametitle">
+                    <h2>Classic</h2>
+                </div>
+            </div>
                 <div id="classiccards" class="card_container">
                         <div class="card" >
                             <a onclick='lobby("CLASICO")' class="cardlink">
@@ -199,7 +204,7 @@
             </div>
             <div class="mode_container">
                 <div class="ad_grid">
-                <div class="adbox left snd ">
+                <div class="adbox left snd topad">
 
                     <script type="text/javascript">
                     
@@ -222,7 +227,7 @@
                     </script>
                     
                 </div>
-                <div class="adbox right snd" >
+                <div class="adbox right snd hidemobile" >
         
                         <script type="text/javascript">
                         
@@ -246,7 +251,11 @@
                         
                 </div>
             </div>
-                <div id="Arcade_gamemodes" class="gametitles"> <h2>Arcade</h2></div> 
+            <div id="Arcade_gamemodes" class="gametitle_container"> 
+                <div class="gametitle">
+                    <h2>Arcade</h2>
+                </div>
+            </div>
                 <div id="arcadecards" class="big_card_container">
                         <div class="card" >
                             <a onclick='lobby("clear_map")' class="cardlink">
@@ -276,7 +285,11 @@
                 </div>
             </div>
             <div class="mode_container">
-                <div id="challenge_gamemodes" class="gametitles"> <h2>Challenges</h2></div>
+                <div id="challenge_gamemodes" class="gametitle_container"> 
+                    <div class="gametitle">
+                        <h2>Challenge</h2>
+                    </div>
+                </div>
                 <div id="challengecards" class="card_container">
                     <div class="card firstchallenge firstcard"  >
                         <a onclick='lobby("contrarreloj")' class="cardlink">

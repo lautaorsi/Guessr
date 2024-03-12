@@ -7,18 +7,15 @@ body{
     background-attachment: fixed;
     background-position: center;
     overflow: clip;
+    height: 100vh;
 }
 
+
+
 #main_container{
-    display: block;
-    position: relative ;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    content: "";
+    position: relative;
     margin: auto;
-    width: 650px;
+    width: 33.85vw;
     height: 85vh;
     min-height: 650px;
     border-radius: 8px;
@@ -34,12 +31,11 @@ p{
 }
 
 .logoimg{
+    position: relative;
     z-index: 99;
     cursor: pointer;
     margin-top: 10;
     width: 70;
-    right: 0%;
-    left: 0%;
     display: block;
     margin: auto;
 }
@@ -62,12 +58,12 @@ p{
 
 
 #controlcont{
-    position: absolute;
-    margin-left: 16%;
+    position: relative;
+    margin: auto;
+    margin-top: 15px;
     border-radius: 8px;
-    bottom: -68px;
     background-color: #fff;
-    width: fit-content;
+    width: 650px;
     height: fit-content;
     padding-top: 5px;
     padding-bottom: 15px;
@@ -177,17 +173,13 @@ p{
 }
 
 
-.colorcontainer {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-}
 
 #selectors{
-    margin-left: 28%;
+    margin: auto;
+    width: fit-content;
     position: relative;
     top: 90px;
-    display: inline;
+    height: fit-content;
 }
 
 
@@ -296,7 +288,6 @@ option{
 #start{
   right: 5%;
   bottom: 3%;
-  appearance: none;
   backface-visibility: hidden;
   background-color: #27ae60;
   border-radius: 8px;
@@ -305,25 +296,16 @@ option{
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  display: inline-block;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: normal;
   line-height: 1.5;
-  outline: none;
-  overflow: hidden;
   padding: 13px 20px;
   position: absolute;
   text-align: center;
   text-decoration: none;
   transform: translate3d(0, 0, 0);
   transition: all .3s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: top;
-  white-space: nowrap;
 }
 
 #start:hover {
@@ -378,66 +360,40 @@ h3{
     50% { transform: translateX(-5px) }
     75% { transform: translateX(5px) }
     100% { transform: translateX(0) }
-   }
+}
 
-
-
-
-
-@media (max-width: 768px) {
-    #main_container{
-        width: 90vw;
-        height: 90vh;
+@media (max-width: 768px){
+    #selectors{
+        top: 20%;
+        margin: auto;
     }
     select{
-        height: 15vh;
-        font-size: 30px;
+        height: 7vh;
+        width: 20vw;
+        font-size: medium;
+        margin: auto;
     }
-    #imgcontainer{
-        display: none;
+    .s{
+        margin-left: 2;
+    }
+    #controlcont{
+        position: absolute;
+        bottom: 0 !important;
+        width: 100vw;
+        font-size: small;
+    }
+    #main_container{
+        width: 90vw;
     }
     .adbox{
-        top: 11%;
-        height: 100%;
-    }
-    iframe{
-        height: 60%;
-    }
-    .left{
-        left: 5%;
-    }
-    .right{
-        right: 5%;
-    }    
-    #selectors{
-        top: 10%;
-        left: 15%;
-        display: grid;
-        grid-auto-rows: auto;
-        grid-auto-columns: 1;
-        grid-row-gap: 20px !important;
-        width: 30vw;
-        height: fit-content;
-        margin-left: 20% !important;
-    }
-    #gamemode{
-        font-size: 30px;
-    }
-
-    #controlcont{
         display: none;
     }
-
-    #start{
-        font-size: 40px;
-    }
-    #mutetext{
-        font-size: 30px;
-
+    #imgcontainer{
+        height: 40%;
     }
     .checkmute{
-        bottom: 4.8%;
-        height: 30px;
-        width: 30px;
+        left: 0;
     }
 }
+
+
