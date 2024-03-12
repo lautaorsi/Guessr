@@ -1,3 +1,5 @@
+
+
 body{
     padding: 0%;
     margin: 0;
@@ -6,7 +8,6 @@ body{
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-    overflow: clip;
     height: 100vh;
 }
 
@@ -15,12 +16,12 @@ body{
 #main_container{
     position: relative;
     margin: auto;
-    width: 33.85vw;
+    width: 650px;
     height: 85vh;
-    min-height: 650px;
     border-radius: 8px;
     background: linear-gradient(180deg, rgba(0,107,254,1) 0%, rgba(60,127,250,1) 53%, rgba(65,190,255,1) 84%, rgba(154,233,255,1) 100%);
     background-size: cover;
+    min-height: 609px;
 }
 
 
@@ -118,8 +119,9 @@ p{
 
 #imgcontainer{
     margin: auto;
-    width: 75%;
-    height: 60%;
+    width: 29vw;
+    height: 50vh;
+    min-height: 358px;
 }
 
 #foot{
@@ -178,7 +180,7 @@ p{
     margin: auto;
     width: fit-content;
     position: relative;
-    top: 90px;
+    margin-top: 70px;
     height: fit-content;
 }
 
@@ -364,12 +366,12 @@ h3{
 
 @media (max-width: 768px){
     #selectors{
-        top: 20%;
+        top: 10%;
         margin: auto;
     }
     select{
         height: 7vh;
-        width: 20vw;
+        width: 21vw;
         font-size: medium;
         margin: auto;
     }
@@ -377,10 +379,7 @@ h3{
         margin-left: 2;
     }
     #controlcont{
-        position: absolute;
-        bottom: 0 !important;
-        width: 100vw;
-        font-size: small;
+        display: none;
     }
     #main_container{
         width: 90vw;
@@ -390,6 +389,7 @@ h3{
     }
     #imgcontainer{
         height: 40%;
+        width: 80vw;
     }
     .checkmute{
         left: 0;
