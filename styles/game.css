@@ -657,11 +657,12 @@ h2{
 
 #StartGame{
   position: absolute;
-  top: 50%;
-  right: 50%;
-  height: fit-content;
+  top: 40%;
+  right: 0;
+  left: 0;
+  z-index: 999;
   cursor: pointer;
-  padding: 10px;
+  padding: 55px;
   border-radius: 8px;
   background-color: forestgreen;
   font-family: 'Gabarito';
@@ -676,5 +677,11 @@ h2{
   }
   .video-foreground{
     display: none;
+  }
+}
+
+@media (max-height: 480px){
+  .video-foreground{
+    top: 40%;
   }
 }
