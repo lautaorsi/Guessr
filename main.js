@@ -1234,3 +1234,4 @@ function country(index){
     }
 }
 
+lock('landscape')
