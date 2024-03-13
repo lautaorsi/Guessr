@@ -5,7 +5,7 @@ const numero_color = JSON.parse(colorobject);
 document.getElementById("marker_warning").style.color = colors[Number(numero_color)]
 const gamemode = JSON.parse(localStorage.getItem('gamemode'))['hello']
 let abstime
-var rounds = 0 
+var rounds = 1
 var roundhtml = document.getElementById('round')
 var timer = document.getElementById("timer")
 const pretime = localStorage.getItem('time')
@@ -16,10 +16,10 @@ var mute = JSON.parse(premute)
 if (gamemode != 'contrarreloj'){
     const prerounds = localStorage.getItem('rounds')
     var prround = JSON.parse(prerounds) 
-    roundhtml.innerHTML = `0/${prround}`
+    roundhtml.innerHTML = `1/${prround}`
 }
 else{
-    roundhtml.innerHTML = `0`
+    roundhtml.innerHTML = `1`
 }
 
 if (gamemode == 'radius'){
@@ -193,7 +193,7 @@ var video_list = [
 ["rFfWAwsdZWI", 59.9119644,10.7485938,1725,'NW', 'Atmos Walks','https://www.youtube.com/@AtmosWalks','Oslo'],
 ['sKTox7DglVg',37.8093724,-122.4759122,301, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew','San Francisco'],
 ['sKTox7DglVg',37.8084333,-122.4729643,1400, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew','San Francisco'],
-// ['a6VI-4YNHR0',40.7567671,-73.9865428,6, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew',''],
+['a6VI-4YNHR0',40.7567671,-73.9865428,6, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew',''],
 ['4ugekTk2_Ss',40.6908017,-74.045311,315, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew','New York'],
 ['-jHtx64DUuw',21.4310782,-157.8315108,5, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew','Yucatan'],
 ['0WFAbXjpC1s',21.281624, -157.830731,107, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew','Hawaii'],
@@ -458,6 +458,7 @@ var x = document.getElementById("warning-container")
 var myvid = document.getElementById('myvid');
 var bool_map = false
 var backvideo
+var credit_array = []
 var marker_placed = false
 
 
@@ -467,31 +468,32 @@ var marker_placed = false
 map = L.map('map').setView([0, 0], 2.4); 
 
 //select map type based on gamemode
-if (gamemode == 'clear_map'){
-    L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
-        maxZoom: 19,
-        minZoom: 2,
-        attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+switch(gamemode){
+    case 'clear_map':
+        L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+            maxZoom: 19,
+            minZoom: 2,
+            attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
+            }).addTo(map);
+            break
+    case 'nozoom':
+        L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en', {
+            minZoom: 2,
+            maxZoom: 2,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            subdomains:['mt0','mt1','mt2','mt3']
         }).addTo(map);
-
-}
-else if(gamemode == 'nozoom'){
-    L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en', {
-        minZoom: 2,
-        maxZoom: 2,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        subdomains:['mt0','mt1','mt2','mt3']
-    }).addTo(map);
-
-}
-else{
-    L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en', {
-        minZoom: 2,
-        attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
-        subdomains:['mt0','mt1','mt2','mt3']
-    }).addTo(map);
+        break
+    default:
+        L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}&hl=en', {
+            minZoom: 2,
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+            subdomains:['mt0','mt1','mt2','mt3']
+        }).addTo(map);
 }
 map.setMaxBounds([[150,200],[-150,-200]]);
+
+
 
 //add marker to map
 marker = L.layerGroup();
@@ -519,7 +521,8 @@ function onYouTubeIframeAPIReady() {
             origin: "http://127.0.0.1:3000/main.html"
         },
         events: {
-            onReady: onPlayerReady
+            onReady: onPlayerReady,
+            onError: onPlayerError
         },
 
     });
@@ -528,16 +531,6 @@ function onYouTubeIframeAPIReady() {
     
 
 }
-
-
-document.getElementById('speedrange').oninput = function(){
-    player.setPlaybackRate(parseFloat((document.getElementById('speedrange')).value))
-    document.getElementById('reduceSpeedButton').innerHTML = `x${(document.getElementById('speedrange')).value}`
-};
-
-document.getElementById('volumerange').oninput = function(){
-    player.setVolume(parseFloat((document.getElementById('volumerange')).value))
-};
 
 
 function onPlayerReady(event) {
@@ -569,6 +562,30 @@ function onPlayerReady(event) {
     setTimeout(() => {  document.getElementById('howto').style.display = "none"; }, 4500)
 }
 
+function onPlayerError(event){
+
+    //choose new video
+    var newvid = randomlyChooseVideo()
+
+    //update video
+    player.loadVideoById(newvid[0],newvid[3]);
+
+
+    //remove video from credit array
+    credit_array.splice(-1)
+}
+
+
+
+document.getElementById('speedrange').oninput = function(){
+    player.setPlaybackRate(parseFloat((document.getElementById('speedrange')).value))
+    document.getElementById('reduceSpeedButton').innerHTML = `x${(document.getElementById('speedrange')).value}`
+};
+
+document.getElementById('volumerange').oninput = function(){
+    player.setVolume(parseFloat((document.getElementById('volumerange')).value))
+};
+
 
 
 //player color selection
@@ -596,6 +613,15 @@ function randomlyChooseVideo() {
 
     // update the video's coordenates
     video_coords = [active_video[1],active_video[2]]
+
+    //update credits
+    var a = document.getElementById('credits');
+    a.href = active_playlist[vid_index][6]
+    a.innerHTML = `${active_playlist[vid_index][5]}`
+
+    addtocredit(src)
+
+    //return video array
     console.log(src)
     return(src)
    
@@ -796,26 +822,11 @@ function next(e) {
 
     //update video
     player.loadVideoById(newvid[0],newvid[3]);
-    var state = player.getPlayerState()
 
-    //if video isn't working, getPlayerState will return -1 value
-
-    if(state == -1){
-        console.log('unavailable video')
-        //choose new video
-        var newvid = randomlyChooseVideo()
-
-        //update video
-        player.loadVideoById(newvid[0],newvid[3]);
-    }
     
     
 
-    var a = document.getElementById('credits');
 
-    //update credits
-    a.href = active_playlist[vid_index][6]
-    a.innerHTML = `${active_playlist[vid_index][5]}`
     
     
     if(gamemode !='contrarreloj'){
@@ -838,6 +849,7 @@ function next(e) {
 function end(){
     score = parseInt(score)
     localStorage.setItem('points', score)
+    localStorage.setItem('credits', JSON.stringify(credit_array))
     document.getElementById("continue").onclick = window.location.href = 'resume.html';
 
     
@@ -1145,7 +1157,7 @@ window.onclick = function(event) {
     if (event.target == modal) {
       modal.close()
     }
-  }
+}
 
 
 if (window.performance.getEntriesByType) {
@@ -1163,7 +1175,10 @@ function startgame(){
     document.getElementsByClassName('video-foreground')[0].style.display = 'block'
 }
 
-
+function addtocredit(ar){
+    credit_array.push({'name':ar[5],'link':ar[6], 'round':rounds})
+    console.log(credit_array)
+}
 
 function country(index){
     switch (index){

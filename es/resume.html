@@ -35,6 +35,11 @@
                     </button>
                 </a>
             </div>
+            <div class="bott_container">
+                <div class="credit_cont" id="credit_cont">
+                    <div id="credit_title">Creditos:</div>
+                </div>
+            </div>
     </body>
     <script>
         function getRandomIndex(max) {
@@ -43,7 +48,7 @@
         }
 
 
-        const objcredits = localStorage.getItem('credits')
+        const objcredits = JSON.parse(localStorage.getItem('credits'))
         const objrounds = localStorage.getItem('rounds')
         const rounds = JSON.stringify(objrounds)
         const objscore = localStorage.getItem('points')
@@ -69,6 +74,14 @@
         function myFunction1(){
             window.location.href = 'game.html'
         }
+        objcredits.forEach(function(element) {
+            var x = document.createElement('div');
+            x.classList.add('credit');
+            x.innerHTML = `${element['round']}: <a href="${element['link']}" style='color:#383838;'>${element['name']}</a>`;
+            document.getElementById("credit_cont").appendChild(x);
+        })
+            
+        
     </script>
 
 

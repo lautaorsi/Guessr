@@ -10,12 +10,7 @@ body{
 }
 
 #main_container{
-    position: relative ;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    content: "";
+    position: relative;
     margin: auto;
     width: 650px;
     height: 750px;
@@ -306,5 +301,43 @@ select {
 #gif{
     width: 100%;
     height: 100%;
+}
+
+.bott_container{
+    margin-top: 10px !important;
+    width: 100%;
+}
+
+.credit_cont{
+    background-color: #fff;
+    border-radius: 5px;
+    width: 90vw;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+}
+
+.credit{
+    font-family: 'Gabarito';
+    background-color: #fff;
+    display: block;
+    width: 100px;
+    min-width: fit-content;
+    font-size: medium;
+    color: #383838;
+    font-weight: 600;
+}
+
+#credit_title{
+    font-weight: 900;
+    text-align: center;
+    width: 100%;
+    margin: auto;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    font-family: 'Merriweather Sans';
+    background-color: #fff;
 }
 
