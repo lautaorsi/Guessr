@@ -279,7 +279,7 @@ var video_list = [
 ['UqZYW3-MgnE',37.5006252,127.0255362,482,'SK','Watchers Club','https://www.youtube.com/@watchersclub','Seoul'],
 ['zUUT06KHbw8',46.62425461112303, 8.035429897480348,150,'SZ','Chris L','https://www.youtube.com/@christopherlzt','Grindelwald'],
 ['8fOxvqVbPvc',56.950837338520955, 24.104650581006652,662,'LTV','Streets Of Ambience','https://www.youtube.com/@streetsambience6054','Riga'],
-['K4HWfOy93k8',20.6896872,-88.201725,112,'MX','Paseos de Aventura', 'https://www.youtube.com/@MiddleAgeAdventureWalks','Valladolid'],
+// ['K4HWfOy93k8',20.6896872,-88.201725,112,'MX','Paseos de Aventura', 'https://www.youtube.com/@MiddleAgeAdventureWalks','Valladolid'],
 ['tHhTHoPcRB8',48.86042795329101, 2.3377860527069623,409,'FR','People Places & Events','https://www.youtube.com/@PeoplePlacesEvents','Paris']
 ]
 
@@ -459,6 +459,7 @@ var myvid = document.getElementById('myvid');
 var bool_map = false
 var backvideo
 var credit_array = []
+var videos_played = []
 var marker_placed = false
 
 
@@ -604,9 +605,13 @@ function getRandomIndex(max) {
 
 //choose random vid based on video list index
 function randomlyChooseVideo() {
-
     // get new video
     vid_index =  getRandomIndex((list[gamemode]).length);
+    console.log(videos_played)
+    while(videos_played.includes(vid_index)){
+        randomlyChooseVideo()
+    }
+    videos_played.push(vid_index)
     src = ((list[gamemode])[vid_index]);
     active_video = (list[gamemode])[vid_index]
     active_playlist = list[gamemode]
