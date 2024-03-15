@@ -16,26 +16,30 @@
     <body>
         <title>VideoGuessr - Resumen</title>
             <h1 id="Title">VideoGuessr</h1>
+            <a href="index.html">
+                <button id="return" >
+                    <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
+                </button>
+            </a>
             <div id="main_container">
                 <h2 id="congrats"></h2>
                 <h2 id="points"></h3>
                 <div id="imgcontainer">
                     <video src="" id="gif" autoplay muted loop>
                 </div>
-                <button id="start" onclick="myFunction1()">
+                <button id="start" class="main_buttons" onclick="myFunction1()">
 
                     Jugar de nuevo
                 </button>
-                <button id="menu" onclick="myFunction()">
+                <button id="menu" class="main_buttons" onclick="myFunction()">
                     Volver al menu
                 </button>
-                <a href="index.html">
-                    <button id="return" href = >
-                        <span id="arrow">&#10229;</span>
-                    </button>
-                </a>
+
             </div>
             <div class="bott_container">
+                <div class="mobile_credit">
+                    <a href="creditos.html">Creditos</a>
+                </div>
                 <div class="credit_cont" id="credit_cont">
                     <div id="credit_title">Creditos:</div>
                 </div>
