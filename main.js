@@ -1268,4 +1268,9 @@ if(window.mobileCheck()){
     player.mute()
 }
 
-console.log(window.mobileCheck())
+if(window.mobileCheck()){
+    console.log('true')
+}
+else{
+    console.log('false')
+}
