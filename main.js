@@ -3,7 +3,12 @@ var colors = ["#CC2A3D", "#9D2ECC", "#CBC52B", "#CB852B", "#3E3E3E", "#2C83CB"]
 const colorobject = localStorage.getItem('color');
 const numero_color = JSON.parse(colorobject);
 document.getElementById("marker_warning").style.color = colors[Number(numero_color)]
-const gamemode = JSON.parse(localStorage.getItem('gamemode'))['hello']
+try{
+    const gamemode = JSON.parse(localStorage.getItem('gamemode'))['hello']
+} catch(error){
+    window.location.href = 'index.html'
+}
+
 let abstime
 var rounds = 1
 var roundhtml = document.getElementById('round')
@@ -279,7 +284,7 @@ var video_list = [
 ['UqZYW3-MgnE',37.5006252,127.0255362,482,'SK','Watchers Club','https://www.youtube.com/@watchersclub','Seoul'],
 ['zUUT06KHbw8',46.62425461112303, 8.035429897480348,150,'SZ','Chris L','https://www.youtube.com/@christopherlzt','Grindelwald'],
 ['8fOxvqVbPvc',56.950837338520955, 24.104650581006652,662,'LTV','Streets Of Ambience','https://www.youtube.com/@streetsambience6054','Riga'],
-// ['K4HWfOy93k8',20.6896872,-88.201725,112,'MX','Paseos de Aventura', 'https://www.youtube.com/@MiddleAgeAdventureWalks','Valladolid'],
+['K4HWfOy93k8',20.6896872,-88.201725,112,'MX','Paseos de Aventura', 'https://www.youtube.com/@MiddleAgeAdventureWalks','Valladolid'],
 ['tHhTHoPcRB8',48.86042795329101, 2.3377860527069623,409,'FR','People Places & Events','https://www.youtube.com/@PeoplePlacesEvents','Paris']
 ]
 

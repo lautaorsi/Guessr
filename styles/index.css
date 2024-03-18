@@ -2,6 +2,7 @@ html{
     flex-direction: column;
     scroll-behavior: smooth;
     overflow-x: clip;
+    margin: 0px;
 }
 
 body{
@@ -10,12 +11,13 @@ body{
     height: fit-content;
     padding: 0%;
     margin: 0;
-    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,16,36,1) 35%, rgba(159,43,164,1) 100%);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(16,16,36,1) 35%, rgb(77, 6, 80) 100%);
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
+
 
 
 #main_container{
@@ -616,3 +618,41 @@ h4{
         right: 2%;
     }
 }
+
+
+.star_container{
+    z-index: -999;
+    height: fit-content;
+    position: sticky;
+}
+
+.star1 {
+    z-index: -99;
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #fff; 
+    border-radius: 50%; 
+    animation: blinkStar 1s infinite alternate; 
+}
+
+.star2 {
+    z-index: -99;
+    position: absolute;
+    width: 2px;
+    height: 2px;
+    background-color: #fff; 
+    border-radius: 50%; 
+    animation: blinkStar 1.5s infinite alternate; 
+}
+
+
+@keyframes blinkStar {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1; 
+    }
+}
+
