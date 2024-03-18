@@ -549,12 +549,17 @@ function onPlayerReady(event) {
     document.getElementById("rewindButton").addEventListener("click", rewindVideo);
     document.getElementById("reduceSpeedButton").addEventListener("click", reduceSpeed);
     player.setPlaybackQuality('highres')
-    if(mute){
+
+    if(window.mobileCheck()){
+        player.mute()
+    }
+
+    if(mute && window.mobileCheck == false){
         player.unMute()
         player.setVolume(0)
         document.getElementById('volumerange').value = 0
     }
-    else{
+    if(mute == false && window.mobileCheck == false){
         player.unMute()
         player.setVolume(30)
     }
@@ -566,6 +571,7 @@ function onPlayerReady(event) {
     a.innerHTML = `${active_playlist[vid_index][5]}`
     startTimer()
     setTimeout(() => {  document.getElementById('howto').style.display = "none"; }, 4500)
+
 }
 
 function onPlayerError(event){
@@ -1264,13 +1270,4 @@ window.mobileCheck = function() {
     return check;
   };
 
-if(window.mobileCheck()){
-    player.mute()
-}
 
-if(window.mobileCheck()){
-    console.log('true')
-}
-else{
-    console.log('false')
-}
