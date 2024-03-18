@@ -69,6 +69,7 @@
 
 
     <body>
+        <div class="star_container">
         <div id="mobile_warning" class="modal">
             <div class="modal-content-mobile">
                 <p class="warning_text">Sorry! VideoGuessr is only available in desktop/laptops, mobile devices are not yet supported</p>
@@ -405,7 +406,7 @@
         <div id="mode">
             <a id="change" href="../es/"><span class="fi fi-mx flag-icon"></a>
         </div>
-
+    </div>
     </body> 
 
     <script> 
@@ -478,6 +479,35 @@
       });
 
       //document.documentElement.clientWidth;
+    </script>
+    <script>
+        const numStars = 70; 
+        const body = document.querySelector('.star_container');
+        setInterval(star1, 2000)
+        setInterval(star2, 3000)
+        function star1() {
+            document.querySelectorAll('.star1').forEach(e => e.remove());    
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star1');
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                body.appendChild(star);
+            }
+        }
+        function star2() {
+            document.querySelectorAll('.star2').forEach(e => e.remove());    
+            for (let i = 0; i < numStars; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star2');
+                star.style.left = `${Math.random() * 100}%`;
+                star.style.top = `${Math.random() * 100}%`;
+                body.appendChild(star);
+            }
+        }
+        
+    
+    
     </script>
 
 </html>
