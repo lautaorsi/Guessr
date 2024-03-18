@@ -21,6 +21,7 @@ body{
 
 
 #main_container{
+    z-index: 99999 !important;
     width: 100vw;
     display: grid;
     grid-template-columns: 1;
@@ -621,13 +622,11 @@ h4{
 
 
 .star_container{
-    z-index: -999;
-    height: fit-content;
     position: sticky;
 }
 
 .star1 {
-    z-index: -99;
+    z-index: -999 !important;
     position: absolute;
     width: 2px;
     height: 2px;
@@ -637,7 +636,7 @@ h4{
 }
 
 .star2 {
-    z-index: -99;
+    z-index: -999 !important;
     position: absolute;
     width: 2px;
     height: 2px;
