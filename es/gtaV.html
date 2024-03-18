@@ -1,19 +1,19 @@
 <html lang="es">
     <head>   
-        <link rel="icon" href="static/logo.png"> 
+        <link rel="icon" href="../static/logo.png"> 
         <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
         <meta name="description" content="Game: Guessing, videogame for guessing, geography fun">
         <script> localStorage.clear()</script>
         <title>VideoGuessr</title>
-        <link rel="stylesheet" href="gtav.css">
+        <link rel="stylesheet" href="../styles/gtav.css">
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Gabarito&family=Mukta&family=Roboto">
     </head>
     <body>
 
         <div id="Top_menu">
-            <img src="./static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
-            <img src="./static/gtalogo.png" alt="logo" class="logoVimg" draggable="false">
+            <img src="../static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
+            <img src="../static/gtalogo.png" alt="logo" class="logoVimg" draggable="false">
             <div id="centerheader">
                 <a href="info.html" draggable="false" id="howto" class="headers">Como jugar</a>
             </div>
@@ -24,11 +24,17 @@
                 <a href="gtaSA.html" draggable="false" id="howto" class="headers">GTA SA</a>
             </div>
         </div>
-                <div id="classic_gamemodes"> <h2>Clasicos</h2></div>
-                <div id="classiccards">
+        <div id="main_container">
+            <div class="mode_container">
+                <div id="classic_gamemodes" class="gametitle_container"> 
+                    <div class="gametitle">
+                        <h2>Clasicos</h2>
+                    </div>
+                </div>
+                <div id="classiccards" class="card_container">
                     <div class="card" id="classiccard">
                         <a onclick='lobby("CLASICO")' class="cardlink">
-                        <img src="./static/gtavmap.jpg" alt="Classic" draggable="false" id="cardimg">
+                        <img src="../static/gtavmap.jpg" alt="Classic" draggable="false" id="cardimg">
                         <div id="Normal" class="difficulty" title="Dificultad">Media</div>
                         <div class="container">
                         <h3><b>Normal</b></h3>
@@ -38,7 +44,7 @@
                     </div>
                     <div class="card" id="pausecard">
                         <a onclick='lobby("PAUSE")' class="cardlink">
-                        <img src="./static/gtavmap.jpg" alt="Classic" draggable="false" id="cardimg">
+                        <img src="../static/gtavmap.jpg" alt="Classic" draggable="false" id="cardimg">
                         <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
                         <div class="container">
                         <h3><b>Pausa</b></h3>
@@ -49,7 +55,7 @@
                     </div>
                     <div class="card" id="urbancard">
                         <a onclick='lobby("URBAN")' class="cardlink">
-                        <img src="./static/urban.jpg" alt="Classic" draggable="false" id="cardimg">
+                        <img src="../static/urban.jpg" alt="Classic" draggable="false" id="cardimg">
                         <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
                         <div class="container">
                         <h3><b>Urbano</b></h3>
@@ -59,7 +65,7 @@
                     </div>
                     <div class="card" id="ruralcard">
                         <a onclick='lobby("RURAL")' class="cardlink">
-                        <img src="./static/rural.jpg" alt="Classic" draggable="false" id="cardimg">
+                        <img src="../static/rural.jpg" alt="Classic" draggable="false" id="cardimg">
                         <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
                         <div class="container">
                         <h3><b>Rural</b></h3>
@@ -68,32 +74,38 @@
                         </a>
                     </div>
                 </div>
-                <div id="Arcade_gamemodes"> <h2>Desafios</h2></div>
-                <div id="arcadecards">
-                    <div class="card" id="timecard">
-                        <a onclick='lobby("contrarreloj")' class="cardlink">
-                        <img src="./static/gtavmap.jpg" alt="clean" draggable="false"  id="cardimg">
-                        <div class="bottomright">⏱️</div>
-                        <div id="Normal" class="difficulty" title="Dificultad">Media</div>
-                        <div class="container">
-                        <h3 id="h4time"><b>Contrarreloj</b></h3>
-                        <p id="timedesc" class="card_description">Consigue la mayor<br>cantidad de puntos<br> antes de que el tiempo acabe! </p>
-                        </a>
-                        </div>
+            </div>
+            <div class="mode_container">
+                <div id="challenge_gamemodes" class="gametitle_container"> 
+                    <div class="gametitle">
+                        <h2>Desafios</h2>
                     </div>
-                    <div class="card" id="radiuscard">
-                        <a onclick="lobby('radius')" class="cardlink">
-                        <img src="./static/gtavmap.jpg" alt="clean" draggable="false" id="cardimg">
-                        <div class="bottomright">📏</div>
-                        <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
-                        <div class="container">
-                        <h3 id="h4radius"><b>Radio</b></h3>
-                        <p id="radiudesc" class="card_description">Consigue la mayor<br> cantidad de aciertos<br> en el radio determinado!</p>
-                        </a>
-                        </div>
-                    </div>
-
                 </div>
+                    <div id="challengecards" class="card_container">
+                        <div class="card" id="timecard">
+                            <a onclick='lobby("contrarreloj")' class="cardlink">
+                            <img src="../static/gtavmap.jpg" alt="clean" draggable="false"  id="cardimg">
+                            <div class="bottomright">⏱️</div>
+                            <div id="Normal" class="difficulty" title="Dificultad">Media</div>
+                            <div class="container">
+                            <h3><b>Contrarreloj</b></h3>
+                            <p  class="card_description">Consigue la mayor<br>cantidad de puntos<br> antes de que el tiempo acabe! </p>
+                            </div>
+                            </a>
+                        </div>
+                        <div class="card" id="radiuscard">
+                            <a onclick="lobby('radius')" class="cardlink">
+                            <img src="../static/gtavmap.jpg" alt="clean" draggable="false" id="cardimg">
+                            <div class="bottomright">📏</div>
+                            <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
+                            <div class="container">
+                            <h3><b>Radio</b></h3>
+                            <p  class="card_description">Consigue la mayor<br> cantidad de aciertos<br> en el radio determinado!</p>
+                            </div>
+                            </a>
+                        </div>
+                    </div>
+            </div>
        </div>
        <div id="sharecontainer">
         <div id="share">
@@ -150,8 +162,12 @@
         </div>
        </footer>
         <div id="Bug">
-            <a id="bug-text" href="https://mail.google.com/mail/u/5/#inbox?compose=GTvVlcSKkkJmlfsZkkcSqVWbgzvSlSKJnhlnhDhSTZxbNlBCJJBLxVtKlZxDTtsqBFNzClrJMTBbc" target="_blank">Reportar bug</a>
+            <a id="bug-text" href="mailto:videoguessr@gmail.com?subject=Reportar%20Bug&body=[Explicacion bug]%0D%0A[Como replicar]" target="_blank">Reportar bug</a>
         </div> 
+
+        <div id="mode">
+            <a id="change" href="../en/"><span class="fi fi-gb flag-icon"></span></a>
+        </div>
     </body> 
 
     <script> 

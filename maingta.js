@@ -104,6 +104,7 @@ var score, video_coords, Enable_marking, points, marker_coords, map, marker, sco
 var color_list = [redIcon, violetIcon, yellowIcon, orangeIcon, blackIcon, blueIcon]
 var guessed = true
 var pausado = false
+var videos_played = []
 
 
 
@@ -136,28 +137,29 @@ var rural_list = [['fVoMdt5MZKg', 4954.52773506048,1673.2022200772203, 0, 'GTA',
 ['fVoMdt5MZKg',971.4073999111112, -3260.898346751677,14409, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
 ]
 
-var video_list = [['fVoMdt5MZKg', 4954.52773506048,1673.2022200772203, 0, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['fVoMdt5MZKg',3754.8508708416716,1943.1708494208497,1675, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['fVoMdt5MZKg',3704.6966190852772, 32.949174951501,7860, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['fVoMdt5MZKg',2559.6723206516867, -1241.2936757941654,9796, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['fVoMdt5MZKg',1152.7158116135877, -3067.7949750856214,11745, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['fVoMdt5MZKg',2305.0334220833015, -1760.3386319718345,10500, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['fVoMdt5MZKg',1079.5259092872393, -3263.8359728834753,12249, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['fVoMdt5MZKg',184.70609745664692, -3013.5055170253504,13040, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['fVoMdt5MZKg',971.4073999111112, -3260.898346751677,14409, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -568.3435959177785, -1390.7216472103837, 20, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -554.6542089811346, -1328.8768865409415, 70, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -394.50011893608536, -1119.1645529151644, 305, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -153.6780094867725, -719.572882101767, 909, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -230.03120507293698, -666.7917939802127, 1200, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -226.96234107948013, -528.0192415200981, 1440, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -292.58050095044484, -316.92327909272046, 1665, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -468.70733446496473, -162.6429837788674, 1891, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -582.1124039904098, -89.06078843640066, 2225, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -746.6862998149187, -24.24984274886327, 2431, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -868.7050729370324, -122.31711913396488, 2662, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -976.9550379865161, -13.669760165230315, 2843, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
-['4keUlXV_z5w', -1301.634640865187, 48.13265456935852, 3208, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+var classic_list = [
+["fVoMdt5MZKg", 4954.52773506048,1673.2022200772203, 0, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["fVoMdt5MZKg",3754.8508708416716,1943.1708494208497,1675, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["fVoMdt5MZKg",3704.6966190852772, 32.949174951501,7860, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["fVoMdt5MZKg",2559.6723206516867, -1241.2936757941654,9796, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["fVoMdt5MZKg",1152.7158116135877, -3067.7949750856214,11745, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["fVoMdt5MZKg",2305.0334220833015, -1760.3386319718345,10500, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["fVoMdt5MZKg",1079.5259092872393, -3263.8359728834753,12249, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["fVoMdt5MZKg",184.70609745664692, -3013.5055170253504,13040, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["fVoMdt5MZKg",971.4073999111112, -3260.898346751677,14409, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -568.3435959177785, -1390.7216472103837, 20, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -554.6542089811346, -1328.8768865409415, 70, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -394.50011893608536, -1119.1645529151644, 305, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -153.6780094867725, -719.572882101767, 909, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -230.03120507293698, -666.7917939802127, 1200, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -226.96234107948013, -528.0192415200981, 1440, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -292.58050095044484, -316.92327909272046, 1665, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -468.70733446496473, -162.6429837788674, 1891, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -582.1124039904098, -89.06078843640066, 2225, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -746.6862998149187, -24.24984274886327, 2431, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -868.7050729370324, -122.31711913396488, 2662, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -976.9550379865161, -13.669760165230315, 2843, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
+["4keUlXV_z5w", -1301.634640865187, 48.13265456935852, 3208, 'GTA', 'DayDream Gaming', 'https://www.youtube.com/@DayDreamGamingTV'],
 ]
 
 
@@ -170,11 +172,11 @@ var video_list = [['fVoMdt5MZKg', 4954.52773506048,1673.2022200772203, 0, 'GTA',
 const list = {
     'URBAN': urban_list,
     'RURAL': rural_list,
-    'PAUSE': video_list,
-    'CLASICO': video_list,
-    'contrarreloj': video_list,
-    'radius': video_list,
-    'INVERTIDO': video_list,
+    'PAUSE': classic_list,
+    'CLASICO': classic_list,
+    'contrarreloj': classic_list,
+    'radius': classic_list,
+    'INVERTIDO': classic_list,
 
 }
 
@@ -212,7 +214,7 @@ CUSTOM_CRS = L.extend({}, L.CRS.Simple, {
     infinite: true
 });
 
-var SateliteStyle = L.tileLayer('mapStyles/styleSatelite/{z}/{x}/{y}.jpg', {minZoom: 0,maxZoom: 8,noWrap: true,continuousWorld: false,attribution: 'Online map GTA V',id: 'SateliteStyle map',})
+var SateliteStyle = L.tileLayer('../mapStyles/styleSatelite/{z}/{x}/{y}.jpg', {minZoom: 0,maxZoom: 8,noWrap: true,continuousWorld: false,attribution: 'Online map GTA V',id: 'SateliteStyle map',})
 
 var map = L.map('map', {
     crs: CUSTOM_CRS,
@@ -258,7 +260,8 @@ function onYouTubeIframeAPIReady() {
             origin: "http://127.0.0.1:3000/main.html"
         },
         events: {
-            onReady: onPlayerReady
+            onReady: onPlayerReady, 
+            onStateChange: onPlayerStateChange
         },
 
     });
@@ -281,6 +284,12 @@ document.getElementById('volumerange').oninput = function(){
 
 
 function onPlayerReady(event) {
+    console.log('player ready')
+    if(gamemode == 'INVERTIDO'){
+        document.getElementById('myvid').style.transform = 'rotate(180deg)'
+        document.getElementById('myvid').style.top= '-80px';
+        document.getElementById('myvid').style.left= '00%';
+    }
     // Define custom control actions
     document.getElementById("rewindButton").addEventListener("click", rewindVideo);
     document.getElementById("reduceSpeedButton").addEventListener("click", reduceSpeed);
@@ -295,12 +304,19 @@ function onPlayerReady(event) {
         player.setVolume(30)
     }
     
+
     var a = document.getElementById('credits');
 
-    a.href = video_list[vid_index][6]
-    a.innerHTML = `Credits: ${video_list[vid_index][5]}`
+    a.href = active_playlist[vid_index][6]
+    a.innerHTML = `${active_playlist[vid_index][5]}`
     startTimer()
 }
+
+function onPlayerStateChange(event){
+    console.log(player.getCurrentTime())
+}
+
+
 
 
 //player color selection
@@ -311,23 +327,32 @@ function choose_color(i){
 
 function getRandomIndex(max) {
     /* The function will return a random number between 0 and max - 1 */
-    return Math.floor(Math.random() * Math.floor(max));
+    // return Math.floor(Math.random() * Math.floor(max));
+    return rando(max)
 }
 
 
-//choose random vid based on video list index
 function randomlyChooseVideo() {
-    
-    
     // get new video
-    vid_index =  getRandomIndex((list[gamemode]).length);
+    vid_index =  getRandomIndex((list[gamemode]).length - 1);
+    while(videos_played.includes(vid_index)){
+        randomlyChooseVideo()
+    }
+    videos_played.push(vid_index)
     src = ((list[gamemode])[vid_index]);
     active_video = (list[gamemode])[vid_index]
     active_playlist = list[gamemode]
 
     // update the video's coordenates
     video_coords = [active_video[1],active_video[2]]
-    console.log(src)
+
+    //update credits
+    var a = document.getElementById('credits');
+    a.href = active_playlist[vid_index][6]
+    a.innerHTML = `${active_playlist[vid_index][5]}`
+
+
+    //return video array
     return(src)
    
 }
@@ -335,12 +360,8 @@ function randomlyChooseVideo() {
 
 
 function calc_distance(pos1, pos2){
-    console.log(pos1)
-    console.log(pos2)
     var x_difference = pos2[1] - pos1[1];
     var y_difference = pos2[0] - pos1[0];
-    console.log(x_difference)
-    console.log(y_difference)
     return Math.sqrt(x_difference * x_difference + y_difference * y_difference);
 }
 
@@ -455,8 +476,20 @@ function calc_points(){
 }
 
 
-//next function (main)
 function next(e) {
+
+    //if user didn't guess on these gamemodes, game ends
+    if(guessed == false && (gamemode == 'contrarreloj' || gamemode == '1hp' || gamemode == 'radius')){
+        end()
+    }
+
+    //if radius gamemode, check guess distance and end if failed
+    if(gamemode == 'radius' && distance > gamerule_radius){
+        end()
+    }
+
+    marker_placed = false
+    playing = true
     rounds = rounds + 1
     
     if(gamemode != 'contrarreloj'){
@@ -488,7 +521,7 @@ function next(e) {
     map.removeLayer(vidmarker)
 
     //readjust map's zoom
-    map.setView([0, 0], 2)
+    map.setView([0, 0], 2.4)
     map_open();
 
     //erase distance text
@@ -498,25 +531,31 @@ function next(e) {
     //close map modal
     document.getElementById('modal').close()
     
+    //remove current video from list
+    active_playlist = active_playlist.splice(vid_index,1);
+
+
     //choose new video
+    
     var newvid = randomlyChooseVideo()
+
+    console.log(newvid)
 
     //update video
     player.loadVideoById(newvid[0],newvid[3]);
-    var a = document.getElementById('credits');
-
-    //update credits
-    a.href = video_list[vid_index][6]
-    a.innerHTML = `Credits: ${video_list[vid_index][5]}`
-
-    //remove video from vide list
-    video_list = video_list.slice(0, vid_index).concat(video_list.slice(vid_index + 1));
+    console.log(player.getCurrentTime())
+    
 
 
+    
     
     if(gamemode !='contrarreloj'){
         //readjust round timer
         time = abstime   
+    }
+
+    if(gamemode == 'radius'){
+
     }
 
     pausado = false
@@ -712,7 +751,6 @@ function final_guess(c) {
 
 map.on('click', function(e){
     mark(e)
-    console.log(marker_coords)
     if (Enable_marking == true){
         mark(e)
        
@@ -723,30 +761,26 @@ map.on('click', function(e){
 
 
 function rewindVideo() {
-    
     const currentTime = player.getCurrentTime();
-    if(currentTime > 70){
+    if(currentTime >= active_video[3] + 10 ){
         player.seekTo(currentTime - 10, true); 
     }
     else{
-        player.seekTo(60, true);
+        player.seekTo(src[3], true);
     }
 }
 
 function reduceSpeed() {
-   
     const currentPlaybackRate = player.getPlaybackRate();
     player.setPlaybackRate(currentPlaybackRate - 0.25); // You can adjust the speed reduction factor
 }
 
 function restartVideo(){
-    
-    player.seekTo(100, true);
+    player.seekTo(src[3], true);
 }
 
 document.addEventListener('keydown', (event) => {
     var name = event.key;
-    console.log(name)
     var x = document.getElementById("guess");
     if (name === 'Enter' && bool_map) {
         if (x.style.visibility != "hidden"){
