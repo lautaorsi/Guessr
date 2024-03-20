@@ -400,10 +400,12 @@ h3{
 
 .fst-cont{
     height: 100vh;
-    top: 0;
+    top: 6;
     position: absolute;
     z-index: -999;
 }
+
+
 
 .flag-cont  span{
     font-size: 2.5vw;
@@ -412,12 +414,12 @@ h3{
 
 
 .flag-cont{
+    height: 100%;
     text-wrap: nowrap;
     position: absolute;
-    height: 100vh;
     margin: 0;
-    animation: slideRight 120s linear infinite;
     width: fit-content;
+    animation: slideRight 120s linear infinite;
 }
 
 .fi{
@@ -426,9 +428,10 @@ h3{
 
 @keyframes slideRight {
     0% {
-        transform: translateX(-85%);
+        transform: translateX(-82.4%);
     }
     100% {
         transform: translateX(110vw); 
     }
 }
+
