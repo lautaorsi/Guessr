@@ -22,10 +22,10 @@
                 </div>
                 <button id="start" onclick="myFunction1()">
 
-                    Jugar de nuevo
+                    Play Again
                 </button>
                 <button id="menu" onclick="myFunction()">
-                    Volver al menu
+                    Back to Menu
                 </button>
                 <a href="gtaV.html">
                     <button id="return" href = >
@@ -48,16 +48,16 @@
         var score = JSON.stringify(objscore)
         const fail_gifs = ['./static/fail2.mp4','./static/fail3.mp4','./static/fail5.mp4','./static/fail6.mp4','./static/fail8.mp4']
         const wow_gifs = ['./static/wow2.gif']
-        if (objscore/rounds >= 1100){
-            document.getElementById('congrats').innerHTML='Wow! Obtuviste:'
+        if (objscore/rounds >= 800){
+            document.getElementById('congrats').innerHTML='Wow! Score:'
             document.getElementById('gif').src = wow_gifs[getRandomIndex(wow_gifs.length)]
         }
-        if(objscore/rounds >= 800){
-            document.getElementById('congrats').innerHTML='Bien jugado! Obtuviste:'
+        if(objscore/rounds >= 500){
+            document.getElementById('congrats').innerHTML='Well played! Score:'
             document.getElementById('gif').src = wow_gifs[getRandomIndex(wow_gifs.length)]
         }
         else{
-            document.getElementById('congrats').innerHTML='Mejor suerte la proxima! Obtuviste:'
+            document.getElementById('congrats').innerHTML='Better luck next time! Score:'
             document.getElementById('gif').src = fail_gifs[getRandomIndex(fail_gifs.length)]
         }
         document.getElementById('points').innerHTML = `${objscore} Puntos`

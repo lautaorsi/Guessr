@@ -19,8 +19,8 @@
         <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
     </button>
     <div id="pausecontainer">
-        <button id="pausebutton" onclick="pause()">PAUSAR⏸</button>
-        <button id="playbutton" onclick="play()">CONTINUAR▶️</button>
+        <button id="pausebutton" onclick="pause()">PAUSE⏸</button>
+        <button id="playbutton" onclick="play()">PLAY▶️</button>
     </div>
     <div id="timercontainer">
         <p id="timer"></p>
@@ -45,7 +45,7 @@
     </div>
     <table width = "200" class="scoretable" id="scoretable">
         <tr>
-            <th>Puntaje</th>
+            <th>Score</th>
                 <td id="points">0</td>
           </tr>
     </table>
@@ -67,13 +67,13 @@
             <div id="distance">
                 <h2 id="h2"></h2>
             </div>
-            <button id="close_map" onclick="window.modal.close(),  map_open()">Cerrar</button>
-            <a href="#" id="guess" class="btn btn-white btn-        animate" onclick="final_guess(true)">Adivinar</a>
-            <button id = "continue" onclick="next()">Continuar</button>
+            <button id="close_map" onclick="window.modal.close(),  map_open()">Close</button>
+            <a href="#" id="guess" class="btn btn-white btn-        animate" onclick="final_guess(true)">Guess</a>
+            <button id = "continue" onclick="next()">Continue</button>
          </div>
 </dialog>
         <div id="warning-container">
-            <text id="warning">Clickea el mapa para adivinar!<i class="fa-solid fa-location-dot fa-bounce" id="marker_warning" style="color: #005eff;"></i></text> 
+            <text id="warning">Click the map to place a marker!<i class="fa-solid fa-location-dot fa-bounce" id="marker_warning" style="color: #005eff;"></i></text> 
         </div>
 </body>
 

@@ -5,15 +5,18 @@ html{
 }
 
 body{
+    float:left;
+    scroll-behavior: smooth;
     height: fit-content;
     padding: 0%;
     margin: 0;
-    background-image: url("../static/background_gta.jpg");
-    background-color: #cccccc;
+    background: linear-gradient(90deg, rgb(0, 8, 1) 0%, rgb(8, 18, 7)35%, #122007 100%);
     background-repeat: no-repeat;
+    background-size: cover;
     background-attachment: fixed;
     background-position: center;
 }
+
 
 
 
@@ -50,7 +53,6 @@ body{
 
 
 
-
 #centerheader{
     display: block;
     width: fit-content;
@@ -76,14 +78,18 @@ body{
     position: absolute;
     top: 57%;
     margin: auto;
-    right: 20px;
+    right: 30px;
 }
 
 .headers{
     font-family: 'Mukta', serif;
     font-size: large;
     text-decoration: none;
-    color: rgb(0, 0, 0);
+    color: rgb(5, 5, 5);
+}
+
+.headers:hover{
+    color: rgb(12, 90, 0) !important;
 }
 
 
@@ -94,8 +100,8 @@ body{
 
 
 #cardimg{
-    border-top-right-radius: 20px;
-    border-top-left-radius: 20px ;
+    border-top-right-radius: 17px;
+    border-top-left-radius: 17px ;
     height:362px;
     min-width: 300px;
     width: 320px;

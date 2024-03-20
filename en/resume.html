@@ -6,16 +6,13 @@
         <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Gabarito&family=Merriweather Sans">
         <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
-
-
-
-
+        <script src="https://randojs.com/2.0.0.js"></script>
     </head>
 
 
     <body>
-        <title>VideoGuessr - Game end</title>
-            <h1 id="Title">VideoGuessr</h1>
+        <title>VideoGuessr - Game Resume</title>
+        <img src="../static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
             <a href="index.html">
                 <button id="return" >
                     <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
@@ -27,10 +24,10 @@
                 <div id="imgcontainer">
                     <video src="" id="gif" autoplay muted loop>
                 </div>
-                <button id="start" onclick="myFunction1()">
+                <button id="start" class="main_buttons" onclick="myFunction1()">
                     Play again
                 </button>
-                <button id="menu" onclick="myFunction()">
+                <button id="menu" class="main_buttons" onclick="myFunction()">
                     Return to menu
                 </button>
 
@@ -45,30 +42,27 @@
             </div>
     </body>
     <script>
-        function getRandomIndex(max) {
-        /* The function will return a random number between 0 and max - 1 */
-        return Math.floor(Math.random() * Math.floor(max));
-        }
-
-
         const objcredits = JSON.parse(localStorage.getItem('credits'))
         const objrounds = localStorage.getItem('rounds')
-        const rounds = JSON.stringify(objrounds)
+        const rounds = (objrounds)
         const objscore = localStorage.getItem('points')
         var score = JSON.stringify(objscore)
         const fail_gifs = ['../static/fail2.mp4','../static/fail3.mp4','../static/fail5.mp4','../static/fail6.mp4','../static/fail8.mp4']
-        const wow_gifs = ['../static/wow2.gif']
+        const wow_gifs = ['../static/wow2.mp4']
         if (objscore/rounds >= 1100){
             document.getElementById('congrats').innerHTML='Wow! You got:'
-            document.getElementById('gif').src = wow_gifs[getRandomIndex(wow_gifs.length)]
+            var gif = rando(wow_gifs.length - 1)
+            document.getElementById('gif').src = wow_gifs[gif]
         }
         if(objscore/rounds >= 800){
             document.getElementById('congrats').innerHTML='Well played! You got:'
-            document.getElementById('gif').src = wow_gifs[getRandomIndex(wow_gifs.length)]
+            var gif = rando(wow_gifs.length - 1)
+            document.getElementById('gif').src = wow_gifs[gif]
         }
         else{
             document.getElementById('congrats').innerHTML='Better luck next time! You got:'
-            document.getElementById('gif').src = fail_gifs[getRandomIndex(fail_gifs.length)]
+            var gif = rando(fail_gifs.length - 1)
+            document.getElementById('gif').src = fail_gifs[gif]
         }
         document.getElementById('points').innerHTML = `${objscore} Points`
         function myFunction(){
@@ -80,7 +74,7 @@
         objcredits.forEach(function(element) {
             var x = document.createElement('div');
             x.classList.add('credit');
-            x.innerHTML = `${element['round']}: <a href="${element['link']}" style='color:#383838;'>${element['name']}</a>`;
+            x.innerHTML = `${element['round']}: <a href="${element['link']}" style='color:c8c8c8;'>${element['name']}</a>`;
             document.getElementById("credit_cont").appendChild(x);
         })
     </script>

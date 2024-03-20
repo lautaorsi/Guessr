@@ -47,10 +47,6 @@
                 </button>
             </a>
             <div id="main_container">
-                <div id="controlcont">
-                    <p id="key" class="s">M</p><p class="s" >Open map</p>
-                    <p id="key" class="s">⬅</p><p id="key" class="s">➡</p><p class="s" id="keyxplain">Speed up / Speed down video</p>
-                </div>
                 <h2 id="gamemode"></h2>
                 <div id="imgcontainer">
                     <img src="" id="img2">
@@ -100,6 +96,10 @@
 
                 <input type="checkbox" class="checkmute" id="checkmute"> <label for="checkmute" id="mutetext">Mute video</label>
             </div>
+            <div id="controlcont">
+                <p id="key" class="s">M</p><p class="s" >Abrir mapa</p>
+                <p id="key" class="s">⬅</p><p id="key" class="s">➡</p><p class="s" id="keyxplain">Subir/Bajar velocidad de reproduccion</p>
+            </div>
             <div id="warning">
                 <h2 id="attention">•Attention•</h2>
                 <h3 id="color_warning">-Choose a pin color!</h3>
@@ -107,6 +107,80 @@
                 <h3 id="rounds_warning">-Choose round amount!</h3>
                 <h3 id="radius_warning">-Choose radius!</h3>
             </div>
+
+            
+            <div class="fst-cont">
+                <div class="fstset flag-cont">
+                    <span class="fi fi-et flag-icon"></span>
+                    <span class="fi fi-kh flag-icon"></span>
+                    <span class="fi fi-cn flag-icon"></span>
+                    <span class="fi fi-bo flag-icon"></span>
+                    <span class="fi fi-pr flag-icon"></span>
+                    <span class="fi fi-ru flag-icon"></span>
+                    <span class="fi fi-ar flag-icon"></span>
+                    <span class="fi fi-ng flag-icon"></span>
+                    <span class="fi fi-ca flag-icon"></span>
+                    <span class="fi fi-au flag-icon"></span>
+                    <span class="fi fi-jp flag-icon"></span>
+                    <span class="fi fi-cl flag-icon"></span>
+                    <span class="fi fi-uy flag-icon"></span>
+                    <span class="fi fi-br flag-icon"></span>
+                    <span class="fi fi-sk flag-icon"></span>
+                    <span class="fi fi-ch flag-icon"></span>
+                    <span class="fi fi-us flag-icon"></span>
+                    <span class="fi fi-gb flag-icon"></span>
+                    <span class="fi fi-mx flag-icon"></span>
+                    <span class="fi fi-es flag-icon"></span>
+                    <span class="fi fi-no flag-icon"></span>
+                    <span class="fi fi-ps flag-icon"></span>
+                    <span class="fi fi-pa flag-icon"></span>
+                    <span class="fi fi-py flag-icon"></span>
+                    <span class="fi fi-se flag-icon"></span>
+                    <span class="fi fi-tw flag-icon"></span>
+                    <span class="fi fi-sd flag-icon"></span>
+                    <span class="fi fi-tg flag-icon"></span>
+                    <span class="fi fi-th flag-icon"></span>
+                    <span class="fi fi-am flag-icon"></span>
+                    <span class="fi fi-ad flag-icon"></span>
+                    <span class="fi fi-cc flag-icon"></span>
+                    <span class="fi fi-bw flag-icon"></span>
+                    <span class="fi fi-be flag-icon"></span>
+                    <span class="fi fi-bm flag-icon"></span>
+                    <span class="fi fi-cm flag-icon"></span>
+                    <span class="fi fi-aq flag-icon"></span>
+                    <span class="fi fi-at flag-icon"></span>
+                    <span class="fi fi-ye flag-icon"></span>
+                    <span class="fi fi-cu flag-icon"></span>
+                    <span class="fi fi-dk flag-icon"></span>
+                    <span class="fi fi-eg flag-icon"></span>
+                    <span class="fi fi-sv flag-icon"></span>
+                    <span class="fi fi-ee flag-icon"></span>
+                    <span class="fi fi-de flag-icon"></span>
+                    <span class="fi fi-gt flag-icon"></span>
+                    <span class="fi fi-ht flag-icon"></span>
+                    <span class="fi fi-it flag-icon"></span>
+                    <span class="fi fi-kw flag-icon"></span>
+                    <span class="fi fi-lb flag-icon"></span>
+                    <span class="fi fi-mc flag-icon"></span>
+                    <span class="fi fi-mn flag-icon"></span>
+                    <span class="fi fi-nz flag-icon"></span>
+                    <span class="fi fi-pe flag-icon"></span>
+                    <span class="fi fi-ne flag-icon"></span>
+                    <span class="fi fi-nl flag-icon"></span>
+                    <span class="fi fi-qa flag-icon"></span>
+                    <span class="fi fi-sa flag-icon"></span>
+                    <span class="fi fi-ws flag-icon"></span>
+                    <span class="fi fi-so flag-icon"></span>
+                    <span class="fi fi-tj flag-icon"></span>
+                    <span class="fi fi-tn flag-icon"></span>
+                    <span class="fi fi-tr flag-icon"></span>
+                </div>
+        
+            </div>
+
+
+
+
     </body>
 </html>
 
@@ -283,4 +357,17 @@
         }
     }
 
+</script>
+
+<script>
+    var flags = document.getElementsByClassName('fi')
+    ran()
+    function ran(){
+        for(var i = 0; i < flags.length; i++){
+            console.log(i)
+            const randomHeight = rando(2, 95); // Random value between 25 and 50
+
+            flags[i].style.top = `${randomHeight}%`;
+        };
+    }
 </script>

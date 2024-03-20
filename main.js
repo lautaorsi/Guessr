@@ -554,12 +554,12 @@ function onPlayerReady(event) {
         player.mute()
     }
 
-    if(mute && window.mobileCheck == false){
+    if(mute && window.mobileCheck() == false){
         player.unMute()
         player.setVolume(0)
         document.getElementById('volumerange').value = 0
     }
-    if(mute == false && window.mobileCheck == false){
+    if(mute == false && window.mobileCheck() == false){
         player.unMute()
         player.setVolume(30)
     }
@@ -607,8 +607,6 @@ function choose_color(i){
 
 
 function getRandomIndex(max) {
-    /* The function will return a random number between 0 and max - 1 */
-    // return Math.floor(Math.random() * Math.floor(max));
     return rando(max)
 }
 
@@ -865,9 +863,8 @@ function end(){
     score = parseInt(score)
     localStorage.setItem('points', score)
     localStorage.setItem('credits', JSON.stringify(credit_array))
+    localStorage.setItem('rounds',prround)
     document.getElementById("continue").onclick = window.location.href = 'resume.html';
-
-    
 }
 
 

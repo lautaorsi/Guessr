@@ -9,6 +9,7 @@ body{
     background-attachment: fixed;
     background-position: center;
     height: 100vh;
+    overflow: clip;
 }
 
 
@@ -119,7 +120,7 @@ p{
 
 #imgcontainer{
     margin: auto;
-    width: 29vw;
+    width: 420px;
     height: 50vh;
     min-height: 358px;
 }
@@ -397,3 +398,37 @@ h3{
 }
 
 
+.fst-cont{
+    height: 100vh;
+    top: 0;
+    position: absolute;
+    z-index: -999;
+}
+
+.flag-cont  span{
+    font-size: 2.5vw;
+    padding: 0; 
+}
+
+
+.flag-cont{
+    text-wrap: nowrap;
+    position: absolute;
+    height: 100vh;
+    margin: 0;
+    animation: slideRight 120s linear infinite;
+    width: fit-content;
+}
+
+.fi{
+    margin-right: 110px;
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-85%);
+    }
+    100% {
+        transform: translateX(110vw); 
+    }
+}

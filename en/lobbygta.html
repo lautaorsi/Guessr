@@ -25,7 +25,7 @@
                 </div>
                 <div id="selectors">
                         <select id="radiusselect">
-                            <option value="none">Radio</option>
+                            <option value="none">Radius</option>
                             <option value=0.1 >100m</option>
                             <option value=0.5 >500m</option>
                             <option value=1 >1km</option>
@@ -35,24 +35,24 @@
                             
                         </select>
                         <select id="colorselect">
-                            <option value="none">Marcador</option>
-                            <option value='0' class="red">Rojo</option>
-                            <option value="5" class="blue">Azul </option>
-                            <option value="2" class="yellow">Amarillo</option>
-                            <option value="1" class="purple">Violeta</option>
-                            <option value="3" class="orange">Naranja</option>
-                            <option value="4" class="black">Negro</option>
+                            <option value="none">Marker</option>
+                            <option value='0' class="red">Red</option>
+                            <option value="5" class="blue">Blue </option>
+                            <option value="2" class="yellow">Yellow</option>
+                            <option value="1" class="purple">Purple</option>
+                            <option value="3" class="orange">Orange</option>
+                            <option value="4" class="black">Black</option>
                         </select>
                         <select id="roundselect">
-                            <option value="none">Rondas</option>
-                            <option value=5 >5 rondas</option>
-                            <option value=10 >10 rondas</option>
-                            <option value=15 >15 rondas</option>
-                            <option value=20 >20 rondas</option>
-                            <option value=25 >25 rondas</option>
+                            <option value="none">Rounds</option>
+                            <option value=5 >5 rounds</option>
+                            <option value=10 >10 rounds</option>
+                            <option value=15 >15 rounds</option>
+                            <option value=20 >20 rounds</option>
+                            <option value=25 >25 rounds</option>
                         </select>
                         <select id="timeselect">
-                            <option value="none">Tiempo</option>
+                            <option value="none">Time</option>
                             <option value=20 id="time1">20s</option>
                             <option value=40 id="time2">40s</option>
                             <option value=80 id="time3">80s</option>
@@ -62,21 +62,17 @@
 
                 </div>
                 <button id="start" onclick="myFunction()">
-                    Jugar
+                    Play
                 </button>
 
                 <input type="checkbox" class="checkmute" id="checkmute"> <label for="checkmute" id="mutetext">Mutear audio del video</label>
             </div>
-            <div id="controlcont">
-                <p id="key" class="s">M</p><p class="s" >Abrir mapa</p>
-                <p id="key" class="s">⬅</p><p id="key" class="s">➡</p><p class="s" id="keyxplain">Subir/Bajar velocidad de reproduccion</p>
-            </div>
             <div id="warning">
-                <h2 id="attention">•Atencion•</h2>
-                <h3 id="color_warning">-Elige un color para tu pin!</h3>
-                <h3 id="time_warning">-Elige la duracion de la ronda!</h3>
-                <h3 id="rounds_warning">-Elige la cantidad de rondas!</h3>
-                <h3 id="radius_warning">-Elige el radio!</h3>
+                <h2 id="attention">•Attention•</h2>
+                <h3 id="color_warning">-Pick a marker color!</h3>
+                <h3 id="time_warning">-Choose the round duration!</h3>
+                <h3 id="rounds_warning">-Pick rounds amount!</h3>
+                <h3 id="radius_warning">-Pick the radius!</h3>
             </div>
             
     </body>
@@ -84,21 +80,21 @@
 
 <script>
     const descriptions = {
-        'URBAN': 'Videos unicamente de <br> la ciudad de Los Santos.',
-        'RURAL': 'Videos de las afueras<br> de Los Santos (Sandy Shores, etc) .',
-        'PAUSE': 'Reglas clasicas, con boton de play y pausa habilitados. <br> Pero cuidado, el tiempo seguira corriendo!',
-        'CLASICO': 'Modo de juego clasico, <br> limites de tiempo por ronda',
-        'contrarreloj': 'Desafio: <br> conseguir la mayor cantidad de aciertos <br>antes de que acabe el tiempo!',
-        'radius': 'Consigue la mayor cantidad de aciertos<br> en el radio determinado!'
+        'URBAN': 'City of Los Santos and its surroundings.',
+        'RURAL': 'Outskirts of Los Santos <br> (Sandy Shores, Paleto bay, etc). ',
+        'PAUSE': 'For casual players,<br>play and pause buttons available.<br>Be careful, time will keep running!',
+        'CLASICO': 'Walk through Los Santos! <br> Includes Cayo Perico and buildings.',
+        'contrarreloj': 'Get the most<br> points before<br> time runs out! ',
+        'radius': 'Get the most <br> guesses <br> within the radius!'
     }
 
     const titles = {
         'URBAN': 'URBANO',
         'RURAL': 'RURAL',
-        'PAUSE': 'PAUSA⏯️',
-        'CLASICO' : 'CLASICO',
-        'contrarreloj' : 'CONTRARRELOJ ⏱️',
-        'radius': 'RADIO📏',
+        'PAUSE': 'PAUSE⏯️',
+        'CLASICO' : 'CLASSIC',
+        'contrarreloj' : 'TIME TRIAL ⏱️',
+        'radius': 'RADIUS📏',
 
     }
 

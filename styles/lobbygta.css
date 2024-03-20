@@ -1,63 +1,136 @@
 body{
     padding: 0%;
     margin: 0;
-    background-image: url("../static/background_gta.jpg");
+    background: linear-gradient(90deg, rgb(0, 8, 1) 0%, rgb(8, 18, 7)35%, #122007 100%);
     background-color: #cccccc;
     background-repeat: no-repeat;
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
-}
-
-#main_container{
-    display: block;
-    position: relative ;
-    top:0;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    content: "";
-    margin: auto;
-    width: 650px;
-    height: 750px;
-    border-radius: 8px;
-    background-image: url('../static/lobby.jpg');
-    background-size: cover;
+    height: 100vh;
 }
 
 
 .logoimg{
+    position: relative;
+    z-index: 99;
+    cursor: pointer;
     margin-top: 10;
-    width: 160;
-    right: 0%;
-    left: 0%;
+    width: 70;
     display: block;
     margin: auto;
 }
+
+.logoimg:hover{
+    animation: rotation 1.5s infinite;
+}
+
+
+
+
 
 .logoVimg{
     top: 12;
     width: 30px;
     position: absolute;
-    right: 0%;
-    left: 185;
+    left: 52%;
     display: block;
     margin: auto;
 }
+
+
+
+
+
+#main_container{
+    position: relative;
+    margin: auto;
+    width: 650px;
+    height: 85vh;
+    border-radius: 8px;
+    background: linear-gradient(180deg, rgba(0,107,254,1) 0%, rgba(60,127,250,1) 53%, rgba(65,190,255,1) 84%, rgba(154,233,255,1) 100%);
+    background-size: cover;
+    min-height: 609px;
+}
+
+
+
+
+p{
+    font-family: 'Gabarito';
+}
+
+
+
+.adbox{
+    top: 15%;
+    position: absolute !important;
+    height: fit-content;
+    width: fit-content;
+    z-index: 9999;
+}
+
+.right{
+    right: 0%;
+}
+
+.left{
+    left: 0%;
+}
+
+
+#controlcont{
+    position: relative;
+    margin: auto;
+    margin-top: 15px;
+    border-radius: 8px;
+    background-color: #fff;
+    width: 650px;
+    height: fit-content;
+    padding-top: 5px;
+    padding-bottom: 15px;
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+.cntrlhead{
+    font-family: 'merriweather sans', serif;
+    font-size: larger;
+    text-align: center;
+    position: relative;
+}
+
+.s{
+    margin: 0%;
+    display: inline-block;
+    margin-left: 5px;
+}
+
+
+#key{
+    width: fit-content;
+    background-color: rgb(221, 220, 218);
+    padding-left: 4px;
+    padding-right: 4px;
+    padding-top: 2px;
+    padding-bottom: 2px;
+    border-radius: 6px;
+    font-family: 'Gabarito';
+    border-style: solid;
+    border-width: 1px;
+}
+
 
 #gamemode{
     font-family: 'merriweather sans', serif;
     font-size: x-large;
     text-align: center;
-    text-decoration: wavy;
-
 }
 
 
 
 #h2{
     position: relative;
-    top: 123;
     width: fit-content;
     right: 0%;
     left: 0%;
@@ -66,17 +139,19 @@ body{
 }
 
 #imgcontainer{
-    position: ab;
-    margin-left: 12%;
-    width: 75%;
-    height: 60%;
+    margin: auto;
+    width: 25vw;
+    height: 50vh;
+    min-height: 358px;
 }
 
 #foot{
-    background-color: white;
-    border-radius: 6px;
+    background-color: rgb(0, 0, 0);
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
     width: 100%;
     padding: 1%;
+    color: white;
 }
 
 #desc{
@@ -85,10 +160,23 @@ body{
 }
 
 #img2{
-    border-radius: 8px;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
     width: 100%;
     height: 90%;
     
+}
+
+#invertimg{
+    rotate: 180deg;
+    border-top-right-radius: 0%;
+    border-top-left-radius: 0%;
+    border-bottom-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+#invertright{
+    rotate: 180deg;
 }
 
 
@@ -108,17 +196,13 @@ body{
 }
 
 
-.colorcontainer {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-}
 
 #selectors{
-    left: 28%;
+    margin: auto;
+    width: fit-content;
     position: relative;
-    top: 90px;
-    display: inline;
+    margin-top: 70px;
+    height: fit-content;
 }
 
 
@@ -135,13 +219,17 @@ select {
     border-radius: 0.25rem;
     color: #000;
     cursor: pointer;
-    text-align: center;
 }
+
 
 option{
-    text-align: left;
+    text-align: center;
+    margin: auto;
 }
 
+.placeholder{
+    display: none;
+}
 
 
 
@@ -199,26 +287,25 @@ option{
     padding: 13px 20px;
     position: absolute;
     text-align: center;
-    text-decoration: none;
-    transform: translate3d(0, 0, 0);
-    transition: all .3s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: top;
-    white-space: nowrap;
+    background: linear-gradient(to top, #323232 50%, #fff 50%);
+    background-size: 100% 200%;
+    background-position: top;
+    transition: all .1s ease-out;
 }
   
 #return:hover {
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
+    background-position: bottom;
+    color: #ffffff;
 }
   
+
+
 #return:active {
     transform: translateY(2px);
     transition-duration: .35s;
 }
+
+
   
 #return:hover {
     box-shadow: rgba(39, 174, 96, .2) 0 6px 12px;
@@ -228,7 +315,6 @@ option{
 #start{
   right: 5%;
   bottom: 3%;
-  appearance: none;
   backface-visibility: hidden;
   background-color: #27ae60;
   border-radius: 8px;
@@ -237,25 +323,16 @@ option{
   box-sizing: border-box;
   color: #fff;
   cursor: pointer;
-  display: inline-block;
   font-family: Inter,-apple-system,system-ui,"Segoe UI",Helvetica,Arial,sans-serif;
   font-size: 16px;
   font-weight: 600;
-  letter-spacing: normal;
   line-height: 1.5;
-  outline: none;
-  overflow: hidden;
   padding: 13px 20px;
   position: absolute;
   text-align: center;
   text-decoration: none;
   transform: translate3d(0, 0, 0);
   transition: all .3s;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: top;
-  white-space: nowrap;
 }
 
 #start:hover {
@@ -310,4 +387,49 @@ h3{
     50% { transform: translateX(-5px) }
     75% { transform: translateX(5px) }
     100% { transform: translateX(0) }
-   }
+}
+
+@media (max-width: 768px){
+    #selectors{
+        top: 10%;
+        margin: auto;
+    }
+    select{
+        height: 7vh;
+        width: 21vw;
+        font-size: medium;
+        margin: auto;
+    }
+    .s{
+        margin-left: 2;
+    }
+    #controlcont{
+        display: none;
+    }
+    #main_container{
+        width: 90vw;
+    }
+    .adbox{
+        display: none;
+    }
+    #imgcontainer{
+        height: 40%;
+        width: 80vw;
+    }
+    .checkmute{
+        left: 0;
+    }
+}
+
+
+@keyframes rotation {
+    25% {
+      transform: rotate(5deg);
+    }
+    50% {
+      transform: rotate(-5deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+}
