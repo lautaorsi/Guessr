@@ -221,7 +221,7 @@
     }
 
     const images = {
-        'ITA': '../static/italy.jpg',
+        'ITA': '../static/region/italy.jpg',
         'PAUSE': '../static/CLASICO.jpg',
         'CLASICO' : '../static/CLASICO.jpg',
         'contrarreloj' : '../static/CLASICO.jpg',
@@ -229,11 +229,11 @@
         '1hp' : '../static/CLASICO.jpg',
         'clear_map' : '../static/earthmap.jpg',
         'INVERTIDO': '../static/CLASICO.jpg',
-        'nozoom': '../static/CLASICO.jpg',
-        'US': '../static/USA.png',
-        'EUROPA': '../static/EUROPA.jpg',
+        'nozoom': '../static/nozoom.png',
+        'US': '../static/region/USA.png',
+        'EUROPA': '../static/region/EUROPA.jpg',
         'STATIC': '../static/CLASICO.jpg',
-        'ARG': '../static/Arg.jpg'
+        'ARG': '../static/region/Arg.jpg'
     }
 
     var descript = document.getElementById('desc')
@@ -271,6 +271,9 @@
         wimg.style.rotate = '180deg'
     }
 
+    if(gamename.hello == 'nozoom' || gamename.hello == 'clear_map'){
+        document.getElementById('imgcontainer').style.width = '90%'
+    }
 
     if(gamename.hello != 'radius'){
         document.getElementById('radiusselect').style.display = 'none'

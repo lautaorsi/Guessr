@@ -186,7 +186,7 @@
 <script>
     const descriptions = {
         'ITA': 'Classic rules, locations within Italy.',
-        'PAUSE': 'Classic rules, play and puase buttons available. <br> Be careful, the clock won`t stop!',
+        'PAUSE': 'Classic rules, play and pause buttons available. <br> Be careful, the clock won`t stop!',
         'CLASICO': 'Classical gamemode. <br> No rules, enjoy!',
         'clear_map': 'Satellite map! <br> No names or divisions! <br> (Strongly suggested for advanced players)',
         '1hp': 'Challenge: <br> conseguir la mayor cantidad de aciertos sin equivocarse, <br> un error y game over!',
@@ -267,6 +267,10 @@
         wimg.style.rotate = '180deg'
     }
 
+
+    if(gamename.hello == 'nozoom' || gamename.hello == 'clear_map'){
+        document.getElementById('imgcontainer').style.width = '90%'
+    }
 
     if(gamename.hello != 'radius'){
         document.getElementById('radiusselect').style.display = 'none'

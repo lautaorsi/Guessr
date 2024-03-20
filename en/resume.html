@@ -47,24 +47,22 @@
         const rounds = (objrounds)
         const objscore = localStorage.getItem('points')
         var score = JSON.stringify(objscore)
-        const fail_gifs = ['../static/fail2.mp4','../static/fail3.mp4','../static/fail5.mp4','../static/fail6.mp4','../static/fail8.mp4']
-        const wow_gifs = ['../static/wow2.mp4']
+        const nice_gifs = ['../static/gifs/nice1.mp4','../static/gifs/nice2.mp4','../static/gifs/nice3.mp4','../static/gifs/nice4.mp4','../static/gifs/nice5.mp4','../static/gifs/nice6.mp4']
+        const fail_gifs = ['../static/gifs/fail2.mp4','../static/gifs/fail3.mp4','../static/gifs/fail5.mp4','../static/gifs/fail6.mp4','../static/gifs/fail8.mp4']
+        const wow_gifs = ['../static/gifs/wow1.mp4','../static/gifs/wow2.mp4','../static/gifs/wow3.mp4','../static/gifs/wow4.mp4','../static/gifs/wow5.mp4','../static/gifs/wow6.mp4','../static/gifs/wow7.mp4']
         if (objscore/rounds >= 1100){
-            document.getElementById('congrats').innerHTML='Wow! You got:'
-            var gif = rando(wow_gifs.length - 1)
-            document.getElementById('gif').src = wow_gifs[gif]
+            document.getElementById('congrats').innerHTML='Wow!'
+            document.getElementById('gif').src = wow_gifs[rando(wow_gifs.length - 1)]
         }
         if(objscore/rounds >= 800){
-            document.getElementById('congrats').innerHTML='Well played! You got:'
-            var gif = rando(wow_gifs.length - 1)
-            document.getElementById('gif').src = wow_gifs[gif]
+            document.getElementById('congrats').innerHTML='Well played!'
+            document.getElementById('gif').src = nice_gifs[rando(nice_gifs.length - 1)]
         }
         else{
-            document.getElementById('congrats').innerHTML='Better luck next time! You got:'
-            var gif = rando(fail_gifs.length - 1)
-            document.getElementById('gif').src = fail_gifs[gif]
+            document.getElementById('congrats').innerHTML='Better luck next time!'
+            document.getElementById('gif').src = fail_gifs[rando(fail_gifs.length - 1)]
         }
-        document.getElementById('points').innerHTML = `${objscore} Points`
+        document.getElementById('points').innerHTML = `You got ${objscore} Points`
         function myFunction(){
             window.location.href = 'index.html'
         }

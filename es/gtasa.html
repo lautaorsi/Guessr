@@ -10,25 +10,25 @@
         <meta name="description" content="Game: Guessing, videogame for guessing, geography fun">
         <script> localStorage.clear()</script>
         <title>VideoGuessr</title>
-        <link rel="stylesheet" href="gtasa.css">
+        <link rel="stylesheet" href="../styles/gtasa.css">
         <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Gabarito&family=Mukta&family=Roboto">
     </head>
     <body>
-        <div id="adblock_warning" class="modal">
+        <!-- <div id="adblock_warning" class="modal">
             <div class="modal-content">
               <h2 id="modal_title">Disculpa las molestias!</h2>
-              <h3> <b>Esta pagina se encuentra en desarrollo</b></h3>
+              <h3 id="h3_warning"> <b>Esta pagina se encuentra en desarrollo</b></h3>
               <div id="buttonscontainer">
                 <button id="goto_classic" onclick='cerrar("index.html")'><p id="text2"><b>Clasico</b></p></button>
                 <button id="goto_gta" onclick='cerrar("gtav.html")'><p id="text2"><b>Gta v</b></p></button>
               </div>
             </div>
-        </div>
+        </div> -->
 
         <div id="Top_menu">
-            <img src="./static/logo.png" alt="logo" class="logoimg" draggable="false">
-            <img src="./static/gtasalogo.png" alt="logo" class="logoVimg" draggable="false">
+            <img src="../static/logo.png" alt="logo" class="logoimg" draggable="false">
+            <img src="../static/gtasalogo.png" alt="logo" class="logoVimg" draggable="false">
             <div id="leftheader">
                 <a href="index.html" draggable="false" id="howto" class="headers">Clasico</a>
             </div>
@@ -36,21 +36,27 @@
                 <a href="gtaV.html" draggable="false" id="howto" class="headers">GTA V</a>
             </div>
         </div>
-                <div id="classic_gamemodes"> <h2>Clasicos</h2></div>
-                <div id="classiccards">
+        <div id="main_container">
+            <div class="mode_container">
+                <div id="classic_gamemodes" class="gametitle_container"> 
+                    <div class="gametitle">
+                        <h2>Clasicos</h2>
+                    </div>
+                </div>
+                <div id="classiccards" class="card_container">
                     <div class="card" id="classiccard">
                         <a onclick='lobby("CLASICO")' class="cardlink">
-                        <img src="./static/gtasamap.jpg" alt="Classic" draggable="false" id="cardimg">
+                        <img src="../static/gtasamap.jpg" alt="Classic" draggable="false" id="cardimg">
                         <div id="Normal" class="difficulty" title="Dificultad">Media</div>
                         <div class="container">
                         <h3><b>Normal</b></h3>
-                        <p id="classicdesc" class="card_description">Recorre todo San Andreas! <br> Incluye isla Cayo Perico y edificios</p>                 
+                        <p id="classicdesc" class="card_description"> <br>Recorre todo San Andreas!</p>                 
                         </div>
                         </a>
                     </div>
                     <div class="card" id="pausecard">
                         <a onclick='lobby("PAUSE")' class="cardlink">
-                        <img src="./static/gtasamap.jpg" alt="Classic" draggable="false" id="cardimg">
+                        <img src="../static/gtasamap.jpg" alt="Classic" draggable="false" id="cardimg">
                         <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
                         <div class="container">
                         <h3><b>Pausa</b></h3>
@@ -61,7 +67,7 @@
                     </div>
                     <div class="card" id="urbancard">
                         <a onclick='lobby("URBAN")' class="cardlink">
-                        <img src="./static/urban.jpg" alt="Classic" draggable="false" id="cardimg">
+                        <img src="../static/gtasacity.png" alt="Classic" draggable="false" id="cardimg">
                         <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
                         <div class="container">
                         <h3><b>Los Angeles</b></h3>
@@ -71,7 +77,7 @@
                     </div>
                     <div class="card" id="ruralcard">
                         <a onclick='lobby("RURAL")' class="cardlink">
-                        <img src="./static/rural.jpg" alt="Classic" draggable="false" id="cardimg">
+                        <img src="../static/rural.jpg" alt="Classic" draggable="false" id="cardimg">
                         <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
                         <div class="container">
                         <h3><b>Vegas</b></h3>
@@ -80,34 +86,41 @@
                         </a>
                     </div>
                 </div>
-                <div id="Arcade_gamemodes"> <h2>Arcade</h2></div>
-                <div id="arcadecards">
-                    <div class="card" id="timecard">
-                        <a onclick='lobby("contrarreloj")' class="cardlink">
-                        <img src="./static/gtasamap.jpg" alt="clean" draggable="false"  id="cardimg">
-                        <div class="bottomright">⏱️</div>
-                        <div id="Normal" class="difficulty" title="Dificultad">Media</div>
-                        <div class="container">
-                        <h3 id="h4time"><b>Contrarreloj</b></h3>
-                        <p id="timedesc" class="card_description">Consigue la mayor<br>cantidad de puntos<br> antes de que el tiempo acabe! </p>
-                        </a>
-                        </div>
+            </div>
+            <div class="mode_container">
+                <div id="challenge_gamemodes" class="gametitle_container"> 
+                    <div class="gametitle">
+                        <h2>Desafios</h2>
                     </div>
-                    <div class="card" id="radiuscard">
-                        <a onclick="lobby('radius')" class="cardlink">
-                        <img src="./static/gtasamap.jpg" alt="clean" draggable="false" id="cardimg">
-                        <div class="bottomright">📏</div>
-                        <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
-                        <div class="container">
-                        <h3 id="h4radius"><b>Radio</b></h3>
-                        <p id="radiudesc" class="card_description">Consigue la mayor<br> cantidad de aciertos<br> en el radio determinado!</p>
-                        </a>
-                        </div>
-                    </div>
-
                 </div>
+                    <div id="challengecards" class="card_container">
+                        <div class="card" id="timecard">
+                            <a onclick='lobby("contrarreloj")' class="cardlink">
+                                <img src="../static/gtasamap.jpg" alt="clean" draggable="false"  id="cardimg">
+                                <div class="bottomright">⏱️</div>
+                                <div id="Normal" class="difficulty" title="Dificultad">Media</div>
+                                <div class="container">
+                                <h3 id="h4time"><b>Contrarreloj</b></h3>
+                                <p id="timedesc" class="card_description">Consigue la mayor<br>cantidad de puntos<br> antes de que el tiempo acabe! </p>
+                                </div>
+                            </a>   
+                        </div>
+                        <div class="card" id="radiuscard">
+                            <a onclick="lobby('radius')" class="cardlink">
+                                <img src="../static/gtasamap.jpg" alt="clean" draggable="false" id="cardimg">
+                                <div class="bottomright">📏</div>
+                                <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
+                                <div class="container">
+                                <h3 id="h4radius"><b>Radio</b></h3>
+                                <p id="radiudesc" class="card_description">Consigue la mayor<br> cantidad de aciertos<br> en el radio determinado!</p>
+                                </div>
+                            </a>
+                        </div>
+    
+                    </div>
+            </div>
        </div>
-       <footer>
+
         <div id="sharecontainer">
             <div id="share">
                 <p id="sharetext">Compartinos en redes!</p> 
@@ -126,7 +139,9 @@
                     </button>
                  </div>
             </div>
-        </div>
+        </div>   
+
+       <footer>
         <div id="footer-content">
             <div id="Juegos">
                 <h4>Juegos</h4>
