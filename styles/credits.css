@@ -28,6 +28,7 @@ h1{
 }
 
 #warning{
+    color: bisque;
     text-align: center;
 }
 
@@ -92,6 +93,7 @@ img{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     border-radius: 10px;
     background: rgb(22, 21, 21);
+    cursor: pointer;
 }
 
 
@@ -113,7 +115,8 @@ img{
 .card-content {
     text-align: center;
     padding: 15px;
-    height: 150px;
+    margin-top: 30%;
+    height: fit-content;
     text-overflow: ellipsis;
     
 }
@@ -144,7 +147,7 @@ img{
 
 h2{
     width: fit-content;
-    color: beige;
+    color: white;
     margin-bottom: 0%;
     margin: auto;
     font-family: 'Roboto';
@@ -174,59 +177,97 @@ a{
 }
 
 
+.imlink:hover{
+    color: rgb(86, 86, 86);
+}
+
+
 
 #toptext{
     margin-top: 10px;
 }
 
 
-
-#footer-content{
-    display:flex;
-    justify-content:space-between;
-    width: 100%;
-    height: 100%;
-}
-
-h4{
-    font-size: large;
-    color: #888;
-    font-family: 'Roboto';
-}
-
-#juegos{
-    margin-left: 20px;
-    font-family: 'Roboto';
-    position: relative;
-    text-align: center;
-}
-
-#creditos{
-    margin-right: 20px;
-    font-family: 'Roboto';
-    position: relative;
-    text-align: center;
-}
-
-#Us{
-    font-family: 'Roboto';
-    position: relative;
-    text-align: center;
-}
-
-.footerlink{
-    text-decoration: none;
-    color: #706f6f;
-}
-
-.footerlink:hover{
-    color: #302f2f;
-}
-
-footer{
+.modal_container{
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 9999; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+  }
+  
+  .creator_modal{
+    z-index: 99;
     position: absolute;
+    background-color: rgb(10, 12, 16);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    width: 65vw;
+    height: 90vh;
+    border-radius: 8px;
+  }
+  
+  #close_modal{
+    color: white;
+    position: absolute;
+    right: 2%;
+    top: 1%;
+    font-size: 1.2vw;
+    cursor: pointer;
+  }
+  
+  .modal_img_container{
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    height: 40%;
     width: 100%;
-    height: fit-content;
-    padding-bottom: 20px;
-    background-color: #fefefe;
-}
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: rgba(0, 0, 0, 0.456);
+  }
+  .modal_img{
+    opacity: 100%;
+    width: fit-content;
+    position: relative;
+    margin: auto;
+    top: 50%;
+    transform: translateY(-50%);
+    
+  }
+  .modal_description{
+    height: 60%;
+  }
+  
+  .description_title{
+    margin-top: 2%;
+    font-family: 'Gabarito';
+    text-align: center;
+    color: white;
+    font-size: 7vh;
+  }
+  .description_content{
+    font-size: 2.3vh;
+    font-family: 'Roboto';
+    color: rgb(220, 248, 255);
+    text-align: center;
+    margin: auto;
+    margin-top: 3%;
+    width: 70%;
+  }
+
+  #title_href{
+    text-decoration: none;
+    color: white;
+  }
+
+  #title_href:hover{
+    color: rgb(86, 86, 86);
+  }
