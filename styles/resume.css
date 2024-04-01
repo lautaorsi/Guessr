@@ -270,6 +270,10 @@ body{
     padding-bottom: 10px;
 }
 
+.credit:hover{
+    color: white;
+}
+
 #credit_title{
     font-weight: 900;
     text-align: center;

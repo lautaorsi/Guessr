@@ -161,9 +161,9 @@ var video_list = [
 ["RInBAatA11Q", 52.247803, 21.013650,656,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks','Warsaw'], 
 ["RInBAatA11Q", 52.247803, 21.013650,1180,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks','Warsaw'], 
 ["RInBAatA11Q", 52.247803, 21.013650,1654,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks','Warsaw'], 
-["ZL4LNXe_F2Y", 42.642014, 18.112509,98,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks','Dubrovnik'], 
-["ZL4LNXe_F2Y", 42.642014, 18.112509,845,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks','Dubrovnik'], 
-["ZL4LNXe_F2Y", 42.642014, 18.112509,1415,'POL', 'AtmosWalks','https://www.youtube.com/@AtmosWalks','Dubrovnik'], 
+["ZL4LNXe_F2Y", 42.642014, 18.112509,98,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks','Dubrovnik'], 
+["ZL4LNXe_F2Y", 42.642014, 18.112509,845,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks','Dubrovnik'], 
+["ZL4LNXe_F2Y", 42.642014, 18.112509,1415,'CRO', 'AtmosWalks','https://www.youtube.com/@AtmosWalks','Dubrovnik'], 
 ["KQ5TW0DCXb0", 45.659127, 10.047541,99,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks','Iseo'], 
 ["KQ5TW0DCXb0", 45.659127, 10.047541,551,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks','Iseo'], 
 ["KQ5TW0DCXb0", 45.659127, 10.047541,1002,'ITA', 'AtmosWalks','https://www.youtube.com/@AtmosWalks','Iseo'], 
@@ -306,7 +306,8 @@ var video_list = [
 ['RnWLl2HRgOQ',-34.605027402533324, -58.367107801435225,5025,'AR','Life & Travel Channel','https://www.youtube.com/@Life-Travel-Channel','Buenos Aires'],
 ['RnWLl2HRgOQ',-34.60801046177624, -58.37103582651056,5509,'AR','Life & Travel Channel','https://www.youtube.com/@Life-Travel-Channel','Buenos Aires'],
 ['RnWLl2HRgOQ',-34.60273514997674, -58.38345687276528,6771,'AR','Life & Travel Channel','https://www.youtube.com/@Life-Travel-Channel','Buenos Aires'],
-['RnWLl2HRgOQ',-34.609690498628794, -58.38968946476691,7831,'AR','Life & Travel Channel','https://www.youtube.com/@Life-Travel-Channel','Buenos Aires']
+['RnWLl2HRgOQ',-34.609690498628794, -58.38968946476691,7831,'AR','Life & Travel Channel','https://www.youtube.com/@Life-Travel-Channel','Buenos Aires'],
+['7WCK5_JodiU',40.18206776788928, 44.52088794136007,1453,'ARM','Travel Monkey','https://www.youtube.com/@travelmonkey2022','Yerevan'],
 ]
 
 
@@ -644,11 +645,13 @@ function getRandomIndex(max) {
 function randomlyChooseVideo() {
     // get new video
     vid_index =  getRandomIndex((list[gamemode]).length);
-    console.log(videos_played)
-    while(videos_played.includes(vid_index)){
-        randomlyChooseVideo()
+    if(validateVideo(vid_index)){
+        videos_played.push(vid_index)
     }
-    videos_played.push(vid_index)
+    else{
+        randomlyChooseVideo(vid_index)
+    }
+    
     src = ((list[gamemode])[vid_index]);
     active_video = (list[gamemode])[vid_index]
     active_playlist = list[gamemode]
@@ -660,7 +663,6 @@ function randomlyChooseVideo() {
     var a = document.getElementById('credits');
     a.href = active_playlist[vid_index][6]
     a.innerHTML = `${active_playlist[vid_index][5]}`
-
     addtocredit(src)
 
     //return video array
@@ -691,6 +693,16 @@ function distance_calc(user_guess, video_coords){
 }
 
 
+function validateVideo(ind){
+    console.log(`validating if ${ind} in ${videos_played}`)
+    if(videos_played.includes(ind)){
+        console.log('not valid, searching for another')
+        return false;
+    }
+    else{
+        return true;
+    }
+}
 
 //marking function
 function mark(e){
@@ -1113,9 +1125,7 @@ function final_guess(c) {
 
 map.on('click', function(e){
     if (Enable_marking == true){
-        mark(e)
-       
-  
+        mark(e);
     }
 });
 
@@ -1281,9 +1291,11 @@ function country(index){
         case 'CZ':
             return('Czech Republic');
         case 'SG':
-            return('Singapore')
+            return('Singapore');
         case 'PAR':
-            return('Paraguay')
+            return('Paraguay');
+        case 'ARM':
+            return('Armenia');
         default:
             return('Unknown')
     }
