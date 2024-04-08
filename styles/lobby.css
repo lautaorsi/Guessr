@@ -102,26 +102,17 @@ p{
 
 
 #gamemode{
-    font-family: 'merriweather sans', serif;
-    font-size: x-large;
+    font-family: 'Roboto';
+    font-size: xx-large;
     text-align: center;
 }
 
 
 
-#h2{
-    position: relative;
-    width: fit-content;
-    right: 0%;
-    left: 0%;
-    display: block;
-    margin: auto;
-}
-
 #imgcontainer{
     margin: auto;
-    width: 420px;
-    height: 50vh;
+    width: fit-content;
+    height: fit-content;
     min-height: 358px;
 }
 
@@ -142,8 +133,8 @@ p{
 #img2{
     border-top-right-radius: 8px;
     border-top-left-radius: 8px;
-    width: 100%;
-    height: 90%;
+    width: 420px;
+    height: 45vh;
     
 }
 
@@ -181,7 +172,7 @@ p{
     margin: auto;
     width: fit-content;
     position: relative;
-    margin-top: 70px;
+    margin-top: 10%;
     height: fit-content;
 }
 

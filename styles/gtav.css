@@ -464,7 +464,41 @@ h4{
     border-radius: 15px;
     font-family: 'Roboto';
     color: #000000;
+    position: relative;
+    z-index: -99;
 }
 
 
 
+
+.ad_grid{
+    z-index: 1;
+    right: 0;
+    left: 0;
+    display: grid;
+    grid-template-columns: repeat(2,minmax(50%,50%));
+    grid-auto-rows: 1;
+    grid-gap: 20px;
+    width: 100vw;
+    position: absolute;
+    margin-top: 10px;
+}
+
+.adbox{
+    margin-top: 10px;
+    background-color: #030303;
+    position: relative;
+    width: fit-content;
+    margin: auto;
+
+}
+
+
+
+
+
+.last{
+    margin-top: 20px !important;
+    position: relative !important;
+    margin: auto;
+}

@@ -190,15 +190,14 @@ body{
 
 
 .ad_grid{
-    z-index: -1;
-    right: 0;
-    left: 0;
+    z-index: 999;
+    margin: auto;
     display: grid;
-    grid-template-columns: repeat(2,minmax(50%,50%));
+    grid-template-columns: fit-content(720px) fit-content(300px) fit-content(720px);
     grid-auto-rows: 1;
     grid-gap: 20px;
-    width: 100vw;
-    position: absolute;
+    width: fit-content;
+    position: relative;
     margin-top: 10px;
 }
 
@@ -234,11 +233,7 @@ body{
     width: 100vw;
 }
 
-.gametitle_container{
-    width: 100vw;
-    position: relative;
-    top: 10px;
-}
+
 
 .gametitle{
     border: #030303;
@@ -252,6 +247,8 @@ body{
     border-radius: 15px;
     font-family: 'Roboto';
     color: #000000;
+    position: relative;
+    z-index: -999;
 }
 
 .card_container{
@@ -655,3 +652,14 @@ h4{
     }
 }
 
+@media (max-width: 1340px){
+    .right{
+        display: none;
+    }
+    .ad_grid{
+        grid-template-columns: 100%;
+        grid-template-rows: fit-content fit-content 0%;
+        grid-row: 2 !important;
+        width: 100vw !important;
+    }
+}

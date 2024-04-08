@@ -441,6 +441,23 @@ h3{
 }
 
 
+.adbox{
+    top: 15%;
+    position: absolute !important;
+    height: fit-content;
+    width: fit-content;
+    z-index: -998;
+}
+
+.right{
+    right: 0%;
+}
+
+.left{
+    left: 0%;
+}
+
+
 .police-lights {
     z-index: -999;
     position: absolute;

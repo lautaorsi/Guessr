@@ -4,7 +4,7 @@
         <link rel="icon" href="../static/logo.png">
         <link rel="stylesheet" href="../styles/lobby.css">
         <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Gabarito&family=Merriweather Sans">
+        href="https://fonts.googleapis.com/css2?family=Gabarito&family=Merriweather Sans&family=Roboto">
         <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
         <script src="https://randojs.com/2.0.0.js"></script>
         <link
@@ -65,7 +65,7 @@
                             <option value=1000 >1000km</option>
                         </select>
                         <select id="colorselect" class="selects">
-                            <option value="none" disabled selected>Marker</option>
+                            <option value="none" disabled selected>Color</option>
                             <option value='0' class="red">Red</option>
                             <option value="5" class="blue">Blue</option>
                             <option value="2" class="yellow">Yellow</option>
@@ -81,7 +81,7 @@
                             <option value=20 >20 rounds</option>
                         </select>
                         <select id="timeselect" class="selects">
-                            <option value="none">Time</option>
+                            <option value="none" disabled selected>Time</option>
                             <option value=30 id="time1">30s</option>
                             <option value=50 id="time2">50s</option>
                             <option value=90 id="time3">90s</option>
@@ -275,9 +275,6 @@
     if(gamename.hello != 'radius'){
         document.getElementById('radiusselect').style.display = 'none'
 
-    }
-    else{
-        document.getElementById('selectors').style.left = '20%'
     }
     function myFunction(){
         var time = document.getElementById('timeselect').value

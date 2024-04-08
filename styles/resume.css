@@ -9,13 +9,22 @@ body{
     background-position: center;
 }
 
+.ad_main_grid{
+    display: grid;
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+
+
 #main_container{
     position: relative;
     margin: auto;
     width: 650px;
     height: 750px;
     border-radius: 8px;
-    background: linear-gradient(180deg, rgba(0,107,254,1) 0%, rgba(60,127,250,1) 53%, rgba(65,190,255,1) 84%, rgba(154,233,255,1) 100%);
+    background: linear-gradient(90deg, rgba(40,40,40,1) 0%, rgba(93,93,93,1) 35%, rgba(161,161,161,1) 100%);
     background-size: cover;
 }
 
@@ -70,7 +79,23 @@ body{
 
 
 
+.adbox{
+    z-index: 999;
+    margin-top: 15%;
+    position: relative;
+    height: fit-content;
+    width: 100%;
+}
 
+.right{
+    position: absolute;
+    right: 0;
+}
+
+.left{
+    position: absolute;
+    left: 0%;
+}
 
 
 
@@ -263,14 +288,18 @@ body{
     background-color: rgba(255, 255, 255, 0);
     display: block;
     width: 100px;
-    color: #c8c8c8;
+    color: white;
     min-width: fit-content;
     font-size: medium;
     font-weight: 600;
     padding-bottom: 10px;
 }
 
-.credit:hover{
+.credit_name{
+    color: #c8c8c8;
+}
+
+.credit_name:hover{
     color: white;
 }
 
@@ -328,6 +357,13 @@ body{
 
 }
 
+@media (max-width: 769px){
+    .adbox{
+        z-index: -999;
+    }
+}
+
+
 @keyframes rotation {
     25% {
       transform: rotate(5deg);
@@ -339,3 +375,33 @@ body{
         transform: rotate(0deg);
     }
 }
+
+
+
+#credits_container{
+    text-align: center;
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+  
+.credits{
+    text-decoration: none;
+    font-family: 'Gabarito';
+    text-align: center;
+    color: #000000;
+    margin-left: 22px;
+    font-size: 21px;
+    cursor: pointer;
+    z-index: 999;
+}
+
+.credits:hover{
+    color: #c8c8c8;
+}
+
+
+.credits:hover{
+    text-decoration: underline;
+}
+

@@ -1,72 +1,109 @@
 <html lang="es">
     <head>
-        <link rel="icon" href="static/logo.png">
-        <link rel="stylesheet" href="styles/resume.css">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="../static/logo.png">
+        <link rel="stylesheet" href="../styles/resume.css">
         <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Gabarito&family=Merriweather Sans">
         <script src="https://kit.fontawesome.com/493860cbeb.js" crossorigin="anonymous"></script>
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-
-
+        <script src="https://randojs.com/2.0.0.js"></script>
     </head>
 
 
     <body>
-            <h1 id="Title">VideoGuessr</h1>
+        <div class="adbox left">
+            <script type="text/javascript">
+                atOptions = {
+                    'key' : 'fffa065c6177bf16965d30a71a57bf29',
+                    'format' : 'iframe',
+                    'height' : 600,
+                    'width' : 160,
+                    'params' : {}
+                    
+                };
+                document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/fffa065c6177bf16965d30a71a57bf29/invoke.js"></scr' + 'ipt>');
+            </script>
+            </div>
+            <div class="adbox right">
+                        <script type="text/javascript">
+                            atOptions = {
+                                'key' : 'fffa065c6177bf16965d30a71a57bf29',
+                                'format' : 'iframe',
+                                'height' : 600,
+                                'width' : 160,
+                                'params' : {}
+                                
+                            };
+                            document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/fffa065c6177bf16965d30a71a57bf29/invoke.js"></scr' + 'ipt>');
+                        </script>
+            </div>
+        <title>VideoGuessr - Game Resume</title>
+        <img src="../static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
+            <a href="index.html">
+                <button id="return" >
+                    <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
+                </button>
+            </a>
             <div id="main_container">
                 <h2 id="congrats"></h2>
                 <h2 id="points"></h3>
                 <div id="imgcontainer">
                     <video src="" id="gif" autoplay muted loop>
                 </div>
-                <button id="start" onclick="myFunction1()">
+                <button id="start" class="main_buttons" onclick="myFunction1()">
+                    Play again
+                </button>
+                <button id="menu" class="main_buttons" onclick="myFunction()">
+                    Return to menu
+                </button>
 
-                    Play Again
-                </button>
-                <button id="menu" onclick="myFunction()">
-                    Back to Menu
-                </button>
-                <a href="gtaV.html">
-                    <button id="return" href = >
-                        <span id="arrow">&#10229;</span>
-                    </button>
-                </a>
+            </div>
+            <div class="bott_container">
+                <div class="mobile_credit">
+                    <a href="credits.html">Credits</a>
+                </div>
+                <div class="credit_cont" id="credit_cont">
+                    <div id="credit_title">Credits:</div>
+                </div>
+            </div>
+            <div id="credits_container">
+                <a href="https://www.pexels.com/es-es/foto/punto-de-referencia-acera-entrada-puerta-18160262/" target="_blank" class="credits" id="white">Photo by Franco Garcia</a>
             </div>
     </body>
     <script>
-        function getRandomIndex(max) {
-        /* The function will return a random number between 0 and max - 1 */
-        return Math.floor(Math.random() * Math.floor(max));
-        }
-
-
-        const objcredits = localStorage.getItem('credits')
+        const objcredits = JSON.parse(localStorage.getItem('credits'))
         const objrounds = localStorage.getItem('rounds')
-        const rounds = JSON.stringify(objrounds)
+        const rounds = (objrounds)
         const objscore = localStorage.getItem('points')
         var score = JSON.stringify(objscore)
-        const fail_gifs = ['./static/fail2.mp4','./static/fail3.mp4','./static/fail5.mp4','./static/fail6.mp4','./static/fail8.mp4']
-        const wow_gifs = ['./static/wow2.gif']
-        if (objscore/rounds >= 800){
-            document.getElementById('congrats').innerHTML='Wow! Score:'
-            document.getElementById('gif').src = wow_gifs[getRandomIndex(wow_gifs.length)]
+        const nice_gifs = ['../static/gifs/nice1.mp4','../static/gifs/nice2.mp4','../static/gifs/nice3.mp4','../static/gifs/nice4.mp4','../static/gifs/nice5.mp4','../static/gifs/nice6.mp4']
+        const fail_gifs = ['../static/gifs/fail2.mp4','../static/gifs/fail3.mp4','../static/gifs/fail5.mp4','../static/gifs/fail6.mp4','../static/gifs/fail8.mp4']
+        const wow_gifs = ['../static/gifs/wow1.mp4','../static/gifs/wow2.mp4','../static/gifs/wow3.mp4','../static/gifs/wow4.mp4','../static/gifs/wow5.mp4','../static/gifs/wow6.mp4','../static/gifs/wow7.mp4']
+        if (objscore/rounds >= 1100){
+            document.getElementById('congrats').innerHTML='Wow!'
+            document.getElementById('gif').src = wow_gifs[rando(wow_gifs.length - 1)]
         }
-        if(objscore/rounds >= 500){
-            document.getElementById('congrats').innerHTML='Well played! Score:'
-            document.getElementById('gif').src = wow_gifs[getRandomIndex(wow_gifs.length)]
+        if(objscore/rounds >= 800){
+            document.getElementById('congrats').innerHTML='Well played!'
+            document.getElementById('gif').src = nice_gifs[rando(nice_gifs.length - 1)]
         }
         else{
-            document.getElementById('congrats').innerHTML='Better luck next time! Score:'
-            document.getElementById('gif').src = fail_gifs[getRandomIndex(fail_gifs.length)]
+            document.getElementById('congrats').innerHTML='Better luck next time!'
+            document.getElementById('gif').src = fail_gifs[rando(fail_gifs.length - 1)]
         }
-        document.getElementById('points').innerHTML = `${objscore} Puntos`
+        document.getElementById('points').innerHTML = `You got ${objscore} Points`
         function myFunction(){
-            window.location.href = 'gtaV.html'
+            window.location.href = 'index.html'
         }
         function myFunction1(){
-            window.location.href = 'gamegta.html'
+            window.location.href = 'game.html'
         }
+        objcredits.forEach(function(element) {
+            var x = document.createElement('div');
+            x.classList.add('credit');
+            x.innerHTML = `${element['round']}: <a href="${element['link']}" style='color:c8c8c8;'>${element['name']}</a>`;
+            document.getElementById("credit_cont").appendChild(x);
+        })
     </script>
 
 

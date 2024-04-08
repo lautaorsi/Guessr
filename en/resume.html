@@ -10,7 +10,7 @@
     </head>
 
 
-    <body>
+    <body>        
         <title>VideoGuessr - Game Resume</title>
         <img src="../static/logo.png" alt="logo" class="logoimg" draggable="false" onclick="window.location='https://videoguessr.com/'">
             <a href="index.html">
@@ -18,6 +18,22 @@
                     <i class="fa-solid fa-arrow-left" style="color: #000000;"></i>
                 </button>
             </a>
+        <div class="ad_main_grid">
+            <div class="adbox">
+                <div class="left">
+                    <script type="text/javascript">
+                        atOptions = {
+                            'key' : 'fffa065c6177bf16965d30a71a57bf29',
+                            'format' : 'iframe',
+                            'height' : 600,
+                            'width' : 160,
+                            'params' : {}
+                            
+                        };
+                        document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/fffa065c6177bf16965d30a71a57bf29/invoke.js"></scr' + 'ipt>');
+                    </script>
+                </div>
+            </div>
             <div id="main_container">
                 <h2 id="congrats"></h2>
                 <h2 id="points"></h3>
@@ -32,6 +48,22 @@
                 </button>
 
             </div>
+            <div class="adbox">
+                <div class="right">
+                    <script type="text/javascript">
+                            atOptions = {
+                                'key' : 'fffa065c6177bf16965d30a71a57bf29',
+                                'format' : 'iframe',
+                                'height' : 600,
+                                'width' : 160,
+                                'params' : {}
+                                
+                            };
+                            document.write('<scr' + 'ipt type="text/javascript" src="//www.topcreativeformat.com/fffa065c6177bf16965d30a71a57bf29/invoke.js"></scr' + 'ipt>');
+                    </script>
+                </div>
+            </div>
+        </div>
             <div class="bott_container">
                 <div class="mobile_credit">
                     <a href="credits.html">Credits</a>
@@ -39,6 +71,9 @@
                 <div class="credit_cont" id="credit_cont">
                     <div id="credit_title">Credits:</div>
                 </div>
+            </div>
+            <div id="credits_container">
+                <a href="https://www.pexels.com/es-es/foto/punto-de-referencia-acera-entrada-puerta-18160262/" target="_blank" class="credits" id="white">Photo by Franco Garcia</a>
             </div>
     </body>
     <script>
@@ -72,7 +107,7 @@
         objcredits.forEach(function(element) {
             var x = document.createElement('div');
             x.classList.add('credit');
-            x.innerHTML = `${element['round']}: <a href="${element['link']}" style='color:c8c8c8;'>${element['name']}</a>`;
+            x.innerHTML = `${element['round']}. <a href="${element['link']}" class='credit_name'>${element['name']}</a>`;
             document.getElementById("credit_cont").appendChild(x);
         })
     </script>

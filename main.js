@@ -302,11 +302,11 @@ var video_list = [
 ['8fOxvqVbPvc',56.950837338520955, 24.104650581006652,662,'LTV','Streets Of Ambience','https://www.youtube.com/@streetsambience6054','Riga'],
 ['K4HWfOy93k8',20.6896872,-88.201725,112,'MX','Paseos de Aventura', 'https://www.youtube.com/@MiddleAgeAdventureWalks','Valladolid'],
 ['tHhTHoPcRB8',48.86042795329101, 2.3377860527069623,409,'FR','People Places & Events','https://www.youtube.com/@PeoplePlacesEvents','Paris'],
-['RnWLl2HRgOQ',-34.61227406477105, -58.36359412429127,1583,'AR','Life & Travel Channel','https://www.youtube.com/@Life-Travel-Channel','Buenos Aires'],
-['RnWLl2HRgOQ',-34.605027402533324, -58.367107801435225,5025,'AR','Life & Travel Channel','https://www.youtube.com/@Life-Travel-Channel','Buenos Aires'],
-['RnWLl2HRgOQ',-34.60801046177624, -58.37103582651056,5509,'AR','Life & Travel Channel','https://www.youtube.com/@Life-Travel-Channel','Buenos Aires'],
-['RnWLl2HRgOQ',-34.60273514997674, -58.38345687276528,6771,'AR','Life & Travel Channel','https://www.youtube.com/@Life-Travel-Channel','Buenos Aires'],
-['RnWLl2HRgOQ',-34.609690498628794, -58.38968946476691,7831,'AR','Life & Travel Channel','https://www.youtube.com/@Life-Travel-Channel','Buenos Aires'],
+['RnWLl2HRgOQ',-34.61227406477105, -58.36359412429127,1583,'AR','Tropical Nomad','https://www.youtube.com/@PeteTropicalNomad','Buenos Aires'],
+['RnWLl2HRgOQ',-34.605027402533324, -58.367107801435225,5025,'AR','Tropical Nomad','https://www.youtube.com/@PeteTropicalNomad','Buenos Aires'],
+['RnWLl2HRgOQ',-34.60801046177624, -58.37103582651056,5509,'AR','Tropical Nomad','https://www.youtube.com/@PeteTropicalNomad','Buenos Aires'],
+['RnWLl2HRgOQ',-34.60273514997674, -58.38345687276528,6771,'AR','Tropical Nomad','https://www.youtube.com/@PeteTropicalNomad','Buenos Aires'],
+['RnWLl2HRgOQ',-34.609690498628794, -58.38968946476691,7831,'AR','Tropical Nomad','https://www.youtube.com/@PeteTropicalNomad','Buenos Aires'],
 ['7WCK5_JodiU',40.18206776788928, 44.52088794136007,1453,'ARM','Travel Monkey','https://www.youtube.com/@travelmonkey2022','Yerevan'],
 ['j-wq6fTYmew',28.640959628460305, 77.21070536024683,206,'IN','Streets of Ambience','https://www.youtube.com/@streetsambience6054','New Delhi'],
 ['dkTq0zuno_Q',37.39207286872985, -5.996576691388661,751,'ES','Teleport Walkers','https://www.youtube.com/@TeleportWalkers','Sevilla'],
@@ -319,7 +319,8 @@ var video_list = [
 ['ZOWygni0bOY',35.454165512071, 139.63607863590607,794,'JP','KiLn','https://www.youtube.com/@KiLn1009','Tokyo'],
 ['eTZxoAxsO8E',35.64898898382873, 139.69931674578416,33,'JP','KiLn','https://www.youtube.com/@KiLn1009','Tokyo'],
 ['G-jXcsMb_PE',47.50031258841018, 19.048900232583723,368,'HU','https://www.youtube.com/@agitravelers5804','Budapest'],
-['G-jXcsMb_PE',47.492909876452806, 19.05322762448806,981,'HU','https://www.youtube.com/@agitravelers5804','Budapest']
+['G-jXcsMb_PE',47.492909876452806, 19.05322762448806,981,'HU','https://www.youtube.com/@agitravelers5804','Budapest'],
+['cw5E_5-xn84',38.04476430355647, 114.48700435868744,492,'CN','DuckTravel','https://www.youtube.com/@DuckTravel','Shijiazhuang']
 
 ]
 
@@ -502,7 +503,7 @@ var bool_map = false
 var backvideo
 var credit_array = []
 var marker_placed = false
-
+var language =  ((document.getElementsByTagName('meta'))[0]).getAttribute('content')
 
 
 
@@ -857,7 +858,12 @@ function next(e) {
     Enable_marking = true
 
     //update continue button
-    document.getElementById('continue').innerHTML = 'Continue'
+    if(language == 'es'){
+        document.getElementById('continue').innerHTML = 'Continuar'
+    }
+    if(language == 'en'){
+        document.getElementById('continue').innerHTML = 'Continue'
+    } 
     switchbtn()
 
     //clear all map layers
