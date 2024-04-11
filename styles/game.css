@@ -526,10 +526,10 @@ h2{
 }
 
 #continue{
-  color: rgb(0, 0, 0);
+  color: rgb(255, 255, 255);
   cursor: pointer;
   size: 20%;
-  background-color: #ffffff;
+  background-color: #00a437;
   border-radius: 4px;
   transition: box-shadow 0.25s ease-in-out;
   font-size: medium;
@@ -540,6 +540,20 @@ h2{
   visibility: hidden;
 }
 
+#continue_out{
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+  size: 20%;
+  background-color: #00a437;
+  border-radius: 4px;
+  transition: box-shadow 0.25s ease-in-out;
+  font-size: medium;
+  padding: 15px 30px;
+  top: 50%;
+  right: 3%;
+  position: absolute;
+  visibility: hidden;
+}
 
 
 .btn:link,

@@ -504,7 +504,7 @@ var backvideo
 var credit_array = []
 var marker_placed = false
 var language =  ((document.getElementsByTagName('meta'))[0]).getAttribute('content')
-
+var round_ended = false
 
 
 // initalize map
@@ -737,7 +737,6 @@ function map_open() {
            bool_map = true
         }
         else {
-         
             bool_map = false
         }
 }
@@ -864,7 +863,10 @@ function next(e) {
     if(language == 'en'){
         document.getElementById('continue').innerHTML = 'Continue'
     } 
+
     switchbtn()
+    document.getElementById('continue_out').style.visibility = 'hidden'
+
 
     //clear all map layers
     marker.clearLayers()
@@ -914,8 +916,6 @@ function next(e) {
     //start timer
     startTimer()
 }
-
-
 
 
 function end(){
@@ -1223,8 +1223,13 @@ document.addEventListener('keydown', (event) => {
 
 
 window.onclick = function(event) {
+    console.log(event.target)
     if (event.target == modal) {
       modal.close()
+    }
+    if(playing == false && event.target == document.getElementById('close_map')){
+        console.log('displaying')
+        document.getElementById('continue_out').style.visibility = 'visible'
     }
 }
 
