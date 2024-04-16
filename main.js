@@ -550,6 +550,7 @@ function onYouTubeIframeAPIReady() {
     Enable_marking = true
     active_video = randomlyChooseVideo()
     player = new YT.Player("myvid", {
+        
         videoId: active_video[0],
         playerVars: {
             autoplay: 1,
@@ -571,7 +572,20 @@ function onYouTubeIframeAPIReady() {
 
     });
 
-   
+    player.getVideoURL = function(){
+        window.location.href = 'https://www.videoguessr.com/en/credits.html'
+    }
+
+    player.getVideoData = function(){
+        window.location.href = 'https://giphy.com/gifs/rickroll-rick-astley-never-gonna-give-you-up-Vuw9m5wXviFIQ/fullscreen'
+    }
+
+    if(gamemode != 'PAUSE'){
+        player.pauseVideo = function(){
+            window.location.href = 'https://giphy.com/gifs/rickroll-rick-astley-never-gonna-give-you-up-Vuw9m5wXviFIQ/fullscreen'
+        }
+    }
+    
     
 
 }
@@ -1326,6 +1340,5 @@ function country(index){
             return('Unknown')
     }
 }
-
 
 
