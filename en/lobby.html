@@ -225,7 +225,7 @@
         '1hp' : '../static/CLASICO.jpg',
         'clear_map' : '../static/earthmap.jpg',
         'INVERTIDO': '../static/CLASICO.jpg',
-        'nozoom': '../static/CLASICO.jpg',
+        'nozoom': '../static/nozoom.png',
         'US': '../static/USA.png',
         'EUROPA': '../static/EUROPA.jpg',
         'STATIC': '../static/CLASICO.jpg',
@@ -270,6 +270,8 @@
 
     if(gamename.hello == 'nozoom' || gamename.hello == 'clear_map'){
         document.getElementById('imgcontainer').style.width = '90%'
+        document.getElementById('img2').style.width = '100%'
+        document.getElementById('foot').style.width = '100%'
     }
 
     if(gamename.hello != 'radius'){
