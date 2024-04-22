@@ -61,24 +61,25 @@
                             <option value=20 >20km</option>
                             <option value=50 >50km</option>
                             <option value=100 >100km</option>
-                            <option value=200 >200km</option>
+                            <option value=250 >250km</option>
+                            <option value=500 >500km</option>
                             <option value=1000 >1000km</option>
                         </select>
+                        <select id="roundselect" class="selects">
+                            <option class="placeholder" value="none" disabled selected>Rounds</option>
+                            <option value=5 >5 rounds</option>
+                            <option value=10 >10 rounds</option>
+                            <option value=15 >15 rounds</option>
+                            <option value=20 >20 rounds</option>
+                        </select>
                         <select id="colorselect" class="selects">
-                            <option value="none" disabled selected>Color</option>
+                            <option value="none" disabled selected>Marker</option>
                             <option value='0' class="red">Red</option>
                             <option value="5" class="blue">Blue</option>
                             <option value="2" class="yellow">Yellow</option>
                             <option value="1" class="purple">Purple</option>
                             <option value="3" class="orange">Orange</option>
                             <option value="4" class="black">Black</option>
-                        </select>
-                        <select id="roundselect" class="selects">
-                            <option value="none" disabled selected>Rounds</option>
-                            <option value=5 >5 rounds</option>
-                            <option value=10 >10 rounds</option>
-                            <option value=15 >15 rounds</option>
-                            <option value=20 >20 rounds</option>
                         </select>
                         <select id="timeselect" class="selects">
                             <option value="none" disabled selected>Time</option>
@@ -97,8 +98,9 @@
                 <input type="checkbox" class="checkmute" id="checkmute"> <label for="checkmute" id="mutetext">Mute video</label>
             </div>
             <div id="controlcont">
-                <p id="key" class="s">M</p><p class="s" >Abrir mapa</p>
-                <p id="key" class="s">⬅</p><p id="key" class="s">➡</p><p class="s" id="keyxplain">Subir/Bajar velocidad de reproduccion</p>
+                <p id="key" class="s" style="font-weight: bold;">HOTKEYS:</p>
+                <p id="key" class="s">M</p><p class="s" >Open map</p>
+                <p id="key" class="s">⬅</p><p id="key" class="s">➡</p><p class="s" id="keyxplain">Lower/Increase video speed</p>
             </div>
             <div id="warning">
                 <h2 id="attention">•Attention•</h2>
@@ -247,9 +249,8 @@
     var warning_elem = document.getElementById('warning')
     const btn = document.getElementById("start");
     console.log(gamename)
-    if (gamename.hello == 'contrarreloj' || gamename.hello == '1hp'){
+    if (gamename.hello == 'contrarreloj' || gamename.hello == 'radius'){
         document.getElementById('roundselect').setAttribute("hidden", "hidden")
-        document.getElementById('timeselect').style.marginLeft = "20%"
         document.getElementById('time1').innerHTML = "30s"
         document.getElementById('time1').value = 30
         document.getElementById('time2').innerHTML = "50s"
@@ -267,7 +268,6 @@
         wimg.style.rotate = '180deg'
     }
 
-
     if(gamename.hello == 'nozoom' || gamename.hello == 'clear_map'){
         document.getElementById('imgcontainer').style.width = '90%'
         document.getElementById('img2').style.width = '100%'
@@ -276,11 +276,10 @@
 
     if(gamename.hello != 'radius'){
         document.getElementById('radiusselect').style.display = 'none'
-
     }
     function myFunction(){
         var time = document.getElementById('timeselect').value
-        if(gamename.hello == 'contrarreloj'){
+        if(gamename.hello == 'contrarreloj' || gamename.hello == 'radius'){
             var rounds = 9999
         }
         else{

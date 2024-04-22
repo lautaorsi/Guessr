@@ -66,7 +66,7 @@
                             <option value=1000 >1000km</option>
                         </select>
                         <select id="colorselect" class="selects">
-                            <option class="placeholder" value="none" disabled selected>Color</option>
+                            <option class="placeholder" value="none" disabled selected>Marcador</option>
                             <option value='0' class="red">Rojo</option>
                             <option value="5" class="blue">Azul </option>
                             <option value="2" class="yellow">Amarillo</option>
@@ -251,9 +251,8 @@
     var warning_elem = document.getElementById('warning')
     const btn = document.getElementById("start");
     console.log(gamename)
-    if (gamename.hello == 'contrarreloj' || gamename.hello == '1hp'){
+    if (gamename.hello == 'contrarreloj' || gamename.hello == 'radius'){
         document.getElementById('roundselect').setAttribute("hidden", "hidden")
-        document.getElementById('timeselect').style.marginLeft = "20%"
         document.getElementById('time1').innerHTML = "30s"
         document.getElementById('time1').value = 30
         document.getElementById('time2').innerHTML = "50s"
@@ -279,14 +278,10 @@
 
     if(gamename.hello != 'radius'){
         document.getElementById('radiusselect').style.display = 'none'
-
-    }
-    else{
-        document.getElementById('selectors').style.left = '20%'
     }
     function myFunction(){
         var time = document.getElementById('timeselect').value
-        if(gamename.hello == 'contrarreloj'){
+        if(gamename.hello == 'contrarreloj' || gamename.hello == 'radius'){
             var rounds = 9999
         }
         else{

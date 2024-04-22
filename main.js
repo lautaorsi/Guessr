@@ -33,12 +33,13 @@ time = JSON.parse(pretime)
 abstime =  JSON.parse(pretime)
 const premute = localStorage.getItem('mute')
 var mute = JSON.parse(premute)
-if (gamemode != 'contrarreloj'){
+if (gamemode != 'contrarreloj' && gamemode != 'radius' ){
     const prerounds = localStorage.getItem('rounds')
     var prround = JSON.parse(prerounds) 
     roundhtml.innerHTML = `1/${prround}`
 }
 else{
+    var prround = 99999
     roundhtml.innerHTML = `1`
 }
 
@@ -865,7 +866,7 @@ function next(e) {
     playing = true
     rounds = rounds + 1
     
-    if(gamemode != 'contrarreloj'){
+    if(gamemode != 'contrarreloj' && gamemode != 'radius'){
     if(rounds <= prround){
         //update round counter
     roundhtml.innerHTML = `${rounds}/${prround}`
@@ -933,9 +934,7 @@ function next(e) {
         time = abstime   
     }
 
-    if(gamemode == 'radius'){
 
-    }
 
     pausado = false
     //start timer
