@@ -262,12 +262,12 @@ var video_list = [
 ['6ghlKAmlbkY',-41.121034981205426, -71.39681102306164,268,'AR','ManuTrip','https://www.youtube.com/@ManuTrip','Bariloche'],
 ['IBROyImKFZo',-23.596944252905963, -65.88318723584135,53,'AR','ManuTrip','https://www.youtube.com/@ManuTrip','Salta'],
 ['L4GEfzP09Sg',-26.829572714174326, -65.20440764697985,509,'AR','ManuTrip','https://www.youtube.com/@ManuTrip','Tucuman'],
-['uRcpYz9lxZw',55.7664814781097, 37.620986278808545,351,'RU','WindowToMoscow','https://www.youtube.com/@WindowToMoscow','Moscow'],
-['77bfP5qAar0',55.756118,37.6161097,64,'RU','WindowToMoscow','https://www.youtube.com/@WindowToMoscow','Moscow'],
-['ZMHTdqngZfA',55.75356764468332, 37.62166782320351,72,'RU','WindowToMoscow','https://www.youtube.com/@WindowToMoscow','Moscow'],
-['ZMHTdqngZfA',55.75301418846161, 37.622853682566515,454,'RU','WindowToMoscow','https://www.youtube.com/@WindowToMoscow','Moscow'],
-['IOm_1-Qx744',55.73881335254801, 37.61029574547425,933,'RU','WindowToMoscow','https://www.youtube.com/@WindowToMoscow','Moscow'],
-['uRcpYz9lxZw',55.7617247,37.6202726,753,'RU','WindowToMoscow','https://www.youtube.com/@WindowToMoscow','Moscow'],
+['uRcpYz9lxZw',55.7664814781097, 37.620986278808545,351,'RU','WindowToM*****','https://www.youtube.com/@WindowToMoscow','Moscow'],
+['77bfP5qAar0',55.756118,37.6161097,64,'RU','WindowToM*****','https://www.youtube.com/@WindowToMoscow','Moscow'],
+['ZMHTdqngZfA',55.75356764468332, 37.62166782320351,72,'RU','WindowToM*****','https://www.youtube.com/@WindowToMoscow','Moscow'],
+['ZMHTdqngZfA',55.75301418846161, 37.622853682566515,454,'RU','WindowToM*****','https://www.youtube.com/@WindowToMoscow','Moscow'],
+['IOm_1-Qx744',55.73881335254801, 37.61029574547425,933,'RU','WindowToM*****','https://www.youtube.com/@WindowToMoscow','Moscow'],
+['uRcpYz9lxZw',55.7617247,37.6202726,753,'RU','WindowToM*****','https://www.youtube.com/@WindowToMoscow','Moscow'],
 ['hmT3m4GBhJU',40.784622,-73.9591253,30, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew','New York'],
 ['hmT3m4GBhJU',40.774314, -73.970380,680, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew','New York'],
 ['hmT3m4GBhJU',40.77265742288223, -73.97149820965703,984, 'US', 'Traveling w/ Andrew', 'https://www.youtube.com/@TravelingwithAndrew','New York'],
@@ -945,8 +945,13 @@ function next(e) {
 function end(){
     score = parseInt(score)
     localStorage.setItem('points', score)
+    if(gamemode != 'radius' && gamemode != 'contrarreloj'){
+        localStorage.setItem('rounds',prround)
+    }
+    else{
+        localStorage.setItem('rounds',rounds)
+    }
     localStorage.setItem('credits', JSON.stringify(credit_array))
-    localStorage.setItem('rounds',prround)
     document.getElementById("continue").onclick = window.location.href = 'resume.html';
 }
 
