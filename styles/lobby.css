@@ -77,6 +77,7 @@ p{
     padding-left: 15px;
 }
 
+
 .cntrlhead{
     font-family: 'merriweather sans', serif;
     font-size: larger;
@@ -90,6 +91,9 @@ p{
     margin-left: 5px;
 }
 
+.z{
+    margin-left: 10%;
+}
 
 #key{
     width: fit-content;
@@ -176,11 +180,18 @@ p{
     margin: auto;
     width: fit-content;
     position: relative;
-    margin-top: 10%;
+    margin-top: 5%;
     height: fit-content;
 }
 
-
+.setting{
+    text-align: center; 
+    width: 100%; 
+    margin-bottom: 10; 
+    font-family: 'Roboto'; 
+    font-weight: 800; 
+    font-size: large;
+}
 
 select {
     appearance: none;
