@@ -303,6 +303,7 @@ var video_list = [
 ['8fOxvqVbPvc',56.950837338520955, 24.104650581006652,662,'LTV','Streets Of Ambience','https://www.youtube.com/@streetsambience6054','Riga'],
 ['K4HWfOy93k8',20.6896872,-88.201725,112,'MX','Paseos de Aventura', 'https://www.youtube.com/@MiddleAgeAdventureWalks','Valladolid'],
 ['tHhTHoPcRB8',48.86042795329101, 2.3377860527069623,409,'FR','People Places & Events','https://www.youtube.com/@PeoplePlacesEvents','Paris'],
+['tHhTHoPcRB8',48.86106567197757, 2.3359028276445084,928,'FR','People Places & Events','https://www.youtube.com/@PeoplePlacesEvents','Paris'],
 ['RnWLl2HRgOQ',-34.61227406477105, -58.36359412429127,1583,'AR','Tropical Nomad','https://www.youtube.com/@PeteTropicalNomad','Buenos Aires'],
 ['RnWLl2HRgOQ',-34.605027402533324, -58.367107801435225,5025,'AR','Tropical Nomad','https://www.youtube.com/@PeteTropicalNomad','Buenos Aires'],
 ['RnWLl2HRgOQ',-34.60801046177624, -58.37103582651056,5509,'AR','Tropical Nomad','https://www.youtube.com/@PeteTropicalNomad','Buenos Aires'],
@@ -381,7 +382,40 @@ var video_list = [
 ['y4RN6MusjY8',46.20222395335237, 6.153557598327851,84,'SWZ','Walking Tour Master','https://www.youtube.com/@Walkingtourmaster','Geneva'],
 ['nsa82K9x7A0',40.419925821610235, -3.700989645180039,426,'ES','TourDrift','https://www.youtube.com/@tourdrift8580','Madrid'],
 ['nsa82K9x7A0',40.419324478139835, -3.693570792713237,895,'ES','TourDrift','https://www.youtube.com/@tourdrift8580','Madrid'],
-['nsa82K9x7A0',40.41673318930838, -3.702573047558823,1536,'ES','TourDrift','https://www.youtube.com/@tourdrift8580','Madrid'],]
+['nsa82K9x7A0',40.41673318930838, -3.702573047558823,1536,'ES','TourDrift','https://www.youtube.com/@tourdrift8580','Madrid'],
+['B8rC1p1g5ZU',43.33682269048736, 17.813725017924604,600,'BSN','POPtravel','https://www.youtube.com/@poptravelorg','Mostar' ],
+['B8rC1p1g5ZU',43.33682269048736, 17.813725017924604,600,'BSN','POPtravel','https://www.youtube.com/@poptravelorg','Mostar' ],
+['B8rC1p1g5ZU',43.336982591155014, 17.812021042238513,1713,'BSN','POPtravel','https://www.youtube.com/@poptravelorg','Mostar' ],
+['B8rC1p1g5ZU',43.337203638143066, 17.814156862462188,2413,'BSN','POPtravel','https://www.youtube.com/@poptravelorg','Mostar' ],
+['B8rC1p1g5ZU',43.33914277843345, 17.81501797397351,3046,'BSN','POPtravel','https://www.youtube.com/@poptravelorg','Mostar' ],
+['u5V7X0tzGDc',40.70186184575172, -73.80801945267366,812,'US','Walk Around W/ Us','https://www.youtube.com/@walkaroundwithus','Queens'],
+['u5V7X0tzGDc',40.70149884195183, -73.82385925309559,2012,'US','Walk Around W/ Us','https://www.youtube.com/@walkaroundwithus','Queens'],
+['QDhiq1Y9vUE',50.63685618351507, 3.0697021660918473,20,'FR','POPtravel','https://www.youtube.com/@poptravelorg','Lille' ],
+['QDhiq1Y9vUE',50.63135632402641, 3.061553187863695,744,'FR','POPtravel','https://www.youtube.com/@poptravelorg','Lille' ],
+['QDhiq1Y9vUE',50.63120140381111, 3.0547043018551547,1508,'FR','POPtravel','https://www.youtube.com/@poptravelorg','Lille' ],
+['QDhiq1Y9vUE',50.62948779735412, 3.0582314389660885,2186,'FR','POPtravel','https://www.youtube.com/@poptravelorg','Lille' ],
+['QDhiq1Y9vUE',50.63293488708856, 3.062647470224023,2681,'FR','POPtravel','https://www.youtube.com/@poptravelorg','Lille' ],
+['lJTXnG6AlzY',43.695486593659, 7.276714180991253,35,'FR','Nomad Walker','https://www.youtube.com/@NOMADWALKER_','Niza'],
+['lJTXnG6AlzY',43.69510404108565, 7.273482770080713,711,'FR','Nomad Walker','https://www.youtube.com/@NOMADWALKER_','Niza'],
+['kDQXwOkikPw',45.56657578672296, 5.92288950030342,30,'FR','Casual Voyager','https://www.youtube.com/@casualvoyager','Chambery'],
+['kDQXwOkikPw',45.563280980417716, 5.9217369617207725,628,'FR','Casual Voyager','https://www.youtube.com/@casualvoyager','Chambery'],
+['kDQXwOkikPw',45.56493283961756, 5.918489823835716,1133,'FR','Casual Voyager','https://www.youtube.com/@casualvoyager','Chambery'],
+['kDQXwOkikPw',45.56657578672296, 5.92288950030342,30,'FR','Casual Voyager','https://www.youtube.com/@casualvoyager','Chambery'],
+['HRXfxEcQFxA',49.70717542537798, 0.20548552520966826,103,'FR','Casual Voyager','https://www.youtube.com/@casualvoyager','Etretat'],
+['HRXfxEcQFxA',49.70822966347092, 0.2049564299979739,820,'FR','Casual Voyager','https://www.youtube.com/@casualvoyager','Etretat'],
+['AfXyxj7WqdA',45.76849169591416, 4.837099110888122,51,'FR','Casual Voyager','https://www.youtube.com/@casualvoyager','Lyon'],
+['AfXyxj7WqdA',45.768155237889346, 4.829327852537253,663,'FR','Casual Voyager','https://www.youtube.com/@casualvoyager','Lyon'],
+['AfXyxj7WqdA',45.765316034243305, 4.827318658144039,1157,'FR','Casual Voyager','https://www.youtube.com/@casualvoyager','Lyon'],
+['hB5ZM78uCO4',43.30401832537083, 5.3941176110074585,61,'FR','Casual Voyager','https://www.youtube.com/@casualvoyager','Marseille'],
+['hB5ZM78uCO4',43.29973922722406, 5.385538715720343,594,'FR','Casual Voyager','https://www.youtube.com/@casualvoyager','Marseille'],
+['Yex5X2p2izk',39.859233646686796, -4.022424060360696,600,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Toledo'],
+['Yex5X2p2izk',39.85751005684317, -4.021269174599751,1967,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Toledo'],
+['mxZGFvBpo',40.41459109135954, -3.7035879055320904,6,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Madrid'],
+['mxZGFvBpo',40.41920472478652, -3.698070580562131,554,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Madrid'],
+['mxZGFvBpo',40.41855294989362, -3.696661923858176,1052,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Madrid'],
+['mxZGFvBpo',40.416092615992575, -3.7069638393876336,1761,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Madrid'],
+
+]
 
 
 var arg_list = [["jstF9EYr4IM", -38.005376808820586, -57.54250699591142, 833,'ARG', 'CarpoWalks','https://www.youtube.com/@CarpoWalks'], 
@@ -1386,6 +1420,8 @@ function country(index){
             return('Egypt');         
         case 'BE':
             return('Belgium');
+        case 'BSN':
+            return('Bosnia');
         case 'NW':
             return('Norway');    
         case 'VN':
