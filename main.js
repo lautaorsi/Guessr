@@ -369,10 +369,10 @@ var video_list = [
 ['sesj4QwZRO8',1.2837785296260664, 103.85113138288266,973,'SG','Walking Tour Master','https://www.youtube.com/@Walkingtourmaster','Singapore'],
 ['kibhq0WR1XM',21.03135442192783, 105.84848129778157,1228,'VN','Walking Tour Master','https://www.youtube.com/@Walkingtourmaster','Hanoi'],
 ['kibhq0WR1XM',21.02477459061477, 105.85308195947172,229,'VN','Walking Tour Master','https://www.youtube.com/@Walkingtourmaster','Hanoi'],
-['l5xe_yVgFoY',38.71213351186336, -9.139431060787198,286,'PT','Walking Portugal','https://www.youtube.com/@Walking_Portugal','Lisboa'],
+['l5xe_yVgFoY',38.71213351186336, -9.139431060787198,286,'PT','Walking P*****','https://www.youtube.com/@Walking_Portugal','Lisboa'],
 ['aRHweyKtvgA',36.106934075089065, -115.17331520947201,281,'US','Zero One','https://www.youtube.com/@zeroone_01','Las Vegas'],
 ['wFZy3owiG2U',41.31062522440086, 19.436809373232837,8,'AL','Walking Tour Master','https://www.youtube.com/@Walkingtourmaster','Durres'],
-['0QLhb01jfKI',38.7677920644157, -9.098308290512026,58,'PT','Walking Portugal','https://www.youtube.com/@Walking_Portugal','Lisboa'],
+['0QLhb01jfKI',38.7677920644157, -9.098308290512026,58,'PT','Walking P*****','https://www.youtube.com/@Walking_Portugal','Lisboa'],
 ['vfzPQCk87m0',40.753621277050414,-73.98697438819755,33,'US','WizardP','https://www.youtube.com/@wizardp7467','New York'],
 ['vfzPQCk87m0',40.75800626075224, -73.98533519938796,538,'US','WizardP','https://www.youtube.com/@wizardp7467','New York'],
 ['9llK66sQmEw',47.37576442233883, 8.53751871378099,321,'SWZ','Street To Street','https://www.youtube.com/@streettostreet','Zurich'],
@@ -414,6 +414,20 @@ var video_list = [
 ['mxZGFvBpo',40.41920472478652, -3.698070580562131,554,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Madrid'],
 ['mxZGFvBpo',40.41855294989362, -3.696661923858176,1052,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Madrid'],
 ['mxZGFvBpo',40.416092615992575, -3.7069638393876336,1761,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Madrid'],
+['v_pDQLxe_mQ',37.33229090988114, -121.88468847168534,30,'US','Gala Daily','https://www.youtube.com/@galadaily240','San Jose'],
+['v_pDQLxe_mQ',37.33524746903032, -121.88998726682321,548,'US','Gala Daily','https://www.youtube.com/@galadaily240','San Jose'],
+['v_pDQLxe_mQ',37.33776800777274, -121.89393627930158,1164,'US','Gala Daily','https://www.youtube.com/@galadaily240','San Jose'],
+['GmI4WLZ3RWU',37.34899567313431, -121.89437410442511,68,'US','Gala Daily','https://www.youtube.com/@galadaily240','San Jose'],
+['HKiyU2JtlMI',41.37392680733299, 2.1502713792964676,460,'ES','The World is Yours','https://www.youtube.com/@Gmadeira04','Barcelona'],
+['HKiyU2JtlMI',41.37513632941855, 2.1618819597737793,1173,'ES','The World is Yours','https://www.youtube.com/@Gmadeira04','Barcelona'],
+['HKiyU2JtlMI',41.37459760904399, 2.176548066407066,1840,'ES','The World is Yours','https://www.youtube.com/@Gmadeira04','Barcelona'],
+['HKiyU2JtlMI',41.375538746884736, 2.180178823327157,2950,'ES','The World is Yours','https://www.youtube.com/@Gmadeira04','Barcelona'],
+['HKiyU2JtlMI',41.381142564092656, 2.1732598151770866,3493,'ES','The World is Yours','https://www.youtube.com/@Gmadeira04','Barcelona'],
+['AL5WRHVSO34',41.40401781117569, 2.174923371244246,99,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Barcelona'],
+['AL5WRHVSO34',41.401175139691674, 2.1790790562265423,696,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Barcelona'],
+['AL5WRHVSO34',41.40136222316096, 2.1856607334370897,1282,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Barcelona'],
+['6nsAktkBDhg',41.387092718368294, 2.1699289769037966,2295,'ES','POPtravel','https://www.youtube.com/@poptravelorg','Barcelona'],
+
 
 ]
 
