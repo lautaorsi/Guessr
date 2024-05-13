@@ -141,7 +141,7 @@ body{
 #Top_menu{
     position: relative;
     top: 0;
-    background-color: #fefefe;
+    background-color: #000000;
     height: 65px;
     width: 100%;
     z-index: 1;
@@ -149,30 +149,15 @@ body{
 
 
 #centerheader{
-    display: block;
-    width: fit-content;
-    position: absolute;
-    top: 57%;
-    margin: auto;
     right: 0%;
     left: 0%;
 }
 
 #leftheader{
-    display: block;
-    width: fit-content;
-    position: absolute;
-    top: 57%;
-    margin: auto;
     left: 20px;
 }
 
 #rightheader{
-    display: block;
-    width: fit-content;
-    position: absolute;
-    top: 57%;
-    margin: auto;
     right: 30px;
 }
 
@@ -180,13 +165,17 @@ body{
     font-family: 'Mukta', serif;
     font-size: large;
     text-decoration: none;
-    color: rgb(5, 5, 5);
+    color: rgb(255, 255, 255);
 }
 
-.headers:hover{
-    color: rgb(12, 90, 0) !important;
-}
 
+.headercont{
+    top: 57%;
+    display: block;
+    width: fit-content;
+    position: absolute;
+    margin: auto;
+}
 
 
 .ad_grid{
@@ -439,7 +428,7 @@ h3{
     padding-bottom: 20px;
     padding-left: 20px;
     position: relative;
-    background-color: #fefefe;
+    background-color: #101010;
     width: fit-content;
     align-self: center;
     border-radius: 10px;
@@ -450,6 +439,7 @@ h3{
     font-family: 'Roboto';
     left: 75px;
     font-size: large;
+    color: #696969;
 }
 .share-buttons {
     display: flex;
@@ -465,7 +455,7 @@ h3{
  }
  .share-button:hover{
     transform: translateY(-0.25em);
-    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.836);
+    box-shadow: 0 8px 16px 0 rgba(125, 125, 125, 0.836);
  }
  .facebook {
     margin-left: 60px;
@@ -491,7 +481,7 @@ footer{
     width: 100%;
     height: 19%;
     padding-bottom: 40px;
-    background-color: #fefefe;
+    background-color: #101010;
 }
 #footer-content{
     display:flex;
@@ -505,7 +495,7 @@ footer{
 }
 h4{
     font-size: large;
-    color: #888;
+    color: #575757;
 }
 #juegos{
     margin-left: 20px;
@@ -515,10 +505,11 @@ h4{
 }
 .footerlink{
     text-decoration: none;
-    color: #706f6f;
+    color: #5f5f5f;
+    width: fit-content;
 }
 .footerlink:hover{
-    color: #302f2f;
+    color: #c4c2c2;
 }
 
 
@@ -663,3 +654,21 @@ h4{
         width: 100vw !important;
     }
 }
+
+.headers::before {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px; /* Set your desired underline height */
+    background-color: #ffffff; /* Set your desired underline color */
+    transition: width 0.2s ease-in-out;
+}
+
+.headers:hover::before {
+    width: 100%;
+}
+
+
