@@ -1418,7 +1418,7 @@ function country(index){
             return('Brazil');
         case 'CA':
             return('Canada');
-        case 'JAP':
+        case 'JP':
             return('Japan');
         case 'CH':
             return('China');
@@ -1452,8 +1452,6 @@ function country(index){
             return('Egypt');         
         case 'BE':
             return('Belgium');
-        case 'BSN':
-            return('Bosnia');
         case 'NW':
             return('Norway');    
         case 'VN':
@@ -1466,12 +1464,16 @@ function country(index){
             return('Paraguay');
         case 'ARM':
             return('Armenia');
-        case 'IN':
-            return('India');
+        case 'AL':
+            return('Albania');
+        case 'SA':
+            return('South Africa');
+        case 'QA':
+            return('Qatar');
         case 'ES':
-            return('España')
+            return('España');
         default:
-            return('Unknown')
+            return('Planet Earth');
     }
 }
 
