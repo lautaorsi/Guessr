@@ -1468,6 +1468,8 @@ function country(index){
             return('Armenia');
         case 'IN':
             return('India');
+        case 'ES':
+            return('España')
         default:
             return('Unknown')
     }
