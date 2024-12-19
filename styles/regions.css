@@ -114,22 +114,17 @@ body{
     outline: none;
     overflow: hidden;
     padding: 13px 20px;
-    position: static;
+    position: absolute;
     text-align: center;
-    text-decoration: none;
-    transform: translate3d(0, 0, 0);
-    transition: all .3s;
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
-    vertical-align: top;
-    white-space: nowrap;
+    background-size: 100% 200%;
+    background-position: top;
+    transition: all .1s ease-out;
 }
   
 #return:hover {
-    opacity: 1;
-    transform: translateY(0);
-    transition-duration: .35s;
+    background-position: bottom;
+    color: #ffffff;
+    transform: translateY(-0.25em);
 }
   
 #return:active {

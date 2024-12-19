@@ -202,7 +202,8 @@
         'US': 'Recorre EEUU,   sus grandes ciudades y amplios valles te dejaran asombrado!',
         'EUROPA': 'Recorre los paises de Europa.Este modo te llevara a recorrer sus ciudades, playas y monumentos iconicos!',
         'STATIC': 'Cansado de videos? Prueba adivinar las ubicaciones en las que fueron tomadas estas fotografias!',
-        'ARG': 'Recorre Argentina.  <br> Hogar de leyendas del futbol y tango!'
+        'ARG': 'Recorre Argentina.  <br> Hogar de leyendas del futbol y tango!',
+        'blur': 'El video aparecera borroso, <br> usa el paisaje y las estructuras<br> para adivinar!'
     }
 
     const titles = {
@@ -218,7 +219,8 @@
         'US': 'USA 🇺🇸',
         'EUROPA': 'EUROPA 🇪🇺',
         'STATIC': 'ESTATICO',
-        'ARG': 'ARGENTINA'
+        'ARG': 'ARGENTINA',
+        'blur': 'BORROSO'
     }
 
     const images = {
@@ -234,6 +236,7 @@
         'US': '../static/region/USA.png',
         'EUROPA': '../static/region/EUROPA.jpg',
         'STATIC': '../static/CLASICO.jpg',
+        'blur': '../static/CLASICO.jpg',
         'ARG': '../static/region/Arg.jpg'
     }
 
@@ -269,6 +272,10 @@
 
     if(gamename.hello == 'INVERTIDO'){
         wimg.style.rotate = '180deg'
+    }
+
+    if(gamename.hello == 'blur'){
+        wimg.classList = `${wimg.className} blur`
     }
 
     if(gamename.hello == 'nozoom' || gamename.hello == 'clear_map'){

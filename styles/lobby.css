@@ -122,6 +122,11 @@ p{
     width: fit-content;
     height: fit-content;
     min-height: 358px;
+    background-color: #000;
+    border-top-right-radius: 8px;
+    border-top-left-radius: 8px;
+    border-bottom-right-radius: 8px;
+    border-bottom-left-radius: 8px;
 }
 
 #foot{
@@ -144,6 +149,11 @@ p{
     width: 420px;
     height: 45vh;
     
+}
+
+.blur{
+    filter: blur(4px);
+    background-color: #000;
 }
 
 #invertimg{

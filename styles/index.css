@@ -305,7 +305,9 @@ body{
 
 
 
-
+.blur{
+    filter: blur(4px);
+}
 
 h3{
     color: white;

@@ -54,6 +54,9 @@ if (gamemode == 'PAUSE'){
 }
 
 
+
+
+
 var redIcon = new L.Icon({
     iconUrl: 'https://raw.githubusercontent.com/pointhi/leaflet-color-markers/master/img/marker-icon-2x-red.png',
     shadowUrl: 'https://cdnjs.cloudflare.com/ajax/libs/leaflet/0.7.7/images/marker-shadow.png',
@@ -444,9 +447,12 @@ var video_list = [
 ['5FEvcCa6Jhs',25.765179185992753, -80.18563531843044,71,'US','Traveling W/ Andrew','https://www.youtube.com/@TravelingwithAndrew','Miami'],
 ['5FEvcCa6Jhs',25.763312160213868, -80.19002556781052,680,'US','Traveling W/ Andrew','https://www.youtube.com/@TravelingwithAndrew','Miami'],
 ['5FEvcCa6Jhs',25.767262486412545, -80.18841434631132,1405,'US','Traveling W/ Andrew','https://www.youtube.com/@TravelingwithAndrew','Miami'],
-
-
-
+['p6JzrLGARAY',41.899151679874855, 12.476638953451127,681,'IT','R*** Walking Tour','https://www.youtube.com/@RomaWalkingTour','Roma'],
+['p6JzrLGARAY',41.90543677627501, 12.483367782850419,2520,'IT','R*** Walking Tour','https://www.youtube.com/@RomaWalkingTour','Roma'],
+['p6JzrLGARAY',41.90599890463755, 12.482768393104397,2931,'IT','R*** Walking Tour','https://www.youtube.com/@RomaWalkingTour','Roma'],
+['J-OdaCTTMXk',41.884388973705, 12.475660808747133,850,'IT','R*** Walking Tour','https://www.youtube.com/@RomaWalkingTour','Roma'],
+['J-OdaCTTMXk',41.8858973,12.4841318,227,'IT','R*** Walking Tour','https://www.youtube.com/@RomaWalkingTour','Roma'],
+['J-OdaCTTMXk',41.8858973,12.4841318,227,'IT','R*** Walking Tour','https://www.youtube.com/@RomaWalkingTour','Roma'],
 ]
 
 
@@ -616,6 +622,7 @@ const list = {
     'nozoom': video_list,
     'EUROPA': europe_list,
     'ARG': arg_list,
+    'blur': video_list
 }
 
 
@@ -1073,18 +1080,16 @@ function startTimer(){
 }
 
 function looptime(){
-    if(time < 1 && marker_placed){
-        final_guess(true)
-    }
+    if(time < 1 && marker_placed)final_guess(true)
+
     if(time >= 1){
        interval = setTimeout(function() {
           updatetime()
         }, 1000);
     }
-    if(time < 1 && marker_placed == false){
-        final_guess(false)
-    }
-    
+
+    if(time < 1 && marker_placed == false)final_guess(false)
+        
 }
 
 function updatetime(){
@@ -1477,4 +1482,7 @@ function country(index){
     }
 }
 
+if (gamemode == 'blur'){
+    myvid.style.filter = 'blur(15px)'
+}
 

@@ -148,6 +148,15 @@
                     </div>
                 </div>
                 <div id="classiccards" class="card_container">
+                        <div class="card">
+                            <a onclick='lobby("PAUSE")' class="cardlink">
+                            <img src="../static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
+                            <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
+                            <h3><b>Pausa</b></h3>
+                            <div class="bottomright">⏯️</div>
+                            <p id="pausedesc" class="card_description"> Para jugadores casuales,<br>botones de play y pausa habilitados.<br>Pero cuidado, el tiempo sigue corriendo!</p>                 
+                            </a>
+                        </div>
                         <div class="card" >
                             <a onclick='lobby("CLASICO")' class="cardlink">
                             <img src="../static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
@@ -158,24 +167,8 @@
                             </div>
                             </a>
                         </div>
-                        <div class="card">
-                            <a onclick='lobby("PAUSE")' class="cardlink">
-                            <img src="../static/CLASICO.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
-                            <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
-                            <h3><b>Pausa</b></h3>
-                            <div class="bottomright">⏯️</div>
-                            <p id="pausedesc" class="card_description"> Para jugadores casuales,<br>botones de play y pausa habilitados.<br>Pero cuidado, el tiempo sigue corriendo!</p>                 
-                            </a>
-                        </div>
-                        <div class="card">
-                            <a onclick='lobby("INVERTIDO")' class="cardlink">
-                            <img src="../static/CLASICO.jpg" class="cardimg invertimg" alt="Classic" draggable="false">
-                            <div id="Easy" class="difficulty" title="Dificultad">Facil</div>
-                            <h3 ><b>Invertido</b></h3>
-                            <div class="bottomright" id="invertright">🧑‍💻</div>
-                            <p id="pausedesc" class="card_description">El video esta de cabeza!<br> Reglas de juego y controles normales.<br> Leer carteles y calles es todo un desafio!</p>                 
-                            </a>
-                        </div>
+
+
                         <div class="card">
                             <a href="https://www.videoguessr.online/es" class="cardlink">
                             <img src="../static/ML_es.jpg" class="cardimg" alt="Classic" draggable="false" id="classicimg">
@@ -183,6 +176,15 @@
                             <h3><b>Multijugador</b></h3>
                             <div class="bottomright">👩‍💻👨‍💻</div>
                             <p id="pausedesc" class="card_description"> Juega con amigos! <br> Competiras para obtener la mayor cantidad de puntos, demuestrales quien manda!</p>                 
+                            </a>
+                        </div>
+                        <div class="card">
+                            <a onclick='lobby("INVERTIDO")' class="cardlink">
+                            <img src="../static/CLASICO.jpg" class="cardimg invertimg" alt="Classic" draggable="false">
+                            <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
+                            <h3 ><b>Invertido</b></h3>
+                            <div class="bottomright" id="invertright">🧑‍💻</div>
+                            <p id="pausedesc" class="card_description">El video esta de cabeza!<br> Reglas de juego y controles normales.<br> Leer carteles y calles es todo un desafio!</p>                 
                             </a>
                         </div>
                         <!-- <div class="card">
@@ -249,15 +251,7 @@
                     </div>
                 </div>
                 <div id="arcadecards" class="big_card_container">
-                        <div class="card" >
-                            <a onclick='lobby("clear_map")' class="cardlink">
-                            <img src="../static/earthmap.jpg" class="largeimg"  alt="clean" draggable="false" id="cleanimg">
-                            <div class="bottomright">🛰️</div>
-                            <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
-                            <h3><b>Satelital</b></h3>
-                            <p id="cleandesc" class="card_description">Para jugadores expertos este modo no tiene <br> divisiones politicas ni nombres! <br> (Dificultad avanzada)</p>
-                        </a>
-                        </div>
+
                     <div class="card" id="arcadecard">
                         <a href="regiones.html" class="cardlink">
                         <img src="../static/CONTINENTES.png" class="largeimg" draggable="false"  id="cleanimg" alt="Classic">
@@ -272,6 +266,15 @@
                         <div id="Normal" class="difficulty" title="Dificultad">Intermedio</div>
                         <h3 id="h4italy"><b>Sin Zoom</b></h3>
                         <p id="classicdesc" class="card_description">Reglas normales pero cuidado, <br> no podras hacer zoom  <br> en el mapa</p>                 
+                        </a>
+                    </div>
+                    <div class="card" >
+                            <a onclick='lobby("clear_map")' class="cardlink">
+                            <img src="../static/earthmap.jpg" class="largeimg"  alt="clean" draggable="false" id="cleanimg">
+                            <div class="bottomright">🛰️</div>
+                            <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
+                            <h3><b>Satelital</b></h3>
+                            <p id="cleandesc" class="card_description">Para jugadores expertos este modo no tiene <br> divisiones politicas ni nombres! <br> (Dificultad avanzada)</p>
                         </a>
                     </div>
                 </div>
@@ -302,6 +305,18 @@
                         <p id="radiudesc" class="card_description">Consigue la mayor<br> cantidad de aciertos<br> en el radio determinado!</p>
                         </a>
                     </div>
+
+                    <div class="card" id="blurcard">
+                        <a onclick="lobby('blur')" class="cardlink">
+                        <img src="../static/CLASICO.jpg" class="cardimg blur" alt="clean" draggable="false" id="timeimg">
+                        <div class="bottomright">👓</div>
+                        <div id="Hard" class="difficulty" title="Dificultad">Dificil</div>
+                        <h3 id="h4radius"><b>Borroso</b></h3>
+                        <p id="radiudesc" class="card_description">El video aparecera borroso, <br> usa el paisaje y las estructuras<br> para adivinar!</p>
+                        </a>
+                    </div>
+
+
                 </div>
                 <div class="adbox last">
 
