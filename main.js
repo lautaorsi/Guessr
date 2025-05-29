@@ -703,7 +703,7 @@ function onYouTubeIframeAPIReady() {
     });
 
     player.getVideoURL = function(){
-        window.location.href = 'https://www.videoguessr.com/en/credits.html'
+        window.location.href = 'https://lautaorsi.github.io/Guessr/en/credits.html'
     }
 
     player.getVideoData = function(){
